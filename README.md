@@ -1,14 +1,14 @@
 # PlayStorm
 A simulation of online video game store like Steam
 
-Trello:
+#### Trello:
  - https://trello.com/b/vTLc0V7J/patrones-software
  
-Base de Datos:
+#### Base de Datos:
  - Con la libreria de Serializar de Java
- Lenguaje:
+#### Lenguaje:
  - Java
- Interfaz:
+#### Interfaz:
  - Con la que nos proporciona Java
  
 # Patrones:
