@@ -7,6 +7,7 @@ package GUI;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -152,7 +153,23 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_LogInButtonActionPerformed
 
     private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
-        // TODO add your handling code here:
+        String[] options = {"Cliente", "Empresa", "Volver"};
+        int selection = JOptionPane.showOptionDialog(null, "¿Quiere registrarse como cliente o como empresa?", "Registrar", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+
+        switch (selection) {
+            case 0 -> {
+                ClientSingUp clientSignUp = new ClientSingUp();
+                clientSignUp.setVisible(true);
+                this.dispose();
+            }
+            case 1 -> {
+                CompanySignUp companySignUp = new CompanySignUp();
+                companySignUp.setVisible(true);
+                this.dispose();
+            }
+            default -> {
+            }
+        }
     }//GEN-LAST:event_RegisterButtonActionPerformed
 
     /**
