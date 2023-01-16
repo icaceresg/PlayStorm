@@ -11,21 +11,21 @@ Base de Datos:
  Interfaz:
  - Con la que nos proporciona Java
  
-PATRONES:
+#PATRONES:
 
-Patrones de Diseño:
+## Patrones de Diseño:
  - Factory Method: Se va a utilizar a la hora de crear un usuario nuevo. Se va a crear una interfaz y se va a utilizar una superclase llamada Usuario para poder crearlo.
  -
  -
  -
  
-Patrones Estructurales:
+## Patrones Estructurales:
  -
  -
  -
  -
  
-Patrones de Creación:
+## Patrones de Creación:
  -
  -
  -
