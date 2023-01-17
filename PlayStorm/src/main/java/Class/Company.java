@@ -2,7 +2,7 @@ package Class;
 
 import java.util.Map;
 
-public class Company extends User {
+public class Company implements User {
 
     private String site, cif;
     private Product[] products;
