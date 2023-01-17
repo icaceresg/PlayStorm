@@ -1,11 +1,9 @@
 package Class;
 
-public class Administrator extends User{
-    
-    public Administrator ()
-    {
-        this.name = "Admin";
-        this.password = "Admin";
-        this.email = "admin@admin.com";
+public class Administrator extends User {
+
+    public Administrator(String name, String email, String password) {
+        super(name, email, password);
     }
+
 }

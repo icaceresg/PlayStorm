@@ -4,12 +4,12 @@ import java.util.Map;
 
 
 public class Company extends User{
-    String site, cif;
-    Product [] products;
-    float wallet;
-    boolean subscribe;
-    Map <String, Integer> discounts; //String to promotional code, int to % discount
-    Company [] company; //List to companys
+    private String site, cif;
+    private Product [] products;
+    private float wallet;
+    private boolean subscribe;
+    private Map <String, Integer> discounts; //String to promotional code, int to % discount
+    private Company [] company; //List to companys
 
     public Company(String name, String email, String password, String site, String cif, boolean subscribe) {
         super(name, email, password);

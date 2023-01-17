@@ -1,7 +1,7 @@
 package Class;
 
 public class Product {
-    String name, description;
-    float price;
-    int amount;
+    private String name, description;
+    private float price;
+    private int amount;
 }
