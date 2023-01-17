@@ -2,14 +2,14 @@ package Class;
 
 import java.util.Map;
 
+public class Company extends User {
 
-public class Company extends User{
     private String site, cif;
-    private Product [] products;
+    private Product[] products;
     private float wallet;
     private boolean subscribe;
-    private Map <String, Integer> discounts; //String to promotional code, int to % discount
-    private Company [] company; //List to companys
+    private Map<String, Integer> discounts; //String to promotional code, int to % discount
+    private Company[] company; //List to companys
 
     public Company(String name, String email, String password, String site, String cif, boolean subscribe) {
         super(name, email, password);
@@ -74,6 +74,5 @@ public class Company extends User{
     public void setCompany(Company[] company) {
         this.company = company;
     }
-    
-    
+
 }

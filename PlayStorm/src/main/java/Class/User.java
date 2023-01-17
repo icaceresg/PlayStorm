@@ -1,7 +1,7 @@
-
 package Class;
 
-public class User{
+public class User {
+
     private String name, email, password;
 
     public User(String name, String email, String password) {
@@ -9,7 +9,6 @@ public class User{
         this.email = email;
         this.password = password;
     }
-    
 
     public String getName() {
         return name;
@@ -34,5 +33,5 @@ public class User{
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
 }
