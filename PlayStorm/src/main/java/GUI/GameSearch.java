@@ -36,7 +36,7 @@ public class GameSearch extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextFieldNombreGameSearch.setText("Inserte titulo");
+        jTextFieldNombreGameSearch.setText("Inserte título");
         jTextFieldNombreGameSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNombreGameSearchActionPerformed(evt);
@@ -58,7 +58,7 @@ public class GameSearch extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Precio maximo");
+        jLabel1.setText("Precio máximo");
 
         jLabel2.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel2.setText("Todos los productos:");
