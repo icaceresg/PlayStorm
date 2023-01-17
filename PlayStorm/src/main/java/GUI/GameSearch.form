@@ -93,7 +93,7 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="jTextFieldNombreGameSearch">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Inserte titulo"/>
+        <Property name="text" type="java.lang.String" value="Inserte t&#xed;tulo"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNombreGameSearchActionPerformed"/>
@@ -144,7 +144,7 @@
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Precio maximo"/>
+        <Property name="text" type="java.lang.String" value="Precio m&#xe1;ximo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
