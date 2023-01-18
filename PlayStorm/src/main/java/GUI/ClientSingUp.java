@@ -7,6 +7,9 @@ package GUI;
 import Class.NotSubscriberFactory;
 import Class.SubscriberFactory;
 import Interfaces.IntClient;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +22,19 @@ public class ClientSingUp extends javax.swing.JFrame {
      * Creates new form ClientSingUp
      */
     public ClientSingUp() {
+        // Centra la pantalla y carga la foto
+        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+        int height = pantalla.height / 2;
+        int width = pantalla.width / 2;
+        setSize(width, height);
+        setLocationRelativeTo(null);
+
         initComponents();
+
+        this.setTitle("JavaPop");
+
+        ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
+        this.setIconImage(imagen.getImage());
     }
 
     /**
@@ -232,14 +247,14 @@ public class ClientSingUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonRegistrarseClientSingUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarseClientSingUpActionPerformed
-        boolean emptyFields = jTextFieldBirthday.getText().equals("")       //no esta
-                | jTextFieldCreditCard.getText().equals("")                 //esta
-                | jTextFieldLocalization.getText().equals("")               //esta
-                | jTextFieldName.getText().equals("")                       //esta
-                | jTextFieldPassword.getText().equals("")                   //esta
-                | jTextFieldRepeatPassword.getText().equals("")             //esta
-                | jTextFieldSurname.getText().equals("")                    //esta
-                | jTextFieldTelephone.getText().equals("")                  //esta
+        boolean emptyFields = jTextFieldBirthday.getText().equals("") //no esta
+                | jTextFieldCreditCard.getText().equals("") //esta
+                | jTextFieldLocalization.getText().equals("") //esta
+                | jTextFieldName.getText().equals("") //esta
+                | jTextFieldPassword.getText().equals("") //esta
+                | jTextFieldRepeatPassword.getText().equals("") //esta
+                | jTextFieldSurname.getText().equals("") //esta
+                | jTextFieldTelephone.getText().equals("") //esta
                 | jTextFieldUser.getText().equals("");                      //esta
 
         if (emptyFields | !(jTextFieldPassword.getText().equals(jTextFieldRepeatPassword.getText()))) {

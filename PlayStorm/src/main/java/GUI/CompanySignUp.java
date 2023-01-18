@@ -9,7 +9,10 @@ import Class.NotSubscriberFactory;
 import Class.SubscriberFactory;
 import Interfaces.IntClient;
 import Interfaces.IntCompany;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.Arrays;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,7 +25,19 @@ public class CompanySignUp extends javax.swing.JFrame {
      * Creates new form CompanySignUp1
      */
     public CompanySignUp() {
+        // Centra la pantalla y carga la foto
+        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+        int height = pantalla.height / 2;
+        int width = pantalla.width / 2;
+        setSize(width, height);
+        setLocationRelativeTo(null);
+
         initComponents();
+
+        this.setTitle("JavaPop");
+
+        ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
+        this.setIconImage(imagen.getImage());
     }
 
     /**
@@ -218,7 +233,7 @@ public class CompanySignUp extends javax.swing.JFrame {
                 | PasswordField.getPassword().equals("") //esta
                 | RepeatPasswordField.getPassword().equals("") //esta
                 | SiteTextField.getText().equals("");
-        
+
         if (emptyFields | !(Arrays.equals(PasswordField.getPassword(), RepeatPasswordField.getPassword()))) {
             if (emptyFields) {
                 JOptionPane.showMessageDialog(this, "Existen campos vacíos", "Registro", JOptionPane.ERROR_MESSAGE);
