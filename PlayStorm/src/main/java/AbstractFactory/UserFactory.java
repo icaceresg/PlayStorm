@@ -9,6 +9,8 @@ package AbstractFactory;
  * @author jorge
  */
 public interface UserFactory {
-    Company createCompany();
-    Client createClient();
+
+    Company createCompany(boolean par);
+
+    Client createClient(boolean par);
 }

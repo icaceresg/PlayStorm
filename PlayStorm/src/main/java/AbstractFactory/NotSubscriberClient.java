@@ -11,6 +11,11 @@ package AbstractFactory;
 public class NotSubscriberClient implements Client {
 
     private String name;
+    private boolean par;
+
+    public NotSubscriberClient(boolean par) {
+        this.par = par;
+    }
 
     @Override
     public String getName() {
@@ -20,6 +25,14 @@ public class NotSubscriberClient implements Client {
     @Override
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isPar() {
+        return par;
+    }
+
+    public void setPar(boolean par) {
+        this.par = par;
     }
 
 }
