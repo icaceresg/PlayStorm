@@ -13,4 +13,8 @@ public interface Company {
     public String getName();
 
     public void setName(String name);
+
+    public boolean isPar();
+
+    public void setPar(boolean par);
 }

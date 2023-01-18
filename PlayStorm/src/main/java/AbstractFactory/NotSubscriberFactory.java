@@ -8,16 +8,16 @@ package AbstractFactory;
  *
  * @author jorge
  */
-public class NotSubscriberFactory implements UserFactory{
+public class NotSubscriberFactory implements UserFactory {
 
     @Override
-    public Company createCompany() {
-        return new NotSubscriberCompany();
+    public Company createCompany(boolean par) {
+        return new NotSubscriberCompany(par);
     }
 
     @Override
-    public Client createClient() {
-        return new NotSubscriberClient();
+    public Client createClient(boolean par) {
+        return new NotSubscriberClient(par);
     }
-    
+
 }

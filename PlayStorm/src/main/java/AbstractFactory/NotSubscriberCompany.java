@@ -11,6 +11,11 @@ package AbstractFactory;
 public class NotSubscriberCompany implements Company {
 
     private String name;
+    private boolean par;
+
+    public NotSubscriberCompany(boolean par) {
+        this.par = par;
+    }
 
     @Override
     public String getName() {
@@ -20,5 +25,15 @@ public class NotSubscriberCompany implements Company {
     @Override
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean isPar() {
+        return par;
+    }
+
+    @Override
+    public void setPar(boolean par) {
+        this.par = par;
     }
 }

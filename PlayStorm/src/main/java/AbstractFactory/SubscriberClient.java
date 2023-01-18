@@ -11,6 +11,11 @@ package AbstractFactory;
 public class SubscriberClient implements Client {
 
     private String name;
+    private boolean par;
+
+    public SubscriberClient(boolean par) {
+        this.par = par;
+    }
 
     @Override
     public String getName() {
@@ -20,6 +25,16 @@ public class SubscriberClient implements Client {
     @Override
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean isPar() {
+        return par;
+    }
+
+    @Override
+    public void setPar(boolean par) {
+        this.par = par;
     }
 
 }
