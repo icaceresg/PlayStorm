@@ -10,42 +10,40 @@ public class Demo {
      * initialization stage), depending on the configuration or environment
      * variables.
      */
-    private static Client configureApplicationClient(String tipo) {
+    private static IntClient configureApplicationClient(String tipo) {
         SubscriberFactory subscriberFactory = new SubscriberFactory();
         NotSubscriberFactory notSubscriberFactory = new NotSubscriberFactory();
-        Client client;
+        IntClient client;
         if (tipo.equals("Suscrito")) {
-            client = subscriberFactory.createClient(true);
+            client = subscriberFactory.createClient("Jorge", "jorge.fer.raez@gmail.com", "contraseña", "Fernandez", "Site", "1234567891234567", "918710203");
             return client;
         }
         else {
-            client = notSubscriberFactory.createClient(false);
+            client = notSubscriberFactory.createClient("Jorge", "jorge.fer.raez@gmail.com", "contraseña", "Fernandez", "Site", "1234567891234567", "918710203");
     }
     return client;
 }
 
-private static Company configureApplicationCompany(String tipo) {
+private static IntCompany configureApplicationCompany(String tipo) {
         SubscriberFactory subscriberFactory = new SubscriberFactory();
         NotSubscriberFactory notSubscriberFactory = new NotSubscriberFactory();
-        Company company;
+        IntCompany company;
         if (tipo.equals("Suscrito")) {
-            company = subscriberFactory.createCompany(true);
+            company = subscriberFactory.createCompany("Inditex", "email", "contraseña", "Site", "12354", true);
             return company;
         }
         else {
-            company = notSubscriberFactory.createCompany(false);
+            company = notSubscriberFactory.createCompany("Inditex", "email", "contraseña", "Site", "12354", false);
     }
     return company;
     }
 
     public static void main(String[] args) {
-        Client client = configureApplicationClient("No Suscrito");
-        client.setName("Raul");
-        System.out.println("El nombre del cliente es: " + client.getName() + " y su suscripcion es: " + client.isPar());
+        IntClient client = configureApplicationClient("No Suscrito");
+        System.out.println("El nombre del cliente es: " + client.getName() + " y su suscripcion es: ");
 
-        Company company = configureApplicationCompany("No Suscrito");
-        company.setName("Amazon");
-        System.out.println("El nombre de la compañia es: " + company.getName() + " y su suscripcion es: " + company.isPar());
+        IntCompany company = configureApplicationCompany("Suscrito");
+        System.out.println("El nombre de la compañia es: " + company.getName() + " y su suscripcion es: " + company.isSubscribe());
 
     }
 }

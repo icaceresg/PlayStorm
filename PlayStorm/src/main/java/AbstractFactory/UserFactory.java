@@ -10,7 +10,7 @@ package AbstractFactory;
  */
 public interface UserFactory {
 
-    Company createCompany(boolean par);
+    IntCompany createCompany(String name, String email, String password, String site, String cif, boolean subscribe);
 
-    Client createClient(boolean par);
+    IntClient createClient(String name, String email, String password, String lastName, String site, String creditCard, String phone);
 }

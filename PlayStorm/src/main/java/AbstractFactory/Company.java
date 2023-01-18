@@ -1,20 +1,100 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package AbstractFactory;
+
+import java.util.Map;
 
 /**
  *
  * @author jorge
  */
-public interface Company {
+public class Company extends User implements IntCompany {
 
-    public String getName();
+    
+    private String site, cif;
+    private Product[] products;
+    private float wallet;
+    private boolean subscribe;
+    private Map<String, Integer> discounts; //String to promotional code, int to % discount
+    private Company[] company; //List to companys
 
-    public void setName(String name);
+    public Company(String name, String email, String password, String site, String cif, boolean subscribe) {
+        super(name, email, password);
+        this.site = site;
+        this.cif = cif;
+        this.wallet = 0;
+        this.subscribe = subscribe;
+    }
 
-    public boolean isPar();
+    @Override
+    public String getSite() {
+        return site;
+    }
 
-    public void setPar(boolean par);
+    @Override
+    public void setSite(String site) {
+        this.site = site;
+    }
+
+    @Override
+    public String getCif() {
+        return cif;
+    }
+
+    @Override
+    public void setCif(String cif) {
+        this.cif = cif;
+    }
+
+    @Override
+    public Product[] getProducts() {
+        return products;
+    }
+
+    @Override
+    public void setProducts(Product[] products) {
+        this.products = products;
+    }
+
+    @Override
+    public float getWallet() {
+        return wallet;
+    }
+
+    @Override
+    public void setWallet(float wallet) {
+        this.wallet = wallet;
+    }
+
+    @Override
+    public boolean isSubscribe() {
+        return subscribe;
+    }
+
+    @Override
+    public void setSubscribe(boolean subscribe) {
+        this.subscribe = subscribe;
+    }
+
+    @Override
+    public Map<String, Integer> getDiscounts() {
+        return discounts;
+    }
+
+    @Override
+    public void setDiscounts(Map<String, Integer> discounts) {
+        this.discounts = discounts;
+    }
+
+    @Override
+    public Company[] getCompany() {
+        return company;
+    }
+
+    @Override
+    public void setCompany(Company[] company) {
+        this.company = company;
+    }
 }
