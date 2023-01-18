@@ -1,5 +1,9 @@
-package AbstractFactory;
+package Class;
 
+import Interfaces.IntClient;
+import Interfaces.IntCompany;
+import Interfaces.IntUser;
+import Interfaces.UserFactory;
 /**
  * Demo class. Everything comes together here.
  */

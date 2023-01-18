@@ -1,9 +1,19 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Class;
 
+import Interfaces.IntCompany;
 import java.util.Map;
 
-public class Company extends User {
+/**
+ *
+ * @author jorge
+ */
+public class Company extends User implements IntCompany {
 
+    
     private String site, cif;
     private Product[] products;
     private float wallet;
@@ -19,60 +29,73 @@ public class Company extends User {
         this.subscribe = subscribe;
     }
 
+    @Override
     public String getSite() {
         return site;
     }
 
+    @Override
     public void setSite(String site) {
         this.site = site;
     }
 
+    @Override
     public String getCif() {
         return cif;
     }
 
+    @Override
     public void setCif(String cif) {
         this.cif = cif;
     }
 
+    @Override
     public Product[] getProducts() {
         return products;
     }
 
+    @Override
     public void setProducts(Product[] products) {
         this.products = products;
     }
 
+    @Override
     public float getWallet() {
         return wallet;
     }
 
+    @Override
     public void setWallet(float wallet) {
         this.wallet = wallet;
     }
 
+    @Override
     public boolean isSubscribe() {
         return subscribe;
     }
 
+    @Override
     public void setSubscribe(boolean subscribe) {
         this.subscribe = subscribe;
     }
 
+    @Override
     public Map<String, Integer> getDiscounts() {
         return discounts;
     }
 
+    @Override
     public void setDiscounts(Map<String, Integer> discounts) {
         this.discounts = discounts;
     }
 
+    @Override
     public Company[] getCompany() {
         return company;
     }
 
+    @Override
     public void setCompany(Company[] company) {
         this.company = company;
     }
-
 }

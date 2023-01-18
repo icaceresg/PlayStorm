@@ -5,6 +5,13 @@
  */
 package GUI;
 
+import Class.NotSubscriberFactory;
+import Class.SubscriberFactory;
+import Interfaces.IntClient;
+import Interfaces.IntCompany;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author icace
@@ -187,7 +194,9 @@ public class CompanySignUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
-        // TODO add your handling code here:
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
@@ -203,7 +212,25 @@ public class CompanySignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_CIFTextFieldActionPerformed
 
     private void AcceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptButtonActionPerformed
-        // TODO add your handling code here:
+        boolean emptyFields = CIFTextField.getText().equals("") //no esta
+                | EmailTextField.getText().equals("") //esta
+                | NameTextField.getText().equals("") //esta
+                | PasswordField.getPassword().equals("") //esta
+                | RepeatPasswordField.getPassword().equals("") //esta
+                | SiteTextField.getText().equals("");
+        
+        if (emptyFields | !(Arrays.equals(PasswordField.getPassword(), RepeatPasswordField.getPassword()))) {
+            if (emptyFields) {
+                JOptionPane.showMessageDialog(this, "Existen campos vacíos", "Registro", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Las contraseñas son iguales", "Registro", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            NotSubscriberFactory notSubscriberFactory = new NotSubscriberFactory();
+            IntCompany company;
+            company = notSubscriberFactory.createCompany(NameTextField.getText(), EmailTextField.getText(), (String.valueOf(PasswordField.getPassword())), SiteTextField.getText(), CIFTextField.getText(), false);
+            System.out.println(company.getName());
+        }
     }//GEN-LAST:event_AcceptButtonActionPerformed
 
     private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed
