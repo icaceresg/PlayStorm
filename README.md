@@ -14,13 +14,13 @@ A simulation of online video game store like Steam
 # Patrones:
 
 ## Patrones de Diseño:
- - Abstract Factory: Se va a utilizar a la hora de crear un usuario nuevo. Se va a crear una interfaz y se va a utilizar una superclase llamada Usuario para poder crearlo.
+ - Abstract Factory: Se va a utilizar a la hora de crear un usuario nuevo.
    - FabricaAbstracta: AbstractFactory
    - FabricaConcreta: SubscriberFactory, NotSubscriberFactory
    - ProductoAbstracto: IntClient, IntCompany
    - ProductoConcreto: Client, Company
    - Cliente: ClientSingUp, CompanySignUp
- -
+ - Singleton: Para crear un admin
  -
  -
  
