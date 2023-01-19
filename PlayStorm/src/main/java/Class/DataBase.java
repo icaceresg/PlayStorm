@@ -20,12 +20,12 @@ import java.util.ArrayList;
  */
 public class DataBase {
 
-    private String ruta = "./database/";
+    private String path = "./database/";
 
     public void saveClient(Client client) throws IOException, Exception {
         ClientIterator iterator = new ClientIterator();
         iterator.addClient(client);
-        File file = new File(ruta, "Clients.txt");
+        File file = new File(path, "Clients.txt");
         ObjectOutputStream oos = null;
         try {
             oos = new ObjectOutputStream(
@@ -49,7 +49,7 @@ public class DataBase {
     }
 
     public ArrayList<Client> readClients() throws Exception {
-        File file = new File(ruta, "Clients.txt");
+        File file = new File(path, "Clients.txt");
         ArrayList<Client> clients = new ArrayList();
         ObjectInputStream ois = null;
         try {
