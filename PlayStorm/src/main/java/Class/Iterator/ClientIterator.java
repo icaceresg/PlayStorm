@@ -7,7 +7,11 @@ import Class.Client;
 
 public class ClientIterator implements IntIterator{
     private int i;
-    private ClientContainer clientContainer = new ClientContainer();
+    private ClientContainer clientContainer;
+
+    public ClientIterator() throws Exception {
+        this.clientContainer = new ClientContainer();
+    }
 
     @Override
     public boolean hasNext() {

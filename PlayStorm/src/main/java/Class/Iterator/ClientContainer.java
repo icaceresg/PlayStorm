@@ -6,9 +6,10 @@ import Interfaces.IntIterator;
 import Class.Client;
 import Class.Client;
 import Class.DataBase;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ClientContainer implements IntContainer{
+public class ClientContainer implements IntContainer, Serializable{
     public ArrayList<Client> clients = new ArrayList<>();
     
     

@@ -28,7 +28,6 @@ public class DataBase {
         try {
             oos = new ObjectOutputStream(
                     new FileOutputStream(file));
-
             ClientIterator iterator = new ClientIterator();
             System.out.println(client.getName());
             oos.writeObject(client);
@@ -54,12 +53,12 @@ public class DataBase {
         ObjectInputStream ois = null;
         try {
             ois = new ObjectInputStream(new FileInputStream(file));
-            Object aux = null;
+            Object aux = ois.readObject();
             do {
-                aux = ois.readObject();
                 if (aux instanceof Client) {
                     clients.add((Client) aux);
                 }
+                aux = ois.readObject();
             } while (aux != null);
         } catch (FileNotFoundException ef) {
             throw new Exception(ef.getMessage());
