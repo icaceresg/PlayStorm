@@ -4,38 +4,39 @@
  */
 package Class.Iterator;
 
-import Class.Company;
+import Class.Client;
+import Class.Product;
 import Interfaces.IntIterator;
 
 /**
  *
  * @author jorge
  */
-public class CompanyIterator implements IntIterator{
+public class ProductIterator implements IntIterator{
     private int i;
-    private CompanyContainer companyContainer;
+    private ProductContainer productContainer;
 
-    public CompanyIterator() throws Exception {
-        this.companyContainer = new CompanyContainer();
+    public ProductIterator() throws Exception {
+        this.productContainer = new ProductContainer();
     }
 
     @Override
     public boolean hasNext() {
-        if(i < companyContainer.companies.size())
+        if(i < productContainer.products.size())
             return true;
         return false;
     }
 
     @Override
-    public Company next() {
+    public Product next() {
         if(this.hasNext())
-            return companyContainer.companies.get(i++);
+            return productContainer.products.get(i++);
         return null;
     }
     
-    public void addCompany(Company company)
+    public void addProducts(Product product)
     {
-        companyContainer.companies.add(company);
+        productContainer.products.add(product);
     }
     
 }
