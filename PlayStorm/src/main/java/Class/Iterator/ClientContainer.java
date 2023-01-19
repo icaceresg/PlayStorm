@@ -1,8 +1,9 @@
 
-package Class;
+package Class.Iterator;
 
 import Interfaces.IntContainer;
 import Interfaces.IntIterator;
+import Class.Client;
 import Class.Client;
 import java.util.ArrayList;
 

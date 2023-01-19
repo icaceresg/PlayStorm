@@ -1,7 +1,8 @@
 
-package Class;
+package Class.Iterator;
 
 import Interfaces.IntIterator;
+import Class.Client;
 import Class.Client;
 
 public class ClientIterator implements IntIterator{

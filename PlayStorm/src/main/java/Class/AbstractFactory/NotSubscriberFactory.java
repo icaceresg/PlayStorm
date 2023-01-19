@@ -2,26 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Class;
+package Class.AbstractFactory;
 
-import Interfaces.UserFactory;
-import Interfaces.IntClient;
-import Interfaces.IntCompany;
+import Class.AbstractFactory.TemplateMethod.NotSubscriberClient;
+import Class.AbstractFactory.TemplateMethod.NotSubscriberCompany;
+import Interfaces.*;
 
-/**
- *
- * @author jorge
- */
-public class SubscriberFactory implements UserFactory {
+public class NotSubscriberFactory implements UserFactory {
 
     @Override
     public IntCompany createCompany(String name, String email, String password, String site, String cif, boolean subscribe) {
-        return new SubscriberCompany(name, email, password, site, cif, subscribe);
+        return new NotSubscriberCompany(name, email, password, site, cif, subscribe);
     }
 
     @Override
     public IntClient createClient(String name, String email, String password, String lastName, String site, String creditCard, String phone) {
-        return new SubscriberClient(name, email, password, lastName, site, creditCard, phone);
+        return new NotSubscriberClient(name, email, password, lastName, site, creditCard, phone);
     }
 
 }

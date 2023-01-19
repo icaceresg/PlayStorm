@@ -5,6 +5,10 @@
  */
 package GUI;
 
+import Class.AbstractFactory.NotSubscriberFactory;
+import Class.Adapter.PasswordAdapter;
+import Class.Adapter.PasswordEncode;
+import Class.Adapter.Password;
 import Class.*;
 import Interfaces.IntCompany;
 import java.awt.Dimension;

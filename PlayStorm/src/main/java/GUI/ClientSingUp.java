@@ -4,11 +4,11 @@
  */
 package GUI;
 
-import Class.NotSubscriberFactory;
-import Class.Password;
-import Class.PasswordAdapter;
-import Class.PasswordEncode;
-import Class.SubscriberFactory;
+import Class.AbstractFactory.NotSubscriberFactory;
+import Class.Adapter.Password;
+import Class.Adapter.PasswordAdapter;
+import Class.Adapter.PasswordEncode;
+import Class.AbstractFactory.SubscriberFactory;
 import Interfaces.IntClient;
 import java.awt.Dimension;
 import java.awt.Toolkit;
