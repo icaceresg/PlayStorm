@@ -18,7 +18,7 @@ A simulation of online video game store like Steam
    - FabricaAbstracta: AbstractFactory.
    - FabricaConcreta: SubscriberFactory, NotSubscriberFactory.
    - ProductoAbstracto: IntClient, IntCompany.
-   - ProductoConcreto: Client, Company.
+   - ProductoConcreto: SubscriberClient, SubscriberCompany, NotSubscriberClient, NotSubscriberCompany.
    - Cliente: ClientSingUp, CompanySignUp.
  - Singleton: Para crear un admin.
    - Administrator: Clase con este patrón.
@@ -32,9 +32,9 @@ A simulation of online video game store like Steam
  - Proxy: Para por ejemplo borrar un cliente, el proxy se encarga de comprobar que realmente eres un admin. 
  
 ## Patrones de Comportamiento:
- - Template Method: Se va utilizar cuando hacemos una herencia de User con Client y Company.
-   - ClaseAbstracta: User.
-   - ClaseConcreta: Client, Company.
+ - Template Method: Se va utilizar cuando hacemos una herencia de Client con SubscriberClient y NotSubscriberClient.
+   - ClaseAbstracta: Client.
+   - ClaseConcreta: SubscriberClient, NotSubscriberClient.
  - Visitor: A la hora de aplicar descuentos de la página.
  - State: Para ver el estado del pedido.
  - Observer: Actualización de los valores del dinero de la empresa y del cliente cada vez que se haga una compra/venta.
