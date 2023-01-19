@@ -2,7 +2,7 @@ package Class;
 
 import Interfaces.IntUser;
 
-public class User implements IntUser{
+public class User implements IntUser {
 
     private String name, email, password;
 

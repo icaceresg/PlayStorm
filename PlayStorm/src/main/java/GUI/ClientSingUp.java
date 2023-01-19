@@ -5,6 +5,9 @@
 package GUI;
 
 import Class.NotSubscriberFactory;
+import Class.Password;
+import Class.PasswordAdapter;
+import Class.PasswordEncode;
 import Class.SubscriberFactory;
 import Interfaces.IntClient;
 import java.awt.Dimension;
@@ -252,19 +255,23 @@ public class ClientSingUp extends javax.swing.JFrame {
                 | jPasswordFieldRepeatPasswordClientSingUp.getText().equals("") //esta
                 | jTextFieldSurname.getText().equals("") //esta
                 | jTextFieldTelephone.getText().equals("") //esta
-                | jTextFieldUser.getText().equals("");                      //esta
+                | jTextFieldUser.getText().equals("");                      //esta 
 
-        if (emptyFields | !(jPasswordFieldClientSingUp.getText().equals(jPasswordFieldRepeatPasswordClientSingUp.getText()))) {
+        if (emptyFields | !((String.valueOf(jPasswordFieldClientSingUp.getPassword())).equals((String.valueOf(jPasswordFieldRepeatPasswordClientSingUp.getPassword()))))) {
             if (emptyFields) {
                 JOptionPane.showMessageDialog(this, "Existen campos vacíos", "Registro", JOptionPane.ERROR_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(this, "Las contraseñas son iguales", "Registro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales", "Registro", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            SubscriberFactory subscriberFactory = new SubscriberFactory();
-            NotSubscriberFactory notSubscriberFactory = new NotSubscriberFactory();
-            IntClient client;
-            client = subscriberFactory.createClient(jTextFieldName.getText(), jTextFieldUser.getText(), jPasswordFieldClientSingUp.getText(), jTextFieldSurname.getText(), jTextFieldLocalization.getText(), jTextFieldCreditCard.getText(), jTextFieldTelephone.getText());
+            String finalEncodePassword;
+
+            Password password = new Password((String.valueOf(jPasswordFieldClientSingUp.getPassword())));
+            PasswordAdapter passwordAdapter = new PasswordAdapter(password);
+
+            finalEncodePassword = new PasswordEncode().save(passwordAdapter);
+
+            IntClient client = new NotSubscriberFactory().createClient(jTextFieldName.getText(), jTextFieldUser.getText(), finalEncodePassword, jTextFieldSurname.getText(), jTextFieldLocalization.getText(), jTextFieldCreditCard.getText(), jTextFieldTelephone.getText());
         }
     }//GEN-LAST:event_jButtonRegistrarseClientSingUpActionPerformed
 

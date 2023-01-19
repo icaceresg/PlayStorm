@@ -4,15 +4,23 @@
  */
 package Class;
 
-public class Password {
+public class PasswordEncode {
 
     private String password;
 
-    public Password(String pass) {
+    public PasswordEncode() {
+    }
+
+    public PasswordEncode(String pass) {
         this.password = pass;
     }
 
-    public String getPassword() {
+    public String getEncode() {
         return password;
+    }
+
+    public String save(PasswordEncode passwordEncode) {
+
+        return passwordEncode.getEncode();
     }
 }

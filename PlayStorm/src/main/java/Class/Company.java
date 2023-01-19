@@ -13,7 +13,6 @@ import java.util.Map;
  */
 public class Company extends User implements IntCompany {
 
-    
     private String site, cif;
     private Product[] products;
     private float wallet;

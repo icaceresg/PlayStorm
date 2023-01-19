@@ -5,9 +5,7 @@
  */
 package GUI;
 
-import Class.NotSubscriberFactory;
-import Class.SubscriberFactory;
-import Interfaces.IntClient;
+import Class.*;
 import Interfaces.IntCompany;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -238,13 +236,17 @@ public class CompanySignUp extends javax.swing.JFrame {
             if (emptyFields) {
                 JOptionPane.showMessageDialog(this, "Existen campos vacíos", "Registro", JOptionPane.ERROR_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(this, "Las contraseñas son iguales", "Registro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales", "Registro", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            NotSubscriberFactory notSubscriberFactory = new NotSubscriberFactory();
-            IntCompany company;
-            company = notSubscriberFactory.createCompany(NameTextField.getText(), EmailTextField.getText(), (String.valueOf(PasswordField.getPassword())), SiteTextField.getText(), CIFTextField.getText(), false);
-            System.out.println(company.getName());
+            String finalEncodePassword;
+
+            Password password = new Password((String.valueOf(PasswordField.getPassword())));
+            PasswordAdapter passwordAdapter = new PasswordAdapter(password);
+
+            finalEncodePassword = new PasswordEncode().save(passwordAdapter);
+
+            IntCompany company = new NotSubscriberFactory().createCompany(NameTextField.getText(), EmailTextField.getText(), finalEncodePassword, SiteTextField.getText(), CIFTextField.getText(), false);
         }
     }//GEN-LAST:event_AcceptButtonActionPerformed
 

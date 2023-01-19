@@ -16,12 +16,12 @@ public class SubscriberFactory implements UserFactory {
 
     @Override
     public IntCompany createCompany(String name, String email, String password, String site, String cif, boolean subscribe) {
-        return new Company(name, email, password, site, cif, subscribe);
+        return new SubscriberCompany(name, email, password, site, cif, subscribe);
     }
 
     @Override
     public IntClient createClient(String name, String email, String password, String lastName, String site, String creditCard, String phone) {
-        return new Client(name, email, password, lastName, site, creditCard, phone);
+        return new SubscriberClient(name, email, password, lastName, site, creditCard, phone);
     }
 
 }
