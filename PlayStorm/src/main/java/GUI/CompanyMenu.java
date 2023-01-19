@@ -12,12 +12,12 @@ import javax.swing.ImageIcon;
  *
  * @author AdriiM_
  */
-public class ProviderMenu extends javax.swing.JFrame {
+public class CompanyMenu extends javax.swing.JFrame {
 
     /**
      * Creates new form ProviderMenu
      */
-    public ProviderMenu() {
+    public CompanyMenu() {
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
         int height = pantalla.height / 2;
         int width = pantalla.width / 2;
@@ -41,19 +41,30 @@ public class ProviderMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jButtonAnnadirProducto = new javax.swing.JButton();
         jButtonBorrarProducto = new javax.swing.JButton();
         jButtonVerVentas = new javax.swing.JButton();
         jLabelName = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuProvideer = new javax.swing.JMenu();
+        jMenuItemEditProvideer = new javax.swing.JMenuItem();
+        jMenuStudioRegister = new javax.swing.JMenu();
+        jMenuItemStudioRegister = new javax.swing.JMenuItem();
+        jMenuCloseSession = new javax.swing.JMenu();
+        jMenuItemCloseSession = new javax.swing.JMenuItem();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,29 +92,31 @@ public class ProviderMenu extends javax.swing.JFrame {
         jButtonVerVentas.setText("Ver Ventas");
         jButtonVerVentas.setActionCommand("");
 
-        jMenu1.setText("Proveedor");
+        jMenuProvideer.setText("Proveedor");
 
-        jMenuItem1.setText("Editar Proveedor");
-        jMenu1.add(jMenuItem1);
+        jMenuItemEditProvideer.setText("Editar Proveedor");
+        jMenuProvideer.add(jMenuItemEditProvideer);
 
-        jMenuItem2.setText("Mejorar Proveedor");
-        jMenu1.add(jMenuItem2);
+        jMenuBar1.add(jMenuProvideer);
 
-        jMenuBar1.add(jMenu1);
+        jMenuStudioRegister.setText("Registrar Estudio");
 
-        jMenu2.setText("Registrar Estudio");
+        jMenuItemStudioRegister.setText("Registrar Estudio");
+        jMenuItemStudioRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemStudioRegisterActionPerformed(evt);
+            }
+        });
+        jMenuStudioRegister.add(jMenuItemStudioRegister);
 
-        jMenuItem3.setText("Registrar Estudio");
-        jMenu2.add(jMenuItem3);
+        jMenuBar1.add(jMenuStudioRegister);
 
-        jMenuBar1.add(jMenu2);
+        jMenuCloseSession.setText("CerrarSesion");
 
-        jMenu4.setText("CerrarSesion");
+        jMenuItemCloseSession.setText("Cerrar Sesion");
+        jMenuCloseSession.add(jMenuItemCloseSession);
 
-        jMenuItem4.setText("Cerrar Sesion");
-        jMenu4.add(jMenuItem4);
-
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(jMenuCloseSession);
 
         setJMenuBar(jMenuBar1);
 
@@ -153,6 +166,11 @@ public class ProviderMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonBorrarProductoActionPerformed
 
+    private void jMenuItemStudioRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemStudioRegisterActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jMenuItemStudioRegisterActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -170,20 +188,21 @@ public class ProviderMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProviderMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompanyMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProviderMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompanyMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProviderMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompanyMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProviderMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompanyMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProviderMenu().setVisible(true);
+                new CompanyMenu().setVisible(true);
             }
         });
     }
@@ -192,15 +211,15 @@ public class ProviderMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAnnadirProducto;
     private javax.swing.JButton jButtonBorrarProducto;
     private javax.swing.JButton jButtonVerVentas;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelName;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenu jMenuCloseSession;
+    private javax.swing.JMenuItem jMenuItemCloseSession;
+    private javax.swing.JMenuItem jMenuItemEditProvideer;
+    private javax.swing.JMenuItem jMenuItemStudioRegister;
+    private javax.swing.JMenu jMenuProvideer;
+    private javax.swing.JMenu jMenuStudioRegister;
     // End of variables declaration//GEN-END:variables
 }
