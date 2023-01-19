@@ -24,14 +24,17 @@ A simulation of online video game store like Steam
    - Administrator: Clase con este patrón.
  
 ## Patrones Estructurales:
- - Adaptador: Para cifrar y descifrar contraseñas
+ - Adaptador: Para cifrar y descifrar contraseñas.
+   - Objetivo: PasswordEncode.
+   - Adaptable: Password.
+   - Adapatador: PasswordAdapter.
  - Composite: Un estudio puede tener a su vez varios estudios,  calcular por ejemplo el capital total de ese estudio, sumando el de todos sus estudios por debajo
  - Proxy: Para por ejemplo borrar un cliente, el proxy se encarga de comprobar que realmente eres un admin. 
- -
- -
  
 ## Patrones de Comportamiento:
- - Template Method: Se va utilizar cuando hacemos una herencia de Usuario con Client y Company
+ - Template Method: Se va utilizar cuando hacemos una herencia de User con Client y Company.
+   - ClaseAbstracta: User.
+   - ClaseConcreta: Client, Company.
  - Visitor: A la hora de aplicar descuentos de la página.
  - State: Para ver el estado del pedido.
  - Observer: Actualización de los valores del dinero de la empresa y del cliente cada vez que se haga una compra/venta.
