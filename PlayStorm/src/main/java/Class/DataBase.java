@@ -23,14 +23,15 @@ public class DataBase {
     private String ruta = "./database/";
 
     public void saveClient(Client client) throws IOException, Exception {
+        ClientIterator iterator = new ClientIterator();
+        iterator.addClient(client);
         File file = new File(ruta, "Clients.txt");
         ObjectOutputStream oos = null;
         try {
             oos = new ObjectOutputStream(
                     new FileOutputStream(file));
-            ClientIterator iterator = new ClientIterator();
-            System.out.println(client.getName());
-            oos.writeObject(client);
+            //System.out.println(client.getName());
+            //oos.writeObject(client);
             while (iterator.hasNext()) {
                 oos.writeObject(iterator.next());
             }

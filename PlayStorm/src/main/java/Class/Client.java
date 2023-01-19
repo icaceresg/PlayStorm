@@ -3,7 +3,7 @@ package Class;
 import Interfaces.IntClient;
 import java.io.Serializable;
 
-public class Client extends User implements IntClient, Serializable {
+public class Client extends User implements IntClient{
 
     private String lastName, site, creditCard, phone;
     private float wallet;

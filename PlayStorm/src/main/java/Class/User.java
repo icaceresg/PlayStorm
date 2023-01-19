@@ -1,8 +1,9 @@
 package Class;
 
 import Interfaces.IntUser;
+import java.io.Serializable;
 
-public class User implements IntUser {
+public class User implements IntUser, Serializable {
 
     private String name, email, password;
 

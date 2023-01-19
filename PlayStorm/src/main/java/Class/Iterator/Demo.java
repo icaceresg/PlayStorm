@@ -21,7 +21,8 @@ public class Demo {
    
     public static void main(String[] args) throws Exception {
         DataBase database= new DataBase();
-        database.saveClient(new Client("bbsita","a","a","a","a","a","a"));
+        //database.saveClient(new Client("amor","a","a","a","a","a","a"));
+        //database.saveClient(new Client("hola","a","a","a","a","a","a"));
         ClientIterator iterator = new ClientIterator();
         while (iterator.hasNext())
             System.out.println(iterator.next().getName());

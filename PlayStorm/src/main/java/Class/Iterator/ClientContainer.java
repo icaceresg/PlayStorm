@@ -8,6 +8,8 @@ import Class.Client;
 import Class.DataBase;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ClientContainer implements IntContainer, Serializable{
     public ArrayList<Client> clients = new ArrayList<>();
@@ -23,6 +25,11 @@ public class ClientContainer implements IntContainer, Serializable{
 
     @Override
     public IntIterator createIterator() {
-        return new ClientIterator();
+        try {
+            return new ClientIterator();
+        } catch (Exception ex) {
+            Logger.getLogger(ClientContainer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 }

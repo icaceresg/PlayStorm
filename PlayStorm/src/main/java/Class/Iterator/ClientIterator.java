@@ -27,4 +27,9 @@ public class ClientIterator implements IntIterator{
         return null;
     }
     
+    public void addClient(Client client)
+    {
+        clientContainer.clients.add(client);
+    }
+    
 }
