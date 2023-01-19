@@ -35,7 +35,7 @@ A simulation of online video game store like Steam
  - Template Method: Se va utilizar cuando hacemos una herencia de Client con SubscriberClient y NotSubscriberClient.
    - ClaseAbstracta: Client.
    - ClaseConcreta: SubscriberClient, NotSubscriberClient.
- - Visitor: A la hora de aplicar descuentos de la página.
+ - Iterator: Para recorrer los objetos.
  - State: Para ver el estado del pedido.
  - Observer: Actualización de los valores del dinero de la empresa y del cliente cada vez que se haga una compra/venta.
  - Command: Cada vez que se cierre sesión, que el código sea implementado con Command.
