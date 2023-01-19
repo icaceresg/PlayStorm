@@ -76,8 +76,8 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="110" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jTextField1" min="-2" pref="116" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelName" min="-2" pref="131" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
@@ -88,7 +88,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="119" max="32767" attributes="0"/>
+              <EmptySpace pref="116" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,7 +98,7 @@
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="jLabelName" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               <Component id="jButtonAnnadirProducto" min="-2" pref="54" max="-2" attributes="0"/>
@@ -118,11 +118,6 @@
           <Font name="Microsoft YaHei UI" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Bienvenido,"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonAnnadirProducto">
@@ -156,6 +151,8 @@
         <Property name="text" type="java.lang.String" value="Ver Ventas"/>
         <Property name="actionCommand" type="java.lang.String" value=""/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelName">
     </Component>
   </SubComponents>
 </Form>

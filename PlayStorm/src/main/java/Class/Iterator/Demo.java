@@ -5,6 +5,8 @@
  */
 package Class.Iterator;
 
+import Class.Client;
+import Class.DataBase;
 import Class.Iterator.ClientIterator;
 
 /**
@@ -16,7 +18,10 @@ public class Demo {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+   
+    public static void main(String[] args) throws Exception {
+        DataBase database= new DataBase();
+        database.saveClient(new Client("a","a","a","a","a","a","a"));
         ClientIterator iterator = new ClientIterator();
         while (iterator.hasNext())
             System.out.println(iterator.next().getName());
