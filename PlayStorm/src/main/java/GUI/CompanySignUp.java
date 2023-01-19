@@ -5,6 +5,16 @@
  */
 package GUI;
 
+import Class.NotSubscriberFactory;
+import Class.SubscriberFactory;
+import Interfaces.IntClient;
+import Interfaces.IntCompany;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.util.Arrays;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author icace
@@ -15,7 +25,19 @@ public class CompanySignUp extends javax.swing.JFrame {
      * Creates new form CompanySignUp1
      */
     public CompanySignUp() {
+        // Centra la pantalla y carga la foto
+        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+        int height = pantalla.height / 2;
+        int width = pantalla.width / 2;
+        setSize(width, height);
+        setLocationRelativeTo(null);
+
         initComponents();
+
+        this.setTitle("JavaPop");
+
+        ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
+        this.setIconImage(imagen.getImage());
     }
 
     /**
@@ -187,7 +209,9 @@ public class CompanySignUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
-        // TODO add your handling code here:
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
@@ -203,7 +227,25 @@ public class CompanySignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_CIFTextFieldActionPerformed
 
     private void AcceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptButtonActionPerformed
-        // TODO add your handling code here:
+        boolean emptyFields = CIFTextField.getText().equals("") //no esta
+                | EmailTextField.getText().equals("") //esta
+                | NameTextField.getText().equals("") //esta
+                | PasswordField.getPassword().equals("") //esta
+                | RepeatPasswordField.getPassword().equals("") //esta
+                | SiteTextField.getText().equals("");
+
+        if (emptyFields | !(Arrays.equals(PasswordField.getPassword(), RepeatPasswordField.getPassword()))) {
+            if (emptyFields) {
+                JOptionPane.showMessageDialog(this, "Existen campos vacíos", "Registro", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Las contraseñas son iguales", "Registro", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            NotSubscriberFactory notSubscriberFactory = new NotSubscriberFactory();
+            IntCompany company;
+            company = notSubscriberFactory.createCompany(NameTextField.getText(), EmailTextField.getText(), (String.valueOf(PasswordField.getPassword())), SiteTextField.getText(), CIFTextField.getText(), false);
+            System.out.println(company.getName());
+        }
     }//GEN-LAST:event_AcceptButtonActionPerformed
 
     private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed
