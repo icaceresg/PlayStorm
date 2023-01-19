@@ -27,13 +27,19 @@ public class GameSearch extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextFieldNombreGameSearch = new javax.swing.JTextField();
-        jButtonPerfilGameSearch = new javax.swing.JButton();
         jComboBoxCategoriaGameSearch = new javax.swing.JComboBox<>();
         jSliderPrecioMaximoGameSearch = new javax.swing.JSlider();
         jButtonBuscarGameSearch = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,14 +47,6 @@ public class GameSearch extends javax.swing.JFrame {
         jTextFieldNombreGameSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNombreGameSearchActionPerformed(evt);
-            }
-        });
-
-        jButtonPerfilGameSearch.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonPerfilGameSearch.setText("Perfil");
-        jButtonPerfilGameSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPerfilGameSearchActionPerformed(evt);
             }
         });
 
@@ -65,6 +63,29 @@ public class GameSearch extends javax.swing.JFrame {
         jLabel2.setText("Todos los productos:");
 
         jLabel3.setText("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+        jMenu1.setText("Perfil");
+
+        jMenuItem2.setText("Ver Datos");
+        jMenu1.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu3.setText("Carrito");
+
+        jMenuItem1.setText("Ver Carrito");
+        jMenu3.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu2.setText("Cerrar Sesion");
+
+        jMenuItem3.setText("Cerrar Sesion");
+        jMenu2.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,8 +108,7 @@ public class GameSearch extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButtonPerfilGameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42)
+                                .addGap(163, 163, 163)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 825, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(24, Short.MAX_VALUE))))
@@ -97,9 +117,7 @@ public class GameSearch extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonPerfilGameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -117,15 +135,11 @@ public class GameSearch extends javax.swing.JFrame {
                                 .addComponent(jSliderPrecioMaximoGameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel3)
-                .addContainerGap(489, Short.MAX_VALUE))
+                .addContainerGap(466, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButtonPerfilGameSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPerfilGameSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonPerfilGameSearchActionPerformed
 
     private void jTextFieldNombreGameSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreGameSearchActionPerformed
         // TODO add your handling code here:
@@ -134,11 +148,17 @@ public class GameSearch extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarGameSearch;
-    private javax.swing.JButton jButtonPerfilGameSearch;
     private javax.swing.JComboBox<String> jComboBoxCategoriaGameSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JSlider jSliderPrecioMaximoGameSearch;
     private javax.swing.JTextField jTextFieldNombreGameSearch;
     // End of variables declaration//GEN-END:variables
