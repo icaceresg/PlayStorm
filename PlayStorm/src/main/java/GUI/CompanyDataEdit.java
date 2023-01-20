@@ -211,8 +211,8 @@ public class CompanyDataEdit extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
-        Login login = new Login();
-        login.setVisible(true);
+        CompanyMenu companyMenu = new CompanyMenu();
+        companyMenu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
