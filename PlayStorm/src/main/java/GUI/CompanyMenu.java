@@ -97,10 +97,20 @@ public class CompanyMenu extends javax.swing.JFrame {
         jButtonVerVentas.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jButtonVerVentas.setText("Ver Ventas");
         jButtonVerVentas.setActionCommand("");
+        jButtonVerVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerVentasActionPerformed(evt);
+            }
+        });
 
         jMenuProvideer.setText("Proveedor");
 
         jMenuItemEditProvideer.setText("Editar Proveedor");
+        jMenuItemEditProvideer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemEditProvideerActionPerformed(evt);
+            }
+        });
         jMenuProvideer.add(jMenuItemEditProvideer);
 
         jMenuBar1.add(jMenuProvideer);
@@ -170,11 +180,15 @@ public class CompanyMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAnnadirProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnnadirProductoActionPerformed
-        // TODO add your handling code here:
+        ProductCreation productCreationMenu = new ProductCreation();
+        productCreationMenu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonAnnadirProductoActionPerformed
 
     private void jButtonBorrarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBorrarProductoActionPerformed
-        // TODO add your handling code here:
+        MyProducts myProducts = new MyProducts();
+        myProducts.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonBorrarProductoActionPerformed
 
     private void jMenuItemStudioRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemStudioRegisterActionPerformed
@@ -190,41 +204,18 @@ public class CompanyMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItemCloseSessionActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CompanyMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CompanyMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CompanyMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CompanyMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    private void jButtonVerVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerVentasActionPerformed
+        MySales mySales = new MySales();
+        mySales.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonVerVentasActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CompanyMenu().setVisible(true);
-            }
-        });
-    }
+    private void jMenuItemEditProvideerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEditProvideerActionPerformed
+        CompanyDataEdit companyMenu = new CompanyDataEdit();
+        companyMenu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItemEditProvideerActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel NameLabel;

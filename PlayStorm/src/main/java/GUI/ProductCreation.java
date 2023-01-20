@@ -229,7 +229,9 @@ public class ProductCreation extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCrearProductCreationActionPerformed
 
     private void jButtonCancelarProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarProductCreationActionPerformed
-        // TODO add your handling code here:
+        CompanyMenu companyMenu = new CompanyMenu();
+        companyMenu.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonCancelarProductCreationActionPerformed
 
     /**

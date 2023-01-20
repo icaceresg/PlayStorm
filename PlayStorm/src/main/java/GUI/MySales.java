@@ -109,8 +109,8 @@ public class MySales extends javax.swing.JFrame {
 
     private void ButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackActionPerformed
         // Vuelve a la ventana de perfil
-        UserProfile profile = new UserProfile();
-        profile.setVisible(true);
+        CompanyMenu companyMenu = new CompanyMenu();
+        companyMenu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ButtonBackActionPerformed
 
