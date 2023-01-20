@@ -39,4 +39,15 @@ public class ProductIterator implements IntIterator{
         productContainer.products.add(product);
     }
     
+    @Override
+    public Product firstItem()
+    {
+        return productContainer.products.get(0);
+    }
+    
+    @Override
+    public Product lastItem()
+    {
+        return productContainer.products.get(productContainer.products.size()-1);
+    }
 }

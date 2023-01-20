@@ -33,4 +33,15 @@ public class ClientIterator implements IntIterator{
         clientContainer.clients.add(client);
     }
     
+    @Override
+    public IntClient firstItem()
+    {
+        return clientContainer.clients.get(0);
+    }
+    
+    @Override
+    public IntClient lastItem()
+    {
+        return clientContainer.clients.get(clientContainer.clients.size()-1);
+    }
 }

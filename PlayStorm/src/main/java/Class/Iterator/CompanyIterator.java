@@ -39,4 +39,15 @@ public class CompanyIterator implements IntIterator{
         companyContainer.companies.add(company);
     }
     
+    @Override
+    public IntCompany firstItem()
+    {
+        return companyContainer.companies.get(0);
+    }
+    
+    @Override
+    public IntCompany lastItem()
+    {
+        return companyContainer.companies.get(companyContainer.companies.size()-1);
+    }
 }
