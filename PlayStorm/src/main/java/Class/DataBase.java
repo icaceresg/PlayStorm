@@ -51,6 +51,30 @@ public class DataBase {
         }
 
     }
+    
+    public void saveIteratorClient(ClientIterator iterator) throws IOException, Exception {
+        File file = new File(path, "Clients.txt");
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(
+                    new FileOutputStream(file));
+            //System.out.println(client.getName());
+            //oos.writeObject(client);
+            while (iterator.hasNext()) {
+                oos.writeObject(iterator.next());
+            }
+
+        } catch (FileNotFoundException ef) {
+            throw new Exception(ef.getMessage());
+        } catch (IOException ei) {
+            throw new Exception(ei.getMessage());
+        } finally {
+            if (oos != null) {
+                oos.close();
+            }
+        }
+
+    }
 
     public ArrayList<IntClient> readClients() throws Exception {
         File file = new File(path, "Clients.txt");
@@ -102,6 +126,30 @@ public class DataBase {
         }
 
     }
+    
+    public void saveIteratorCompany(CompanyIterator iterator) throws IOException, Exception {
+        File file = new File(path, "Clients.txt");
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(
+                    new FileOutputStream(file));
+            //System.out.println(client.getName());
+            //oos.writeObject(client);
+            while (iterator.hasNext()) {
+                oos.writeObject(iterator.next());
+            }
+
+        } catch (FileNotFoundException ef) {
+            throw new Exception(ef.getMessage());
+        } catch (IOException ei) {
+            throw new Exception(ei.getMessage());
+        } finally {
+            if (oos != null) {
+                oos.close();
+            }
+        }
+
+    }
 
     public ArrayList<IntCompany> readCompanies() throws Exception {
         File file = new File(path, "Company.txt");
@@ -132,6 +180,30 @@ public class DataBase {
         ProductIterator iterator = new ProductIterator();
         iterator.addProducts(product);
         File file = new File(path, "Product.txt");
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(
+                    new FileOutputStream(file));
+            //System.out.println(client.getName());
+            //oos.writeObject(client);
+            while (iterator.hasNext()) {
+                oos.writeObject(iterator.next());
+            }
+
+        } catch (FileNotFoundException ef) {
+            throw new Exception(ef.getMessage());
+        } catch (IOException ei) {
+            throw new Exception(ei.getMessage());
+        } finally {
+            if (oos != null) {
+                oos.close();
+            }
+        }
+
+    }
+    
+    public void saveIteratorProduct(ProductIterator iterator) throws IOException, Exception {
+        File file = new File(path, "Clients.txt");
         ObjectOutputStream oos = null;
         try {
             oos = new ObjectOutputStream(

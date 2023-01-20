@@ -35,11 +35,14 @@ public final class Administrator extends User implements IntAdmin{
             {
                 IntClient nextItem = iterator.next();
                 if (nextItem.getEmail().equals(email))
+                {
                     iterator.deleteClient(nextItem);
-                return;
+                    new DataBase().saveIteratorClient(iterator);
+                    return;
+                }
             }
         } catch (Exception ex) {
-            Logger.getLogger(AdminFunctionsImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Administrator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -51,11 +54,14 @@ public final class Administrator extends User implements IntAdmin{
             {
                 IntCompany nextItem = iterator.next();
                 if (nextItem.getEmail().equals(email))
+                {
                     iterator.deleteCompany(nextItem);
-                return;
+                    new DataBase().saveIteratorCompany(iterator);
+                    return;
+                }
             }
         } catch (Exception ex) {
-            Logger.getLogger(AdminFunctionsImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Administrator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -67,11 +73,14 @@ public final class Administrator extends User implements IntAdmin{
             {
                 Product nextItem = iterator.next();
                 if (nextItem.getId() == product.getId())
+                {
                     iterator.deleteProduct(nextItem);
-                return;
+                    new DataBase().saveIteratorProduct(iterator);
+                    return;
+                }
             }
         } catch (Exception ex) {
-            Logger.getLogger(AdminFunctionsImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Administrator.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
