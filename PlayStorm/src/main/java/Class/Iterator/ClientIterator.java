@@ -33,6 +33,11 @@ public class ClientIterator implements IntIterator{
         clientContainer.clients.add(client);
     }
     
+    public void deleteClient(IntClient client)
+    {
+        clientContainer.clients.remove(client);
+    }
+    
     @Override
     public IntClient firstItem()
     {

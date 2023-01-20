@@ -39,6 +39,11 @@ public class ProductIterator implements IntIterator{
         productContainer.products.add(product);
     }
     
+    public void deleteProduct(Product product)
+    {
+        productContainer.products.remove(product);
+    }
+    
     @Override
     public Product firstItem()
     {

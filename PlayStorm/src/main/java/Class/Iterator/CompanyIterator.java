@@ -39,6 +39,11 @@ public class CompanyIterator implements IntIterator{
         companyContainer.companies.add(company);
     }
     
+     public void deleteCompany(IntCompany company)
+    {
+        companyContainer.companies.remove(company);
+    }
+    
     @Override
     public IntCompany firstItem()
     {
