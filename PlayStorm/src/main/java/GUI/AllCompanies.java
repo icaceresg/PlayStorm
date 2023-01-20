@@ -1,13 +1,17 @@
 package GUI;
 
-
+import Class.Iterator.CompanyIterator;
+import Interfaces.IntCompany;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-/**Ventana para ver la lista de productos añadidos al carrito para poder comprarlo*/
-
+/**
+ * Ventana para ver la lista de productos añadidos al carrito para poder comprarlo
+ */
 public class AllCompanies extends javax.swing.JFrame {
 
     public AllCompanies() {
@@ -18,18 +22,40 @@ public class AllCompanies extends javax.swing.JFrame {
         setSize(width, height);
         setLocationRelativeTo(null);
         initComponents();
-        addRowToJTable();
-        
+        try {
+            addRowToJTable();
+        } catch (Exception ex) {
+            Logger.getLogger(AllCompanies.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         this.setTitle("JavaPop");
-        
-        ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png" );
+
+        ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
     }
-    
+
     /**
-     * Metodo para crear por defecto la tabla definida por los productos introducidos
+     * Metodo para crear por defecto la tabla definida por los productos
+     * introducidos
      */
-    public void addRowToJTable() {
+        public void addRowToJTable() throws Exception {
+
+        DefaultTableModel model = (DefaultTableModel) AllCompaniesTable.getModel();
+
+        CompanyIterator iterator = new CompanyIterator();
+        Object rowData[] = new Object[4];
+
+        while (iterator.hasNext()) {
+            IntCompany company = iterator.next();
+
+            rowData[0] = company.getCif();
+            rowData[1] = company.getName();
+            rowData[2] = company.getSite();
+            rowData[3] = company.getEmail();
+
+            model.addRow(rowData);
+
+        }
 
     }
 
@@ -121,8 +147,8 @@ public class AllCompanies extends javax.swing.JFrame {
 
     private void ButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackActionPerformed
         // Vuelve a la ventana de perfil
-        UserProfile profile = new UserProfile();
-        profile.setVisible(true);
+        AdminMenu adminMenu = new AdminMenu();
+        adminMenu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ButtonBackActionPerformed
 

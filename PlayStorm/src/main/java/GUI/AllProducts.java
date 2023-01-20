@@ -1,13 +1,17 @@
 package GUI;
 
-
+import Class.Iterator.ProductIterator;
+import Class.Product;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-/**Ventana para ver la lista de productos añadidos al carrito para poder comprarlo*/
-
+/**
+ * Ventana para ver la lista de productos añadidos al carrito para poder comprarlo
+ */
 public class AllProducts extends javax.swing.JFrame {
 
     public AllProducts() {
@@ -18,18 +22,42 @@ public class AllProducts extends javax.swing.JFrame {
         setSize(width, height);
         setLocationRelativeTo(null);
         initComponents();
-        addRowToJTable();
-        
+        try {
+            addRowToJTable();
+        } catch (Exception ex) {
+            Logger.getLogger(AllProducts.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         this.setTitle("JavaPop");
-        
-        ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png" );
+
+        ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
     }
-    
+
     /**
-     * Metodo para crear por defecto la tabla definida por los productos introducidos
+     * Metodo para crear por defecto la tabla definida por los productos
+     * introducidos
      */
-    public void addRowToJTable() {
+     public void addRowToJTable() throws Exception {
+
+        DefaultTableModel model = (DefaultTableModel) AllProductsTable.getModel();
+
+        ProductIterator iterator = new ProductIterator();
+        Object rowData[] = new Object[4];
+
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+
+            //Falta la empresa y la categoria
+            rowData[0] = product.getName();
+            rowData[1] = product.getAmount();
+            rowData[2] = product.getPrice();
+            rowData[3] = product.getDescription();
+            rowData[4] = product.getAmount();
+
+            model.addRow(rowData);
+
+        }
 
     }
 
@@ -117,8 +145,8 @@ public class AllProducts extends javax.swing.JFrame {
 
     private void ButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackActionPerformed
         // Vuelve a la ventana de perfil
-        UserProfile profile = new UserProfile();
-        profile.setVisible(true);
+        AdminMenu adminMenu = new AdminMenu();
+        adminMenu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ButtonBackActionPerformed
 

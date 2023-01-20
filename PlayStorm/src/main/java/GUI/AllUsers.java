@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class AllUsers extends javax.swing.JFrame {
 
-    public AllUsers(){
+    public AllUsers() {
         try {
             // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
             Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
@@ -25,9 +25,9 @@ public class AllUsers extends javax.swing.JFrame {
             setLocationRelativeTo(null);
             initComponents();
             addRowToJTable();
-            
+
             this.setTitle("JavaPop");
-            
+
             ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png");
             this.setIconImage(imagen.getImage());
         } catch (Exception ex) {
@@ -151,9 +151,10 @@ public class AllUsers extends javax.swing.JFrame {
 
     private void ButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackActionPerformed
         // Vuelve a la ventana de perfil
-        UserProfile profile = new UserProfile();
-        profile.setVisible(true);
+        AdminMenu adminMenu = new AdminMenu();
+        adminMenu.setVisible(true);
         this.dispose();
+
     }//GEN-LAST:event_ButtonBackActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
