@@ -36,6 +36,13 @@ A simulation of online video game store like Steam
    - ClaseAbstracta: Client.
    - ClaseConcreta: SubscriberClient, NotSubscriberClient.
  - Iterator: Para recorrer los objetos.
+   - Agregado: ClientContainer, CompanyContainer, ProductContainer
+   - Iterador: ClientIterator, CompanyIterator, ProductIterator
+   - Interfaz Iterador: IntContainer 
+   - Interfaz Agregado:  IntIterator
  - State: Para ver el estado del pedido.
  - Observer: Actualización de los valores del dinero de la empresa y del cliente cada vez que se haga una compra/venta.
  - Command: Cada vez que se cierre sesión, que el código sea implementado con Command.
+   - Comando = IntCommand
+   - Invocado = LogOutCommand
+   - Invocador = AdminMenu, CompanyMenu, GameSearch
