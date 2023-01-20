@@ -3,6 +3,8 @@ package Class;
 import Class.Iterator.ClientIterator;
 import Class.Iterator.CompanyIterator;
 import Class.Iterator.ProductIterator;
+import Interfaces.IntClient;
+import Interfaces.IntCompany;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -24,7 +26,7 @@ public class DataBase {
 
     private String path = "./database/";
 
-    public void saveClient(Client client) throws IOException, Exception {
+    public void saveClient(IntClient client) throws IOException, Exception {
         ClientIterator iterator = new ClientIterator();
         iterator.addClient(client);
         File file = new File(path, "Clients.txt");
@@ -50,16 +52,16 @@ public class DataBase {
 
     }
 
-    public ArrayList<Client> readClients() throws Exception {
+    public ArrayList<IntClient> readClients() throws Exception {
         File file = new File(path, "Clients.txt");
-        ArrayList<Client> clients = new ArrayList();
+        ArrayList<IntClient> clients = new ArrayList();
         ObjectInputStream ois = null;
         try {
             ois = new ObjectInputStream(new FileInputStream(file));
             Object aux = ois.readObject();
             do {
-                if (aux instanceof Client) {
-                    clients.add((Client) aux);
+                if (aux instanceof IntClient) {
+                    clients.add((IntClient) aux);
                 }
                 aux = ois.readObject();
             } while (aux != null);
@@ -74,8 +76,8 @@ public class DataBase {
         }
         return clients;
     }
-    
-    public void saveCompanies(Company company) throws IOException, Exception {
+
+    public void saveCompanies(IntCompany company) throws IOException, Exception {
         CompanyIterator iterator = new CompanyIterator();
         iterator.addCompany(company);
         File file = new File(path, "Company.txt");
@@ -101,16 +103,16 @@ public class DataBase {
 
     }
 
-    public ArrayList<Company> readCompanies() throws Exception {
+    public ArrayList<IntCompany> readCompanies() throws Exception {
         File file = new File(path, "Company.txt");
-        ArrayList<Company> companies = new ArrayList();
+        ArrayList<IntCompany> companies = new ArrayList();
         ObjectInputStream ois = null;
         try {
             ois = new ObjectInputStream(new FileInputStream(file));
             Object aux = ois.readObject();
             do {
-                if (aux instanceof Company) {
-                    companies.add((Company) aux);
+                if (aux instanceof IntCompany) {
+                    companies.add((IntCompany) aux);
                 }
                 aux = ois.readObject();
             } while (aux != null);
@@ -125,7 +127,7 @@ public class DataBase {
         }
         return companies;
     }
-    
+
     public void saveProducts(Product product) throws IOException, Exception {
         ProductIterator iterator = new ProductIterator();
         iterator.addProducts(product);

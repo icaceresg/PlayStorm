@@ -5,6 +5,7 @@
 package Class.Iterator;
 
 import Class.Company;
+import Interfaces.IntCompany;
 import Interfaces.IntIterator;
 
 /**
@@ -27,13 +28,13 @@ public class CompanyIterator implements IntIterator{
     }
 
     @Override
-    public Company next() {
+    public IntCompany next() {
         if(this.hasNext())
             return companyContainer.companies.get(i++);
         return null;
     }
     
-    public void addCompany(Company company)
+    public void addCompany(IntCompany company)
     {
         companyContainer.companies.add(company);
     }

@@ -20,7 +20,7 @@ public class Company extends User implements IntCompany {
     private Map<String, Integer> discounts; //String to promotional code, int to % discount
     private Company[] company; //List to companys
 
-    public Company(String name, String email, String password, String site, String cif, boolean subscribe) {
+    public Company(String name, String email, String password, String site, String cif) {
         super(name, email, password);
         this.site = site;
         this.cif = cif;

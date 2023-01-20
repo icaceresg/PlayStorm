@@ -4,9 +4,14 @@
  */
 package GUI;
 
+import Class.Company;
+import Class.User;
+import Command.LogoutCommand;
+import Interfaces.IntLogOut;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,6 +35,8 @@ public class AdminMenu extends javax.swing.JFrame {
 
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
+
+        NameLabel.setText(User.usuarioActivo.get(0).getName());
     }
 
     /**
@@ -46,6 +53,7 @@ public class AdminMenu extends javax.swing.JFrame {
         jButtonEliminarProducto = new javax.swing.JButton();
         jButtonEliminarUsuario = new javax.swing.JButton();
         jButtonEliminarProveedor = new javax.swing.JButton();
+        NameLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCloseSession = new javax.swing.JMenu();
         jMenuItemCloseSession = new javax.swing.JMenuItem();
@@ -65,7 +73,7 @@ public class AdminMenu extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Bienvenido, Administrador");
+        jLabel1.setText("Bienvenido, ");
 
         jButtonEliminarProducto.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jButtonEliminarProducto.setText("Eliminar Producto");
@@ -88,9 +96,17 @@ public class AdminMenu extends javax.swing.JFrame {
         jButtonEliminarProveedor.setText("Eliminar Proveedor");
         jButtonEliminarProveedor.setActionCommand("");
 
+        NameLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
+        NameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         jMenuCloseSession.setText("CerrarSesion");
 
         jMenuItemCloseSession.setText("Cerrar Sesion");
+        jMenuItemCloseSession.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCloseSessionActionPerformed(evt);
+            }
+        });
         jMenuCloseSession.add(jMenuItemCloseSession);
 
         jMenuBar1.add(jMenuCloseSession);
@@ -102,22 +118,26 @@ public class AdminMenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(152, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonEliminarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonEliminarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(140, 140, 140))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NameLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
@@ -137,6 +157,16 @@ public class AdminMenu extends javax.swing.JFrame {
     private void jButtonEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonEliminarUsuarioActionPerformed
+
+    private void jMenuItemCloseSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCloseSessionActionPerformed
+        int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
+        if (resp == 0) {
+            IntLogOut logOutCommand = new LogoutCommand();
+            logOutCommand.logOut(this);
+        }
+
+
+    }//GEN-LAST:event_jMenuItemCloseSessionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,6 +207,7 @@ public class AdminMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel NameLabel;
     private javax.swing.JButton jButtonEliminarProducto;
     private javax.swing.JButton jButtonEliminarProveedor;
     private javax.swing.JButton jButtonEliminarUsuario;

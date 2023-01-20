@@ -9,9 +9,15 @@ import Class.Adapter.Password;
 import Class.Adapter.PasswordAdapter;
 import Class.Adapter.PasswordEncode;
 import Class.AbstractFactory.SubscriberFactory;
+import Class.DataBase;
+import Class.Iterator.ClientIterator;
+import Class.Iterator.CompanyIterator;
 import Interfaces.IntClient;
+import Interfaces.IntCompany;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -70,6 +76,7 @@ public class ClientSingUp extends javax.swing.JFrame {
         jTextFieldTelephone = new javax.swing.JTextField();
         jPasswordFieldClientSingUp = new javax.swing.JPasswordField();
         jPasswordFieldRepeatPasswordClientSingUp = new javax.swing.JPasswordField();
+        VIPComboBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -148,10 +155,22 @@ public class ClientSingUp extends javax.swing.JFrame {
             }
         });
 
+        VIPComboBox.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        VIPComboBox.setText("VIP");
+        VIPComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VIPComboBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -186,15 +205,13 @@ public class ClientSingUp extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButtonRegistrarseClientSingUp, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextFieldCreditCard)
-                    .addComponent(jTextFieldLocalization)
-                    .addComponent(jTextFieldTelephone, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTextFieldCreditCard)
+                        .addComponent(jTextFieldLocalization)
+                        .addComponent(jTextFieldTelephone, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
+                    .addComponent(VIPComboBox))
                 .addGap(23, 23, 23))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,8 +244,9 @@ public class ClientSingUp extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jPasswordFieldClientSingUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jPasswordFieldClientSingUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VIPComboBox))
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jPasswordFieldRepeatPasswordClientSingUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -236,7 +254,7 @@ public class ClientSingUp extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jTextFieldBirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonVolverClientSingUp, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRegistrarseClientSingUp, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -263,6 +281,10 @@ public class ClientSingUp extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales", "Registro", JOptionPane.ERROR_MESSAGE);
             }
+        } else if (sameEmail(jTextFieldUser.getText())) {
+            JOptionPane.showMessageDialog(this, "Ese correo ya existe", "Registro", JOptionPane.ERROR_MESSAGE);
+            jTextFieldUser.setText("");
+
         } else {
             String finalEncodePassword;
 
@@ -271,7 +293,26 @@ public class ClientSingUp extends javax.swing.JFrame {
 
             finalEncodePassword = new PasswordEncode().save(passwordAdapter);
 
-            IntClient client = new NotSubscriberFactory().createClient(jTextFieldName.getText(), jTextFieldUser.getText(), finalEncodePassword, jTextFieldSurname.getText(), jTextFieldLocalization.getText(), jTextFieldCreditCard.getText(), jTextFieldTelephone.getText());
+            IntClient client;
+            
+            if (VIPComboBox.isSelected()) {
+                client = new SubscriberFactory().createClient(jTextFieldName.getText(), jTextFieldUser.getText(), finalEncodePassword, jTextFieldSurname.getText(), jTextFieldLocalization.getText(), jTextFieldCreditCard.getText(), jTextFieldTelephone.getText());
+            } else {
+                client = new NotSubscriberFactory().createClient(jTextFieldName.getText(), jTextFieldUser.getText(), finalEncodePassword, jTextFieldSurname.getText(), jTextFieldLocalization.getText(), jTextFieldCreditCard.getText(), jTextFieldTelephone.getText());
+            }
+
+            DataBase database = new DataBase();
+            try {
+                database.saveClient(client);
+            } catch (Exception ex) {
+                Logger.getLogger(ClientSingUp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            JOptionPane.showMessageDialog(this, "Cliente registrado correctamente", "Registro", JOptionPane.INFORMATION_MESSAGE);
+
+            Login login = new Login();
+            login.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jButtonRegistrarseClientSingUpActionPerformed
 
@@ -293,7 +334,12 @@ public class ClientSingUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordFieldRepeatPasswordClientSingUpActionPerformed
 
+    private void VIPComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VIPComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VIPComboBoxActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox VIPComboBox;
     private javax.swing.JButton jButtonRegistrarseClientSingUp;
     private javax.swing.JButton jButtonVolverClientSingUp;
     private javax.swing.JLabel jLabel1;
@@ -316,4 +362,32 @@ public class ClientSingUp extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldTelephone;
     private javax.swing.JTextField jTextFieldUser;
     // End of variables declaration//GEN-END:variables
+    private boolean sameEmail(String email) {
+        if (email.equals("admin")) {
+            return false;
+        } else {
+
+            try {
+                ClientIterator clientIterator = new ClientIterator();
+                while (clientIterator.hasNext()) {
+                    IntClient client = clientIterator.next();
+                    if (client.getEmail().equals(email)) {
+                        return true;
+                    }
+                }
+
+                CompanyIterator companyIterator = new CompanyIterator();
+                while (companyIterator.hasNext()) {
+                    IntCompany company = companyIterator.next();
+                    if (company.getEmail().equals(email)) {
+                        return true;
+                    }
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(CompanySignUp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return false;
+
+    }
 }

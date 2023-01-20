@@ -12,8 +12,8 @@ import Class.Company;
  */
 public class SubscriberCompany extends Company {
 
-    public SubscriberCompany(String name, String email, String password, String site, String cif, boolean subscribe) {
-        super(name, email, password, site, cif, subscribe);
+    public SubscriberCompany(String name, String email, String password, String site, String cif) {
+        super(name, email, password, site, cif);
     }
 
 }

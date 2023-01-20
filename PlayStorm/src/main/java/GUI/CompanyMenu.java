@@ -4,9 +4,13 @@
  */
 package GUI;
 
+import Class.User;
+import Command.LogoutCommand;
+import Interfaces.IntLogOut;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,6 +34,8 @@ public class CompanyMenu extends javax.swing.JFrame {
 
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
+
+        NameLabel.setText(User.usuarioActivo.get(0).getName());
     }
 
     /**
@@ -46,7 +52,7 @@ public class CompanyMenu extends javax.swing.JFrame {
         jButtonAnnadirProducto = new javax.swing.JButton();
         jButtonBorrarProducto = new javax.swing.JButton();
         jButtonVerVentas = new javax.swing.JButton();
-        jLabelName = new javax.swing.JLabel();
+        NameLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuProvideer = new javax.swing.JMenu();
         jMenuItemEditProvideer = new javax.swing.JMenuItem();
@@ -114,6 +120,11 @@ public class CompanyMenu extends javax.swing.JFrame {
         jMenuCloseSession.setText("CerrarSesion");
 
         jMenuItemCloseSession.setText("Cerrar Sesion");
+        jMenuItemCloseSession.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCloseSessionActionPerformed(evt);
+            }
+        });
         jMenuCloseSession.add(jMenuItemCloseSession);
 
         jMenuBar1.add(jMenuCloseSession);
@@ -130,7 +141,7 @@ public class CompanyMenu extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(158, 158, 158)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -145,7 +156,7 @@ public class CompanyMenu extends javax.swing.JFrame {
                 .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addComponent(jButtonAnnadirProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
@@ -168,8 +179,16 @@ public class CompanyMenu extends javax.swing.JFrame {
 
     private void jMenuItemStudioRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemStudioRegisterActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jMenuItemStudioRegisterActionPerformed
+
+    private void jMenuItemCloseSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCloseSessionActionPerformed
+        int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
+        if (resp == 0) {
+            IntLogOut logOutCommand = new LogoutCommand();
+            logOutCommand.logOut(this);
+        }
+    }//GEN-LAST:event_jMenuItemCloseSessionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,12 +227,12 @@ public class CompanyMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel NameLabel;
     private javax.swing.JButton jButtonAnnadirProducto;
     private javax.swing.JButton jButtonBorrarProducto;
     private javax.swing.JButton jButtonVerVentas;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelName;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCloseSession;
     private javax.swing.JMenuItem jMenuItemCloseSession;

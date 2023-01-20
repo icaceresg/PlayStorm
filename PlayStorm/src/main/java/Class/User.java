@@ -1,9 +1,14 @@
 package Class;
 
+import Interfaces.IntClient;
+import Interfaces.IntCompany;
 import Interfaces.IntUser;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class User implements IntUser, Serializable {
+
+    public static ArrayList<IntUser> usuarioActivo = new ArrayList<IntUser>();
 
     private String name, email, password;
 
@@ -42,5 +47,4 @@ public class User implements IntUser, Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }

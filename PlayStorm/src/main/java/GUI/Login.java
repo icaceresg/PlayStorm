@@ -4,8 +4,20 @@
  */
 package GUI;
 
+import Class.Adapter.Password;
+import Class.Adapter.PasswordAdapter;
+import Class.Adapter.PasswordEncode;
+import Class.Administrator;
+import Class.Client;
+import Class.Iterator.ClientIterator;
+import Class.Iterator.CompanyIterator;
+import Class.User;
+import Interfaces.IntClient;
+import Interfaces.IntCompany;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -150,7 +162,62 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
+        boolean emptyFields = UserTextField.getText().equals("") //no esta
+                | String.valueOf(PasswordField.getPassword()).equals("");
+        if (emptyFields) {
+            JOptionPane.showMessageDialog(this, "Existen campos vacíos", "Registro", JOptionPane.ERROR_MESSAGE);
+        } else {
 
+            String finalEncodePassword;
+
+            boolean encontrado = false;
+
+            Password password = new Password((String.valueOf(PasswordField.getPassword())));
+            PasswordAdapter passwordAdapter = new PasswordAdapter(password);
+
+            finalEncodePassword = new PasswordEncode().save(passwordAdapter);
+
+            try {
+                ClientIterator clientIterator = new ClientIterator();
+                while (clientIterator.hasNext()) {
+                    IntClient client = clientIterator.next();
+                    if (client.getEmail().equals(UserTextField.getText()) && client.getPassword().equals(finalEncodePassword)) {
+                        User.usuarioActivo.add(client);
+                        GameSearch gameSearch = new GameSearch();
+                        gameSearch.setVisible(true);
+                        this.dispose();
+                        encontrado = true;
+                    }
+                }
+
+                CompanyIterator companyIterator = new CompanyIterator();
+                while (companyIterator.hasNext()) {
+                    IntCompany company = companyIterator.next();
+                    if (company.getEmail().equals(UserTextField.getText()) && company.getPassword().equals(finalEncodePassword)) {
+                        User.usuarioActivo.add(company);
+                        CompanyMenu companyMenu = new CompanyMenu();
+                        companyMenu.setVisible(true);
+                        this.dispose();
+                        encontrado = true;
+                    }
+                }
+                if ("admin".equals(UserTextField.getText()) && "admin".equals(String.valueOf(PasswordField.getPassword()))) {
+                    Administrator admin = Administrator.getInstance("Admin", String.valueOf(PasswordField.getPassword()), UserTextField.getText());
+                    User.usuarioActivo.add(admin);
+                    AdminMenu adminMenu = new AdminMenu();
+                    adminMenu.setVisible(true);
+                    this.dispose();
+                    encontrado = true;
+                }
+
+                if (!encontrado) {
+                    JOptionPane.showMessageDialog(this, "El correo o contraseña no coinciden", "Registro", JOptionPane.ERROR_MESSAGE);
+                }
+
+            } catch (Exception ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
 
     }//GEN-LAST:event_LogInButtonActionPerformed
 

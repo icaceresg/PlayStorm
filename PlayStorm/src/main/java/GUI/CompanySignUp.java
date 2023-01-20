@@ -10,10 +10,16 @@ import Class.Adapter.PasswordAdapter;
 import Class.Adapter.PasswordEncode;
 import Class.Adapter.Password;
 import Class.*;
+import Class.AbstractFactory.SubscriberFactory;
+import Class.Iterator.ClientIterator;
+import Class.Iterator.CompanyIterator;
+import Interfaces.IntClient;
 import Interfaces.IntCompany;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -66,6 +72,7 @@ public class CompanySignUp extends javax.swing.JFrame {
         AcceptButton = new javax.swing.JButton();
         EmailTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        VIPComboBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,20 +137,28 @@ public class CompanySignUp extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jLabel4.setText("C.I.F");
 
+        VIPComboBox.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        VIPComboBox.setText("VIP");
+        VIPComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VIPComboBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
+                        .addComponent(VIPComboBox)
+                        .addGap(96, 96, 96)
                         .addComponent(BackButton)
                         .addGap(36, 36, 36)
-                        .addComponent(AcceptButton)))
+                        .addComponent(AcceptButton))
+                    .addComponent(jLabel4))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 142, Short.MAX_VALUE)
@@ -178,7 +193,8 @@ public class CompanySignUp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AcceptButton)
-                    .addComponent(BackButton))
+                    .addComponent(BackButton)
+                    .addComponent(VIPComboBox))
                 .addGap(47, 47, 47))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -242,6 +258,11 @@ public class CompanySignUp extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales", "Registro", JOptionPane.ERROR_MESSAGE);
             }
+
+        } else if (sameEmail(EmailTextField.getText())) {
+            JOptionPane.showMessageDialog(this, "Ese correo ya existe", "Registro", JOptionPane.ERROR_MESSAGE);
+            EmailTextField.setText("");
+
         } else {
             String finalEncodePassword;
 
@@ -250,13 +271,34 @@ public class CompanySignUp extends javax.swing.JFrame {
 
             finalEncodePassword = new PasswordEncode().save(passwordAdapter);
 
-            IntCompany company = new NotSubscriberFactory().createCompany(NameTextField.getText(), EmailTextField.getText(), finalEncodePassword, SiteTextField.getText(), CIFTextField.getText(), false);
+            IntCompany company;
+            if (VIPComboBox.isSelected()) {
+                company = new SubscriberFactory().createCompany(NameTextField.getText(), EmailTextField.getText(), finalEncodePassword, SiteTextField.getText(), CIFTextField.getText());
+            } else {
+                company = new NotSubscriberFactory().createCompany(NameTextField.getText(), EmailTextField.getText(), finalEncodePassword, SiteTextField.getText(), CIFTextField.getText());
+            }
+
+            DataBase database = new DataBase();
+            try {
+                database.saveCompanies(company);
+            } catch (Exception ex) {
+                Logger.getLogger(CompanySignUp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            JOptionPane.showMessageDialog(this, "Empresa registrado correctamente", "Registro", JOptionPane.INFORMATION_MESSAGE);
+            Login login = new Login();
+            login.setVisible(true);
+            this.dispose();
+
         }
     }//GEN-LAST:event_AcceptButtonActionPerformed
 
     private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EmailTextFieldActionPerformed
+
+    private void VIPComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VIPComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VIPComboBoxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -268,6 +310,7 @@ public class CompanySignUp extends javax.swing.JFrame {
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JPasswordField RepeatPasswordField;
     private javax.swing.JTextField SiteTextField;
+    private javax.swing.JCheckBox VIPComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -276,4 +319,33 @@ public class CompanySignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
+
+    private boolean sameEmail(String email) {
+        if (email.equals("admin")) {
+            return false;
+        } else {
+
+            try {
+                ClientIterator clientIterator = new ClientIterator();
+                while (clientIterator.hasNext()) {
+                    IntClient client = clientIterator.next();
+                    if (client.getEmail().equals(email)) {
+                        return true;
+                    }
+                }
+
+                CompanyIterator companyIterator = new CompanyIterator();
+                while (companyIterator.hasNext()) {
+                    IntCompany company = companyIterator.next();
+                    if (company.getEmail().equals(email)) {
+                        return true;
+                    }
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(CompanySignUp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return false;
+
+    }
 }

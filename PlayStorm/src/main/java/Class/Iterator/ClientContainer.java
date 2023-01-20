@@ -6,13 +6,14 @@ import Interfaces.IntIterator;
 import Class.Client;
 import Class.Client;
 import Class.DataBase;
+import Interfaces.IntClient;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ClientContainer implements IntContainer, Serializable{
-    public ArrayList<Client> clients = new ArrayList<>();
+    public ArrayList<IntClient> clients = new ArrayList<>();
     
     
     public ClientContainer() throws Exception

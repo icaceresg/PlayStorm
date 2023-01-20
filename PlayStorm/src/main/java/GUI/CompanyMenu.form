@@ -55,6 +55,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cerrar Sesion"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemCloseSessionActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -90,7 +93,7 @@
                       <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="110" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabelName" min="-2" pref="131" max="-2" attributes="0"/>
+                      <Component id="NameLabel" min="-2" pref="131" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
@@ -111,7 +114,7 @@
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="jLabelName" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="NameLabel" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               <Component id="jButtonAnnadirProducto" min="-2" pref="54" max="-2" attributes="0"/>
@@ -165,7 +168,7 @@
         <Property name="actionCommand" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabelName">
+    <Component class="javax.swing.JLabel" name="NameLabel">
     </Component>
   </SubComponents>
 </Form>

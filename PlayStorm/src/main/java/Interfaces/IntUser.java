@@ -1,5 +1,7 @@
 package Interfaces;
 
+import Class.User;
+
 public interface IntUser {
 
     public String getName();

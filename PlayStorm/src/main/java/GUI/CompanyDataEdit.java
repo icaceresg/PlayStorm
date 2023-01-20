@@ -250,7 +250,7 @@ public class CompanyDataEdit extends javax.swing.JFrame {
 
             finalEncodePassword = new PasswordEncode().save(passwordAdapter);
 
-            IntCompany company = new NotSubscriberFactory().createCompany(NameCompanyDataEdit.getText(), EmailCompanyDataEdit.getText(), finalEncodePassword, SiteCompanyDataEdit.getText(), CIFCompanyDataEdit.getText(), false);
+            IntCompany company = new NotSubscriberFactory().createCompany(NameCompanyDataEdit.getText(), EmailCompanyDataEdit.getText(), finalEncodePassword, SiteCompanyDataEdit.getText(), CIFCompanyDataEdit.getText());
         }
     }//GEN-LAST:event_AcceptButtonActionPerformed
 

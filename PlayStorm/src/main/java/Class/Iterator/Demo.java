@@ -29,15 +29,15 @@ public class Demo {
             System.out.println(iterator.next().getName());
         }
 
-        database.saveProducts(new Product("amor", "a", 2, 2));
-        database.saveProducts(new Product("hola", "a", 2, 2));
+        //database.saveProducts(new Product("amor", "a", 2, 2));
+        //database.saveProducts(new Product("hola", "a", 2, 2));
         ProductIterator iteratorProduct = new ProductIterator();
         while (iteratorProduct.hasNext()) {
             System.out.println(iteratorProduct.next().getName());
         }
 
-        database.saveCompanies(new Company("amor", "a", "a", "a", "a", false));
-        database.saveCompanies(new Company("hola", "a", "a", "a", "a", true));
+        //database.saveCompanies(new Company("amor", "a", "a", "a", "a", false));
+        //database.saveCompanies(new Company("hola", "a", "a", "a", "a", true));
         CompanyIterator iteratorCompany = new CompanyIterator();
         while (iteratorCompany.hasNext()) {
             System.out.println(iteratorCompany.next().getName());

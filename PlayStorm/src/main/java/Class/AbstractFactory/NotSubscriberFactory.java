@@ -11,8 +11,8 @@ import Interfaces.*;
 public class NotSubscriberFactory implements UserFactory {
 
     @Override
-    public IntCompany createCompany(String name, String email, String password, String site, String cif, boolean subscribe) {
-        return new NotSubscriberCompany(name, email, password, site, cif, subscribe);
+    public IntCompany createCompany(String name, String email, String password, String site, String cif) {
+        return new NotSubscriberCompany(name, email, password, site, cif);
     }
 
     @Override

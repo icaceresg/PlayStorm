@@ -4,6 +4,11 @@
  */
 package GUI;
 
+import Class.User;
+import Command.LogoutCommand;
+import Interfaces.IntLogOut;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author AdriiM_
@@ -106,6 +111,11 @@ public class GameSearch extends javax.swing.JFrame {
         jMenu2.setText("Cerrar Sesion");
 
         jMenuItem3.setText("Cerrar Sesion");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem3);
 
         jMenuBar1.add(jMenu2);
@@ -187,6 +197,14 @@ public class GameSearch extends javax.swing.JFrame {
     private void jTextFieldNombreGameSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreGameSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNombreGameSearchActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
+        if (resp == 0) {
+            IntLogOut logOutCommand = new LogoutCommand();
+            logOutCommand.logOut(this);
+        }
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

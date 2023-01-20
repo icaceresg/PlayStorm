@@ -7,6 +7,7 @@ package Class.Iterator;
 import Class.Client;
 import Class.Company;
 import Class.DataBase;
+import Interfaces.IntCompany;
 import Interfaces.IntContainer;
 import Interfaces.IntIterator;
 import java.io.Serializable;
@@ -19,7 +20,7 @@ import java.util.logging.Logger;
  * @author jorge
  */
 public class CompanyContainer implements IntContainer, Serializable{
-    public ArrayList<Company> companies = new ArrayList<>();
+    public ArrayList<IntCompany> companies = new ArrayList<>();
     
     
     public CompanyContainer() throws Exception
