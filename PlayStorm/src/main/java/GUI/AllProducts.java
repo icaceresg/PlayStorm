@@ -10,7 +10,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Ventana para ver la lista de productos añadidos al carrito para poder comprarlo
+ * Ventana para ver la lista de productos añadidos al carrito para poder
+ * comprarlo
  */
 public class AllProducts extends javax.swing.JFrame {
 
@@ -38,7 +39,7 @@ public class AllProducts extends javax.swing.JFrame {
      * Metodo para crear por defecto la tabla definida por los productos
      * introducidos
      */
-     public void addRowToJTable() throws Exception {
+    public void addRowToJTable() throws Exception {
 
         DefaultTableModel model = (DefaultTableModel) AllProductsTable.getModel();
 

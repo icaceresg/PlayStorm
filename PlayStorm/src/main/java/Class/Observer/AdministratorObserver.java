@@ -9,13 +9,15 @@ package Class.Observer;
  * @author AdriiM_
  */
 public class AdministratorObserver extends Observer {
-    private Money money= new Money();
-    public AdministratorObserver(Money money){
-    this.money=money;
+
+    private Money money = new Money();
+
+    public AdministratorObserver(Money money) {
+        this.money = money;
     }
-    
+
     public void Update() {
-        System.out.println("ADMINISTRADOR: Tiene " + money.getMoney() +" euros en la cuenta bancaria ");  
+        System.out.println("ADMINISTRADOR: Tiene " + money.getMoney() + " euros en la cuenta bancaria ");
     }
-    
+
 }

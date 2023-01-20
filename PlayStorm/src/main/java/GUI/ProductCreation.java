@@ -4,6 +4,10 @@
  */
 package GUI;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author AdriiM_
@@ -14,7 +18,19 @@ public class ProductCreation extends javax.swing.JFrame {
      * Creates new form ProductCreation
      */
     public ProductCreation() {
+        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+        int height = pantalla.height / 2;
+        int width = pantalla.width / 2;
+        setSize(width, height);
+        setLocationRelativeTo(null);
+
         initComponents();
+
+        this.setTitle("JavaPop");
+
+        ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
+        this.setIconImage(imagen.getImage());
+
     }
 
     /**
@@ -237,7 +253,6 @@ public class ProductCreation extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancelarProductCreation;

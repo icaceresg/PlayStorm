@@ -5,7 +5,6 @@
 package Class.AbstractFactory.TemplateMethod;
 
 import Class.Client;
-import java.util.logging.Logger;
 
 /**
  *

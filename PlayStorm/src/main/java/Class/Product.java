@@ -3,7 +3,8 @@ package Class;
 import Class.Iterator.ProductIterator;
 import java.io.Serializable;
 
-public class Product implements Serializable{
+public class Product implements Serializable {
+
     private String name, description;
     private float price;
     private int amount;
@@ -15,10 +16,11 @@ public class Product implements Serializable{
         this.price = price;
         this.amount = amount;
         ProductIterator iterator = new ProductIterator();
-        if (!iterator.hasNext())
+        if (!iterator.hasNext()) {
             this.id = 0;
-        else
+        } else {
             this.id = new ProductIterator().lastItem().getId() + 1;
+        }
     }
 
     public int getId() {
@@ -60,6 +62,5 @@ public class Product implements Serializable{
     public void setAmount(int amount) {
         this.amount = amount;
     }
-    
-    
+
 }

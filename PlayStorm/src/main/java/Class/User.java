@@ -1,7 +1,5 @@
 package Class;
 
-import Interfaces.IntClient;
-import Interfaces.IntCompany;
 import Interfaces.IntUser;
 import java.io.Serializable;
 import java.util.ArrayList;

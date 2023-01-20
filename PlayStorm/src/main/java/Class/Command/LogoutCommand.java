@@ -7,7 +7,6 @@ package Class.Command;
 import Class.User;
 import GUI.Login;
 import Interfaces.IntLogOut;
-import Interfaces.IntUser;
 import javax.swing.JFrame;
 
 /**
@@ -21,14 +20,13 @@ public class LogoutCommand implements IntLogOut {
         Login login = new Login();
         login.setVisible(true);
         vista.dispose();
-        
+
         logOutUser();
     }
-    
+
     @Override
     public void logOutUser() {
         User.usuarioActivo.clear();
     }
-    
-    
+
 }

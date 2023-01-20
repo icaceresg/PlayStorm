@@ -17,15 +17,14 @@ import java.util.logging.Logger;
  *
  * @author jorge
  */
-public class ProductContainer implements IntContainer, Serializable{
+public class ProductContainer implements IntContainer, Serializable {
+
     public ArrayList<Product> products = new ArrayList<>();
-    
-    
-    public ProductContainer() throws Exception
-    {
+
+    public ProductContainer() throws Exception {
         //clients.add(new Client("a","a","a","a","a","a","a"));
         //clients.add(new Client("b","b","b","b","b","b","b"));
-        
+
         this.products = new DataBase().readProducts();
     }
 

@@ -18,5 +18,5 @@ public class Demo {
         IntAdmin adminProxy = new AdminProxy();
         adminProxy.deleteClient("correo@electronico");
     }
-    
+
 }

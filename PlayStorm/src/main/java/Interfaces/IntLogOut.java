@@ -11,7 +11,8 @@ import javax.swing.JFrame;
  * @author jorge
  */
 public interface IntLogOut {
+
     void logOut(JFrame vista);
-    
+
     public void logOutUser();
 }

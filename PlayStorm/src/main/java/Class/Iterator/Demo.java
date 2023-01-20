@@ -5,11 +5,7 @@
  */
 package Class.Iterator;
 
-import Class.Client;
-import Class.Company;
 import Class.DataBase;
-import Class.Iterator.ClientIterator;
-import Class.Product;
 
 /**
  *

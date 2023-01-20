@@ -9,12 +9,10 @@ package Class.Observer;
  * @author AdriiM_
  */
 public abstract class Observer {
-    
+
     protected Money money;
 
-
-    public  void Update( ){
+    public void Update() {
     }
-    
-    
+
 }

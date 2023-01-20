@@ -294,7 +294,7 @@ public class ClientSingUp extends javax.swing.JFrame {
             finalEncodePassword = new PasswordEncode().save(passwordAdapter);
 
             IntClient client;
-            
+
             if (VIPComboBox.isSelected()) {
                 client = new SubscriberFactory().createClient(jTextFieldName.getText(), jTextFieldUser.getText(), finalEncodePassword, jTextFieldSurname.getText(), jTextFieldLocalization.getText(), jTextFieldCreditCard.getText(), jTextFieldTelephone.getText());
             } else {

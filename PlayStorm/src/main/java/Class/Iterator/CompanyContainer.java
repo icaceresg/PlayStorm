@@ -4,8 +4,6 @@
  */
 package Class.Iterator;
 
-import Class.Client;
-import Class.Company;
 import Class.DataBase;
 import Interfaces.IntCompany;
 import Interfaces.IntContainer;
@@ -19,15 +17,14 @@ import java.util.logging.Logger;
  *
  * @author jorge
  */
-public class CompanyContainer implements IntContainer, Serializable{
+public class CompanyContainer implements IntContainer, Serializable {
+
     public ArrayList<IntCompany> companies = new ArrayList<>();
-    
-    
-    public CompanyContainer() throws Exception
-    {
+
+    public CompanyContainer() throws Exception {
         //clients.add(new Client("a","a","a","a","a","a","a"));
         //clients.add(new Client("b","b","b","b","b","b","b"));
-        
+
         this.companies = new DataBase().readCompanies();
     }
 

@@ -7,6 +7,9 @@ package GUI;
 import Class.User;
 import Class.Command.LogoutCommand;
 import Interfaces.IntLogOut;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +22,19 @@ public class GameSearch extends javax.swing.JFrame {
      * Creates new form GameSearch
      */
     public GameSearch() {
+        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+        int height = pantalla.height / 2;
+        int width = pantalla.width / 2;
+        setSize(width, height);
+        setLocationRelativeTo(null);
+
         initComponents();
+
+        this.setTitle("JavaPop");
+
+        ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
+        this.setIconImage(imagen.getImage());
+
     }
 
     /**

@@ -4,7 +4,6 @@
  */
 package Class.Iterator;
 
-import Class.Client;
 import Class.Product;
 import Interfaces.IntIterator;
 
@@ -12,7 +11,8 @@ import Interfaces.IntIterator;
  *
  * @author jorge
  */
-public class ProductIterator implements IntIterator{
+public class ProductIterator implements IntIterator {
+
     private int i;
     private ProductContainer productContainer;
 
@@ -22,37 +22,35 @@ public class ProductIterator implements IntIterator{
 
     @Override
     public boolean hasNext() {
-        if(i < productContainer.products.size())
+        if (i < productContainer.products.size()) {
             return true;
+        }
         return false;
     }
 
     @Override
     public Product next() {
-        if(this.hasNext())
+        if (this.hasNext()) {
             return productContainer.products.get(i++);
+        }
         return null;
     }
-    
-    public void addProducts(Product product)
-    {
+
+    public void addProducts(Product product) {
         productContainer.products.add(product);
     }
-    
-    public void deleteProduct(Product product)
-    {
+
+    public void deleteProduct(Product product) {
         productContainer.products.remove(product);
     }
-    
+
     @Override
-    public Product firstItem()
-    {
+    public Product firstItem() {
         return productContainer.products.get(0);
     }
-    
+
     @Override
-    public Product lastItem()
-    {
-        return productContainer.products.get(productContainer.products.size()-1);
+    public Product lastItem() {
+        return productContainer.products.get(productContainer.products.size() - 1);
     }
 }

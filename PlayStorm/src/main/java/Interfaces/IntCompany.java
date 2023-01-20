@@ -13,7 +13,7 @@ import java.util.Map;
  *
  * @author jorge
  */
-public interface IntCompany extends IntUser{
+public interface IntCompany extends IntUser {
 
     public String getSite();
 

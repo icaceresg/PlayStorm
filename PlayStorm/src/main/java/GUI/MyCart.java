@@ -1,13 +1,13 @@
 package GUI;
 
-
 import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-/**Ventana para ver la lista de productos añadidos al carrito para poder comprarlo*/
-
+/**
+ * Ventana para ver la lista de productos añadidos al carrito para poder comprarlo
+ */
 public class MyCart extends javax.swing.JFrame {
 
     public MyCart() {
@@ -19,15 +19,16 @@ public class MyCart extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         initComponents();
         addRowToJTable();
-        
+
         this.setTitle("JavaPop");
-        
-        ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png" );
+
+        ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
     }
-    
+
     /**
-     * Metodo para crear por defecto la tabla definida por los productos introducidos
+     * Metodo para crear por defecto la tabla definida por los productos
+     * introducidos
      */
     public void addRowToJTable() {
 

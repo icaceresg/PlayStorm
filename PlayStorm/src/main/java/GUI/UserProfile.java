@@ -410,7 +410,7 @@ public class UserProfile extends javax.swing.JFrame {
         return false;
     }
     private void jTextFieldUserUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUserUserProfileActionPerformed
-        
+
     }//GEN-LAST:event_jTextFieldUserUserProfileActionPerformed
 
     private void jTextFieldSurnameUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSurnameUserProfileActionPerformed
@@ -461,17 +461,17 @@ public class UserProfile extends javax.swing.JFrame {
         MyLibrary library = new MyLibrary();
         library.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
-                int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
+        int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
         if (resp == 0) {
             IntLogOut logOutCommand = new LogoutCommand();
             logOutCommand.logOut(this);
         }
-        
+
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed

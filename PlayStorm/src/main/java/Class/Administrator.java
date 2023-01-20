@@ -1,7 +1,6 @@
 package Class;
 
 //Singleton pattern
-
 import Class.Iterator.ClientIterator;
 import Class.Iterator.CompanyIterator;
 import Class.Iterator.ProductIterator;
@@ -11,7 +10,7 @@ import Interfaces.IntCompany;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public final class Administrator extends User implements IntAdmin{
+public final class Administrator extends User implements IntAdmin {
 
     private static Administrator instance;
 
@@ -26,16 +25,14 @@ public final class Administrator extends User implements IntAdmin{
         }
         return instance;
     }
-    
+
     @Override
     public void deleteClient(String email) {
         try {
             ClientIterator iterator = new ClientIterator();
-            while (iterator.hasNext())
-            {
+            while (iterator.hasNext()) {
                 IntClient nextItem = iterator.next();
-                if (nextItem.getEmail().equals(email))
-                {
+                if (nextItem.getEmail().equals(email)) {
                     iterator.deleteClient(nextItem);
                     new DataBase().saveIteratorClient(iterator);
                     return;
@@ -50,11 +47,9 @@ public final class Administrator extends User implements IntAdmin{
     public void deleteCompany(String email) {
         try {
             CompanyIterator iterator = new CompanyIterator();
-            while (iterator.hasNext())
-            {
+            while (iterator.hasNext()) {
                 IntCompany nextItem = iterator.next();
-                if (nextItem.getEmail().equals(email))
-                {
+                if (nextItem.getEmail().equals(email)) {
                     iterator.deleteCompany(nextItem);
                     new DataBase().saveIteratorCompany(iterator);
                     return;
@@ -69,11 +64,9 @@ public final class Administrator extends User implements IntAdmin{
     public void deleteProduct(Product product) {
         try {
             ProductIterator iterator = new ProductIterator();
-            while (iterator.hasNext())
-            {
+            while (iterator.hasNext()) {
                 Product nextItem = iterator.next();
-                if (nextItem.getId() == product.getId())
-                {
+                if (nextItem.getId() == product.getId()) {
                     iterator.deleteProduct(nextItem);
                     new DataBase().saveIteratorProduct(iterator);
                     return;
@@ -82,6 +75,6 @@ public final class Administrator extends User implements IntAdmin{
         } catch (Exception ex) {
             Logger.getLogger(Administrator.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 }

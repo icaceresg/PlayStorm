@@ -3,8 +3,6 @@ package Class.Iterator;
 
 import Interfaces.IntContainer;
 import Interfaces.IntIterator;
-import Class.Client;
-import Class.Client;
 import Class.DataBase;
 import Interfaces.IntClient;
 import java.io.Serializable;

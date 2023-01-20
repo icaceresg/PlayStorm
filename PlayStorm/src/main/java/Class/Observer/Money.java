@@ -9,21 +9,22 @@ package Class.Observer;
  * @author AdriiM_
  */
 public class Money {
-    private Observer observer= new Observer(){};
+
+    private Observer observer = new Observer() {
+    };
     private int actualmoney;
-    
-    public int getMoney(){
-    return actualmoney;
+
+    public int getMoney() {
+        return actualmoney;
     }
-    
-    public void setMoney(int actualmoney){
-    this.actualmoney=actualmoney;
-    notifyAllObservers();
+
+    public void setMoney(int actualmoney) {
+        this.actualmoney = actualmoney;
+        notifyAllObservers();
     }
-    
-    
-    public void notifyAllObservers(){
+
+    public void notifyAllObservers() {
         observer.Update();
     }
-    
+
 }
