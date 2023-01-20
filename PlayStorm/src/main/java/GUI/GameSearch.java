@@ -97,6 +97,11 @@ public class GameSearch extends javax.swing.JFrame {
         jMenu1.setText("Perfil");
 
         jMenuItem2.setText("Ver Datos");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -104,6 +109,11 @@ public class GameSearch extends javax.swing.JFrame {
         jMenu3.setText("Carrito");
 
         jMenuItem1.setText("Ver Carrito");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem1);
 
         jMenuBar1.add(jMenu3);
@@ -205,6 +215,20 @@ public class GameSearch extends javax.swing.JFrame {
             logOutCommand.logOut(this);
         }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        UserProfile profile = new UserProfile();
+        profile.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        MyCart cart = new MyCart();
+        cart.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

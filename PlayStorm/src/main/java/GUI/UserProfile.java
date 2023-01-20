@@ -4,9 +4,12 @@
  */
 package GUI;
 
+import Class.Command.LogoutCommand;
+import Interfaces.IntLogOut;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -248,6 +251,11 @@ public class UserProfile extends javax.swing.JFrame {
         jMenu1.setText("Datos");
 
         jMenuItem1.setText("Editar Datos");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -255,6 +263,11 @@ public class UserProfile extends javax.swing.JFrame {
         jMenu3.setText("Biblioteca");
 
         jMenuItem3.setText("Ver Mi Biblioteca");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem3);
 
         jMenuBar1.add(jMenu3);
@@ -262,6 +275,11 @@ public class UserProfile extends javax.swing.JFrame {
         jMenu6.setText("Cerrar Sesion");
 
         jMenuItem7.setText("Cerrar Sesion");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem7);
 
         jMenuBar1.add(jMenu6);
@@ -319,8 +337,7 @@ public class UserProfile extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -438,6 +455,28 @@ public class UserProfile extends javax.swing.JFrame {
     private void jButtonSaveChangesUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveChangesUserProfileActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSaveChangesUserProfileActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        MyLibrary library = new MyLibrary();
+        library.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+                int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
+        if (resp == 0) {
+            IntLogOut logOutCommand = new LogoutCommand();
+            logOutCommand.logOut(this);
+        }
+        
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments

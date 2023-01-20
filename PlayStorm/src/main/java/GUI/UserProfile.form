@@ -81,6 +81,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar Datos"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -93,6 +96,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver Mi Biblioteca"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -105,6 +111,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cerrar Sesion"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem7ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -194,7 +203,6 @@
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jTextField1" min="-2" pref="106" max="-2" attributes="0"/>
-                              <EmptySpace min="33" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>

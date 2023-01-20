@@ -135,8 +135,8 @@ public class MyCart extends javax.swing.JFrame {
 
     private void ButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackActionPerformed
         // Vuelve a la ventana de perfil
-        UserProfile profile = new UserProfile();
-        profile.setVisible(true);
+        GameSearch games = new GameSearch();
+        games.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ButtonBackActionPerformed
 
