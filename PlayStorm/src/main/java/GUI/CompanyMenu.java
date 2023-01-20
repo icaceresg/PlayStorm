@@ -5,7 +5,7 @@
 package GUI;
 
 import Class.User;
-import Command.LogoutCommand;
+import Class.Command.LogoutCommand;
 import Interfaces.IntLogOut;
 import java.awt.Dimension;
 import java.awt.Toolkit;
