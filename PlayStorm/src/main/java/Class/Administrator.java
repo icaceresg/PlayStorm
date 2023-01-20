@@ -5,7 +5,6 @@ package Class;
 import Class.Iterator.ClientIterator;
 import Class.Iterator.CompanyIterator;
 import Class.Iterator.ProductIterator;
-import Class.Proxy.AdminFunctionsImpl;
 import Class.Proxy.IntAdmin;
 import Interfaces.IntClient;
 import Interfaces.IntCompany;
