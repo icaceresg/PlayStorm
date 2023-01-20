@@ -201,8 +201,8 @@ public class Login extends javax.swing.JFrame {
                         encontrado = true;
                     }
                 }
-                if ("admin".equals(UserTextField.getText()) && "admin".equals(String.valueOf(PasswordField.getPassword()))) {
-                    Administrator admin = Administrator.getInstance("Admin", String.valueOf(PasswordField.getPassword()), UserTextField.getText());
+                if ("admin@admin".equals(UserTextField.getText()) && "admin".equals(String.valueOf(PasswordField.getPassword()))) {
+                    Administrator admin = Administrator.getInstance();
                     User.usuarioActivo.add(admin);
                     AdminMenu adminMenu = new AdminMenu();
                     adminMenu.setVisible(true);

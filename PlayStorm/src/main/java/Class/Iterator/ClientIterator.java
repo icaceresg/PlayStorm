@@ -33,4 +33,20 @@ public class ClientIterator implements IntIterator{
         clientContainer.clients.add(client);
     }
     
+    public void deleteClient(IntClient client)
+    {
+        clientContainer.clients.remove(client);
+    }
+    
+    @Override
+    public IntClient firstItem()
+    {
+        return clientContainer.clients.get(0);
+    }
+    
+    @Override
+    public IntClient lastItem()
+    {
+        return clientContainer.clients.get(clientContainer.clients.size()-1);
+    }
 }

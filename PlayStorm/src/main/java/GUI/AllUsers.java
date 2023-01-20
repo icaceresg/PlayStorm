@@ -1,35 +1,63 @@
 package GUI;
 
-
+import Class.Iterator.ClientIterator;
+import Interfaces.IntClient;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-/**Ventana para ver la lista de productos añadidos al carrito para poder comprarlo*/
-
+/**
+ * Ventana para ver la lista de productos añadidos al carrito para poder
+ * comprarlo
+ */
 public class AllUsers extends javax.swing.JFrame {
 
-    public AllUsers() {
-        // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
-        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
-        int height = pantalla.height / 2;
-        int width = pantalla.width / 2;
-        setSize(width, height);
-        setLocationRelativeTo(null);
-        initComponents();
-        addRowToJTable();
-        
-        this.setTitle("JavaPop");
-        
-        ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png" );
-        this.setIconImage(imagen.getImage());
+    public AllUsers(){
+        try {
+            // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
+            Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+            int height = pantalla.height / 2;
+            int width = pantalla.width / 2;
+            setSize(width, height);
+            setLocationRelativeTo(null);
+            initComponents();
+            addRowToJTable();
+            
+            this.setTitle("JavaPop");
+            
+            ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png");
+            this.setIconImage(imagen.getImage());
+        } catch (Exception ex) {
+            Logger.getLogger(AllUsers.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
+
     /**
-     * Metodo para crear por defecto la tabla definida por los productos introducidos
+     * Metodo para crear por defecto la tabla definida por los productos
+     * introducidos
      */
-    public void addRowToJTable() {
+    public void addRowToJTable() throws Exception {
+
+        DefaultTableModel model = (DefaultTableModel) AllUsersTable.getModel();
+
+        ClientIterator iterator = new ClientIterator();
+        Object rowData[] = new Object[5];
+
+        while (iterator.hasNext()) {
+            IntClient client = iterator.next();
+
+            rowData[0] = client.getEmail();
+            rowData[1] = client.getName();
+            rowData[2] = client.getLastName();
+            rowData[3] = client.getPhone();
+            rowData[4] = client.getSite();
+
+            model.addRow(rowData);
+
+        }
 
     }
 
