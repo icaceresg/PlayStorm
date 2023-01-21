@@ -50,7 +50,7 @@ public class AllProducts extends javax.swing.JFrame {
             Product product = iterator.next();
 
             //Falta la empresa y la categoria
-            rowData[0] = product.getName();
+            rowData[0] = product.getTitle();
             rowData[1] = product.getAmount();
             rowData[2] = product.getPrice();
             rowData[3] = product.getDescription();

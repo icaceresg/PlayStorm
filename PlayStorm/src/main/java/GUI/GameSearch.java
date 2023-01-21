@@ -6,11 +6,18 @@ package GUI;
 
 import Class.User;
 import Class.Command.LogoutCommand;
+import Class.Iterator.CompanyIterator;
+import Class.Iterator.ProductIterator;
+import Class.Product;
+import Interfaces.IntCompany;
 import Interfaces.IntLogOut;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -29,11 +36,40 @@ public class GameSearch extends javax.swing.JFrame {
         setLocationRelativeTo(null);
 
         initComponents();
+        try {
+            addRowToJTable();
+        } catch (Exception ex) {
+            Logger.getLogger(AllCompanies.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         this.setTitle("JavaPop");
 
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
+
+    }
+    
+    public void addRowToJTable() throws Exception {
+
+        DefaultTableModel model = (DefaultTableModel) jTableProducts.getModel();
+
+        ProductIterator iterator = new ProductIterator();
+        Object rowData[] = new Object[jTableProducts.getColumnCount()];
+
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+
+            rowData[0] = product.getTitle();
+            rowData[1] = product.getDescription();
+            rowData[2] = product.getPrice();
+            rowData[3] = product.getPrice(); //Comment this line or delete
+            
+            //rowData[3] = product.getCompany().getName();
+            rowData[4] = product.getAmount();
+
+            model.addRow(rowData);
+
+        }
 
     }
 
@@ -105,13 +141,10 @@ public class GameSearch extends javax.swing.JFrame {
 
         jTableProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Titulo", "Empresa", "Precio", "Fecha Lanzamiento"
+                "Titulo", "Descripción", "Precio", "Empresa", "Cantidad"
             }
         ));
         jScrollPane1.setViewportView(jTableProducts);

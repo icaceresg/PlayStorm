@@ -44,7 +44,7 @@ public class AllCompanies extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) AllCompaniesTable.getModel();
 
         CompanyIterator iterator = new CompanyIterator();
-        Object rowData[] = new Object[4];
+        Object rowData[] = new Object[AllCompaniesTable.getColumnCount()];
 
         while (iterator.hasNext()) {
             IntCompany company = iterator.next();
