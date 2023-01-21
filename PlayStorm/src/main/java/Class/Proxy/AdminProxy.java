@@ -24,11 +24,11 @@ public class AdminProxy implements IntAdmin {
     }
 
     @Override
-    public void deleteProduct(Product product) {
+    public void deleteProduct(int id) {
         if (realAdmin == null) {
             realAdmin = Administrator.getInstance();
         }
-        realAdmin.deleteProduct(product);
+        realAdmin.deleteProduct(id);
     }
 
 }

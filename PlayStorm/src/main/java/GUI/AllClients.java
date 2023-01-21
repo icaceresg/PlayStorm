@@ -3,6 +3,8 @@ package GUI;
 import Class.AbstractFactory.TemplateMethod.SubscriberClient;
 import Class.DataBase;
 import Class.Iterator.ClientIterator;
+import Class.Proxy.AdminProxy;
+import Class.Proxy.IntAdmin;
 import Interfaces.IntClient;
 import java.awt.*;
 import java.util.ArrayList;
@@ -180,18 +182,8 @@ public class AllClients extends javax.swing.JFrame {
         if (num != -1) {
             try {
                 DefaultTableModel modelo = (DefaultTableModel) AllClientsTable.getModel();
-
-                ClientIterator iteratorClient = new ClientIterator();
-                while (iteratorClient.hasNext()) {
-                    IntClient client = iteratorClient.next();
-
-                    if (client.getEmail().equals((String) modelo.getValueAt(num, 2))) {
-                        iteratorClient.deleteClient(client);
-
-                    }
-                }
-                DataBase database = new DataBase();
-                database.saveIteratorClient(iteratorClient);
+                IntAdmin adminProxy = new AdminProxy();
+                adminProxy.deleteClient((String) modelo.getValueAt(num, 2));
                 modelo.removeRow(num);
                 //Si no seleccionamos ninguno se muestra una advertencia
             } catch (Exception ex) {

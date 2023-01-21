@@ -8,5 +8,5 @@ public interface IntAdmin {
 
     void deleteCompany(String email);
 
-    void deleteProduct(Product product);
+    void deleteProduct(int Id);
 }

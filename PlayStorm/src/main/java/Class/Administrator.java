@@ -34,10 +34,10 @@ public final class Administrator extends User implements IntAdmin {
                 IntClient nextItem = iterator.next();
                 if (nextItem.getEmail().equals(email)) {
                     iterator.deleteClient(nextItem);
-                    new DataBase().saveIteratorClient(iterator);
-                    return;
                 }
             }
+            new DataBase().saveIteratorClient(iterator);
+
         } catch (Exception ex) {
             Logger.getLogger(Administrator.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -51,27 +51,25 @@ public final class Administrator extends User implements IntAdmin {
                 IntCompany nextItem = iterator.next();
                 if (nextItem.getEmail().equals(email)) {
                     iterator.deleteCompany(nextItem);
-                    new DataBase().saveIteratorCompany(iterator);
-                    return;
                 }
             }
+            new DataBase().saveIteratorCompany(iterator);
         } catch (Exception ex) {
             Logger.getLogger(Administrator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
-    public void deleteProduct(Product product) {
+    public void deleteProduct(int id) {
         try {
             ProductIterator iterator = new ProductIterator();
             while (iterator.hasNext()) {
                 Product nextItem = iterator.next();
-                if (nextItem.getId() == product.getId()) {
+                if (nextItem.getId() == id) {
                     iterator.deleteProduct(nextItem);
-                    new DataBase().saveIteratorProduct(iterator);
-                    return;
                 }
             }
+            new DataBase().saveIteratorProduct(iterator);
         } catch (Exception ex) {
             Logger.getLogger(Administrator.class.getName()).log(Level.SEVERE, null, ex);
         }

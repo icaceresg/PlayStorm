@@ -3,6 +3,8 @@ package GUI;
 import Class.AbstractFactory.TemplateMethod.SubscriberCompany;
 import Class.DataBase;
 import Class.Iterator.CompanyIterator;
+import Class.Proxy.AdminProxy;
+import Class.Proxy.IntAdmin;
 import Interfaces.IntCompany;
 import java.awt.*;
 import java.util.ArrayList;
@@ -107,7 +109,7 @@ public class AllCompanies extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Empresas");
+        jLabel1.setText("Empresas registradas");
 
         BackButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         BackButton.setText("Volver");
@@ -179,17 +181,11 @@ public class AllCompanies extends javax.swing.JFrame {
             try {
                 DefaultTableModel modelo = (DefaultTableModel) AllCompaniesTable.getModel();
 
-                CompanyIterator iteratorCompany = new CompanyIterator();
-                while (iteratorCompany.hasNext()) {
-                    IntCompany company = iteratorCompany.next();
+                IntAdmin adminProxy = new AdminProxy();
+                adminProxy.deleteCompany((String) modelo.getValueAt(num, 3));
 
-                    if (company.getEmail().equals((String) modelo.getValueAt(num, 3))) {
-                        iteratorCompany.deleteCompany(company);
-                    }
-                }
-                DataBase database = new DataBase();
-                database.saveIteratorCompany(iteratorCompany);
                 modelo.removeRow(num);
+
                 //Si no seleccionamos ninguno se muestra una advertencia
             } catch (Exception ex) {
                 Logger.getLogger(AllProducts.class.getName()).log(Level.SEVERE, null, ex);

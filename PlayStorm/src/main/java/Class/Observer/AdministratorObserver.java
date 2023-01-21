@@ -16,6 +16,7 @@ public class AdministratorObserver extends Observer {
         this.money = money;
     }
 
+    @Override
     public void Update() {
         System.out.println("ADMINISTRADOR: Tiene " + money.getMoney() + " euros en la cuenta bancaria ");
     }

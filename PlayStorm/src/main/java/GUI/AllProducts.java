@@ -3,6 +3,8 @@ package GUI;
 import Class.DataBase;
 import Class.Iterator.ProductIterator;
 import Class.Product;
+import Class.Proxy.AdminProxy;
+import Class.Proxy.IntAdmin;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -162,18 +164,8 @@ public class AllProducts extends javax.swing.JFrame {
         if (num != -1) {
             try {
                 DefaultTableModel modelo = (DefaultTableModel) AllProductsTable.getModel();
-
-                ProductIterator iteratorProduct = new ProductIterator();
-                while (iteratorProduct.hasNext()) {
-                    Product product = iteratorProduct.next();
-
-                    if (product.getId() == (Integer) modelo.getValueAt(num, 0)) {
-                        iteratorProduct.deleteProduct(product);
-
-                    }
-                }
-                DataBase database = new DataBase();
-                database.saveIteratorProduct(iteratorProduct);
+                IntAdmin adminProxy = new AdminProxy();
+                adminProxy.deleteProduct((Integer) modelo.getValueAt(num, 0));
                 modelo.removeRow(num);
                 //Si no seleccionamos ninguno se muestra una advertencia
             } catch (Exception ex) {
