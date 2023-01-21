@@ -5,16 +5,17 @@ import java.io.Serializable;
 
 public class Product implements Serializable {
 
-    private String name, description;
+    private String title, description, category;
     private float price;
     private int amount;
     private int id;
 
-    public Product(String name, String description, float price, int amount) throws Exception {
-        this.name = name;
+    public Product(String title, String description, float price, int amount, String category) throws Exception {
+        this.title = title;
         this.description = description;
         this.price = price;
         this.amount = amount;
+        this.category = category;
         ProductIterator iterator = new ProductIterator();
         if (!iterator.hasNext()) {
             this.id = 0;
@@ -32,11 +33,11 @@ public class Product implements Serializable {
     }
 
     public String getName() {
-        return name;
+        return title;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.title = name;
     }
 
     public String getDescription() {

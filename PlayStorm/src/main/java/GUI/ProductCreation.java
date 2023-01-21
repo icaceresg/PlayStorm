@@ -4,9 +4,14 @@
  */
 package GUI;
 
+import Class.DataBase;
+import Class.Product;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -44,7 +49,6 @@ public class ProductCreation extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jComboBoxCategoriaProductCreation = new javax.swing.JComboBox<>();
@@ -53,7 +57,6 @@ public class ProductCreation extends javax.swing.JFrame {
         jButtonCancelarProductCreation = new javax.swing.JButton();
         jButtonCrearProductCreation = new javax.swing.JButton();
         jTextFieldTituloProductCreation = new javax.swing.JTextField();
-        jTextFieldEmpresaProductCreation = new javax.swing.JTextField();
         jTextFieldPrecioProductCreation = new javax.swing.JTextField();
         jTextFieldDescipcionProductCreation = new javax.swing.JTextField();
         jTextFieldCantidadProductCreation = new javax.swing.JTextField();
@@ -62,17 +65,13 @@ public class ProductCreation extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Producto");
+        jLabel1.setText("Juego");
         jLabel1.setToolTipText("");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel2.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Titulo:");
-
-        jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Empresa:");
 
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -119,12 +118,6 @@ public class ProductCreation extends javax.swing.JFrame {
             }
         });
 
-        jTextFieldEmpresaProductCreation.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEmpresaProductCreationActionPerformed(evt);
-            }
-        });
-
         jTextFieldPrecioProductCreation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldPrecioProductCreationActionPerformed(evt);
@@ -154,27 +147,27 @@ public class ProductCreation extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jTextFieldTituloProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(jButtonCancelarProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(76, 76, 76)
+                        .addComponent(jButtonCrearProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jComboBoxCategoriaProductCreation, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldTituloProductCreation)
-                                .addComponent(jTextFieldEmpresaProductCreation)
                                 .addComponent(jTextFieldPrecioProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jTextFieldDescipcionProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldCantidadProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(jButtonCancelarProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76)
-                        .addComponent(jButtonCrearProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextFieldCantidadProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 63, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -186,11 +179,7 @@ public class ProductCreation extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextFieldTituloProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextFieldEmpresaProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTextFieldPrecioProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -206,7 +195,7 @@ public class ProductCreation extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldCantidadProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCancelarProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonCrearProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -224,10 +213,6 @@ public class ProductCreation extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxCategoriaProductCreationActionPerformed
 
-    private void jTextFieldEmpresaProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmpresaProductCreationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEmpresaProductCreationActionPerformed
-
     private void jTextFieldDescipcionProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDescipcionProductCreationActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldDescipcionProductCreationActionPerformed
@@ -241,7 +226,30 @@ public class ProductCreation extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldPrecioProductCreationActionPerformed
 
     private void jButtonCrearProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearProductCreationActionPerformed
-        // TODO add your handling code here:
+       boolean emptyFields = jTextFieldTituloProductCreation.getText().equals("")
+               | jTextFieldDescipcionProductCreation.getText().equals("")
+               | jTextFieldPrecioProductCreation.getText().equals("")
+               | jTextFieldCantidadProductCreation.getText().equals("")
+               | jComboBoxCategoriaProductCreation.getSelectedIndex() == 0;
+       
+       if (emptyFields) {
+            JOptionPane.showMessageDialog(this, "Existen campos vacíos o no has seleccionado una categoría", "Registro juego", JOptionPane.ERROR_MESSAGE);
+            return;
+       }
+       Product product;
+       DataBase database = new DataBase();
+       
+        try {
+            product = new Product (jTextFieldTituloProductCreation.getText(),
+                    jTextFieldDescipcionProductCreation.getText(),
+                    Float.parseFloat(jTextFieldPrecioProductCreation.getText()),
+                    Integer.parseInt(jTextFieldCantidadProductCreation.getText()),
+                    jComboBoxCategoriaProductCreation.getSelectedItem().toString());
+            database.saveProducts(product);
+        } catch (Exception ex) {
+            Logger.getLogger(ProductCreation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
     }//GEN-LAST:event_jButtonCrearProductCreationActionPerformed
 
     private void jButtonCancelarProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarProductCreationActionPerformed
@@ -260,14 +268,12 @@ public class ProductCreation extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxCategoriaProductCreation;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextFieldCantidadProductCreation;
     private javax.swing.JTextField jTextFieldDescipcionProductCreation;
-    private javax.swing.JTextField jTextFieldEmpresaProductCreation;
     private javax.swing.JTextField jTextFieldPrecioProductCreation;
     private javax.swing.JTextField jTextFieldTituloProductCreation;
     // End of variables declaration//GEN-END:variables
