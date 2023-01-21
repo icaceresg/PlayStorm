@@ -4,11 +4,16 @@
  */
 package GUI;
 
+import Class.Client;
 import Class.User;
 import Class.Command.LogoutCommand;
+import Class.Iterator.ClientIterator;
 import Class.Iterator.CompanyIterator;
 import Class.Iterator.ProductIterator;
+import Class.Observer.SumObserver;
+import Class.Observer.SumSubject;
 import Class.Product;
+import Interfaces.IntClient;
 import Interfaces.IntCompany;
 import Interfaces.IntLogOut;
 import java.awt.Dimension;
@@ -47,8 +52,25 @@ public class GameSearch extends javax.swing.JFrame {
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
 
+        float wallet = getWallet(User.usuarioActivo.get(0).getEmail());
+        Money.setText(String.valueOf(wallet));
     }
-    
+
+    private float getWallet(String email) {
+        try {
+            ClientIterator iterator = new ClientIterator();
+            while (iterator.hasNext()) {
+                IntClient client = iterator.next();
+                if (client.getEmail().equals(email)) {
+                    return client.getWallet();
+                }
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+
     public void addRowToJTable() throws Exception {
 
         DefaultTableModel model = (DefaultTableModel) AllProductsTable.getModel();
@@ -61,8 +83,8 @@ public class GameSearch extends javax.swing.JFrame {
 
             rowData[0] = product.getTitle();
             rowData[1] = product.getDescription();
-            rowData[2] = product.getCategory();            
-            rowData[3] = product.getPrice();            
+            rowData[2] = product.getCategory();
+            rowData[3] = product.getPrice();
             rowData[4] = product.getCompany().getName();
             rowData[5] = product.getAmount();
 
@@ -96,6 +118,7 @@ public class GameSearch extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         ProfileMenu = new javax.swing.JMenu();
         Profile = new javax.swing.JMenuItem();
+        AddMoneyItem = new javax.swing.JMenuItem();
         CartMenu = new javax.swing.JMenu();
         Cart = new javax.swing.JMenuItem();
         CloseSessionMenu = new javax.swing.JMenu();
@@ -177,6 +200,14 @@ public class GameSearch extends javax.swing.JFrame {
             }
         });
         ProfileMenu.add(Profile);
+
+        AddMoneyItem.setText("Añadir Dinero");
+        AddMoneyItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddMoneyItemActionPerformed(evt);
+            }
+        });
+        ProfileMenu.add(AddMoneyItem);
 
         jMenuBar1.add(ProfileMenu);
 
@@ -317,13 +348,31 @@ public class GameSearch extends javax.swing.JFrame {
     }//GEN-LAST:event_NameFieldMouseEntered
 
     private void NameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NameFieldMouseClicked
-        if(NameField.getText().equals("Inserte título..."))
+        if (NameField.getText().equals("Inserte título..."))
             NameField.setText("");
     }//GEN-LAST:event_NameFieldMouseClicked
+
+    private void AddMoneyItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddMoneyItemActionPerformed
+        float money = Float.parseFloat(JOptionPane.showInputDialog(null, "Escriba la cantidad de dinero que desea añadir"));
+
+        SumSubject dataSource = new SumSubject();
+        SumObserver observer = new SumObserver();
+
+        dataSource.registerObserver(observer);
+
+        dataSource.getClientData(getWallet(User.usuarioActivo.get(0).getEmail()));
+        dataSource.getExternalData(money);
+
+        dataSource.removeObserver(observer);
+
+        float wallet = getWallet(User.usuarioActivo.get(0).getEmail());
+        Money.setText(String.valueOf(wallet));
+    }//GEN-LAST:event_AddMoneyItemActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddCartButton;
+    private javax.swing.JMenuItem AddMoneyItem;
     private javax.swing.JTable AllProductsTable;
     private javax.swing.JMenuItem Cart;
     private javax.swing.JMenu CartMenu;
@@ -343,4 +392,5 @@ public class GameSearch extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
 }

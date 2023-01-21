@@ -1,6 +1,9 @@
 package Class;
 
+import Class.Iterator.ClientIterator;
 import Interfaces.IntClient;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Client extends User implements IntClient {
 

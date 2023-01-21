@@ -4,7 +4,7 @@ import Class.AbstractFactory.TemplateMethod.SubscriberCompany;
 import Class.DataBase;
 import Class.Iterator.CompanyIterator;
 import Class.Proxy.AdminProxy;
-import Class.Proxy.IntAdmin;
+import Interfaces.IntAdmin;
 import Interfaces.IntCompany;
 import java.awt.*;
 import java.util.ArrayList;

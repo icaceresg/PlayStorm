@@ -4,7 +4,7 @@ import Class.DataBase;
 import Class.Iterator.ProductIterator;
 import Class.Product;
 import Class.Proxy.AdminProxy;
-import Class.Proxy.IntAdmin;
+import Interfaces.IntAdmin;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.logging.Level;

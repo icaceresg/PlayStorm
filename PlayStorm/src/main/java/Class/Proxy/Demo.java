@@ -5,6 +5,8 @@
  */
 package Class.Proxy;
 
+import Interfaces.IntAdmin;
+
 /**
  *
  * @author icace

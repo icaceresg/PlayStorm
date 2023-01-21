@@ -4,7 +4,7 @@ package Class;
 import Class.Iterator.ClientIterator;
 import Class.Iterator.CompanyIterator;
 import Class.Iterator.ProductIterator;
-import Class.Proxy.IntAdmin;
+import Interfaces.IntAdmin;
 import Interfaces.IntClient;
 import Interfaces.IntCompany;
 import java.util.logging.Level;

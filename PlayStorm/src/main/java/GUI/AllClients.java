@@ -4,7 +4,7 @@ import Class.AbstractFactory.TemplateMethod.SubscriberClient;
 import Class.DataBase;
 import Class.Iterator.ClientIterator;
 import Class.Proxy.AdminProxy;
-import Class.Proxy.IntAdmin;
+import Interfaces.IntAdmin;
 import Interfaces.IntClient;
 import java.awt.*;
 import java.util.ArrayList;
@@ -58,10 +58,11 @@ public class AllClients extends javax.swing.JFrame {
             rowData[2] = client.getEmail();
             rowData[3] = client.getPhone();
             rowData[4] = client.getSite();
-            rowData[5] = false;
+            rowData[5] = client.getWallet();
+            rowData[6] = false;
 
             if (client instanceof SubscriberClient) {
-                rowData[5] = true;
+                rowData[6] = true;
             }
             model.addRow(rowData);
         }
@@ -86,14 +87,14 @@ public class AllClients extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Apellido", "Usuario", "Teléfono", "Localización", "Suscrito"
+                "Nombre", "Apellido", "Usuario", "Teléfono", "Localización", "Dinero", "Suscrito"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {

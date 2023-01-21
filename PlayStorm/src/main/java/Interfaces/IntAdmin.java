@@ -1,4 +1,4 @@
-package Class.Proxy;
+package Interfaces;
 
 import Class.Product;
 
