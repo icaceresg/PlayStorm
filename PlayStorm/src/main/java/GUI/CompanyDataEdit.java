@@ -51,20 +51,20 @@ public class CompanyDataEdit extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PasswordCompanyDataEdit = new javax.swing.JPasswordField();
+        PasswordField = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        RepeatPasswordCompanyDataEdit = new javax.swing.JPasswordField();
+        RepeatPasswordField = new javax.swing.JPasswordField();
         BackButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        NameCompanyDataEdit = new javax.swing.JTextField();
-        SiteCompanyDataEdit = new javax.swing.JTextField();
-        CIFCompanyDataEdit = new javax.swing.JTextField();
+        NameField = new javax.swing.JTextField();
+        SiteField = new javax.swing.JTextField();
+        CIFField = new javax.swing.JTextField();
         AcceptButton = new javax.swing.JButton();
-        EmailCompanyDataEdit = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,21 +95,21 @@ public class CompanyDataEdit extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 24)); // NOI18N
         jLabel1.setText("Modificar empresa");
 
-        NameCompanyDataEdit.addActionListener(new java.awt.event.ActionListener() {
+        NameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameCompanyDataEditActionPerformed(evt);
+                NameFieldActionPerformed(evt);
             }
         });
 
-        SiteCompanyDataEdit.addActionListener(new java.awt.event.ActionListener() {
+        SiteField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SiteCompanyDataEditActionPerformed(evt);
+                SiteFieldActionPerformed(evt);
             }
         });
 
-        CIFCompanyDataEdit.addActionListener(new java.awt.event.ActionListener() {
+        CIFField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CIFCompanyDataEditActionPerformed(evt);
+                CIFFieldActionPerformed(evt);
             }
         });
 
@@ -121,9 +121,9 @@ public class CompanyDataEdit extends javax.swing.JFrame {
             }
         });
 
-        EmailCompanyDataEdit.addActionListener(new java.awt.event.ActionListener() {
+        Email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailCompanyDataEditActionPerformed(evt);
+                EmailActionPerformed(evt);
             }
         });
 
@@ -160,12 +160,12 @@ public class CompanyDataEdit extends javax.swing.JFrame {
                         .addComponent(jLabel8))
                     .addGap(34, 34, 34)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(EmailCompanyDataEdit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
-                        .addComponent(PasswordCompanyDataEdit, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(SiteCompanyDataEdit)
-                        .addComponent(CIFCompanyDataEdit)
-                        .addComponent(RepeatPasswordCompanyDataEdit)
-                        .addComponent(NameCompanyDataEdit))
+                        .addComponent(Email, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                        .addComponent(PasswordField, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(SiteField)
+                        .addComponent(CIFField)
+                        .addComponent(RepeatPasswordField)
+                        .addComponent(NameField))
                     .addGap(25, 25, 25)))
         );
         layout.setVerticalGroup(
@@ -184,26 +184,26 @@ public class CompanyDataEdit extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(93, 93, 93)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(NameCompanyDataEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2))
                     .addGap(18, 18, 18)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(SiteCompanyDataEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SiteField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3))
                     .addGap(18, 18, 18)
-                    .addComponent(CIFCompanyDataEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CIFField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(EmailCompanyDataEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5))
                     .addGap(27, 27, 27)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(PasswordCompanyDataEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel6))
                     .addGap(18, 18, 18)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8)
-                        .addComponent(RepeatPasswordCompanyDataEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(RepeatPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(97, Short.MAX_VALUE)))
         );
 
@@ -216,27 +216,27 @@ public class CompanyDataEdit extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void NameCompanyDataEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameCompanyDataEditActionPerformed
+    private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameCompanyDataEditActionPerformed
+    }//GEN-LAST:event_NameFieldActionPerformed
 
-    private void SiteCompanyDataEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiteCompanyDataEditActionPerformed
+    private void SiteFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiteFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SiteCompanyDataEditActionPerformed
+    }//GEN-LAST:event_SiteFieldActionPerformed
 
-    private void CIFCompanyDataEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIFCompanyDataEditActionPerformed
+    private void CIFFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIFFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CIFCompanyDataEditActionPerformed
+    }//GEN-LAST:event_CIFFieldActionPerformed
 
     private void AcceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptButtonActionPerformed
-        boolean emptyFields = CIFCompanyDataEdit.getText().equals("") //no esta
-                | EmailCompanyDataEdit.getText().equals("") //esta
-                | NameCompanyDataEdit.getText().equals("") //esta
-                | PasswordCompanyDataEdit.getPassword().equals("") //esta
-                | RepeatPasswordCompanyDataEdit.getPassword().equals("") //esta
-                | SiteCompanyDataEdit.getText().equals("");
+        boolean emptyFields = CIFField.getText().equals("") //no esta
+                | Email.getText().equals("") //esta
+                | NameField.getText().equals("") //esta
+                | PasswordField.getPassword().equals("") //esta
+                | RepeatPasswordField.getPassword().equals("") //esta
+                | SiteField.getText().equals("");
 
-        if (emptyFields | !(Arrays.equals(PasswordCompanyDataEdit.getPassword(), RepeatPasswordCompanyDataEdit.getPassword()))) {
+        if (emptyFields | !(Arrays.equals(PasswordField.getPassword(), RepeatPasswordField.getPassword()))) {
             if (emptyFields) {
                 JOptionPane.showMessageDialog(this, "Existen campos vacíos", "Registro", JOptionPane.ERROR_MESSAGE);
             } else {
@@ -245,29 +245,29 @@ public class CompanyDataEdit extends javax.swing.JFrame {
         } else {
             String finalEncodePassword;
 
-            Password password = new Password((String.valueOf(PasswordCompanyDataEdit.getPassword())));
+            Password password = new Password((String.valueOf(PasswordField.getPassword())));
             PasswordAdapter passwordAdapter = new PasswordAdapter(password);
 
             finalEncodePassword = new PasswordEncode().save(passwordAdapter);
 
-            IntCompany company = new NotSubscriberFactory().createCompany(NameCompanyDataEdit.getText(), EmailCompanyDataEdit.getText(), finalEncodePassword, SiteCompanyDataEdit.getText(), CIFCompanyDataEdit.getText());
+            IntCompany company = new NotSubscriberFactory().createCompany(NameField.getText(), Email.getText(), finalEncodePassword, SiteField.getText(), CIFField.getText());
         }
     }//GEN-LAST:event_AcceptButtonActionPerformed
 
-    private void EmailCompanyDataEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailCompanyDataEditActionPerformed
+    private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EmailCompanyDataEditActionPerformed
+    }//GEN-LAST:event_EmailActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AcceptButton;
     private javax.swing.JButton BackButton;
-    private javax.swing.JTextField CIFCompanyDataEdit;
-    private javax.swing.JTextField EmailCompanyDataEdit;
-    private javax.swing.JTextField NameCompanyDataEdit;
-    private javax.swing.JPasswordField PasswordCompanyDataEdit;
-    private javax.swing.JPasswordField RepeatPasswordCompanyDataEdit;
-    private javax.swing.JTextField SiteCompanyDataEdit;
+    private javax.swing.JTextField CIFField;
+    private javax.swing.JTextField Email;
+    private javax.swing.JTextField NameField;
+    private javax.swing.JPasswordField PasswordField;
+    private javax.swing.JPasswordField RepeatPasswordField;
+    private javax.swing.JTextField SiteField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

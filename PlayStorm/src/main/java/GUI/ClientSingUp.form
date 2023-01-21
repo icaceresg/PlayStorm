@@ -42,17 +42,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jTextFieldSurname" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextFieldName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextFieldUser" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jPasswordFieldClientSingUp" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jPasswordFieldRepeatPasswordClientSingUp" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextFieldBirthday" alignment="0" max="32767" attributes="0"/>
+                          <Component id="SurnameField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="NameField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="UserField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="PasswordField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="PasswordRepeatField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="BirthdayField" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jButtonVolverClientSingUp" min="-2" pref="146" max="-2" attributes="0"/>
+                      <Component id="BackButton" min="-2" pref="146" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -68,15 +68,15 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jButtonRegistrarseClientSingUp" min="-2" pref="133" max="-2" attributes="0"/>
+                      <Component id="SingUpButton" min="-2" pref="133" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jTextFieldCreditCard" max="32767" attributes="0"/>
-                      <Component id="jTextFieldLocalization" max="32767" attributes="0"/>
-                      <Component id="jTextFieldTelephone" alignment="0" pref="129" max="32767" attributes="0"/>
+                      <Component id="CreditCardField" max="32767" attributes="0"/>
+                      <Component id="LocalizationField" max="32767" attributes="0"/>
+                      <Component id="TelephoneField" alignment="0" pref="129" max="32767" attributes="0"/>
                   </Group>
                   <Component id="VIPComboBox" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -93,52 +93,52 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldUser" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldCreditCard" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="UserField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CreditCardField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldLocalization" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="NameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LocalizationField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldSurname" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SurnameField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TelephoneField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPasswordFieldClientSingUp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PasswordField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="VIPComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPasswordFieldRepeatPasswordClientSingUp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PasswordRepeatField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldBirthday" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BirthdayField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="42" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButtonVolverClientSingUp" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="jButtonRegistrarseClientSingUp" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Component id="BackButton" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Component id="SingUpButton" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
           </Group>
@@ -236,7 +236,7 @@
         <Property name="text" type="java.lang.String" value="Tel&#xe9;fono:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonRegistrarseClientSingUp">
+    <Component class="javax.swing.JButton" name="SingUpButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -244,10 +244,10 @@
         <Property name="text" type="java.lang.String" value="Registrarse"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRegistrarseClientSingUpActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SingUpButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonVolverClientSingUp">
+    <Component class="javax.swing.JButton" name="BackButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -256,34 +256,34 @@
         <Property name="actionCommand" type="java.lang.String" value="jButtonVolver"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonVolverClientSingUpActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BackButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldUser">
+    <Component class="javax.swing.JTextField" name="UserField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldUserActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UserFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldName">
+    <Component class="javax.swing.JTextField" name="NameField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldSurname">
+    <Component class="javax.swing.JTextField" name="SurnameField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldSurnameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SurnameFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldBirthday">
+    <Component class="javax.swing.JTextField" name="BirthdayField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldCreditCard">
+    <Component class="javax.swing.JTextField" name="CreditCardField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldLocalization">
+    <Component class="javax.swing.JTextField" name="LocalizationField">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldTelephone">
+    <Component class="javax.swing.JTextField" name="TelephoneField">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordFieldClientSingUp">
+    <Component class="javax.swing.JPasswordField" name="PasswordField">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordFieldRepeatPasswordClientSingUp">
+    <Component class="javax.swing.JPasswordField" name="PasswordRepeatField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jPasswordFieldRepeatPasswordClientSingUpActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PasswordRepeatFieldActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="VIPComboBox">

@@ -35,7 +35,7 @@ public class CompanyMenu extends javax.swing.JFrame {
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
 
-        NameLabel.setText(User.usuarioActivo.get(0).getName());
+        Name.setText(User.usuarioActivo.get(0).getName());
     }
 
     /**
@@ -49,17 +49,17 @@ public class CompanyMenu extends javax.swing.JFrame {
 
         jDialog1 = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
-        jButtonAnnadirProducto = new javax.swing.JButton();
-        jButtonBorrarProducto = new javax.swing.JButton();
-        jButtonVerVentas = new javax.swing.JButton();
-        NameLabel = new javax.swing.JLabel();
+        AddProduct = new javax.swing.JButton();
+        DeleteProduct = new javax.swing.JButton();
+        Sales = new javax.swing.JButton();
+        Name = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenuProvideer = new javax.swing.JMenu();
-        jMenuItemEditProvideer = new javax.swing.JMenuItem();
-        jMenuStudioRegister = new javax.swing.JMenu();
-        jMenuItemStudioRegister = new javax.swing.JMenuItem();
-        jMenuCloseSession = new javax.swing.JMenu();
-        jMenuItemCloseSession = new javax.swing.JMenuItem();
+        ProvideerMenu = new javax.swing.JMenu();
+        Provideer = new javax.swing.JMenuItem();
+        StudioRegisterMenu = new javax.swing.JMenu();
+        StudioRegister = new javax.swing.JMenuItem();
+        CloseSessionMenu = new javax.swing.JMenu();
+        CloseSession = new javax.swing.JMenuItem();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -77,67 +77,67 @@ public class CompanyMenu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setText("Bienvenido,");
 
-        jButtonAnnadirProducto.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonAnnadirProducto.setText("Añadir Producto");
-        jButtonAnnadirProducto.setToolTipText("");
-        jButtonAnnadirProducto.addActionListener(new java.awt.event.ActionListener() {
+        AddProduct.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        AddProduct.setText("Añadir Producto");
+        AddProduct.setToolTipText("");
+        AddProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAnnadirProductoActionPerformed(evt);
+                AddProductActionPerformed(evt);
             }
         });
 
-        jButtonBorrarProducto.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonBorrarProducto.setText("Ver Productos");
-        jButtonBorrarProducto.addActionListener(new java.awt.event.ActionListener() {
+        DeleteProduct.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        DeleteProduct.setText("Ver Productos");
+        DeleteProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBorrarProductoActionPerformed(evt);
+                DeleteProductActionPerformed(evt);
             }
         });
 
-        jButtonVerVentas.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonVerVentas.setText("Ver Ventas");
-        jButtonVerVentas.setActionCommand("");
-        jButtonVerVentas.addActionListener(new java.awt.event.ActionListener() {
+        Sales.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        Sales.setText("Ver Ventas");
+        Sales.setActionCommand("");
+        Sales.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerVentasActionPerformed(evt);
+                SalesActionPerformed(evt);
             }
         });
 
-        jMenuProvideer.setText("Proveedor");
+        ProvideerMenu.setText("Proveedor");
 
-        jMenuItemEditProvideer.setText("Editar Proveedor");
-        jMenuItemEditProvideer.addActionListener(new java.awt.event.ActionListener() {
+        Provideer.setText("Editar Proveedor");
+        Provideer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemEditProvideerActionPerformed(evt);
+                ProvideerActionPerformed(evt);
             }
         });
-        jMenuProvideer.add(jMenuItemEditProvideer);
+        ProvideerMenu.add(Provideer);
 
-        jMenuBar1.add(jMenuProvideer);
+        jMenuBar1.add(ProvideerMenu);
 
-        jMenuStudioRegister.setText("Registrar Estudio");
+        StudioRegisterMenu.setText("Registrar Estudio");
 
-        jMenuItemStudioRegister.setText("Registrar Estudio");
-        jMenuItemStudioRegister.addActionListener(new java.awt.event.ActionListener() {
+        StudioRegister.setText("Registrar Estudio");
+        StudioRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemStudioRegisterActionPerformed(evt);
+                StudioRegisterActionPerformed(evt);
             }
         });
-        jMenuStudioRegister.add(jMenuItemStudioRegister);
+        StudioRegisterMenu.add(StudioRegister);
 
-        jMenuBar1.add(jMenuStudioRegister);
+        jMenuBar1.add(StudioRegisterMenu);
 
-        jMenuCloseSession.setText("Cerrar Sesión");
+        CloseSessionMenu.setText("Cerrar Sesión");
 
-        jMenuItemCloseSession.setText("Cerrar Sesion");
-        jMenuItemCloseSession.addActionListener(new java.awt.event.ActionListener() {
+        CloseSession.setText("Cerrar Sesion");
+        CloseSession.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemCloseSessionActionPerformed(evt);
+                CloseSessionActionPerformed(evt);
             }
         });
-        jMenuCloseSession.add(jMenuItemCloseSession);
+        CloseSessionMenu.add(CloseSession);
 
-        jMenuBar1.add(jMenuCloseSession);
+        jMenuBar1.add(CloseSessionMenu);
 
         setJMenuBar(jMenuBar1);
 
@@ -151,13 +151,13 @@ public class CompanyMenu extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(158, 158, 158)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonAnnadirProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                            .addComponent(jButtonBorrarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonVerVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(AddProduct, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                            .addComponent(DeleteProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Sales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -166,70 +166,70 @@ public class CompanyMenu extends javax.swing.JFrame {
                 .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
-                .addComponent(jButtonAnnadirProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AddProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jButtonBorrarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DeleteProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jButtonVerVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Sales, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(113, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonAnnadirProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnnadirProductoActionPerformed
+    private void AddProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddProductActionPerformed
         ProductCreation productCreationMenu = new ProductCreation();
         productCreationMenu.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButtonAnnadirProductoActionPerformed
+    }//GEN-LAST:event_AddProductActionPerformed
 
-    private void jButtonBorrarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBorrarProductoActionPerformed
+    private void DeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteProductActionPerformed
         MyProducts myProducts = new MyProducts();
         myProducts.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButtonBorrarProductoActionPerformed
+    }//GEN-LAST:event_DeleteProductActionPerformed
 
-    private void jMenuItemStudioRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemStudioRegisterActionPerformed
+    private void StudioRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudioRegisterActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_jMenuItemStudioRegisterActionPerformed
+    }//GEN-LAST:event_StudioRegisterActionPerformed
 
-    private void jMenuItemCloseSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCloseSessionActionPerformed
+    private void CloseSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseSessionActionPerformed
         int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
         if (resp == 0) {
             IntLogOut logOutCommand = new LogoutCommand();
             logOutCommand.logOut(this);
         }
-    }//GEN-LAST:event_jMenuItemCloseSessionActionPerformed
+    }//GEN-LAST:event_CloseSessionActionPerformed
 
-    private void jButtonVerVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerVentasActionPerformed
+    private void SalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalesActionPerformed
         MySales mySales = new MySales();
         mySales.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButtonVerVentasActionPerformed
+    }//GEN-LAST:event_SalesActionPerformed
 
-    private void jMenuItemEditProvideerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEditProvideerActionPerformed
+    private void ProvideerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProvideerActionPerformed
         CompanyDataEdit companyMenu = new CompanyDataEdit();
         companyMenu.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItemEditProvideerActionPerformed
+    }//GEN-LAST:event_ProvideerActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel NameLabel;
-    private javax.swing.JButton jButtonAnnadirProducto;
-    private javax.swing.JButton jButtonBorrarProducto;
-    private javax.swing.JButton jButtonVerVentas;
+    private javax.swing.JButton AddProduct;
+    private javax.swing.JMenuItem CloseSession;
+    private javax.swing.JMenu CloseSessionMenu;
+    private javax.swing.JButton DeleteProduct;
+    private javax.swing.JLabel Name;
+    private javax.swing.JMenuItem Provideer;
+    private javax.swing.JMenu ProvideerMenu;
+    private javax.swing.JButton Sales;
+    private javax.swing.JMenuItem StudioRegister;
+    private javax.swing.JMenu StudioRegisterMenu;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu jMenuCloseSession;
-    private javax.swing.JMenuItem jMenuItemCloseSession;
-    private javax.swing.JMenuItem jMenuItemEditProvideer;
-    private javax.swing.JMenuItem jMenuItemStudioRegister;
-    private javax.swing.JMenu jMenuProvideer;
-    private javax.swing.JMenu jMenuStudioRegister;
     // End of variables declaration//GEN-END:variables
 }

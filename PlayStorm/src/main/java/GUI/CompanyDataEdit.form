@@ -55,12 +55,12 @@
                   </Group>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="EmailCompanyDataEdit" alignment="1" pref="295" max="32767" attributes="0"/>
-                      <Component id="PasswordCompanyDataEdit" alignment="1" max="32767" attributes="0"/>
-                      <Component id="SiteCompanyDataEdit" alignment="0" max="32767" attributes="0"/>
-                      <Component id="CIFCompanyDataEdit" alignment="0" max="32767" attributes="0"/>
-                      <Component id="RepeatPasswordCompanyDataEdit" alignment="0" max="32767" attributes="0"/>
-                      <Component id="NameCompanyDataEdit" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Email" alignment="1" pref="295" max="32767" attributes="0"/>
+                      <Component id="PasswordField" alignment="1" max="32767" attributes="0"/>
+                      <Component id="SiteField" alignment="0" max="32767" attributes="0"/>
+                      <Component id="CIFField" alignment="0" max="32767" attributes="0"/>
+                      <Component id="RepeatPasswordField" alignment="0" max="32767" attributes="0"/>
+                      <Component id="NameField" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
@@ -85,30 +85,30 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NameCompanyDataEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="NameField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="SiteCompanyDataEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="SiteField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="CIFCompanyDataEdit" min="-2" max="-2" attributes="0"/>
+                  <Component id="CIFField" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="EmailCompanyDataEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Email" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="PasswordCompanyDataEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PasswordField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="RepeatPasswordCompanyDataEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RepeatPasswordField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="97" max="32767" attributes="0"/>
               </Group>
@@ -117,7 +117,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JPasswordField" name="PasswordCompanyDataEdit">
+    <Component class="javax.swing.JPasswordField" name="PasswordField">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -143,7 +143,7 @@
         <Property name="text" type="java.lang.String" value="Localizaci&#xf3;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="RepeatPasswordCompanyDataEdit">
+    <Component class="javax.swing.JPasswordField" name="RepeatPasswordField">
     </Component>
     <Component class="javax.swing.JButton" name="BackButton">
       <Properties>
@@ -180,19 +180,19 @@
         <Property name="text" type="java.lang.String" value="Modificar empresa"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="NameCompanyDataEdit">
+    <Component class="javax.swing.JTextField" name="NameField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameCompanyDataEditActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="SiteCompanyDataEdit">
+    <Component class="javax.swing.JTextField" name="SiteField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SiteCompanyDataEditActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SiteFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="CIFCompanyDataEdit">
+    <Component class="javax.swing.JTextField" name="CIFField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CIFCompanyDataEditActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CIFFieldActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="AcceptButton">
@@ -206,9 +206,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AcceptButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="EmailCompanyDataEdit">
+    <Component class="javax.swing.JTextField" name="Email">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailCompanyDataEditActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">

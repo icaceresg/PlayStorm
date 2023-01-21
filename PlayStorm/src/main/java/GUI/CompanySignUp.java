@@ -66,11 +66,11 @@ public class CompanySignUp extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        NameTextField = new javax.swing.JTextField();
-        SiteTextField = new javax.swing.JTextField();
-        CIFTextField = new javax.swing.JTextField();
+        NameField = new javax.swing.JTextField();
+        SiteField = new javax.swing.JTextField();
+        CIFField = new javax.swing.JTextField();
         AcceptButton = new javax.swing.JButton();
-        EmailTextField = new javax.swing.JTextField();
+        EmailField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         VIPComboBox = new javax.swing.JCheckBox();
 
@@ -102,21 +102,21 @@ public class CompanySignUp extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 24)); // NOI18N
         jLabel1.setText("Registro de empresa");
 
-        NameTextField.addActionListener(new java.awt.event.ActionListener() {
+        NameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameTextFieldActionPerformed(evt);
+                NameFieldActionPerformed(evt);
             }
         });
 
-        SiteTextField.addActionListener(new java.awt.event.ActionListener() {
+        SiteField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SiteTextFieldActionPerformed(evt);
+                SiteFieldActionPerformed(evt);
             }
         });
 
-        CIFTextField.addActionListener(new java.awt.event.ActionListener() {
+        CIFField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CIFTextFieldActionPerformed(evt);
+                CIFFieldActionPerformed(evt);
             }
         });
 
@@ -128,9 +128,9 @@ public class CompanySignUp extends javax.swing.JFrame {
             }
         });
 
-        EmailTextField.addActionListener(new java.awt.event.ActionListener() {
+        EmailField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailTextFieldActionPerformed(evt);
+                EmailFieldActionPerformed(evt);
             }
         });
 
@@ -175,12 +175,12 @@ public class CompanySignUp extends javax.swing.JFrame {
                         .addComponent(jLabel8))
                     .addGap(34, 34, 34)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(EmailTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                        .addComponent(EmailField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
                         .addComponent(PasswordField, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(SiteTextField)
-                        .addComponent(CIFTextField)
+                        .addComponent(SiteField)
+                        .addComponent(CIFField)
                         .addComponent(RepeatPasswordField)
-                        .addComponent(NameTextField))
+                        .addComponent(NameField))
                     .addGap(25, 25, 25)))
         );
         layout.setVerticalGroup(
@@ -200,17 +200,17 @@ public class CompanySignUp extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(93, 93, 93)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(NameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2))
                     .addGap(18, 18, 18)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(SiteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SiteField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3))
                     .addGap(18, 18, 18)
-                    .addComponent(CIFTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CIFField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(EmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(EmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5))
                     .addGap(27, 27, 27)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -232,25 +232,25 @@ public class CompanySignUp extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
+    private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameTextFieldActionPerformed
+    }//GEN-LAST:event_NameFieldActionPerformed
 
-    private void SiteTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiteTextFieldActionPerformed
+    private void SiteFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiteFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SiteTextFieldActionPerformed
+    }//GEN-LAST:event_SiteFieldActionPerformed
 
-    private void CIFTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIFTextFieldActionPerformed
+    private void CIFFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIFFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CIFTextFieldActionPerformed
+    }//GEN-LAST:event_CIFFieldActionPerformed
 
     private void AcceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptButtonActionPerformed
-        boolean emptyFields = CIFTextField.getText().equals("") //no esta
-                | EmailTextField.getText().equals("") //esta
-                | NameTextField.getText().equals("") //esta
+        boolean emptyFields = CIFField.getText().equals("") //no esta
+                | EmailField.getText().equals("") //esta
+                | NameField.getText().equals("") //esta
                 | PasswordField.getPassword().equals("") //esta
                 | RepeatPasswordField.getPassword().equals("") //esta
-                | SiteTextField.getText().equals("");
+                | SiteField.getText().equals("");
 
         if (emptyFields | !(Arrays.equals(PasswordField.getPassword(), RepeatPasswordField.getPassword()))) {
             if (emptyFields) {
@@ -259,9 +259,9 @@ public class CompanySignUp extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales", "Registro", JOptionPane.ERROR_MESSAGE);
             }
 
-        } else if (sameEmail(EmailTextField.getText())) {
+        } else if (sameEmail(EmailField.getText())) {
             JOptionPane.showMessageDialog(this, "Ese correo ya existe", "Registro", JOptionPane.ERROR_MESSAGE);
-            EmailTextField.setText("");
+            EmailField.setText("");
 
         } else {
             String finalEncodePassword;
@@ -273,9 +273,9 @@ public class CompanySignUp extends javax.swing.JFrame {
 
             IntCompany company;
             if (VIPComboBox.isSelected()) {
-                company = new SubscriberFactory().createCompany(NameTextField.getText(), EmailTextField.getText(), finalEncodePassword, SiteTextField.getText(), CIFTextField.getText());
+                company = new SubscriberFactory().createCompany(NameField.getText(), EmailField.getText(), finalEncodePassword, SiteField.getText(), CIFField.getText());
             } else {
-                company = new NotSubscriberFactory().createCompany(NameTextField.getText(), EmailTextField.getText(), finalEncodePassword, SiteTextField.getText(), CIFTextField.getText());
+                company = new NotSubscriberFactory().createCompany(NameField.getText(), EmailField.getText(), finalEncodePassword, SiteField.getText(), CIFField.getText());
             }
 
             DataBase database = new DataBase();
@@ -292,9 +292,9 @@ public class CompanySignUp extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AcceptButtonActionPerformed
 
-    private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed
+    private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EmailTextFieldActionPerformed
+    }//GEN-LAST:event_EmailFieldActionPerformed
 
     private void VIPComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VIPComboBoxActionPerformed
         // TODO add your handling code here:
@@ -304,12 +304,12 @@ public class CompanySignUp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AcceptButton;
     private javax.swing.JButton BackButton;
-    private javax.swing.JTextField CIFTextField;
-    private javax.swing.JTextField EmailTextField;
-    private javax.swing.JTextField NameTextField;
+    private javax.swing.JTextField CIFField;
+    private javax.swing.JTextField EmailField;
+    private javax.swing.JTextField NameField;
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JPasswordField RepeatPasswordField;
-    private javax.swing.JTextField SiteTextField;
+    private javax.swing.JTextField SiteField;
     private javax.swing.JCheckBox VIPComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
