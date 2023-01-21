@@ -17,6 +17,7 @@ public class ClientIterator implements IntIterator {
         if (i < clientContainer.clients.size()) {
             return true;
         }
+        i = 0;
         return false;
     }
 

@@ -25,6 +25,7 @@ public class CompanyIterator implements IntIterator {
         if (i < companyContainer.companies.size()) {
             return true;
         }
+        i = 0;
         return false;
     }
 

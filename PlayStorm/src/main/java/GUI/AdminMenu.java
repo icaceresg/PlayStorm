@@ -162,7 +162,7 @@ public class AdminMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEliminarProductoActionPerformed
 
     private void jButtonEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarUsuarioActionPerformed
-        AllUsers allUsers = new AllUsers();
+        AllClients allUsers = new AllClients();
         allUsers.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonEliminarUsuarioActionPerformed

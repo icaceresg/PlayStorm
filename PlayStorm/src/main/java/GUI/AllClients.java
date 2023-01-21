@@ -1,9 +1,9 @@
 package GUI;
 
-import Class.AbstractFactory.TemplateMethod.SubscriberCompany;
+import Class.AbstractFactory.TemplateMethod.SubscriberClient;
 import Class.DataBase;
-import Class.Iterator.CompanyIterator;
-import Interfaces.IntCompany;
+import Class.Iterator.ClientIterator;
+import Interfaces.IntClient;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -15,26 +15,26 @@ import javax.swing.table.DefaultTableModel;
  * Ventana para ver la lista de productos añadidos al carrito para poder
  * comprarlo
  */
-public class AllCompanies extends javax.swing.JFrame {
+public class AllClients extends javax.swing.JFrame {
 
-    public AllCompanies() {
-        // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
-        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
-        int height = pantalla.height / 2;
-        int width = pantalla.width / 2;
-        setSize(width, height);
-        setLocationRelativeTo(null);
-        initComponents();
+    public AllClients() {
         try {
+            // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
+            Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+            int height = pantalla.height / 2;
+            int width = pantalla.width / 2;
+            setSize(width, height);
+            setLocationRelativeTo(null);
+            initComponents();
             addRowToJTable();
+
+            this.setTitle("JavaPop");
+
+            ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
+            this.setIconImage(imagen.getImage());
         } catch (Exception ex) {
-            Logger.getLogger(AllCompanies.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AllClients.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        this.setTitle("JavaPop");
-
-        ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
-        this.setIconImage(imagen.getImage());
     }
 
     /**
@@ -43,26 +43,25 @@ public class AllCompanies extends javax.swing.JFrame {
      */
     public void addRowToJTable() throws Exception {
 
-        DefaultTableModel model = (DefaultTableModel) AllCompaniesTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) AllClientsTable.getModel();
 
-        CompanyIterator iterator = new CompanyIterator();
-        Object rowData[] = new Object[AllCompaniesTable.getColumnCount()];
+        ClientIterator iterator = new ClientIterator();
+        Object rowData[] = new Object[AllClientsTable.getColumnCount()];
 
         while (iterator.hasNext()) {
-            IntCompany company = iterator.next();
+            IntClient client = iterator.next();
 
-            rowData[0] = company.getCif();
-            rowData[1] = company.getName();
-            rowData[2] = company.getSite();
-            rowData[3] = company.getEmail();
-            rowData[4] = false;
+            rowData[0] = client.getName();
+            rowData[1] = client.getLastName();
+            rowData[2] = client.getEmail();
+            rowData[3] = client.getPhone();
+            rowData[4] = client.getSite();
+            rowData[5] = false;
 
-            if (company instanceof SubscriberCompany) {
-                rowData[4] = true;
+            if (client instanceof SubscriberClient) {
+                rowData[5] = true;
             }
-
             model.addRow(rowData);
-
         }
 
     }
@@ -71,28 +70,28 @@ public class AllCompanies extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        AllCompaniesPane = new javax.swing.JScrollPane();
-        AllCompaniesTable = new javax.swing.JTable();
+        AllClientsPane = new javax.swing.JScrollPane();
+        AllClientsTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         BackButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        AllCompaniesTable.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
-        AllCompaniesTable.setModel(new javax.swing.table.DefaultTableModel(
+        AllClientsTable.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
+        AllClientsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "CIF", "Nombre", "Localización", "Correo", "Suscrito"
+                "Nombre", "Apellido", "Usuario", "Teléfono", "Localización", "Suscrito"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -103,11 +102,11 @@ public class AllCompanies extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        AllCompaniesPane.setViewportView(AllCompaniesTable);
+        AllClientsPane.setViewportView(AllClientsTable);
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Empresas");
+        jLabel1.setText("Clientes registrados");
 
         BackButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         BackButton.setText("Volver");
@@ -129,21 +128,23 @@ public class AllCompanies extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(283, 283, 283))
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(BackButton)
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(AllCompaniesPane, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 35, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(354, 354, 354))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(AllClientsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,9 +155,9 @@ public class AllCompanies extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(AllCompaniesPane, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AllClientsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
@@ -170,25 +171,27 @@ public class AllCompanies extends javax.swing.JFrame {
         AdminMenu adminMenu = new AdminMenu();
         adminMenu.setVisible(true);
         this.dispose();
+
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
-        int num = AllCompaniesTable.getSelectedRow();
+        int num = AllClientsTable.getSelectedRow();
         //Eliminamos el producto seleccionado
         if (num != -1) {
             try {
-                DefaultTableModel modelo = (DefaultTableModel) AllCompaniesTable.getModel();
+                DefaultTableModel modelo = (DefaultTableModel) AllClientsTable.getModel();
 
-                CompanyIterator iteratorCompany = new CompanyIterator();
-                while (iteratorCompany.hasNext()) {
-                    IntCompany company = iteratorCompany.next();
+                ClientIterator iteratorClient = new ClientIterator();
+                while (iteratorClient.hasNext()) {
+                    IntClient client = iteratorClient.next();
 
-                    if (company.getEmail().equals((String) modelo.getValueAt(num, 3))) {
-                        iteratorCompany.deleteCompany(company);
+                    if (client.getEmail().equals((String) modelo.getValueAt(num, 2))) {
+                        iteratorClient.deleteClient(client);
+
                     }
                 }
                 DataBase database = new DataBase();
-                database.saveIteratorCompany(iteratorCompany);
+                database.saveIteratorClient(iteratorClient);
                 modelo.removeRow(num);
                 //Si no seleccionamos ninguno se muestra una advertencia
             } catch (Exception ex) {
@@ -200,8 +203,8 @@ public class AllCompanies extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane AllCompaniesPane;
-    private javax.swing.JTable AllCompaniesTable;
+    private javax.swing.JScrollPane AllClientsPane;
+    private javax.swing.JTable AllClientsTable;
     private javax.swing.JButton BackButton;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JLabel jLabel1;
