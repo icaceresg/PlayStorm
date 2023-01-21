@@ -9,6 +9,7 @@ public class Product implements Serializable {
     private float price;
     private int amount;
     private int id;
+    private IntCompany company;
 
     public Product(String title, String description, float price, int amount, String category) throws Exception {
         this.title = title;
