@@ -5,7 +5,10 @@
 package GUI;
 
 import Class.DataBase;
+import Class.Iterator.CompanyIterator;
 import Class.Product;
+import Class.User;
+import Interfaces.IntCompany;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.logging.Level;
@@ -227,36 +230,44 @@ public class ProductCreation extends javax.swing.JFrame {
 
     private void jButtonCrearProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearProductCreationActionPerformed
         boolean emptyFields = jTextFieldTituloProductCreation.getText().equals("")
-               | jTextFieldDescipcionProductCreation.getText().equals("")
-               | jTextFieldPrecioProductCreation.getText().equals("")
-               | jTextFieldCantidadProductCreation.getText().equals("")
-               | jComboBoxCategoriaProductCreation.getSelectedIndex() == 0;
-       
-       if (emptyFields) {
+                | jTextFieldDescipcionProductCreation.getText().equals("")
+                | jTextFieldPrecioProductCreation.getText().equals("")
+                | jTextFieldCantidadProductCreation.getText().equals("")
+                | jComboBoxCategoriaProductCreation.getSelectedIndex() == 0;
+
+        if (emptyFields) {
             JOptionPane.showMessageDialog(this, "Existen campos vacíos o no has seleccionado una categoría", "Registro juego", JOptionPane.ERROR_MESSAGE);
             return;
-       }
-       Product product;
-       DataBase database = new DataBase();
-       
+        }
+        Product product;
+        DataBase database = new DataBase();
+
+        CompanyIterator iteratorCompany;
+        IntCompany company = null;
         try {
-            product = new Product (jTextFieldTituloProductCreation.getText(),
+            iteratorCompany = new CompanyIterator();
+            while (iteratorCompany.hasNext()) {
+                company = iteratorCompany.next();
+                if (company.getEmail().equals(User.usuarioActivo.get(0).getEmail()))
+                    break;
+            }
+
+            product = new Product(jTextFieldTituloProductCreation.getText(),
                     jTextFieldDescipcionProductCreation.getText(),
                     Float.parseFloat(jTextFieldPrecioProductCreation.getText()),
                     Integer.parseInt(jTextFieldCantidadProductCreation.getText()),
-                    jComboBoxCategoriaProductCreation.getSelectedItem().toString());
+                    jComboBoxCategoriaProductCreation.getSelectedItem().toString(),
+                    company);
             database.saveProducts(product);
             JOptionPane.showMessageDialog(this, "Juego registrado correctamente", "Registro juego", JOptionPane.INFORMATION_MESSAGE);
             CompanyMenu companyMenu = new CompanyMenu();
             companyMenu.setVisible(true);
             this.dispose();
-        }
-        catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Debes poner una cantidad y precio adecuado", "Registro juego", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception ex) {
             Logger.getLogger(ProductCreation.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
     }//GEN-LAST:event_jButtonCrearProductCreationActionPerformed
 
     private void jButtonCancelarProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarProductCreationActionPerformed

@@ -31,10 +31,6 @@ public interface IntCompany extends IntUser {
 
     public void setWallet(float wallet);
 
-    public boolean isSubscribe();
-
-    public void setSubscribe(boolean subscribe);
-
     public Map<String, Integer> getDiscounts();
 
     public void setDiscounts(Map<String, Integer> discounts);

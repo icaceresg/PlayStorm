@@ -29,7 +29,7 @@ public class Demo {
         //database.saveProducts(new Product("hola", "a", 2, 2));
         ProductIterator iteratorProduct = new ProductIterator();
         while (iteratorProduct.hasNext()) {
-            System.out.println(iteratorProduct.next().getName());
+            System.out.println(iteratorProduct.next().getTitle());
         }
 
         //database.saveCompanies(new Company("amor", "a", "a", "a", "a", false));

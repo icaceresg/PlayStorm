@@ -28,7 +28,7 @@ public class AllUsers extends javax.swing.JFrame {
 
             this.setTitle("JavaPop");
 
-            ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png");
+            ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
             this.setIconImage(imagen.getImage());
         } catch (Exception ex) {
             Logger.getLogger(AllUsers.class.getName()).log(Level.SEVERE, null, ex);
@@ -49,9 +49,9 @@ public class AllUsers extends javax.swing.JFrame {
         while (iterator.hasNext()) {
             IntClient client = iterator.next();
 
-            rowData[0] = client.getEmail();
-            rowData[1] = client.getName();
-            rowData[2] = client.getLastName();
+            rowData[0] = client.getName();
+            rowData[1] = client.getLastName();
+            rowData[2] = client.getEmail();
             rowData[3] = client.getPhone();
             rowData[4] = client.getSite();
 
@@ -79,7 +79,7 @@ public class AllUsers extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Usuario", "Nombre", "Apellido", "Teléfono", "Localización"
+                "Nombre", "Apellido", "Usuario", "Teléfono", "Localización"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -94,7 +94,7 @@ public class AllUsers extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Usuarios Aplicación");
+        jLabel1.setText("Usuarios");
 
         ButtonBack.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         ButtonBack.setText("Volver");

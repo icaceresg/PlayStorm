@@ -1,5 +1,6 @@
 package GUI;
 
+import Class.AbstractFactory.TemplateMethod.SubscriberCompany;
 import Class.Iterator.CompanyIterator;
 import Interfaces.IntCompany;
 import java.awt.*;
@@ -31,7 +32,7 @@ public class AllCompanies extends javax.swing.JFrame {
 
         this.setTitle("JavaPop");
 
-        ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png");
+        ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
     }
 
@@ -53,6 +54,10 @@ public class AllCompanies extends javax.swing.JFrame {
             rowData[1] = company.getName();
             rowData[2] = company.getSite();
             rowData[3] = company.getEmail();
+            rowData[4] = false;
+
+            if(company instanceof SubscriberCompany)
+                rowData[4] = true;
 
             model.addRow(rowData);
 
@@ -78,12 +83,19 @@ public class AllCompanies extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CIF", "Nombre", "Localizacion", "Correo"
+                "CIF", "Nombre", "Localización", "Correo", "Suscrito"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -93,7 +105,7 @@ public class AllCompanies extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Compañias Aplicacion");
+        jLabel1.setText("Empresas");
 
         ButtonBack.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         ButtonBack.setText("Volver");

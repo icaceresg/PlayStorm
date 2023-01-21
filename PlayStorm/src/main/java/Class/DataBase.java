@@ -128,7 +128,7 @@ public class DataBase {
     }
 
     public void saveIteratorCompany(CompanyIterator iterator) throws IOException, Exception {
-        File file = new File(path, "Clients.txt");
+        File file = new File(path, "Company.txt");
         ObjectOutputStream oos = null;
         try {
             oos = new ObjectOutputStream(
@@ -203,7 +203,7 @@ public class DataBase {
     }
 
     public void saveIteratorProduct(ProductIterator iterator) throws IOException, Exception {
-        File file = new File(path, "Clients.txt");
+        File file = new File(path, "Product.txt");
         ObjectOutputStream oos = null;
         try {
             oos = new ObjectOutputStream(

@@ -1,6 +1,7 @@
 package Class;
 
 import Class.Iterator.ProductIterator;
+import Interfaces.IntCompany;
 import java.io.Serializable;
 
 public class Product implements Serializable {
@@ -9,13 +10,15 @@ public class Product implements Serializable {
     private float price;
     private int amount;
     private int id;
+    private IntCompany company;
 
-    public Product(String title, String description, float price, int amount, String category) throws Exception {
+    public Product(String title, String description, float price, int amount, String category, IntCompany company) throws Exception {
         this.title = title;
         this.description = description;
         this.price = price;
         this.amount = amount;
         this.category = category;
+        this.company = company;
         ProductIterator iterator = new ProductIterator();
         if (!iterator.hasNext()) {
             this.id = 0;
@@ -62,6 +65,22 @@ public class Product implements Serializable {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public IntCompany getCompany() {
+        return company;
+    }
+
+    public void setCompany(IntCompany company) {
+        this.company = company;
     }
 
 }

@@ -76,7 +76,7 @@ public class AdminMenu extends javax.swing.JFrame {
         jLabel1.setText("Bienvenido, ");
 
         jButtonEliminarProducto.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonEliminarProducto.setText("Eliminar Producto");
+        jButtonEliminarProducto.setText("Videojuegos");
         jButtonEliminarProducto.setToolTipText("");
         jButtonEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +85,7 @@ public class AdminMenu extends javax.swing.JFrame {
         });
 
         jButtonEliminarUsuario.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonEliminarUsuario.setText("Eliminar Usuario");
+        jButtonEliminarUsuario.setText("Usuarios");
         jButtonEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEliminarUsuarioActionPerformed(evt);
@@ -93,7 +93,7 @@ public class AdminMenu extends javax.swing.JFrame {
         });
 
         jButtonEliminarProveedor.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonEliminarProveedor.setText("Eliminar Proveedor");
+        jButtonEliminarProveedor.setText("Empresas");
         jButtonEliminarProveedor.setActionCommand("");
         jButtonEliminarProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,9 +104,9 @@ public class AdminMenu extends javax.swing.JFrame {
         NameLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         NameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jMenuCloseSession.setText("CerrarSesion");
+        jMenuCloseSession.setText("Cerrar Sesión");
 
-        jMenuItemCloseSession.setText("Cerrar Sesion");
+        jMenuItemCloseSession.setText("Cerrar Sesión");
         jMenuItemCloseSession.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemCloseSessionActionPerformed(evt);

@@ -25,7 +25,9 @@ public class ProductIterator implements IntIterator {
         if (i < productContainer.products.size()) {
             return true;
         }
+        i = 0;
         return false;
+
     }
 
     @Override

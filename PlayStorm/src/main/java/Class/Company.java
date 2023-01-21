@@ -16,7 +16,6 @@ public class Company extends User implements IntCompany {
     private String site, cif;
     private Product[] products;
     private float wallet;
-    private boolean subscribe;
     private Map<String, Integer> discounts; //String to promotional code, int to % discount
     private Company[] company; //List to companys
 
@@ -25,7 +24,6 @@ public class Company extends User implements IntCompany {
         this.site = site;
         this.cif = cif;
         this.wallet = 0;
-        this.subscribe = subscribe;
     }
 
     @Override
@@ -66,16 +64,6 @@ public class Company extends User implements IntCompany {
     @Override
     public void setWallet(float wallet) {
         this.wallet = wallet;
-    }
-
-    @Override
-    public boolean isSubscribe() {
-        return subscribe;
-    }
-
-    @Override
-    public void setSubscribe(boolean subscribe) {
-        this.subscribe = subscribe;
     }
 
     @Override

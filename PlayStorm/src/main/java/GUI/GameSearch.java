@@ -61,11 +61,10 @@ public class GameSearch extends javax.swing.JFrame {
 
             rowData[0] = product.getTitle();
             rowData[1] = product.getDescription();
-            rowData[2] = product.getPrice();
-            rowData[3] = product.getPrice(); //Comment this line or delete
-            
-            //rowData[3] = product.getCompany().getName();
-            rowData[4] = product.getAmount();
+            rowData[2] = product.getCategory();            
+            rowData[3] = product.getPrice();            
+            rowData[4] = product.getCompany().getName();
+            rowData[5] = product.getAmount();
 
             model.addRow(rowData);
 
@@ -144,9 +143,17 @@ public class GameSearch extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Titulo", "Descripción", "Precio", "Empresa", "Cantidad"
+                "Titulo", "Descripción", "Categoría", "Precio", "Empresa", "Cantidad"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTableProducts);
 
         jButtonAddtoCart.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N

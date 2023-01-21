@@ -21,12 +21,12 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenuCloseSession">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CerrarSesion"/>
+            <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemCloseSession">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cerrar Sesion"/>
+                <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemCloseSessionActionPerformed"/>
@@ -112,7 +112,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Eliminar Producto"/>
+        <Property name="text" type="java.lang.String" value="Videojuegos"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
@@ -124,7 +124,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Eliminar Usuario"/>
+        <Property name="text" type="java.lang.String" value="Usuarios"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEliminarUsuarioActionPerformed"/>
@@ -135,7 +135,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Eliminar Proveedor"/>
+        <Property name="text" type="java.lang.String" value="Empresas"/>
         <Property name="actionCommand" type="java.lang.String" value=""/>
       </Properties>
       <Events>
