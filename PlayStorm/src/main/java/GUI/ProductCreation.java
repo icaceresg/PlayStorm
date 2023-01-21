@@ -226,7 +226,7 @@ public class ProductCreation extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldPrecioProductCreationActionPerformed
 
     private void jButtonCrearProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearProductCreationActionPerformed
-       boolean emptyFields = jTextFieldTituloProductCreation.getText().equals("")
+        boolean emptyFields = jTextFieldTituloProductCreation.getText().equals("")
                | jTextFieldDescipcionProductCreation.getText().equals("")
                | jTextFieldPrecioProductCreation.getText().equals("")
                | jTextFieldCantidadProductCreation.getText().equals("")
@@ -246,10 +246,17 @@ public class ProductCreation extends javax.swing.JFrame {
                     Integer.parseInt(jTextFieldCantidadProductCreation.getText()),
                     jComboBoxCategoriaProductCreation.getSelectedItem().toString());
             database.saveProducts(product);
+            JOptionPane.showMessageDialog(this, "Juego registrado correctamente", "Registro juego", JOptionPane.INFORMATION_MESSAGE);
+            CompanyMenu companyMenu = new CompanyMenu();
+            companyMenu.setVisible(true);
+            this.dispose();
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "Debes poner una cantidad y precio adecuado", "Registro juego", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception ex) {
             Logger.getLogger(ProductCreation.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
+        } 
     }//GEN-LAST:event_jButtonCrearProductCreationActionPerformed
 
     private void jButtonCancelarProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarProductCreationActionPerformed
