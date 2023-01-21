@@ -49,9 +49,10 @@ A simulation of online video game store like Steam
    - EstadoConcreto: NewOrderState, ProcessingOrderState.
    - Contexto: Order
  - **Observer:** Actualización del valor de la cartera del cliente cada vez que añade dinero o compra productos.
-   - ConcreteObserver: AdministratorObserver
-   - Subject: Money
-   - Observador: Observer
+   - ConcreteObserver: SumObserver
+   - ConcreteSubject: SumSubject
+   - Subject: Subject
+   - Observer: Observer
  - **Command:** Cada vez que se cierre sesión, que el código sea implementado con Command. **(FINALIZADO)**
    - Comando: IntCommand
    - Invocado: LogOutCommand
