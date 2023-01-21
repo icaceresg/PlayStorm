@@ -123,7 +123,7 @@ public class MyLibrary extends javax.swing.JFrame {
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // Vuelve a la ventana de perfil
-        UserProfile profile = new UserProfile();
+        ClientProfile profile = new ClientProfile();
         profile.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed

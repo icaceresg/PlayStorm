@@ -22,8 +22,8 @@ public class SubscriberFactory implements UserFactory {
     }
 
     @Override
-    public IntClient createClient(String name, String email, String password, String lastName, String site, String creditCard, String phone) {
-        return new SubscriberClient(name, email, password, lastName, site, creditCard, phone);
+    public IntClient createClient(String name, String email, String password, String lastName, String site, String creditCard, String phone, String birthday) {
+        return new SubscriberClient(name, email, password, lastName, site, creditCard, phone, birthday);
     }
 
 }

@@ -12,8 +12,8 @@ import Class.Client;
  */
 public class SubscriberClient extends Client {
 
-    public SubscriberClient(String name, String email, String password, String lastName, String site, String creditCard, String phone) {
-        super(name, email, password, lastName, site, creditCard, phone);
+    public SubscriberClient(String name, String email, String password, String lastName, String site, String creditCard, String phone, String birthday) {
+        super(name, email, password, lastName, site, creditCard, phone, birthday);
     }
 
 }

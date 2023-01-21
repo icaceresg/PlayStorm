@@ -53,4 +53,8 @@ public interface IntClient extends IntUser {
     public Product[] getOwnProducts();
 
     public void setOwnProducts(Product[] ownProducts);
+
+    public String getBirthday();
+
+    public void setBirthday(String birthday);
 }

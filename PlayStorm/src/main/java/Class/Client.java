@@ -7,17 +7,18 @@ import java.util.logging.Logger;
 
 public class Client extends User implements IntClient {
 
-    private String lastName, site, creditCard, phone;
+    private String lastName, site, creditCard, phone, birthday;
     private float wallet;
     private Product[] ownProducts;
 
-    public Client(String name, String email, String password, String lastName, String site, String creditCard, String phone) {
+    public Client(String name, String email, String password, String lastName, String site, String creditCard, String phone, String birthday) {
         super(name, email, password);
         this.lastName = lastName;
         this.site = site;
         this.creditCard = creditCard;
         this.phone = phone;
         this.wallet = 0;
+        this.birthday = birthday;
     }
 
     @Override
@@ -108,6 +109,16 @@ public class Client extends User implements IntClient {
     @Override
     public String getName() {
         return super.getName(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
+    public String getBirthday() {
+        return birthday;
+    }
+
+    @Override
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
 }

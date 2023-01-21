@@ -323,7 +323,7 @@ public class GameSearch extends javax.swing.JFrame {
 
     private void ProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileActionPerformed
         // TODO add your handling code here:
-        UserProfile profile = new UserProfile();
+        ClientProfile profile = new ClientProfile();
         profile.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ProfileActionPerformed

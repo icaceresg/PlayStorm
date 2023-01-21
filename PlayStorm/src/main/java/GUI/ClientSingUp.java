@@ -269,8 +269,8 @@ public class ClientSingUp extends javax.swing.JFrame {
                 | CreditCardField.getText().equals("") //esta
                 | LocalizationField.getText().equals("") //esta
                 | NameField.getText().equals("") //esta
-                | PasswordField.getText().equals("") //esta
-                | PasswordRepeatField.getText().equals("") //esta
+                | (String.valueOf(PasswordField.getPassword())).equals("") //esta
+                | (String.valueOf(PasswordRepeatField.getPassword())).equals("") //esta
                 | SurnameField.getText().equals("") //esta
                 | TelephoneField.getText().equals("") //esta
                 | UserField.getText().equals("");                      //esta 
@@ -296,9 +296,9 @@ public class ClientSingUp extends javax.swing.JFrame {
             IntClient client;
 
             if (VIPComboBox.isSelected()) {
-                client = new SubscriberFactory().createClient(NameField.getText(), UserField.getText(), finalEncodePassword, SurnameField.getText(), LocalizationField.getText(), CreditCardField.getText(), TelephoneField.getText());
+                client = new SubscriberFactory().createClient(NameField.getText(), UserField.getText(), finalEncodePassword, SurnameField.getText(), LocalizationField.getText(), CreditCardField.getText(), TelephoneField.getText(), BirthdayField.getText());
             } else {
-                client = new NotSubscriberFactory().createClient(NameField.getText(), UserField.getText(), finalEncodePassword, SurnameField.getText(), LocalizationField.getText(), CreditCardField.getText(), TelephoneField.getText());
+                client = new NotSubscriberFactory().createClient(NameField.getText(), UserField.getText(), finalEncodePassword, SurnameField.getText(), LocalizationField.getText(), CreditCardField.getText(), TelephoneField.getText(), BirthdayField.getText());
             }
 
             DataBase database = new DataBase();
