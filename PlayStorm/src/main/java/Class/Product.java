@@ -9,7 +9,6 @@ public class Product implements Serializable {
     private float price;
     private int amount;
     private int id;
-    private IntCompany company;
 
     public Product(String title, String description, float price, int amount, String category) throws Exception {
         this.title = title;
@@ -23,22 +22,6 @@ public class Product implements Serializable {
         } else {
             this.id = new ProductIterator().lastItem().getId() + 1;
         }
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     public int getId() {

@@ -79,7 +79,7 @@ public class AllUsers extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Usuario", "Nombre", "Apellido", "Telefono", "Localizacion"
+                "Usuario", "Nombre", "Apellido", "Teléfono", "Localización"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -94,7 +94,7 @@ public class AllUsers extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Usuarios Aplicacion");
+        jLabel1.setText("Usuarios Aplicación");
 
         ButtonBack.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         ButtonBack.setText("Volver");

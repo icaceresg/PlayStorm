@@ -51,7 +51,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenuCloseSession">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CerrarSesion"/>
+            <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemCloseSession">

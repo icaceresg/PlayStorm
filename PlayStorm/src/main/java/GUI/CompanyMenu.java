@@ -127,7 +127,7 @@ public class CompanyMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuStudioRegister);
 
-        jMenuCloseSession.setText("CerrarSesion");
+        jMenuCloseSession.setText("Cerrar Sesión");
 
         jMenuItemCloseSession.setText("Cerrar Sesion");
         jMenuItemCloseSession.addActionListener(new java.awt.event.ActionListener() {

@@ -36,7 +36,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cerrar Sesion"/>
+            <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
@@ -84,7 +84,7 @@
                           <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
                           <Component id="jButtonAddtoCart" alignment="1" min="-2" pref="174" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -165,9 +165,12 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="jTextFieldNombreGameSearch">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Inserte t&#xed;tulo"/>
+        <Property name="text" type="java.lang.String" value="Inserte t&#xed;tulo..."/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextFieldNombreGameSearchMouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextFieldNombreGameSearchMouseEntered"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNombreGameSearchActionPerformed"/>
       </Events>
     </Component>
@@ -176,15 +179,18 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="7">
             <StringItem index="0" value="Rol"/>
-            <StringItem index="1" value="Accion"/>
+            <StringItem index="1" value="Acci&#xf3;n"/>
             <StringItem index="2" value="Estrategia"/>
             <StringItem index="3" value="Aventura"/>
-            <StringItem index="4" value="Simulacion"/>
+            <StringItem index="4" value="Simulaci&#xf3;n"/>
             <StringItem index="5" value="Deportes"/>
             <StringItem index="6" value="Carreras"/>
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxCategoriaGameSearchActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
@@ -274,8 +280,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="A&#xf1;adir al Carrito"/>
+        <Property name="text" type="java.lang.String" value="A&#xf1;adir al carrito"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddtoCartActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>

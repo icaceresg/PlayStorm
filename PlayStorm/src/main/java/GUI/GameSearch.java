@@ -68,14 +68,28 @@ public class GameSearch extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextFieldNombreGameSearch.setText("Inserte título");
+        jTextFieldNombreGameSearch.setText("Inserte título...");
+        jTextFieldNombreGameSearch.setToolTipText("");
+        jTextFieldNombreGameSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextFieldNombreGameSearchMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTextFieldNombreGameSearchMouseEntered(evt);
+            }
+        });
         jTextFieldNombreGameSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNombreGameSearchActionPerformed(evt);
             }
         });
 
-        jComboBoxCategoriaGameSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rol", "Accion", "Estrategia", "Aventura", "Simulacion", "Deportes", "Carreras" }));
+        jComboBoxCategoriaGameSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rol", "Acción", "Estrategia", "Aventura", "Simulación", "Deportes", "Carreras" }));
+        jComboBoxCategoriaGameSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxCategoriaGameSearchActionPerformed(evt);
+            }
+        });
 
         jButtonBuscarGameSearch.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jButtonBuscarGameSearch.setText("Buscar");
@@ -103,7 +117,12 @@ public class GameSearch extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTableProducts);
 
         jButtonAddtoCart.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonAddtoCart.setText("Añadir al Carrito");
+        jButtonAddtoCart.setText("Añadir al carrito");
+        jButtonAddtoCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddtoCartActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -133,7 +152,7 @@ public class GameSearch extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu2.setText("Cerrar Sesion");
+        jMenu2.setText("Cerrar Sesión");
 
         jMenuItem3.setText("Cerrar Sesion");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +178,7 @@ public class GameSearch extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonAddtoCart, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(24, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -244,6 +263,23 @@ public class GameSearch extends javax.swing.JFrame {
         cart.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jButtonAddtoCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddtoCartActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAddtoCartActionPerformed
+
+    private void jComboBoxCategoriaGameSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCategoriaGameSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxCategoriaGameSearchActionPerformed
+
+    private void jTextFieldNombreGameSearchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldNombreGameSearchMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreGameSearchMouseEntered
+
+    private void jTextFieldNombreGameSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldNombreGameSearchMouseClicked
+        if(jTextFieldNombreGameSearch.getText().equals("Inserte título..."))
+            jTextFieldNombreGameSearch.setText("");
+    }//GEN-LAST:event_jTextFieldNombreGameSearchMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
