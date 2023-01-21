@@ -30,6 +30,10 @@ A simulation of online video game store like Steam
    - Adapatador: PasswordAdapter.
  - Composite: Un estudio puede tener a su vez varios estudios,  calcular por ejemplo el capital total de ese estudio, sumando el de todos sus estudios por debajo
  - Proxy: Para por ejemplo borrar un cliente, el proxy se encarga de comprobar que realmente eres un admin. 
+   - Sujeto: Administrator
+   - Proxy: AdminProxy
+   - SujetoReal: AllProducts, AllClients, AllCompanies
+   - Cliente: IntAdmin
  
 ## Patrones de Comportamiento:
  - Template Method: Se va utilizar cuando hacemos una herencia de Client con SubscriberClient y NotSubscriberClient.
@@ -41,7 +45,13 @@ A simulation of online video game store like Steam
    - Interfaz Iterador: IntContainer 
    - Interfaz Agregado:  IntIterator
  - State: Para ver el estado del pedido.
+   - Estado: OrderState
+   - EstadoConcreto: NewOrderState, ProcessingOrderState.
+   - Contexto: Order
  - Observer: Actualización de los valores del dinero de la empresa y del cliente cada vez que se haga una compra/venta.
+   - ConcreteObserver: ConAdministratorObserver
+   - Subject: Money
+   - Observador = Observer
  - Command: Cada vez que se cierre sesión, que el código sea implementado con Command.
    - Comando: IntCommand
    - Invocado: LogOutCommand
