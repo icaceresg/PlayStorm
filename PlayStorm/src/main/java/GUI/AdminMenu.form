@@ -17,7 +17,7 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+    <Menu class="javax.swing.JMenuBar" name="SessionClose">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenuCloseSession">
           <Properties>
@@ -41,7 +41,7 @@
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="SessionClose"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -63,9 +63,9 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="152" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jButtonEliminarProducto" max="32767" attributes="0"/>
-                  <Component id="jButtonEliminarUsuario" max="32767" attributes="0"/>
-                  <Component id="jButtonEliminarProveedor" min="-2" pref="152" max="-2" attributes="0"/>
+                  <Component id="ProductsButton" max="32767" attributes="0"/>
+                  <Component id="ClientsButton" max="32767" attributes="0"/>
+                  <Component id="CompanyButton" min="-2" pref="152" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
           </Group>
@@ -73,7 +73,7 @@
               <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="NameLabel" min="-2" max="-2" attributes="0"/>
+              <Component id="Name" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -84,14 +84,14 @@
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="NameLabel" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="Name" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButtonEliminarProducto" min="-2" pref="54" max="-2" attributes="0"/>
+              <Component id="ProductsButton" min="-2" pref="54" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Component id="jButtonEliminarUsuario" min="-2" pref="56" max="-2" attributes="0"/>
+              <Component id="ClientsButton" min="-2" pref="56" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Component id="jButtonEliminarProveedor" min="-2" pref="56" max="-2" attributes="0"/>
+              <Component id="CompanyButton" min="-2" pref="56" max="-2" attributes="0"/>
               <EmptySpace pref="63" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -107,7 +107,7 @@
         <Property name="text" type="java.lang.String" value="Bienvenido, "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonEliminarProducto">
+    <Component class="javax.swing.JButton" name="ProductsButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -116,21 +116,21 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEliminarProductoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProductsButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonEliminarUsuario">
+    <Component class="javax.swing.JButton" name="ClientsButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Usuarios"/>
+        <Property name="text" type="java.lang.String" value="Clientes"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEliminarUsuarioActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClientsButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonEliminarProveedor">
+    <Component class="javax.swing.JButton" name="CompanyButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -139,10 +139,10 @@
         <Property name="actionCommand" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEliminarProveedorActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CompanyButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="NameLabel">
+    <Component class="javax.swing.JLabel" name="Name">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="18" style="1"/>

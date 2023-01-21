@@ -36,7 +36,7 @@ public class AdminMenu extends javax.swing.JFrame {
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
 
-        NameLabel.setText(User.usuarioActivo.get(0).getName());
+        Name.setText(User.usuarioActivo.get(0).getName());
     }
 
     /**
@@ -50,11 +50,11 @@ public class AdminMenu extends javax.swing.JFrame {
 
         jDialog1 = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
-        jButtonEliminarProducto = new javax.swing.JButton();
-        jButtonEliminarUsuario = new javax.swing.JButton();
-        jButtonEliminarProveedor = new javax.swing.JButton();
-        NameLabel = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        ProductsButton = new javax.swing.JButton();
+        ClientsButton = new javax.swing.JButton();
+        CompanyButton = new javax.swing.JButton();
+        Name = new javax.swing.JLabel();
+        SessionClose = new javax.swing.JMenuBar();
         jMenuCloseSession = new javax.swing.JMenu();
         jMenuItemCloseSession = new javax.swing.JMenuItem();
 
@@ -75,34 +75,34 @@ public class AdminMenu extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bienvenido, ");
 
-        jButtonEliminarProducto.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonEliminarProducto.setText("Videojuegos");
-        jButtonEliminarProducto.setToolTipText("");
-        jButtonEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
+        ProductsButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        ProductsButton.setText("Videojuegos");
+        ProductsButton.setToolTipText("");
+        ProductsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEliminarProductoActionPerformed(evt);
+                ProductsButtonActionPerformed(evt);
             }
         });
 
-        jButtonEliminarUsuario.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonEliminarUsuario.setText("Usuarios");
-        jButtonEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
+        ClientsButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        ClientsButton.setText("Clientes");
+        ClientsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEliminarUsuarioActionPerformed(evt);
+                ClientsButtonActionPerformed(evt);
             }
         });
 
-        jButtonEliminarProveedor.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonEliminarProveedor.setText("Empresas");
-        jButtonEliminarProveedor.setActionCommand("");
-        jButtonEliminarProveedor.addActionListener(new java.awt.event.ActionListener() {
+        CompanyButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        CompanyButton.setText("Empresas");
+        CompanyButton.setActionCommand("");
+        CompanyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEliminarProveedorActionPerformed(evt);
+                CompanyButtonActionPerformed(evt);
             }
         });
 
-        NameLabel.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
-        NameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Name.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
+        Name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         jMenuCloseSession.setText("Cerrar Sesión");
 
@@ -114,9 +114,9 @@ public class AdminMenu extends javax.swing.JFrame {
         });
         jMenuCloseSession.add(jMenuItemCloseSession);
 
-        jMenuBar1.add(jMenuCloseSession);
+        SessionClose.add(jMenuCloseSession);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(SessionClose);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,15 +125,15 @@ public class AdminMenu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(152, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonEliminarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonEliminarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ProductsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ClientsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CompanyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(140, 140, 140))
             .addGroup(layout.createSequentialGroup()
                 .addGap(110, 110, 110)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NameLabel)
+                .addComponent(Name)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -142,30 +142,30 @@ public class AdminMenu extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButtonEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ProductsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jButtonEliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ClientsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jButtonEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CompanyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarProductoActionPerformed
+    private void ProductsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductsButtonActionPerformed
         AllProducts allProducts = new AllProducts();
         allProducts.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButtonEliminarProductoActionPerformed
+    }//GEN-LAST:event_ProductsButtonActionPerformed
 
-    private void jButtonEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarUsuarioActionPerformed
+    private void ClientsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientsButtonActionPerformed
         AllClients allUsers = new AllClients();
         allUsers.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButtonEliminarUsuarioActionPerformed
+    }//GEN-LAST:event_ClientsButtonActionPerformed
 
     private void jMenuItemCloseSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCloseSessionActionPerformed
         int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
@@ -177,21 +177,21 @@ public class AdminMenu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItemCloseSessionActionPerformed
 
-    private void jButtonEliminarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarProveedorActionPerformed
+    private void CompanyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompanyButtonActionPerformed
         AllCompanies allCompanies = new AllCompanies();
         allCompanies.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButtonEliminarProveedorActionPerformed
+    }//GEN-LAST:event_CompanyButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel NameLabel;
-    private javax.swing.JButton jButtonEliminarProducto;
-    private javax.swing.JButton jButtonEliminarProveedor;
-    private javax.swing.JButton jButtonEliminarUsuario;
+    private javax.swing.JButton ClientsButton;
+    private javax.swing.JButton CompanyButton;
+    private javax.swing.JLabel Name;
+    private javax.swing.JButton ProductsButton;
+    private javax.swing.JMenuBar SessionClose;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCloseSession;
     private javax.swing.JMenuItem jMenuItemCloseSession;
     // End of variables declaration//GEN-END:variables

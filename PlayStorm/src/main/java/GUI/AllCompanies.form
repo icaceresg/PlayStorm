@@ -38,7 +38,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="AllCompaniesPane" min="-2" pref="750" max="-2" attributes="0"/>
+                      <Component id="AllCompaniesPanel" min="-2" pref="750" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="35" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -59,7 +59,7 @@
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="AllCompaniesPane" min="-2" pref="206" max="-2" attributes="0"/>
+              <Component id="AllCompaniesPanel" min="-2" pref="206" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="DeleteButton" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace pref="32" max="32767" attributes="0"/>
@@ -68,7 +68,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JScrollPane" name="AllCompaniesPane">
+    <Container class="javax.swing.JScrollPane" name="AllCompaniesPanel">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
