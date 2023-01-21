@@ -41,8 +41,8 @@ public class MyLibrary extends javax.swing.JFrame {
         TablaProductos = new javax.swing.JScrollPane();
         MyLibraryTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        ButtonTciket = new javax.swing.JButton();
-        ButtonBack = new javax.swing.JButton();
+        TicketButton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,19 +68,19 @@ public class MyLibrary extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setText("Mis Juegos Comprados");
 
-        ButtonTciket.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        ButtonTciket.setText("Ver Ticket");
-        ButtonTciket.addActionListener(new java.awt.event.ActionListener() {
+        TicketButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        TicketButton.setText("Ver Ticket");
+        TicketButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonTciketActionPerformed(evt);
+                TicketButtonActionPerformed(evt);
             }
         });
 
-        ButtonBack.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        ButtonBack.setText("Volver");
-        ButtonBack.addActionListener(new java.awt.event.ActionListener() {
+        BackButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        BackButton.setText("Volver");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonBackActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
 
@@ -93,12 +93,12 @@ public class MyLibrary extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(ButtonBack)
+                        .addComponent(BackButton)
                         .addGap(347, 347, 347)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(411, 411, 411)
-                        .addComponent(ButtonTciket, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(TicketButton, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(328, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -110,33 +110,33 @@ public class MyLibrary extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(ButtonBack)))
+                        .addComponent(BackButton)))
                 .addGap(18, 18, 18)
                 .addComponent(TablaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(ButtonTciket, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TicketButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // Vuelve a la ventana de perfil
         UserProfile profile = new UserProfile();
         profile.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_ButtonBackActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void ButtonTciketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTciketActionPerformed
+    private void TicketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TicketButtonActionPerformed
         // Cambia de ventana a la de comprar para avanzar en la operacion
 
-    }//GEN-LAST:event_ButtonTciketActionPerformed
+    }//GEN-LAST:event_TicketButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonBack;
-    private javax.swing.JButton ButtonTciket;
+    private javax.swing.JButton BackButton;
     private javax.swing.JTable MyLibraryTable;
     private javax.swing.JScrollPane TablaProductos;
+    private javax.swing.JButton TicketButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -33,13 +33,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel2" min="-2" pref="170" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="jTextFieldTituloProductCreation" min="-2" pref="133" max="-2" attributes="0"/>
+                      <Component id="TittleField" min="-2" pref="133" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                      <Component id="jButtonCancelarProductCreation" min="-2" pref="117" max="-2" attributes="0"/>
+                      <Component id="CancelButton" min="-2" pref="117" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                      <Component id="jButtonCrearProductCreation" min="-2" pref="120" max="-2" attributes="0"/>
+                      <Component id="CreateButton" min="-2" pref="120" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -51,11 +51,11 @@
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jComboBoxCategoriaProductCreation" max="32767" attributes="0"/>
-                              <Component id="jTextFieldPrecioProductCreation" min="-2" pref="133" max="-2" attributes="0"/>
+                              <Component id="CategoryButton" max="32767" attributes="0"/>
+                              <Component id="PriceField" min="-2" pref="133" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jTextFieldDescipcionProductCreation" min="-2" pref="308" max="-2" attributes="0"/>
-                          <Component id="jTextFieldCantidadProductCreation" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
+                          <Component id="DescriptionField" min="-2" pref="308" max="-2" attributes="0"/>
+                          <Component id="AmountField" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -71,32 +71,32 @@
               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldTituloProductCreation" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TittleField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldPrecioProductCreation" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PriceField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBoxCategoriaProductCreation" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CategoryButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldDescipcionProductCreation" min="-2" pref="57" max="-2" attributes="0"/>
+                  <Component id="DescriptionField" min="-2" pref="57" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextFieldCantidadProductCreation" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="AmountField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="119" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButtonCancelarProductCreation" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
-                  <Component id="jButtonCrearProductCreation" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                  <Component id="CancelButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                  <Component id="CreateButton" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
@@ -142,22 +142,23 @@
         <Property name="text" type="java.lang.String" value="Categoria:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBoxCategoriaProductCreation">
+    <Component class="javax.swing.JComboBox" name="CategoryButton">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="7">
-            <StringItem index="0" value="Rol"/>
-            <StringItem index="1" value="Accion"/>
-            <StringItem index="2" value="Estrategia"/>
-            <StringItem index="3" value="Aventura"/>
-            <StringItem index="4" value="Simulacion"/>
-            <StringItem index="5" value="Deportes"/>
-            <StringItem index="6" value="Carreras"/>
+          <StringArray count="8">
+            <StringItem index="0" value="Sellecione una categoria"/>
+            <StringItem index="1" value="Rol"/>
+            <StringItem index="2" value="Accion"/>
+            <StringItem index="3" value="Estrategia"/>
+            <StringItem index="4" value="Aventura"/>
+            <StringItem index="5" value="Simulacion"/>
+            <StringItem index="6" value="Deportes"/>
+            <StringItem index="7" value="Carreras"/>
           </StringArray>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxCategoriaProductCreationActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CategoryButtonActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -181,7 +182,7 @@
         <Property name="text" type="java.lang.String" value="Cantidad:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonCancelarProductCreation">
+    <Component class="javax.swing.JButton" name="CancelButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -189,10 +190,10 @@
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelarProductCreationActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonCrearProductCreation">
+    <Component class="javax.swing.JButton" name="CreateButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -200,27 +201,27 @@
         <Property name="text" type="java.lang.String" value="Crear"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCrearProductCreationActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CreateButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldTituloProductCreation">
+    <Component class="javax.swing.JTextField" name="TittleField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldTituloProductCreationActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TittleFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldPrecioProductCreation">
+    <Component class="javax.swing.JTextField" name="PriceField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldPrecioProductCreationActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PriceFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldDescipcionProductCreation">
+    <Component class="javax.swing.JTextField" name="DescriptionField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldDescipcionProductCreationActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DescriptionFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldCantidadProductCreation">
+    <Component class="javax.swing.JTextField" name="AmountField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldCantidadProductCreationActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AmountFieldActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

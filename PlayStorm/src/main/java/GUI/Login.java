@@ -61,7 +61,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        UserTextField = new javax.swing.JTextField();
+        UserField = new javax.swing.JTextField();
         SetPhoto = new javax.swing.JLabel();
         LogInButton = new javax.swing.JButton();
         RegisterButton = new javax.swing.JButton();
@@ -84,7 +84,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel4.setText("Contraseña");
 
-        UserTextField.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        UserField.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
 
         LogInButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         LogInButton.setText("INICIAR SESIÓN");
@@ -123,7 +123,7 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(UserTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(UserField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(SetPhoto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(PasswordField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))))
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -145,7 +145,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(SetPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UserTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UserField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -162,7 +162,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
-        boolean emptyFields = UserTextField.getText().equals("") //no esta
+        boolean emptyFields = UserField.getText().equals("") //no esta
                 | String.valueOf(PasswordField.getPassword()).equals("");
         if (emptyFields) {
             JOptionPane.showMessageDialog(this, "Existen campos vacíos", "Registro", JOptionPane.ERROR_MESSAGE);
@@ -181,7 +181,7 @@ public class Login extends javax.swing.JFrame {
                 ClientIterator clientIterator = new ClientIterator();
                 while (clientIterator.hasNext()) {
                     IntClient client = clientIterator.next();
-                    if (client.getEmail().equals(UserTextField.getText()) && client.getPassword().equals(finalEncodePassword)) {
+                    if (client.getEmail().equals(UserField.getText()) && client.getPassword().equals(finalEncodePassword)) {
                         User.usuarioActivo.add(client);
                         GameSearch gameSearch = new GameSearch();
                         gameSearch.setVisible(true);
@@ -193,7 +193,7 @@ public class Login extends javax.swing.JFrame {
                 CompanyIterator companyIterator = new CompanyIterator();
                 while (companyIterator.hasNext()) {
                     IntCompany company = companyIterator.next();
-                    if (company.getEmail().equals(UserTextField.getText()) && company.getPassword().equals(finalEncodePassword)) {
+                    if (company.getEmail().equals(UserField.getText()) && company.getPassword().equals(finalEncodePassword)) {
                         User.usuarioActivo.add(company);
                         CompanyMenu companyMenu = new CompanyMenu();
                         companyMenu.setVisible(true);
@@ -201,7 +201,7 @@ public class Login extends javax.swing.JFrame {
                         encontrado = true;
                     }
                 }
-                if ("admin@admin".equals(UserTextField.getText()) && "admin".equals(String.valueOf(PasswordField.getPassword()))) {
+                if ("admin@admin".equals(UserField.getText()) && "admin".equals(String.valueOf(PasswordField.getPassword()))) {
                     Administrator admin = Administrator.getInstance();
                     User.usuarioActivo.add(admin);
                     AdminMenu adminMenu = new AdminMenu();
@@ -281,7 +281,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JButton RegisterButton;
     private javax.swing.JLabel SetPhoto;
-    private javax.swing.JTextField UserTextField;
+    private javax.swing.JTextField UserField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

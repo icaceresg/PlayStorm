@@ -41,7 +41,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="UserTextField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="UserField" alignment="0" max="32767" attributes="0"/>
                           <Component id="SetPhoto" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                           <Component id="PasswordField" alignment="0" pref="219" max="32767" attributes="0"/>
                       </Group>
@@ -70,7 +70,7 @@
               <Component id="SetPhoto" min="-2" pref="115" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="UserTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="UserField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -123,7 +123,7 @@
         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="UserTextField">
+    <Component class="javax.swing.JTextField" name="UserField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="14" style="0"/>

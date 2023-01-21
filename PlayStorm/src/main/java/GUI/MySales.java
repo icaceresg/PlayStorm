@@ -39,14 +39,14 @@ public class MySales extends javax.swing.JFrame {
     private void initComponents() {
 
         TablaProductos = new javax.swing.JScrollPane();
-        MyLibraryTable = new javax.swing.JTable();
+        MySalesTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        ButtonBack = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        MyLibraryTable.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
-        MyLibraryTable.setModel(new javax.swing.table.DefaultTableModel(
+        MySalesTable.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
+        MySalesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -62,17 +62,17 @@ public class MySales extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        TablaProductos.setViewportView(MyLibraryTable);
+        TablaProductos.setViewportView(MySalesTable);
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Mis Ventas");
 
-        ButtonBack.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        ButtonBack.setText("Volver");
-        ButtonBack.addActionListener(new java.awt.event.ActionListener() {
+        BackButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        BackButton.setText("Volver");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonBackActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
 
@@ -82,7 +82,7 @@ public class MySales extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(412, 412, 412)
-                .addComponent(ButtonBack, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -101,23 +101,23 @@ public class MySales extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(TablaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(ButtonBack, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // Vuelve a la ventana de perfil
         CompanyMenu companyMenu = new CompanyMenu();
         companyMenu.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_ButtonBackActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonBack;
-    private javax.swing.JTable MyLibraryTable;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JTable MySalesTable;
     private javax.swing.JScrollPane TablaProductos;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

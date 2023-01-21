@@ -38,12 +38,12 @@ public class MyCart extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TablaProductos = new javax.swing.JScrollPane();
+        ProductsTable = new javax.swing.JScrollPane();
         MyCartTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        ButtonComprar = new javax.swing.JButton();
-        ButtonBack = new javax.swing.JButton();
-        ButtonDevolver = new javax.swing.JButton();
+        BuyButton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
+        ReturnButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,32 +64,32 @@ public class MyCart extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        TablaProductos.setViewportView(MyCartTable);
+        ProductsTable.setViewportView(MyCartTable);
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setText("Mi carrito");
 
-        ButtonComprar.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        ButtonComprar.setText("Comprar");
-        ButtonComprar.addActionListener(new java.awt.event.ActionListener() {
+        BuyButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        BuyButton.setText("Comprar");
+        BuyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonComprarActionPerformed(evt);
+                BuyButtonActionPerformed(evt);
             }
         });
 
-        ButtonBack.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        ButtonBack.setText("Volver");
-        ButtonBack.addActionListener(new java.awt.event.ActionListener() {
+        BackButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        BackButton.setText("Volver");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonBackActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
 
-        ButtonDevolver.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        ButtonDevolver.setText("Devolver");
-        ButtonDevolver.addActionListener(new java.awt.event.ActionListener() {
+        ReturnButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        ReturnButton.setText("Devolver");
+        ReturnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonDevolverActionPerformed(evt);
+                ReturnButtonActionPerformed(evt);
             }
         });
 
@@ -97,19 +97,19 @@ public class MyCart extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TablaProductos)
+            .addComponent(ProductsTable)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(ButtonBack)
+                        .addComponent(BackButton)
                         .addGap(347, 347, 347)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(355, 355, 355)
-                        .addComponent(ButtonDevolver)
+                        .addComponent(ReturnButton)
                         .addGap(125, 125, 125)
-                        .addComponent(ButtonComprar)))
+                        .addComponent(BuyButton)))
                 .addContainerGap(328, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -121,41 +121,41 @@ public class MyCart extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(ButtonBack)))
+                        .addComponent(BackButton)))
                 .addGap(18, 18, 18)
-                .addComponent(TablaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ProductsTable, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonComprar)
-                    .addComponent(ButtonDevolver))
+                    .addComponent(BuyButton)
+                    .addComponent(ReturnButton))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // Vuelve a la ventana de perfil
         GameSearch games = new GameSearch();
         games.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_ButtonBackActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void ButtonDevolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDevolverActionPerformed
+    private void ReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnButtonActionPerformed
         // Devuelve el producto a la busqueda y lo elimina de misProductos
 
-    }//GEN-LAST:event_ButtonDevolverActionPerformed
+    }//GEN-LAST:event_ReturnButtonActionPerformed
 
-    private void ButtonComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonComprarActionPerformed
+    private void BuyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuyButtonActionPerformed
         // Cambia de ventana a la de comprar para avanzar en la operacion
 
-    }//GEN-LAST:event_ButtonComprarActionPerformed
+    }//GEN-LAST:event_BuyButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonBack;
-    private javax.swing.JButton ButtonComprar;
-    private javax.swing.JButton ButtonDevolver;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JButton BuyButton;
     private javax.swing.JTable MyCartTable;
-    private javax.swing.JScrollPane TablaProductos;
+    private javax.swing.JScrollPane ProductsTable;
+    private javax.swing.JButton ReturnButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -54,36 +54,36 @@ public class UserProfile extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        NameField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextFieldBirthdayUserProfile = new javax.swing.JTextField();
+        BirthdayField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextFieldCreditCardUserProfile = new javax.swing.JTextField();
+        CreditCardField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextFieldLocalizationUserProfile = new javax.swing.JTextField();
+        LocationField = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextFieldTelephoneUserProfile = new javax.swing.JTextField();
+        TelephoneField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextFieldUserUserProfile = new javax.swing.JTextField();
+        UserField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTextFieldNameUserProfile = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextFieldSurnameUserProfile = new javax.swing.JTextField();
+        SurnameField = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jPasswordFieldUserProfile = new javax.swing.JPasswordField();
-        jPasswordFieldRepeatUserProfile = new javax.swing.JPasswordField();
-        jButtonBackUserProfile = new javax.swing.JButton();
-        jButtonSaveChangesUserProfile = new javax.swing.JButton();
+        PasswordField = new javax.swing.JPasswordField();
+        RepeatPassField = new javax.swing.JPasswordField();
+        BackButton = new javax.swing.JButton();
+        SaveChangesField = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        Menu = new javax.swing.JMenuBar();
+        DataMenu = new javax.swing.JMenu();
+        Data = new javax.swing.JMenuItem();
+        LibraryMenu = new javax.swing.JMenu();
+        Library = new javax.swing.JMenuItem();
+        CloseSessionMenu = new javax.swing.JMenu();
+        CloseSession = new javax.swing.JMenuItem();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -126,11 +126,11 @@ public class UserProfile extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setText("Perfil de:");
 
-        jTextField1.setEditable(false);
-        jTextField1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        NameField.setEditable(false);
+        NameField.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
+        NameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                NameFieldActionPerformed(evt);
             }
         });
 
@@ -146,10 +146,10 @@ public class UserProfile extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Fecha de nacimiento:");
 
-        jTextFieldBirthdayUserProfile.setEditable(false);
-        jTextFieldBirthdayUserProfile.addActionListener(new java.awt.event.ActionListener() {
+        BirthdayField.setEditable(false);
+        BirthdayField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBirthdayUserProfileActionPerformed(evt);
+                BirthdayFieldActionPerformed(evt);
             }
         });
 
@@ -157,10 +157,10 @@ public class UserProfile extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Numero de tarjeta bancaria: ");
 
-        jTextFieldCreditCardUserProfile.setEditable(false);
-        jTextFieldCreditCardUserProfile.addActionListener(new java.awt.event.ActionListener() {
+        CreditCardField.setEditable(false);
+        CreditCardField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCreditCardUserProfileActionPerformed(evt);
+                CreditCardFieldActionPerformed(evt);
             }
         });
 
@@ -168,10 +168,10 @@ public class UserProfile extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Localizacion:");
 
-        jTextFieldLocalizationUserProfile.setEditable(false);
-        jTextFieldLocalizationUserProfile.addActionListener(new java.awt.event.ActionListener() {
+        LocationField.setEditable(false);
+        LocationField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldLocalizationUserProfileActionPerformed(evt);
+                LocationFieldActionPerformed(evt);
             }
         });
 
@@ -179,10 +179,10 @@ public class UserProfile extends javax.swing.JFrame {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Telefono:");
 
-        jTextFieldTelephoneUserProfile.setEditable(false);
-        jTextFieldTelephoneUserProfile.addActionListener(new java.awt.event.ActionListener() {
+        TelephoneField.setEditable(false);
+        TelephoneField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTelephoneUserProfileActionPerformed(evt);
+                TelephoneFieldActionPerformed(evt);
             }
         });
 
@@ -190,10 +190,10 @@ public class UserProfile extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Usuario:");
 
-        jTextFieldUserUserProfile.setEditable(false);
-        jTextFieldUserUserProfile.addActionListener(new java.awt.event.ActionListener() {
+        UserField.setEditable(false);
+        UserField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldUserUserProfileActionPerformed(evt);
+                UserFieldActionPerformed(evt);
             }
         });
 
@@ -207,84 +207,84 @@ public class UserProfile extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Apellidos:");
 
-        jTextFieldSurnameUserProfile.setEditable(false);
-        jTextFieldSurnameUserProfile.addActionListener(new java.awt.event.ActionListener() {
+        SurnameField.setEditable(false);
+        SurnameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldSurnameUserProfileActionPerformed(evt);
+                SurnameFieldActionPerformed(evt);
             }
         });
 
         jLabel10.setText("-----------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        jPasswordFieldUserProfile.setEditable(false);
-        jPasswordFieldUserProfile.addActionListener(new java.awt.event.ActionListener() {
+        PasswordField.setEditable(false);
+        PasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordFieldUserProfileActionPerformed(evt);
+                PasswordFieldActionPerformed(evt);
             }
         });
 
-        jPasswordFieldRepeatUserProfile.setEditable(false);
-        jPasswordFieldRepeatUserProfile.addActionListener(new java.awt.event.ActionListener() {
+        RepeatPassField.setEditable(false);
+        RepeatPassField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordFieldRepeatUserProfileActionPerformed(evt);
+                RepeatPassFieldActionPerformed(evt);
             }
         });
 
-        jButtonBackUserProfile.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonBackUserProfile.setText("Volver");
-        jButtonBackUserProfile.addActionListener(new java.awt.event.ActionListener() {
+        BackButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        BackButton.setText("Volver");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBackUserProfileActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
 
-        jButtonSaveChangesUserProfile.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonSaveChangesUserProfile.setText("Guardar Cambios");
-        jButtonSaveChangesUserProfile.addActionListener(new java.awt.event.ActionListener() {
+        SaveChangesField.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        SaveChangesField.setText("Guardar Cambios");
+        SaveChangesField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSaveChangesUserProfileActionPerformed(evt);
+                SaveChangesFieldActionPerformed(evt);
             }
         });
 
         jLabel12.setText("------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        jMenu1.setText("Datos");
+        DataMenu.setText("Datos");
 
-        jMenuItem1.setText("Editar Datos");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        Data.setText("Editar Datos");
+        Data.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                DataActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        DataMenu.add(Data);
 
-        jMenuBar1.add(jMenu1);
+        Menu.add(DataMenu);
 
-        jMenu3.setText("Biblioteca");
+        LibraryMenu.setText("Biblioteca");
 
-        jMenuItem3.setText("Ver Mi Biblioteca");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        Library.setText("Ver Mi Biblioteca");
+        Library.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                LibraryActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem3);
+        LibraryMenu.add(Library);
 
-        jMenuBar1.add(jMenu3);
+        Menu.add(LibraryMenu);
 
-        jMenu6.setText("Cerrar Sesion");
+        CloseSessionMenu.setText("Cerrar Sesion");
 
-        jMenuItem7.setText("Cerrar Sesion");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+        CloseSession.setText("Cerrar Sesion");
+        CloseSession.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
+                CloseSessionActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem7);
+        CloseSessionMenu.add(CloseSession);
 
-        jMenuBar1.add(jMenu6);
+        Menu.add(CloseSessionMenu);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(Menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -307,15 +307,15 @@ public class UserProfile extends javax.swing.JFrame {
                                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jPasswordFieldRepeatUserProfile)
-                                            .addComponent(jPasswordFieldUserProfile)
-                                            .addComponent(jTextFieldSurnameUserProfile)
+                                            .addComponent(RepeatPassField)
+                                            .addComponent(PasswordField)
+                                            .addComponent(SurnameField)
                                             .addComponent(jTextFieldNameUserProfile)
-                                            .addComponent(jTextFieldUserUserProfile, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                            .addComponent(jTextFieldBirthdayUserProfile, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                            .addComponent(UserField, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                                            .addComponent(BirthdayField, javax.swing.GroupLayout.Alignment.TRAILING)))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jButtonBackUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(42, 42, 42)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -327,17 +327,17 @@ public class UserProfile extends javax.swing.JFrame {
                                                 .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextFieldCreditCardUserProfile)
-                                            .addComponent(jTextFieldLocalizationUserProfile)
-                                            .addComponent(jTextFieldTelephoneUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(CreditCardField)
+                                            .addComponent(LocationField)
+                                            .addComponent(TelephoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(106, 106, 106)
-                                        .addComponent(jButtonSaveChangesUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(SaveChangesField, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(34, 34, 34))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -353,7 +353,7 @@ public class UserProfile extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 14, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addGap(36, 36, 36)
@@ -361,7 +361,7 @@ public class UserProfile extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextFieldUserUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(UserField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -369,37 +369,37 @@ public class UserProfile extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextFieldSurnameUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(SurnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jTextFieldCreditCardUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CreditCardField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(jTextFieldLocalizationUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LocationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldTelephoneUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(TelephoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jPasswordFieldUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jPasswordFieldRepeatUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RepeatPassField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextFieldBirthdayUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BirthdayField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12)
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonBackUserProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSaveChangesUserProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SaveChangesField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45))
         );
 
@@ -409,62 +409,62 @@ public class UserProfile extends javax.swing.JFrame {
     public boolean isTextEditable(String text) {
         return false;
     }
-    private void jTextFieldUserUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUserUserProfileActionPerformed
+    private void UserFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserFieldActionPerformed
 
-    }//GEN-LAST:event_jTextFieldUserUserProfileActionPerformed
+    }//GEN-LAST:event_UserFieldActionPerformed
 
-    private void jTextFieldSurnameUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSurnameUserProfileActionPerformed
+    private void SurnameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SurnameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldSurnameUserProfileActionPerformed
+    }//GEN-LAST:event_SurnameFieldActionPerformed
 
-    private void jPasswordFieldUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldUserProfileActionPerformed
+    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordFieldUserProfileActionPerformed
+    }//GEN-LAST:event_PasswordFieldActionPerformed
 
-    private void jPasswordFieldRepeatUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldRepeatUserProfileActionPerformed
+    private void RepeatPassFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RepeatPassFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordFieldRepeatUserProfileActionPerformed
+    }//GEN-LAST:event_RepeatPassFieldActionPerformed
 
-    private void jTextFieldBirthdayUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBirthdayUserProfileActionPerformed
+    private void BirthdayFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BirthdayFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBirthdayUserProfileActionPerformed
+    }//GEN-LAST:event_BirthdayFieldActionPerformed
 
-    private void jTextFieldCreditCardUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCreditCardUserProfileActionPerformed
+    private void CreditCardFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreditCardFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCreditCardUserProfileActionPerformed
+    }//GEN-LAST:event_CreditCardFieldActionPerformed
 
-    private void jTextFieldLocalizationUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLocalizationUserProfileActionPerformed
+    private void LocationFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LocationFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldLocalizationUserProfileActionPerformed
+    }//GEN-LAST:event_LocationFieldActionPerformed
 
-    private void jTextFieldTelephoneUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTelephoneUserProfileActionPerformed
+    private void TelephoneFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelephoneFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTelephoneUserProfileActionPerformed
+    }//GEN-LAST:event_TelephoneFieldActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_NameFieldActionPerformed
 
-    private void jButtonBackUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackUserProfileActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // TODO add your handling code here:
         GameSearch search = new GameSearch();
         search.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButtonBackUserProfileActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void jButtonSaveChangesUserProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveChangesUserProfileActionPerformed
+    private void SaveChangesFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveChangesFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSaveChangesUserProfileActionPerformed
+    }//GEN-LAST:event_SaveChangesFieldActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void LibraryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LibraryActionPerformed
         // TODO add your handling code here:
         MyLibrary library = new MyLibrary();
         library.setVisible(true);
         this.dispose();
 
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_LibraryActionPerformed
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+    private void CloseSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseSessionActionPerformed
         // TODO add your handling code here:
         int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
         if (resp == 0) {
@@ -472,11 +472,11 @@ public class UserProfile extends javax.swing.JFrame {
             logOutCommand.logOut(this);
         }
 
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
+    }//GEN-LAST:event_CloseSessionActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void DataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_DataActionPerformed
 
     /**
      * @param args the command line arguments
@@ -514,8 +514,24 @@ public class UserProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBackUserProfile;
-    private javax.swing.JButton jButtonSaveChangesUserProfile;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JTextField BirthdayField;
+    private javax.swing.JMenuItem CloseSession;
+    private javax.swing.JMenu CloseSessionMenu;
+    private javax.swing.JTextField CreditCardField;
+    private javax.swing.JMenuItem Data;
+    private javax.swing.JMenu DataMenu;
+    private javax.swing.JMenuItem Library;
+    private javax.swing.JMenu LibraryMenu;
+    private javax.swing.JTextField LocationField;
+    private javax.swing.JMenuBar Menu;
+    private javax.swing.JTextField NameField;
+    private javax.swing.JPasswordField PasswordField;
+    private javax.swing.JPasswordField RepeatPassField;
+    private javax.swing.JButton SaveChangesField;
+    private javax.swing.JTextField SurnameField;
+    private javax.swing.JTextField TelephoneField;
+    private javax.swing.JTextField UserField;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
@@ -530,29 +546,13 @@ public class UserProfile extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JPasswordField jPasswordFieldRepeatUserProfile;
-    private javax.swing.JPasswordField jPasswordFieldUserProfile;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextFieldBirthdayUserProfile;
-    private javax.swing.JTextField jTextFieldCreditCardUserProfile;
-    private javax.swing.JTextField jTextFieldLocalizationUserProfile;
     private javax.swing.JTextField jTextFieldNameUserProfile;
-    private javax.swing.JTextField jTextFieldSurnameUserProfile;
-    private javax.swing.JTextField jTextFieldTelephoneUserProfile;
-    private javax.swing.JTextField jTextFieldUserUserProfile;
     // End of variables declaration//GEN-END:variables
 }

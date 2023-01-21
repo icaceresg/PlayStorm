@@ -46,17 +46,17 @@ public class ProductModification extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBoxCategoriaProductCreation = new javax.swing.JComboBox<>();
+        CategoryComboBox = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButtonCancelarProductModification = new javax.swing.JButton();
-        jButtonModificarProductModification = new javax.swing.JButton();
-        jTextFieldTituloProductCreation = new javax.swing.JTextField();
-        jTextFieldEmpresaProductCreation = new javax.swing.JTextField();
-        jTextFieldPrecioProductCreation = new javax.swing.JTextField();
-        jTextFieldDescipcionProductCreation = new javax.swing.JTextField();
-        jTextFieldCantidadProductCreation = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        CancelButton = new javax.swing.JButton();
+        ModifyButton = new javax.swing.JButton();
+        TitleField = new javax.swing.JTextField();
+        CompanyField = new javax.swing.JTextField();
+        PriceField = new javax.swing.JTextField();
+        DescriptionField = new javax.swing.JTextField();
+        AmountField = new javax.swing.JTextField();
+        ProductField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,10 +82,10 @@ public class ProductModification extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Categoria:");
 
-        jComboBoxCategoriaProductCreation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rol", "Accion", "Estrategia", "Aventura", "Simulacion", "Deportes", "Carreras" }));
-        jComboBoxCategoriaProductCreation.addActionListener(new java.awt.event.ActionListener() {
+        CategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una categoria", "Rol", "Accion", "Estrategia", "Aventura", "Simulacion", "Deportes", "Carreras" }));
+        CategoryComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxCategoriaProductCreationActionPerformed(evt);
+                CategoryComboBoxActionPerformed(evt);
             }
         });
 
@@ -97,56 +97,56 @@ public class ProductModification extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Cantidad:");
 
-        jButtonCancelarProductModification.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonCancelarProductModification.setText("Cancelar");
-        jButtonCancelarProductModification.addActionListener(new java.awt.event.ActionListener() {
+        CancelButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        CancelButton.setText("Cancelar");
+        CancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelarProductModificationActionPerformed(evt);
+                CancelButtonActionPerformed(evt);
             }
         });
 
-        jButtonModificarProductModification.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonModificarProductModification.setText("Modificar");
-        jButtonModificarProductModification.addActionListener(new java.awt.event.ActionListener() {
+        ModifyButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        ModifyButton.setText("Modificar");
+        ModifyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonModificarProductModificationActionPerformed(evt);
+                ModifyButtonActionPerformed(evt);
             }
         });
 
-        jTextFieldTituloProductCreation.addActionListener(new java.awt.event.ActionListener() {
+        TitleField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTituloProductCreationActionPerformed(evt);
+                TitleFieldActionPerformed(evt);
             }
         });
 
-        jTextFieldEmpresaProductCreation.addActionListener(new java.awt.event.ActionListener() {
+        CompanyField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEmpresaProductCreationActionPerformed(evt);
+                CompanyFieldActionPerformed(evt);
             }
         });
 
-        jTextFieldPrecioProductCreation.addActionListener(new java.awt.event.ActionListener() {
+        PriceField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldPrecioProductCreationActionPerformed(evt);
+                PriceFieldActionPerformed(evt);
             }
         });
 
-        jTextFieldDescipcionProductCreation.addActionListener(new java.awt.event.ActionListener() {
+        DescriptionField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldDescipcionProductCreationActionPerformed(evt);
+                DescriptionFieldActionPerformed(evt);
             }
         });
 
-        jTextFieldCantidadProductCreation.addActionListener(new java.awt.event.ActionListener() {
+        AmountField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCantidadProductCreationActionPerformed(evt);
+                AmountFieldActionPerformed(evt);
             }
         });
 
-        jTextField1.setEditable(false);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        ProductField.setEditable(false);
+        ProductField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                ProductFieldActionPerformed(evt);
             }
         });
 
@@ -167,23 +167,23 @@ public class ProductModification extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jComboBoxCategoriaProductCreation, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldTituloProductCreation)
-                                .addComponent(jTextFieldEmpresaProductCreation)
-                                .addComponent(jTextFieldPrecioProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextFieldDescipcionProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldCantidadProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(CategoryComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TitleField)
+                                .addComponent(CompanyField)
+                                .addComponent(PriceField, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(DescriptionField, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(146, 146, 146)
-                        .addComponent(jButtonCancelarProductModification, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(76, 76, 76)
-                        .addComponent(jButtonModificarProductModification, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ModifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 63, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(103, 103, 103)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ProductField, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -192,85 +192,91 @@ public class ProductModification extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ProductField, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextFieldTituloProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TitleField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextFieldEmpresaProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CompanyField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextFieldPrecioProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PriceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBoxCategoriaProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CategoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(jTextFieldDescipcionProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DescriptionField, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldCantidadProductCreation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonCancelarProductModification, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonModificarProductModification, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ModifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldTituloProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTituloProductCreationActionPerformed
+    private void TitleFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TitleFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTituloProductCreationActionPerformed
+    }//GEN-LAST:event_TitleFieldActionPerformed
 
-    private void jComboBoxCategoriaProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCategoriaProductCreationActionPerformed
+    private void CategoryComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoryComboBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxCategoriaProductCreationActionPerformed
+    }//GEN-LAST:event_CategoryComboBoxActionPerformed
 
-    private void jTextFieldEmpresaProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmpresaProductCreationActionPerformed
+    private void CompanyFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompanyFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEmpresaProductCreationActionPerformed
+    }//GEN-LAST:event_CompanyFieldActionPerformed
 
-    private void jTextFieldDescipcionProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDescipcionProductCreationActionPerformed
+    private void DescriptionFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescriptionFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldDescipcionProductCreationActionPerformed
+    }//GEN-LAST:event_DescriptionFieldActionPerformed
 
-    private void jTextFieldCantidadProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCantidadProductCreationActionPerformed
+    private void AmountFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AmountFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCantidadProductCreationActionPerformed
+    }//GEN-LAST:event_AmountFieldActionPerformed
 
-    private void jTextFieldPrecioProductCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPrecioProductCreationActionPerformed
+    private void PriceFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PriceFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPrecioProductCreationActionPerformed
+    }//GEN-LAST:event_PriceFieldActionPerformed
 
-    private void jButtonModificarProductModificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarProductModificationActionPerformed
+    private void ModifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifyButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonModificarProductModificationActionPerformed
+    }//GEN-LAST:event_ModifyButtonActionPerformed
 
-    private void jButtonCancelarProductModificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarProductModificationActionPerformed
+    private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCancelarProductModificationActionPerformed
+    }//GEN-LAST:event_CancelButtonActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void ProductFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_ProductFieldActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCancelarProductModification;
-    private javax.swing.JButton jButtonModificarProductModification;
-    private javax.swing.JComboBox<String> jComboBoxCategoriaProductCreation;
+    private javax.swing.JTextField AmountField;
+    private javax.swing.JButton CancelButton;
+    private javax.swing.JComboBox<String> CategoryComboBox;
+    private javax.swing.JTextField CompanyField;
+    private javax.swing.JTextField DescriptionField;
+    private javax.swing.JButton ModifyButton;
+    private javax.swing.JTextField PriceField;
+    private javax.swing.JTextField ProductField;
+    private javax.swing.JTextField TitleField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -278,11 +284,5 @@ public class ProductModification extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextFieldCantidadProductCreation;
-    private javax.swing.JTextField jTextFieldDescipcionProductCreation;
-    private javax.swing.JTextField jTextFieldEmpresaProductCreation;
-    private javax.swing.JTextField jTextFieldPrecioProductCreation;
-    private javax.swing.JTextField jTextFieldTituloProductCreation;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,47 +4,47 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="ProfileMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Perfil"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="Profile">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver Datos"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProfileActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu3">
+        <Menu class="javax.swing.JMenu" name="CartMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Carrito"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="Cart">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver Carrito"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CartActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
+        <Menu class="javax.swing.JMenu" name="CloseSessionMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+            <MenuItem class="javax.swing.JMenuItem" name="CloseSession">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cerrar Sesion"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CloseSessionActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -82,23 +82,23 @@
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jButtonAddtoCart" alignment="1" min="-2" pref="174" max="-2" attributes="0"/>
+                          <Component id="AddCartButton" alignment="1" min="-2" pref="174" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jTextFieldNombreGameSearch" min="-2" pref="337" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="NameField" min="-2" pref="313" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jComboBoxCategoriaGameSearch" min="-2" pref="141" max="-2" attributes="0"/>
+                              <Component id="Categorycombobox" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel1" max="32767" attributes="0"/>
-                                  <Component id="jSliderPrecioMaximoGameSearch" pref="0" max="32767" attributes="0"/>
+                                  <Component id="MaxPriceSlider" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="jLabel2" min="-2" pref="282" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -108,11 +108,11 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel4" min="-2" pref="60" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabelMoney" max="32767" attributes="0"/>
+                              <Component id="Money" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jButtonBuscarGameSearch" min="-2" pref="122" max="-2" attributes="0"/>
+                              <Component id="SearchButton" min="-2" pref="122" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
@@ -130,23 +130,23 @@
                       <Component id="jLabel2" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextFieldNombreGameSearch" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="jComboBoxCategoriaGameSearch" alignment="3" max="32767" attributes="0"/>
+                          <Component id="NameField" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="Categorycombobox" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel4" pref="38" max="32767" attributes="0"/>
-                          <Component id="jLabelMoney" max="32767" attributes="0"/>
+                          <Component id="Money" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButtonBuscarGameSearch" max="32767" attributes="0"/>
+                          <Component id="SearchButton" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jSliderPrecioMaximoGameSearch" min="-2" max="-2" attributes="0"/>
+                              <Component id="MaxPriceSlider" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -156,48 +156,49 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="338" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jButtonAddtoCart" min="-2" max="-2" attributes="0"/>
+              <Component id="AddCartButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="22" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="jTextFieldNombreGameSearch">
+    <Component class="javax.swing.JTextField" name="NameField">
       <Properties>
         <Property name="text" type="java.lang.String" value="Inserte t&#xed;tulo..."/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextFieldNombreGameSearchMouseClicked"/>
-        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTextFieldNombreGameSearchMouseEntered"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNombreGameSearchActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="NameFieldMouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="NameFieldMouseEntered"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBoxCategoriaGameSearch">
+    <Component class="javax.swing.JComboBox" name="Categorycombobox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="7">
-            <StringItem index="0" value="Rol"/>
-            <StringItem index="1" value="Acci&#xf3;n"/>
-            <StringItem index="2" value="Estrategia"/>
-            <StringItem index="3" value="Aventura"/>
-            <StringItem index="4" value="Simulaci&#xf3;n"/>
-            <StringItem index="5" value="Deportes"/>
-            <StringItem index="6" value="Carreras"/>
+          <StringArray count="8">
+            <StringItem index="0" value="Seleccione una categoria"/>
+            <StringItem index="1" value="Rol"/>
+            <StringItem index="2" value="Acci&#xf3;n"/>
+            <StringItem index="3" value="Estrategia"/>
+            <StringItem index="4" value="Aventura"/>
+            <StringItem index="5" value="Simulaci&#xf3;n"/>
+            <StringItem index="6" value="Deportes"/>
+            <StringItem index="7" value="Carreras"/>
           </StringArray>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxCategoriaGameSearchActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CategorycomboboxActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JSlider" name="jSliderPrecioMaximoGameSearch">
+    <Component class="javax.swing.JSlider" name="MaxPriceSlider">
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonBuscarGameSearch">
+    <Component class="javax.swing.JButton" name="SearchButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -234,7 +235,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTableProducts">
+        <Component class="javax.swing.JTable" name="AllProductsTable">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="6" rowCount="0">
@@ -287,7 +288,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButtonAddtoCart">
+    <Component class="javax.swing.JButton" name="AddCartButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -295,7 +296,7 @@
         <Property name="text" type="java.lang.String" value="A&#xf1;adir al carrito"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddtoCartActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddCartButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
@@ -307,7 +308,7 @@
         <Property name="text" type="java.lang.String" value="Dinero:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabelMoney">
+    <Component class="javax.swing.JLabel" name="Money">
     </Component>
   </SubComponents>
 </Form>

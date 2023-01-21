@@ -51,10 +51,10 @@ public class GameSearch extends javax.swing.JFrame {
     
     public void addRowToJTable() throws Exception {
 
-        DefaultTableModel model = (DefaultTableModel) jTableProducts.getModel();
+        DefaultTableModel model = (DefaultTableModel) AllProductsTable.getModel();
 
         ProductIterator iterator = new ProductIterator();
-        Object rowData[] = new Object[jTableProducts.getColumnCount()];
+        Object rowData[] = new Object[AllProductsTable.getColumnCount()];
 
         while (iterator.hasNext()) {
             Product product = iterator.next();
@@ -81,53 +81,53 @@ public class GameSearch extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFieldNombreGameSearch = new javax.swing.JTextField();
-        jComboBoxCategoriaGameSearch = new javax.swing.JComboBox<>();
-        jSliderPrecioMaximoGameSearch = new javax.swing.JSlider();
-        jButtonBuscarGameSearch = new javax.swing.JButton();
+        NameField = new javax.swing.JTextField();
+        Categorycombobox = new javax.swing.JComboBox<>();
+        MaxPriceSlider = new javax.swing.JSlider();
+        SearchButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableProducts = new javax.swing.JTable();
-        jButtonAddtoCart = new javax.swing.JButton();
+        AllProductsTable = new javax.swing.JTable();
+        AddCartButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabelMoney = new javax.swing.JLabel();
+        Money = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        ProfileMenu = new javax.swing.JMenu();
+        Profile = new javax.swing.JMenuItem();
+        CartMenu = new javax.swing.JMenu();
+        Cart = new javax.swing.JMenuItem();
+        CloseSessionMenu = new javax.swing.JMenu();
+        CloseSession = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextFieldNombreGameSearch.setText("Inserte título...");
-        jTextFieldNombreGameSearch.setToolTipText("");
-        jTextFieldNombreGameSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+        NameField.setText("Inserte título...");
+        NameField.setToolTipText("");
+        NameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextFieldNombreGameSearchMouseClicked(evt);
+                NameFieldMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jTextFieldNombreGameSearchMouseEntered(evt);
+                NameFieldMouseEntered(evt);
             }
         });
-        jTextFieldNombreGameSearch.addActionListener(new java.awt.event.ActionListener() {
+        NameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNombreGameSearchActionPerformed(evt);
+                NameFieldActionPerformed(evt);
             }
         });
 
-        jComboBoxCategoriaGameSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rol", "Acción", "Estrategia", "Aventura", "Simulación", "Deportes", "Carreras" }));
-        jComboBoxCategoriaGameSearch.addActionListener(new java.awt.event.ActionListener() {
+        Categorycombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una categoria", "Rol", "Acción", "Estrategia", "Aventura", "Simulación", "Deportes", "Carreras" }));
+        Categorycombobox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxCategoriaGameSearchActionPerformed(evt);
+                CategorycomboboxActionPerformed(evt);
             }
         });
 
-        jButtonBuscarGameSearch.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonBuscarGameSearch.setText("Buscar");
+        SearchButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        SearchButton.setText("Buscar");
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -138,7 +138,7 @@ public class GameSearch extends javax.swing.JFrame {
 
         jLabel3.setText("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        jTableProducts.setModel(new javax.swing.table.DefaultTableModel(
+        AllProductsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -154,13 +154,13 @@ public class GameSearch extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTableProducts);
+        jScrollPane1.setViewportView(AllProductsTable);
 
-        jButtonAddtoCart.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButtonAddtoCart.setText("Añadir al carrito");
-        jButtonAddtoCart.addActionListener(new java.awt.event.ActionListener() {
+        AddCartButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        AddCartButton.setText("Añadir al carrito");
+        AddCartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddtoCartActionPerformed(evt);
+                AddCartButtonActionPerformed(evt);
             }
         });
 
@@ -168,41 +168,41 @@ public class GameSearch extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Dinero:");
 
-        jMenu1.setText("Perfil");
+        ProfileMenu.setText("Perfil");
 
-        jMenuItem2.setText("Ver Datos");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        Profile.setText("Ver Datos");
+        Profile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                ProfileActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        ProfileMenu.add(Profile);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(ProfileMenu);
 
-        jMenu3.setText("Carrito");
+        CartMenu.setText("Carrito");
 
-        jMenuItem1.setText("Ver Carrito");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        Cart.setText("Ver Carrito");
+        Cart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                CartActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem1);
+        CartMenu.add(Cart);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(CartMenu);
 
-        jMenu2.setText("Cerrar Sesión");
+        CloseSessionMenu.setText("Cerrar Sesión");
 
-        jMenuItem3.setText("Cerrar Sesion");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        CloseSession.setText("Cerrar Sesion");
+        CloseSession.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                CloseSessionActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        CloseSessionMenu.add(CloseSession);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(CloseSessionMenu);
 
         setJMenuBar(jMenuBar1);
 
@@ -217,18 +217,18 @@ public class GameSearch extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonAddtoCart, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(AddCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextFieldNombreGameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBoxCategoriaGameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Categorycombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jSliderPrecioMaximoGameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                                    .addComponent(MaxPriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))
@@ -237,10 +237,10 @@ public class GameSearch extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelMoney, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(Money, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButtonBuscarGameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(61, 61, 61))))
         );
         layout.setVerticalGroup(
@@ -252,95 +252,95 @@ public class GameSearch extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldNombreGameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxCategoriaGameSearch))
+                            .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Categorycombobox))
                         .addGap(27, 27, 27))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                            .addComponent(jLabelMoney, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Money, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonBuscarGameSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SearchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSliderPrecioMaximoGameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(MaxPriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonAddtoCart)
+                .addComponent(AddCartButton)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldNombreGameSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreGameSearchActionPerformed
+    private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNombreGameSearchActionPerformed
+    }//GEN-LAST:event_NameFieldActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void CloseSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseSessionActionPerformed
         int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
         if (resp == 0) {
             IntLogOut logOutCommand = new LogoutCommand();
             logOutCommand.logOut(this);
         }
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_CloseSessionActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void ProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileActionPerformed
         // TODO add your handling code here:
         UserProfile profile = new UserProfile();
         profile.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_ProfileActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void CartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CartActionPerformed
         // TODO add your handling code here:
         MyCart cart = new MyCart();
         cart.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_CartActionPerformed
 
-    private void jButtonAddtoCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddtoCartActionPerformed
+    private void AddCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCartButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAddtoCartActionPerformed
+    }//GEN-LAST:event_AddCartButtonActionPerformed
 
-    private void jComboBoxCategoriaGameSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCategoriaGameSearchActionPerformed
+    private void CategorycomboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategorycomboboxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxCategoriaGameSearchActionPerformed
+    }//GEN-LAST:event_CategorycomboboxActionPerformed
 
-    private void jTextFieldNombreGameSearchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldNombreGameSearchMouseEntered
+    private void NameFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NameFieldMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNombreGameSearchMouseEntered
+    }//GEN-LAST:event_NameFieldMouseEntered
 
-    private void jTextFieldNombreGameSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldNombreGameSearchMouseClicked
-        if(jTextFieldNombreGameSearch.getText().equals("Inserte título..."))
-            jTextFieldNombreGameSearch.setText("");
-    }//GEN-LAST:event_jTextFieldNombreGameSearchMouseClicked
+    private void NameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NameFieldMouseClicked
+        if(NameField.getText().equals("Inserte título..."))
+            NameField.setText("");
+    }//GEN-LAST:event_NameFieldMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAddtoCart;
-    private javax.swing.JButton jButtonBuscarGameSearch;
-    private javax.swing.JComboBox<String> jComboBoxCategoriaGameSearch;
+    private javax.swing.JButton AddCartButton;
+    private javax.swing.JTable AllProductsTable;
+    private javax.swing.JMenuItem Cart;
+    private javax.swing.JMenu CartMenu;
+    private javax.swing.JComboBox<String> Categorycombobox;
+    private javax.swing.JMenuItem CloseSession;
+    private javax.swing.JMenu CloseSessionMenu;
+    private javax.swing.JSlider MaxPriceSlider;
+    private javax.swing.JLabel Money;
+    private javax.swing.JTextField NameField;
+    private javax.swing.JMenuItem Profile;
+    private javax.swing.JMenu ProfileMenu;
+    private javax.swing.JButton SearchButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabelMoney;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSlider jSliderPrecioMaximoGameSearch;
-    private javax.swing.JTable jTableProducts;
-    private javax.swing.JTextField jTextFieldNombreGameSearch;
     // End of variables declaration//GEN-END:variables
 }
