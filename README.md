@@ -48,10 +48,10 @@ A simulation of online video game store like Steam
    - Estado: OrderState
    - EstadoConcreto: NewOrderState, ProcessingOrderState.
    - Contexto: Order
- - Observer: Actualización de los valores del dinero de la empresa y del cliente cada vez que se haga una compra/venta.
-   - ConcreteObserver: ConAdministratorObserver
+ - Observer: Actualización del valor de la cartera del cliente cada vez que añade dinero o compra productos.
+   - ConcreteObserver: AdministratorObserver
    - Subject: Money
-   - Observador = Observer
+   - Observador: Observer
  - Command: Cada vez que se cierre sesión, que el código sea implementado con Command.
    - Comando: IntCommand
    - Invocado: LogOutCommand
