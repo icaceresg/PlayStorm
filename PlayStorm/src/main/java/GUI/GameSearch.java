@@ -7,15 +7,15 @@ package GUI;
 import Class.Client;
 import Class.User;
 import Class.Command.LogoutCommand;
+import Class.DataBase;
 import Class.Iterator.ClientIterator;
-import Class.Iterator.CompanyIterator;
+import Class.Iterator.OrderIterator;
 import Class.Iterator.ProductIterator;
 import Class.Observer.SumObserver;
 import Class.Observer.SumSubject;
 import Class.Product;
 import Class.State.Order;
 import Interfaces.IntClient;
-import Interfaces.IntCompany;
 import Interfaces.IntLogOut;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -345,19 +345,44 @@ public class GameSearch extends javax.swing.JFrame {
 
     private void AddShoppingCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddShoppingCartButtonActionPerformed
         int num = AllProductsTable.getSelectedRow();
-        if(num > -1) {
+
+        if (num > -1) {
             try {
                 DefaultTableModel modelo = (DefaultTableModel) AllProductsTable.getModel();
                 ProductIterator productIterator = new ProductIterator();
-                while (productIterator.hasNext())
-                {
+                OrderIterator orderIterator = new OrderIterator();
+                while (productIterator.hasNext()) {
                     Product product = productIterator.next();
-                    if((Integer) AllProductsTable.getValueAt(num, 0) == product.getId())
+                    if ((Integer) AllProductsTable.getValueAt(num, 0) == product.getId()) {
                         productIterator.deleteProduct(product);
-                        Order order = Order.getInstance();
-                        order.addProduct(product);
                         modelo.removeRow(num);
+                        ClientIterator client = new ClientIterator();
+                        while (client.hasNext()) {
+                            IntClient clientOrder = client.next();
+                            if (clientOrder.getEmail().equals(User.activeUser.get(0).getEmail())) {
+                                Order orderSelected, order = null;
+                                while (orderIterator.hasNext()) {
+                                    orderSelected = orderIterator.next();
+                                    if (orderSelected.getClient().getEmail().equals(User.activeUser.get(0).getEmail())&!(orderSelected.getStatus().equals("Finalizado"))) {
+                                        order = orderSelected;
+                                        order.addProduct(product);
+                                        order.process();
+                                    }
+                                }
+                                if (order == null) {
+                                    order = new Order(clientOrder);
+                                    order.addProduct(product);
+                                    order.process();
+                                    orderIterator.addOrder(order);
+                                }
+
+                            }
+                        }
+                    }
                 }
+                DataBase dataBase = new DataBase();
+                dataBase.saveIteratorOrder(orderIterator);
+                dataBase.saveIteratorProduct(productIterator);
             } catch (Exception ex) {
                 Logger.getLogger(GameSearch.class.getName()).log(Level.SEVERE, null, ex);
             }

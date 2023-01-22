@@ -184,8 +184,6 @@ public class Login extends javax.swing.JFrame {
                     IntClient client = clientIterator.next();
                     if (client.getEmail().equals(EmailField.getText()) && client.getPassword().equals(finalEncodePassword)) {
                         User.activeUser.add(client);
-                        Order order = Order.getInstance(client);
-                        order.process();
                         GameSearch gameSearch = new GameSearch();
                         gameSearch.setVisible(true);
                         this.dispose();

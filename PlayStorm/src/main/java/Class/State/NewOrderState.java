@@ -1,6 +1,8 @@
 package Class.State;
 
-public class NewOrderState implements OrderState {
+import java.io.Serializable;
+
+public class NewOrderState implements OrderState, Serializable {
 
     @Override
     public String processOrder(String status) {

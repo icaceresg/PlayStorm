@@ -1,10 +1,14 @@
 package Class.State;
 
+import Class.Iterator.OrderIterator;
 import Class.Product;
 import Interfaces.IntClient;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class Order {
+public class Order implements Serializable {
 
     private static Order instance;
     private int id;
@@ -14,31 +18,30 @@ public class Order {
 
     private OrderState currentState;
 
-    public static Order getInstance(IntClient client) {
-        if (instance == null) {
-            instance = new Order(0, client, "");
+    public Order(IntClient client) {
+        try {
+            OrderIterator iterator = new OrderIterator();
+            if (!iterator.hasNext()) {
+                this.id = 0;
+            } else {
+                this.id = new OrderIterator().lastItem().getId() + 1;
+            }
+            this.client = client;
+            this.status = "";
+
+            currentState = new NewOrderState();
+        } catch (Exception ex) {
+            Logger.getLogger(Order.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return instance;
-    }
-
-    public static Order getInstance() {
-        return instance;
-    }
-
-    private Order(int id, IntClient client, String status) {
-        this.id = id;
-        this.client = client;
-        this.status = status;
-
-        currentState = new NewOrderState();
     }
 
     public void addProduct(Product product) {
         this.products.add(product);
+
     }
 
     public void deleteProduct(Product product) {
-        return;
+        this.products.remove(product);
     }
 
     public int getId() {

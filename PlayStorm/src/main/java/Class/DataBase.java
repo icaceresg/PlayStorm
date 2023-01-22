@@ -2,7 +2,9 @@ package Class;
 
 import Class.Iterator.ClientIterator;
 import Class.Iterator.CompanyIterator;
+import Class.Iterator.OrderIterator;
 import Class.Iterator.ProductIterator;
+import Class.State.Order;
 import Interfaces.IntClient;
 import Interfaces.IntCompany;
 import java.io.File;
@@ -229,6 +231,77 @@ public class DataBase {
             }
         }
         return products;
+    }
+
+    public void saveOrders(Order order) throws IOException, Exception {
+        OrderIterator iterator = new OrderIterator();
+        iterator.addOrder(order);
+        File file = new File(path, "Order.xt");
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(
+                    new FileOutputStream(file));
+            while (iterator.hasNext()) {
+                oos.writeObject(iterator.next());
+            }
+
+        } catch (FileNotFoundException ef) {
+            throw new Exception(ef.getMessage());
+        } catch (IOException ei) {
+            throw new Exception(ei.getMessage());
+        } finally {
+            if (oos != null) {
+                oos.close();
+            }
+        }
+
+    }
+
+    public void saveIteratorOrder(OrderIterator iterator) throws IOException, Exception {
+        File file = new File(path, "Order.txt");
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(
+                    new FileOutputStream(file));
+            while (iterator.hasNext()) {
+                oos.writeObject(iterator.next());
+            }
+
+        } catch (FileNotFoundException ef) {
+            throw new Exception(ef.getMessage());
+        } catch (IOException ei) {
+            throw new Exception(ei.getMessage());
+        } finally {
+            if (oos != null) {
+                oos.close();
+            }
+        }
+
+    }
+
+    public ArrayList<Order> readOrder() throws Exception {
+        File file = new File(path, "Order.txt");
+        ArrayList<Order> orders = new ArrayList();
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream(file));
+            Object aux = ois.readObject();
+            do {
+                if (aux instanceof Order) {
+                    orders.add((Order) aux);
+                }
+                aux = ois.readObject();
+            } while (aux != null);
+        } catch (FileNotFoundException ef) {
+            throw new Exception(ef.getMessage());
+        } catch (IOException ei) {
+            //throw new Exception(ei.getMessage());
+        } finally {
+            if (ois != null) {
+                ois.close();
+            }
+        }
+        return orders;
     }
 
 }
