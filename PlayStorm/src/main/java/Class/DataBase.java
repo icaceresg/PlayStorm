@@ -80,7 +80,7 @@ public class DataBase {
         } catch (FileNotFoundException ef) {
             throw new Exception(ef.getMessage());
         } catch (IOException ei) {
-            throw new Exception(ei.getMessage());
+            //throw new Exception(ei.getMessage());
         } finally {
             if (ois != null) {
                 ois.close();
@@ -151,7 +151,7 @@ public class DataBase {
         } catch (FileNotFoundException ef) {
             throw new Exception(ef.getMessage());
         } catch (IOException ei) {
-            throw new Exception(ei.getMessage());
+            //throw new Exception(ei.getMessage());
         } finally {
             if (ois != null) {
                 ois.close();
@@ -222,7 +222,7 @@ public class DataBase {
         } catch (FileNotFoundException ef) {
             throw new Exception(ef.getMessage());
         } catch (IOException ei) {
-            throw new Exception(ei.getMessage());
+            //throw new Exception(ei.getMessage());
         } finally {
             if (ois != null) {
                 ois.close();
