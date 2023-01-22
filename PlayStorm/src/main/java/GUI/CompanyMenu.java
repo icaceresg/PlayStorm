@@ -56,8 +56,6 @@ public class CompanyMenu extends javax.swing.JFrame {
         MenuBar = new javax.swing.JMenuBar();
         CompanyMenu = new javax.swing.JMenu();
         CompanyItem = new javax.swing.JMenuItem();
-        StudioRegisterMenu = new javax.swing.JMenu();
-        StudioRegisterItem = new javax.swing.JMenuItem();
         SessionCloseMenu = new javax.swing.JMenu();
         SessionCloseItem = new javax.swing.JMenuItem();
 
@@ -105,7 +103,7 @@ public class CompanyMenu extends javax.swing.JFrame {
 
         CompanyMenu.setText("Empresa");
 
-        CompanyItem.setText("Editar Proveedor");
+        CompanyItem.setText("Editar Empresa");
         CompanyItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CompanyItemActionPerformed(evt);
@@ -114,18 +112,6 @@ public class CompanyMenu extends javax.swing.JFrame {
         CompanyMenu.add(CompanyItem);
 
         MenuBar.add(CompanyMenu);
-
-        StudioRegisterMenu.setText("Registrar Estudio");
-
-        StudioRegisterItem.setText("Registrar Estudio");
-        StudioRegisterItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StudioRegisterItemActionPerformed(evt);
-            }
-        });
-        StudioRegisterMenu.add(StudioRegisterItem);
-
-        MenuBar.add(StudioRegisterMenu);
 
         SessionCloseMenu.setText("Cerrar Sesión");
 
@@ -191,11 +177,6 @@ public class CompanyMenu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ProductsFieldActionPerformed
 
-    private void StudioRegisterItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudioRegisterItemActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_StudioRegisterItemActionPerformed
-
     private void SessionCloseItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SessionCloseItemActionPerformed
         int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
         if (resp == 0) {
@@ -227,8 +208,6 @@ public class CompanyMenu extends javax.swing.JFrame {
     private javax.swing.JButton SalesButton;
     private javax.swing.JMenuItem SessionCloseItem;
     private javax.swing.JMenu SessionCloseMenu;
-    private javax.swing.JMenuItem StudioRegisterItem;
-    private javax.swing.JMenu StudioRegisterMenu;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

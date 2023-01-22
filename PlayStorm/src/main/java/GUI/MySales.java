@@ -1,12 +1,21 @@
 package GUI;
 
+import Class.Iterator.CompanyIterator;
+import Class.Iterator.OrderIterator;
+import Class.Product;
+import Class.State.Order;
+import Class.User;
+import Interfaces.IntCompany;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Ventana para ver la lista de productos añadidos al carrito para poder comprarlo
+ * Ventana para ver la lista de productos añadidos al carrito para poder
+ * comprarlo
  */
 public class MySales extends javax.swing.JFrame {
 
@@ -31,6 +40,30 @@ public class MySales extends javax.swing.JFrame {
      * introducidos
      */
     public void addRowToJTable() {
+        try {
+            DefaultTableModel model = (DefaultTableModel) MySalesTable.getModel();
+            Object rowData[] = new Object[MySalesTable.getColumnCount()];
+
+            OrderIterator orderIterator = new OrderIterator();
+            while (orderIterator.hasNext()) {
+                Order orderSearch = orderIterator.next();
+                if (orderSearch.getStatus().equals("Finalizado")) {
+                    for (int i = 0; i < orderSearch.getProduct().size(); i++) {
+                        if (User.activeUser.get(0).getEmail().equals(orderSearch.getProduct().get(i).getCompany().getEmail())) {
+                            rowData[0] = orderSearch.getProduct().get(i).getTitle();
+                            rowData[1] = orderSearch.getProduct().get(i).getCompany().getName();
+                            rowData[2] = orderSearch.getClient().getName();
+                            rowData[3] = orderSearch.getProduct().get(i).getPrice();
+
+                            model.addRow(rowData);
+                        }
+                    }
+                }
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(MyCart.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 

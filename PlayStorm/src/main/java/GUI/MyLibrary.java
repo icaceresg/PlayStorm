@@ -1,7 +1,12 @@
 package GUI;
 
+import Class.Iterator.OrderIterator;
+import Class.State.Order;
+import Class.User;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -30,7 +35,31 @@ public class MyLibrary extends javax.swing.JFrame {
      * Metodo para crear por defecto la tabla definida por los productos
      * introducidos
      */
-    public void addRowToJTable() {
+        public void addRowToJTable() {
+        try {
+            DefaultTableModel model = (DefaultTableModel) MyLibraryTable.getModel();
+            Object rowData[] = new Object[MyLibraryTable.getColumnCount()];
+
+            OrderIterator orderIterator = new OrderIterator();
+            while (orderIterator.hasNext()) {
+                Order orderSearch = orderIterator.next();
+                if (orderSearch.getStatus().equals("Finalizado")) {
+                    for (int i = 0; i < orderSearch.getProduct().size(); i++) {
+                        if (User.activeUser.get(0).getEmail().equals(orderSearch.getClient().getEmail())) {
+                            rowData[0] = orderSearch.getProduct().get(i).getTitle();
+                            rowData[1] = orderSearch.getProduct().get(i).getCompany().getName();
+                            rowData[2] = orderSearch.getProduct().get(i).getPrice();
+                            rowData[3] = orderSearch.getProduct().get(i).getCategory();
+
+                            model.addRow(rowData);
+                        }
+                    }
+                }
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(MyCart.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
@@ -41,7 +70,6 @@ public class MyLibrary extends javax.swing.JFrame {
         MyLibraryPane = new javax.swing.JScrollPane();
         MyLibraryTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        TicketButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,14 +96,6 @@ public class MyLibrary extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setText("Mis Juegos Comprados");
 
-        TicketButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        TicketButton.setText("Ver Ticket");
-        TicketButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TicketButtonActionPerformed(evt);
-            }
-        });
-
         BackButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         BackButton.setText("Volver");
         BackButton.addActionListener(new java.awt.event.ActionListener() {
@@ -90,16 +110,11 @@ public class MyLibrary extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(MyLibraryPane)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(BackButton)
-                        .addGap(347, 347, 347)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(411, 411, 411)
-                        .addComponent(TicketButton, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(328, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(BackButton)
+                .addGap(291, 291, 291)
+                .addComponent(jLabel1)
+                .addContainerGap(384, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,10 +127,8 @@ public class MyLibrary extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(BackButton)))
                 .addGap(18, 18, 18)
-                .addComponent(MyLibraryPane, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(TicketButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addComponent(MyLibraryPane, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         pack();
@@ -128,15 +141,10 @@ public class MyLibrary extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void TicketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TicketButtonActionPerformed
-        // Cambia de ventana a la de comprar para avanzar en la operacion
-
-    }//GEN-LAST:event_TicketButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.JScrollPane MyLibraryPane;
     private javax.swing.JTable MyLibraryTable;
-    private javax.swing.JButton TicketButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

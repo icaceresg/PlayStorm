@@ -26,25 +26,10 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="CompanyItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Editar Proveedor"/>
+                <Property name="text" type="java.lang.String" value="Editar Empresa"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CompanyItemActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="StudioRegisterMenu">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Registrar Estudio"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="StudioRegisterItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Registrar Estudio"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StudioRegisterItemActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

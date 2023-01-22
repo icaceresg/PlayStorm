@@ -6,14 +6,22 @@
 package GUI;
 
 import Class.AbstractFactory.NotSubscriberFactory;
+import Class.AbstractFactory.SubscriberFactory;
+import Class.AbstractFactory.TemplateMethod.SubscriberCompany;
 import Class.Adapter.PasswordAdapter;
 import Class.Adapter.PasswordEncode;
 import Class.Adapter.Password;
-import Class.*;
+import Class.DataBase;
+import Class.Iterator.ClientIterator;
+import Class.Iterator.CompanyIterator;
+import Class.User;
+import Interfaces.IntClient;
 import Interfaces.IntCompany;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -35,11 +43,44 @@ public class CompanyDataEdit extends javax.swing.JFrame {
         setLocationRelativeTo(null);
 
         initComponents();
+        insertData();
 
         this.setTitle("JavaPop");
 
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
+    }
+
+    public void insertData() {
+        NameField.setText(User.activeUser.get(0).getName());
+
+        IntCompany company = getCompany();
+        LocationField.setText(company.getLocation());
+        EmailField.setText(company.getEmail());
+        CIFField.setText(company.getCif());
+        PassField.setText("");
+        RepeatPassField.setText("");
+        if (company instanceof SubscriberCompany) {
+            VipCheckBox.setSelected(true);
+        } else {
+            VipCheckBox.setSelected(false);
+        }
+    }
+
+    public IntCompany getCompany() {
+        IntCompany companySelected = null;
+        try {
+            CompanyIterator iterator = new CompanyIterator();
+            while (iterator.hasNext()) {
+                IntCompany company = iterator.next();
+                if (company.getEmail().equals(User.activeUser.get(0).getEmail())) {
+                    companySelected = company;
+                }
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(ClientProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return companySelected;
     }
 
     /**
@@ -66,6 +107,7 @@ public class CompanyDataEdit extends javax.swing.JFrame {
         RepeatPassField = new javax.swing.JPasswordField();
         AcceptButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
+        VipCheckBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,6 +150,8 @@ public class CompanyDataEdit extends javax.swing.JFrame {
             }
         });
 
+        EmailField.setEditable(false);
+        EmailField.setEnabled(false);
         EmailField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EmailFieldActionPerformed(evt);
@@ -130,20 +174,23 @@ public class CompanyDataEdit extends javax.swing.JFrame {
             }
         });
 
+        VipCheckBox.setText("VIP");
+        VipCheckBox.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(197, 197, 197)
+                        .addComponent(VipCheckBox)
+                        .addGap(134, 134, 134)
                         .addComponent(BackButton)
                         .addGap(29, 29, 29)
-                        .addComponent(AcceptButton)))
+                        .addComponent(AcceptButton))
+                    .addComponent(jLabel4))
                 .addContainerGap(147, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 164, Short.MAX_VALUE)
@@ -178,7 +225,8 @@ public class CompanyDataEdit extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AcceptButton)
-                    .addComponent(BackButton))
+                    .addComponent(BackButton)
+                    .addComponent(VipCheckBox))
                 .addGap(47, 47, 47))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -242,15 +290,43 @@ public class CompanyDataEdit extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales", "Registro", JOptionPane.ERROR_MESSAGE);
             }
+
         } else {
-            String finalEncodePassword;
 
-            Password password = new Password((String.valueOf(PassField.getPassword())));
-            PasswordAdapter passwordAdapter = new PasswordAdapter(password);
+            try {
+                String finalEncodePassword;
 
-            finalEncodePassword = new PasswordEncode().save(passwordAdapter);
+                Password password = new Password((String.valueOf(PassField.getPassword())));
+                PasswordAdapter passwordAdapter = new PasswordAdapter(password);
 
-            IntCompany company = new NotSubscriberFactory().createCompany(NameField.getText(), EmailField.getText(), finalEncodePassword, LocationField.getText(), CIFField.getText());
+                finalEncodePassword = new PasswordEncode().save(passwordAdapter);
+
+                CompanyIterator iterator = new CompanyIterator();
+                while (iterator.hasNext()) {
+                    IntCompany company = iterator.next();
+                    if (company.getEmail().equals(User.activeUser.get(0).getEmail())) {
+                        company.setName(NameField.getText());
+                        company.setCif(CIFField.getText());
+                        company.setLocation(LocationField.getText());
+                        company.setPassword(finalEncodePassword);
+
+                        User.activeUser.get(0).setEmail(company.getEmail());
+                        User.activeUser.get(0).setName(company.getName());
+                        User.activeUser.get(0).setPassword(company.getPassword());
+                    }
+                }
+
+                DataBase database = new DataBase();
+                database.saveIteratorCompany(iterator);
+
+                JOptionPane.showMessageDialog(this, "Empresa registrada correctamente", "Editar Empresa", JOptionPane.INFORMATION_MESSAGE);
+                CompanyMenu menu = new CompanyMenu();
+                menu.setVisible(true);
+                this.dispose();
+            } catch (Exception ex) {
+                Logger.getLogger(CompanyDataEdit.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
     }//GEN-LAST:event_AcceptButtonActionPerformed
 
@@ -268,6 +344,7 @@ public class CompanyDataEdit extends javax.swing.JFrame {
     private javax.swing.JTextField NameField;
     private javax.swing.JPasswordField PassField;
     private javax.swing.JPasswordField RepeatPassField;
+    private javax.swing.JCheckBox VipCheckBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

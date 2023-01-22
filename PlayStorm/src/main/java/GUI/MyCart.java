@@ -1,5 +1,6 @@
 package GUI;
 
+import Class.AbstractFactory.TemplateMethod.SubscriberClient;
 import Class.DataBase;
 import Class.Iterator.ClientIterator;
 import Class.Iterator.CompanyIterator;
@@ -53,7 +54,6 @@ public class MyCart extends javax.swing.JFrame {
             Order order = null;
             while (orderIterator.hasNext()) {
                 Order orderSearch = orderIterator.next();
-                System.out.println(orderSearch.getStatus());
                 if (orderSearch.getClient().getEmail().equals(User.activeUser.get(0).getEmail()) & !orderSearch.getStatus().equals("Finalizado")) {
                     order = orderSearch;
                 }
@@ -277,7 +277,11 @@ public class MyCart extends javax.swing.JFrame {
                 }
             }
 
-            client.setWallet(client.getWallet() - sum);
+            if (client instanceof SubscriberClient) {
+                client.setWallet((float) (client.getWallet() - (sum * 0.92)));
+            } else {
+                client.setWallet(client.getWallet() - sum);
+            }
 
             order.setState(new ProcessingOrderState());
             order.finish(); // prints "Order processing cannot be canceled"

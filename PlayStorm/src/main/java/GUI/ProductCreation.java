@@ -82,7 +82,7 @@ public class ProductCreation extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Categoría:");
 
-        CategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sellecione una categoria", "Rol", "Accion", "Estrategia", "Aventura", "Simulacion", "Deportes", "Carreras" }));
+        CategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione una categoría", "Rol", "Acción", "Estrategia", "Aventura", "Simulación", "Deportes", "Carreras" }));
         CategoryComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CategoryComboBoxActionPerformed(evt);

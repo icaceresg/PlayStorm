@@ -1,12 +1,21 @@
 package GUI;
 
+import Class.DataBase;
+import Class.Iterator.OrderIterator;
+import Class.Iterator.ProductIterator;
+import Class.Product;
+import Class.State.Order;
+import Class.User;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Ventana para ver la lista de productos añadidos al carrito para poder comprarlo
+ * Ventana para ver la lista de productos añadidos al carrito para poder
+ * comprarlo
  */
 public class MyProducts extends javax.swing.JFrame {
 
@@ -31,6 +40,29 @@ public class MyProducts extends javax.swing.JFrame {
      * introducidos
      */
     public void addRowToJTable() {
+        try {
+            DefaultTableModel model = (DefaultTableModel) MyProductsTable.getModel();
+            Object rowData[] = new Object[MyProductsTable.getColumnCount()];
+
+            ProductIterator productIterator = new ProductIterator();
+            while (productIterator.hasNext()) {
+                Product product = productIterator.next();
+                if (product.getCompany().getEmail().equals(User.activeUser.get(0).getEmail())) {
+                    if (User.activeUser.get(0).getEmail().equals(product.getCompany().getEmail())) {
+                        rowData[0] = product.getId();
+                        rowData[1] = product.getTitle();
+                        rowData[2] = product.getCompany().getName();
+                        rowData[3] = product.getPrice();
+                        rowData[4] = product.getCategory();
+
+                        model.addRow(rowData);
+                    }
+                }
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(MyCart.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
@@ -41,7 +73,6 @@ public class MyProducts extends javax.swing.JFrame {
         MyProductsPane = new javax.swing.JScrollPane();
         MyProductsTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        ModifyButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
 
@@ -53,11 +84,11 @@ public class MyProducts extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Título", "Empresa", "Precio", "Categoría"
+                "Id", "Título", "Empresa", "Precio", "Categoría"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -69,14 +100,6 @@ public class MyProducts extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setText("Mis Productos");
 
-        ModifyButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        ModifyButton.setText("Modificar");
-        ModifyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModifyButtonActionPerformed(evt);
-            }
-        });
-
         BackButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         BackButton.setText("Volver");
         BackButton.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +110,11 @@ public class MyProducts extends javax.swing.JFrame {
 
         DeleteButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         DeleteButton.setText("Eliminar");
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,9 +130,7 @@ public class MyProducts extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(ModifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(198, 198, 198))
+                .addGap(364, 364, 364))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,11 +144,9 @@ public class MyProducts extends javax.swing.JFrame {
                         .addComponent(BackButton)))
                 .addGap(18, 18, 18)
                 .addComponent(MyProductsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ModifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27))
+                .addGap(18, 18, 18)
+                .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
@@ -135,14 +159,36 @@ public class MyProducts extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void ModifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifyButtonActionPerformed
-        // Cambia de ventana a la de comprar para avanzar en la operacion
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+        int num = MyProductsTable.getSelectedRow();
+        //Eliminamos el producto seleccionado
+        if (num != -1) {
+            try {
+                DefaultTableModel modelo = (DefaultTableModel) MyProductsTable.getModel();
 
-    }//GEN-LAST:event_ModifyButtonActionPerformed
+                ProductIterator productIterator = new ProductIterator();
+                while (productIterator.hasNext()) {
+                    Product product = productIterator.next();
+                    if (product.getId() == (Integer) modelo.getValueAt(num, 0)) {
+                        productIterator.deleteProduct(product);
+
+                    }
+                }
+                DataBase dataBase = new DataBase();
+                dataBase.saveIteratorProduct(productIterator);
+                modelo.removeRow(num);
+                //Si no seleccionamos ninguno se muestra una advertencia
+            } catch (Exception ex) {
+                Logger.getLogger(AllProducts.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecciona un producto a eliminar.", "Eliminar producto", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_DeleteButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.JButton DeleteButton;
-    private javax.swing.JButton ModifyButton;
     private javax.swing.JScrollPane MyProductsPane;
     private javax.swing.JTable MyProductsTable;
     private javax.swing.JLabel jLabel1;
