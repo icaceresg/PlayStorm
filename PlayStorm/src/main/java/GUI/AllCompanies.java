@@ -55,7 +55,7 @@ public class AllCompanies extends javax.swing.JFrame {
 
             rowData[0] = company.getCif();
             rowData[1] = company.getName();
-            rowData[2] = company.getSite();
+            rowData[2] = company.getLocation();
             rowData[3] = company.getEmail();
             rowData[4] = false;
 
@@ -73,7 +73,7 @@ public class AllCompanies extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        AllCompaniesPanel = new javax.swing.JScrollPane();
+        AllCompaniesPane = new javax.swing.JScrollPane();
         AllCompaniesTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         BackButton = new javax.swing.JButton();
@@ -105,7 +105,7 @@ public class AllCompanies extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        AllCompaniesPanel.setViewportView(AllCompaniesTable);
+        AllCompaniesPane.setViewportView(AllCompaniesTable);
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -144,7 +144,7 @@ public class AllCompanies extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(AllCompaniesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AllCompaniesPane, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 35, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -158,7 +158,7 @@ public class AllCompanies extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(AllCompaniesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AllCompaniesPane, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
@@ -196,7 +196,7 @@ public class AllCompanies extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane AllCompaniesPanel;
+    private javax.swing.JScrollPane AllCompaniesPane;
     private javax.swing.JTable AllCompaniesTable;
     private javax.swing.JButton BackButton;
     private javax.swing.JButton DeleteButton;

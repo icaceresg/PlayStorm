@@ -1,39 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Class;
 
 import Interfaces.IntCompany;
 import java.util.Map;
 
-/**
- *
- * @author jorge
- */
 public class Company extends User implements IntCompany {
 
-    private String site, cif;
+    private String location, cif;
     private Product[] products;
     private float wallet;
     private Map<String, Integer> discounts; //String to promotional code, int to % discount
     private Company[] company; //List to companys
 
-    public Company(String name, String email, String password, String site, String cif) {
+    public Company(String name, String email, String password, String location, String cif) {
         super(name, email, password);
-        this.site = site;
+        this.location = location;
         this.cif = cif;
         this.wallet = 0;
     }
 
     @Override
-    public String getSite() {
-        return site;
+    public String getLocation() {
+        return location;
     }
 
     @Override
-    public void setSite(String site) {
-        this.site = site;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     @Override

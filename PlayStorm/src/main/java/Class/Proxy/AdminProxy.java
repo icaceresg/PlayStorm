@@ -2,7 +2,6 @@ package Class.Proxy;
 
 import Interfaces.IntAdmin;
 import Class.Administrator;
-import Class.Product;
 
 public class AdminProxy implements IntAdmin {
 

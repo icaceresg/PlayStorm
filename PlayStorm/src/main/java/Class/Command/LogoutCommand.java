@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Class.Command;
 
 import Class.User;
@@ -9,10 +5,6 @@ import GUI.Login;
 import Interfaces.IntLogOut;
 import javax.swing.JFrame;
 
-/**
- *
- * @author jorge
- */
 public class LogoutCommand implements IntLogOut {
 
     @Override
@@ -26,7 +18,7 @@ public class LogoutCommand implements IntLogOut {
 
     @Override
     public void logOutUser() {
-        User.usuarioActivo.clear();
+        User.activeUser.clear();
     }
 
 }

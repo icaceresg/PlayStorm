@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class User implements IntUser, Serializable {
 
-    public static ArrayList<IntUser> usuarioActivo = new ArrayList<IntUser>();
+    public static ArrayList<IntUser> activeUser = new ArrayList<IntUser>();
 
     private String name, email, password;
 

@@ -1,4 +1,3 @@
-
 package Class.Iterator;
 
 import Interfaces.IntContainer;
@@ -10,15 +9,11 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ClientContainer implements IntContainer, Serializable{
+public class ClientContainer implements IntContainer, Serializable {
+
     public ArrayList<IntClient> clients = new ArrayList<>();
-    
-    
-    public ClientContainer() throws Exception
-    {
-        //clients.add(new Client("a","a","a","a","a","a","a"));
-        //clients.add(new Client("b","b","b","b","b","b","b"));
-        
+
+    public ClientContainer() throws Exception {
         this.clients = new DataBase().readClients();
     }
 

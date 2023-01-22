@@ -1,22 +1,16 @@
 package GUI;
 
 import Class.AbstractFactory.TemplateMethod.SubscriberClient;
-import Class.DataBase;
 import Class.Iterator.ClientIterator;
 import Class.Proxy.AdminProxy;
 import Interfaces.IntAdmin;
 import Interfaces.IntClient;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-/**
- * Ventana para ver la lista de productos añadidos al carrito para poder
- * comprarlo
- */
 public class AllClients extends javax.swing.JFrame {
 
     public AllClients() {
@@ -56,8 +50,8 @@ public class AllClients extends javax.swing.JFrame {
             rowData[0] = client.getName();
             rowData[1] = client.getLastName();
             rowData[2] = client.getEmail();
-            rowData[3] = client.getPhone();
-            rowData[4] = client.getSite();
+            rowData[3] = client.getTelephone();
+            rowData[4] = client.getLocation();
             rowData[5] = client.getWallet();
             rowData[6] = false;
 
@@ -73,7 +67,7 @@ public class AllClients extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        AllClientsPanel = new javax.swing.JScrollPane();
+        AllClientsPane = new javax.swing.JScrollPane();
         AllClientsTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         BackButton = new javax.swing.JButton();
@@ -87,7 +81,7 @@ public class AllClients extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Apellido", "Usuario", "Teléfono", "Localización", "Dinero", "Suscrito"
+                "Nombre", "Apellido", "Correo", "Teléfono", "Localización", "Dinero", "Suscrito"
             }
         ) {
             Class[] types = new Class [] {
@@ -105,7 +99,7 @@ public class AllClients extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        AllClientsPanel.setViewportView(AllClientsTable);
+        AllClientsPane.setViewportView(AllClientsTable);
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -146,7 +140,7 @@ public class AllClients extends javax.swing.JFrame {
                                 .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(354, 354, 354))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(AllClientsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AllClientsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29))))))
         );
         layout.setVerticalGroup(
@@ -160,7 +154,7 @@ public class AllClients extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(AllClientsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AllClientsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
@@ -196,7 +190,7 @@ public class AllClients extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane AllClientsPanel;
+    private javax.swing.JScrollPane AllClientsPane;
     private javax.swing.JTable AllClientsTable;
     private javax.swing.JButton BackButton;
     private javax.swing.JButton DeleteButton;

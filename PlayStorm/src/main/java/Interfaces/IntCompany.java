@@ -1,23 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package Interfaces;
 
 import Class.Product;
-
 import Class.Company;
 import java.util.Map;
 
-/**
- *
- * @author jorge
- */
 public interface IntCompany extends IntUser {
 
-    public String getSite();
+    public String getLocation();
 
-    public void setSite(String site);
+    public void setLocation(String location);
 
     public String getCif();
 

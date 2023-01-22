@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Class.AbstractFactory;
 
 import Class.AbstractFactory.TemplateMethod.SubscriberClient;
@@ -10,10 +6,6 @@ import Interfaces.UserFactory;
 import Interfaces.IntClient;
 import Interfaces.IntCompany;
 
-/**
- *
- * @author jorge
- */
 public class SubscriberFactory implements UserFactory {
 
     @Override

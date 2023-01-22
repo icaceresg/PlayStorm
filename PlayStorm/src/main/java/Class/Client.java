@@ -1,22 +1,19 @@
 package Class;
 
-import Class.Iterator.ClientIterator;
 import Interfaces.IntClient;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Client extends User implements IntClient {
 
-    private String lastName, site, creditCard, phone, birthday;
+    private String lastName, location, creditCard, telephone, birthday;
     private float wallet;
     private Product[] ownProducts;
 
-    public Client(String name, String email, String password, String lastName, String site, String creditCard, String phone, String birthday) {
+    public Client(String name, String email, String password, String lastName, String location, String creditCard, String telephone, String birthday) {
         super(name, email, password);
         this.lastName = lastName;
-        this.site = site;
+        this.location = location;
         this.creditCard = creditCard;
-        this.phone = phone;
+        this.telephone = telephone;
         this.wallet = 0;
         this.birthday = birthday;
     }
@@ -32,13 +29,13 @@ public class Client extends User implements IntClient {
     }
 
     @Override
-    public String getSite() {
-        return site;
+    public String getLocation() {
+        return location;
     }
 
     @Override
-    public void setSite(String site) {
-        this.site = site;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     @Override
@@ -52,13 +49,13 @@ public class Client extends User implements IntClient {
     }
 
     @Override
-    public String getPhone() {
-        return phone;
+    public String getTelephone() {
+        return telephone;
     }
 
     @Override
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
     @Override

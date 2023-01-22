@@ -35,11 +35,11 @@ public class MyCart extends javax.swing.JFrame {
      */
     public void addRowToJTable() {
 
-        DefaultTableModel model = (DefaultTableModel) MyCartTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) MyShoppingCartTable.getModel();
 
         Order order = Order.getInstance();
         ArrayList<Product> products = order.getProduct();
-        Object rowData[] = new Object[MyCartTable.getColumnCount()];
+        Object rowData[] = new Object[MyShoppingCartTable.getColumnCount()];
        
         int i = 0;
         while (i < products.size()) {
@@ -62,17 +62,17 @@ public class MyCart extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ProductsTable = new javax.swing.JScrollPane();
-        MyCartTable = new javax.swing.JTable();
+        MyShoppingCartPane = new javax.swing.JScrollPane();
+        MyShoppingCartTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         BuyButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
-        ReturnButton = new javax.swing.JButton();
+        SendBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        MyCartTable.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
-        MyCartTable.setModel(new javax.swing.table.DefaultTableModel(
+        MyShoppingCartTable.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
+        MyShoppingCartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -95,7 +95,7 @@ public class MyCart extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        ProductsTable.setViewportView(MyCartTable);
+        MyShoppingCartPane.setViewportView(MyShoppingCartTable);
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setText("Mi carrito");
@@ -116,11 +116,11 @@ public class MyCart extends javax.swing.JFrame {
             }
         });
 
-        ReturnButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        ReturnButton.setText("Devolver");
-        ReturnButton.addActionListener(new java.awt.event.ActionListener() {
+        SendBackButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        SendBackButton.setText("Devolver");
+        SendBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReturnButtonActionPerformed(evt);
+                SendBackButtonActionPerformed(evt);
             }
         });
 
@@ -128,7 +128,7 @@ public class MyCart extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ProductsTable)
+            .addComponent(MyShoppingCartPane)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -138,7 +138,7 @@ public class MyCart extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(355, 355, 355)
-                        .addComponent(ReturnButton)
+                        .addComponent(SendBackButton)
                         .addGap(125, 125, 125)
                         .addComponent(BuyButton)))
                 .addContainerGap(328, Short.MAX_VALUE))
@@ -154,11 +154,11 @@ public class MyCart extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(BackButton)))
                 .addGap(18, 18, 18)
-                .addComponent(ProductsTable, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MyShoppingCartPane, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BuyButton)
-                    .addComponent(ReturnButton))
+                    .addComponent(SendBackButton))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -172,10 +172,10 @@ public class MyCart extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void ReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnButtonActionPerformed
+    private void SendBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendBackButtonActionPerformed
         // Devuelve el producto a la busqueda y lo elimina de misProductos
 
-    }//GEN-LAST:event_ReturnButtonActionPerformed
+    }//GEN-LAST:event_SendBackButtonActionPerformed
 
     private void BuyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuyButtonActionPerformed
         Order.getInstance().finish();
@@ -184,9 +184,9 @@ public class MyCart extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.JButton BuyButton;
-    private javax.swing.JTable MyCartTable;
-    private javax.swing.JScrollPane ProductsTable;
-    private javax.swing.JButton ReturnButton;
+    private javax.swing.JScrollPane MyShoppingCartPane;
+    private javax.swing.JTable MyShoppingCartTable;
+    private javax.swing.JButton SendBackButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

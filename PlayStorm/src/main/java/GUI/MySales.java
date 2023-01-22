@@ -38,7 +38,7 @@ public class MySales extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TablaProductos = new javax.swing.JScrollPane();
+        MySalesPane = new javax.swing.JScrollPane();
         MySalesTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         BackButton = new javax.swing.JButton();
@@ -51,18 +51,18 @@ public class MySales extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Título", "Empresa", "Usuario Comprador", "Cantidad", "Precio", "Fecha Venta"
+                "Título", "Empresa", "Usuario Comprador", "Precio"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        TablaProductos.setViewportView(MySalesTable);
+        MySalesPane.setViewportView(MySalesTable);
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -86,7 +86,7 @@ public class MySales extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TablaProductos, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
+                .addComponent(MySalesPane, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -99,7 +99,7 @@ public class MySales extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addComponent(jLabel1)
                 .addGap(28, 28, 28)
-                .addComponent(TablaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MySalesPane, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
@@ -117,8 +117,8 @@ public class MySales extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
+    private javax.swing.JScrollPane MySalesPane;
     private javax.swing.JTable MySalesTable;
-    private javax.swing.JScrollPane TablaProductos;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

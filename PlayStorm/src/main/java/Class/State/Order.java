@@ -1,41 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Class.State;
 
 import Class.Product;
 import Interfaces.IntClient;
-import Interfaces.IntCompany;
 import java.util.ArrayList;
 
-/**
- *
- * @author jorge
- */
 public class Order {
-    
+
     private static Order instance;
     private int id;
     private IntClient client;
     private ArrayList<Product> products = new ArrayList<Product>();
-    private IntCompany company;
     private String status;
 
     private OrderState currentState;
-            
-            
+
     public static Order getInstance(IntClient client) {
         if (instance == null) {
             instance = new Order(0, client, "");
         }
         return instance;
     }
-    
+
     public static Order getInstance() {
         return instance;
     }
-    
+
     private Order(int id, IntClient client, String status) {
         this.id = id;
         this.client = client;
@@ -43,15 +32,12 @@ public class Order {
 
         currentState = new NewOrderState();
     }
-    
-    
-    public void addProduct(Product product)
-    {
+
+    public void addProduct(Product product) {
         this.products.add(product);
     }
-    
-    public void deleteProduct(Product product)
-    {
+
+    public void deleteProduct(Product product) {
         return;
     }
 
@@ -77,14 +63,6 @@ public class Order {
 
     public void setProduct(ArrayList<Product> products) {
         this.products = products;
-    }
-
-    public IntCompany getCompany() {
-        return company;
-    }
-
-    public void setCompany(IntCompany company) {
-        this.company = company;
     }
 
     public String getStatus() {

@@ -38,7 +38,7 @@ public class MyLibrary extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TablaProductos = new javax.swing.JScrollPane();
+        MyLibraryPane = new javax.swing.JScrollPane();
         MyLibraryTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         TicketButton = new javax.swing.JButton();
@@ -52,18 +52,18 @@ public class MyLibrary extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Título", "Empresa", "Precio", "Categoría", "Fecha Compra"
+                "Título", "Empresa", "Precio", "Categoría"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        TablaProductos.setViewportView(MyLibraryTable);
+        MyLibraryPane.setViewportView(MyLibraryTable);
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setText("Mis Juegos Comprados");
@@ -88,7 +88,7 @@ public class MyLibrary extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TablaProductos)
+            .addComponent(MyLibraryPane)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -112,7 +112,7 @@ public class MyLibrary extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(BackButton)))
                 .addGap(18, 18, 18)
-                .addComponent(TablaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MyLibraryPane, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(TicketButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(29, Short.MAX_VALUE))
@@ -134,8 +134,8 @@ public class MyLibrary extends javax.swing.JFrame {
     }//GEN-LAST:event_TicketButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
+    private javax.swing.JScrollPane MyLibraryPane;
     private javax.swing.JTable MyLibraryTable;
-    private javax.swing.JScrollPane TablaProductos;
     private javax.swing.JButton TicketButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

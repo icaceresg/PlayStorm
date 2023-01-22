@@ -41,9 +41,9 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="UserField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="EmailField" alignment="0" max="32767" attributes="0"/>
                           <Component id="SetPhoto" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                          <Component id="PasswordField" alignment="0" pref="219" max="32767" attributes="0"/>
+                          <Component id="PassField" alignment="0" pref="219" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -70,13 +70,13 @@
               <Component id="SetPhoto" min="-2" pref="115" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="UserField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="EmailField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="PasswordField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PassField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="LogInButton" min="-2" max="-2" attributes="0"/>
@@ -111,7 +111,7 @@
           <Font name="Microsoft YaHei UI" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Usuario"/>
+        <Property name="text" type="java.lang.String" value="Correo"/>
         <Property name="horizontalTextPosition" type="int" value="4"/>
       </Properties>
     </Component>
@@ -123,7 +123,7 @@
         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="UserField">
+    <Component class="javax.swing.JTextField" name="EmailField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="14" style="0"/>
@@ -154,7 +154,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RegisterButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="PasswordField">
+    <Component class="javax.swing.JPasswordField" name="PassField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="14" style="0"/>

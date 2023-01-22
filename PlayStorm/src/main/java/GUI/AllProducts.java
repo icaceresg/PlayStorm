@@ -1,12 +1,10 @@
 package GUI;
 
-import Class.DataBase;
 import Class.Iterator.ProductIterator;
 import Class.Product;
 import Class.Proxy.AdminProxy;
 import Interfaces.IntAdmin;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -56,7 +54,6 @@ public class AllProducts extends javax.swing.JFrame {
             rowData[3] = product.getCategory();
             rowData[4] = product.getPrice();
             rowData[5] = product.getCompany().getName();
-            rowData[6] = product.getAmount();
 
             model.addRow(rowData);
 
@@ -68,7 +65,7 @@ public class AllProducts extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        AllProductsPanel = new javax.swing.JScrollPane();
+        AllProductsPane = new javax.swing.JScrollPane();
         AllProductsTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         BackButton = new javax.swing.JButton();
@@ -82,18 +79,18 @@ public class AllProducts extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Título", "Descripción", "Categoría", "Precio", "Empresa", "Cantidad"
+                "Id", "Título", "Descripción", "Categoría", "Precio", "Empresa"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        AllProductsPanel.setViewportView(AllProductsTable);
+        AllProductsPane.setViewportView(AllProductsTable);
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -119,7 +116,7 @@ public class AllProducts extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AllProductsPanel)
+            .addComponent(AllProductsPane)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,7 +139,7 @@ public class AllProducts extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(AllProductsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AllProductsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
@@ -177,7 +174,7 @@ public class AllProducts extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane AllProductsPanel;
+    private javax.swing.JScrollPane AllProductsPane;
     private javax.swing.JTable AllProductsTable;
     private javax.swing.JButton BackButton;
     private javax.swing.JButton DeleteButton;

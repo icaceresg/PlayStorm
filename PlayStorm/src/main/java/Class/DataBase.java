@@ -14,14 +14,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-/**
- *
- * @author AdriiM_
- */
 public class DataBase {
 
     private String path = "./database/";
@@ -34,8 +26,6 @@ public class DataBase {
         try {
             oos = new ObjectOutputStream(
                     new FileOutputStream(file));
-            //System.out.println(client.getName());
-            //oos.writeObject(client);
             while (iterator.hasNext()) {
                 oos.writeObject(iterator.next());
             }
@@ -58,8 +48,6 @@ public class DataBase {
         try {
             oos = new ObjectOutputStream(
                     new FileOutputStream(file));
-            //System.out.println(client.getName());
-            //oos.writeObject(client);
             while (iterator.hasNext()) {
                 oos.writeObject(iterator.next());
             }
@@ -92,7 +80,7 @@ public class DataBase {
         } catch (FileNotFoundException ef) {
             throw new Exception(ef.getMessage());
         } catch (IOException ei) {
-            //throw new Exception(ei.getMessage());
+            throw new Exception(ei.getMessage());
         } finally {
             if (ois != null) {
                 ois.close();
@@ -109,8 +97,6 @@ public class DataBase {
         try {
             oos = new ObjectOutputStream(
                     new FileOutputStream(file));
-            //System.out.println(client.getName());
-            //oos.writeObject(client);
             while (iterator.hasNext()) {
                 oos.writeObject(iterator.next());
             }
@@ -133,8 +119,6 @@ public class DataBase {
         try {
             oos = new ObjectOutputStream(
                     new FileOutputStream(file));
-            //System.out.println(client.getName());
-            //oos.writeObject(client);
             while (iterator.hasNext()) {
                 oos.writeObject(iterator.next());
             }
@@ -167,7 +151,7 @@ public class DataBase {
         } catch (FileNotFoundException ef) {
             throw new Exception(ef.getMessage());
         } catch (IOException ei) {
-            //throw new Exception(ei.getMessage());
+            throw new Exception(ei.getMessage());
         } finally {
             if (ois != null) {
                 ois.close();
@@ -184,8 +168,6 @@ public class DataBase {
         try {
             oos = new ObjectOutputStream(
                     new FileOutputStream(file));
-            //System.out.println(client.getName());
-            //oos.writeObject(client);
             while (iterator.hasNext()) {
                 oos.writeObject(iterator.next());
             }
@@ -208,8 +190,6 @@ public class DataBase {
         try {
             oos = new ObjectOutputStream(
                     new FileOutputStream(file));
-            //System.out.println(client.getName());
-            //oos.writeObject(client);
             while (iterator.hasNext()) {
                 oos.writeObject(iterator.next());
             }
@@ -242,7 +222,7 @@ public class DataBase {
         } catch (FileNotFoundException ef) {
             throw new Exception(ef.getMessage());
         } catch (IOException ei) {
-            //throw new Exception(ei.getMessage());
+            throw new Exception(ei.getMessage());
         } finally {
             if (ois != null) {
                 ois.close();

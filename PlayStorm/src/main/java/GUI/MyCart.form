@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="ProductsTable" alignment="0" max="32767" attributes="0"/>
+          <Component id="MyShoppingCartPane" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -34,7 +34,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
-                      <Component id="ReturnButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="SendBackButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                       <Component id="BuyButton" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -57,11 +57,11 @@
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="ProductsTable" min="-2" pref="206" max="-2" attributes="0"/>
+              <Component id="MyShoppingCartPane" min="-2" pref="206" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="BuyButton" min="-2" max="-2" attributes="0"/>
-                  <Component id="ReturnButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="SendBackButton" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="26" max="32767" attributes="0"/>
           </Group>
@@ -69,14 +69,14 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JScrollPane" name="ProductsTable">
+    <Container class="javax.swing.JScrollPane" name="MyShoppingCartPane">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="MyCartTable">
+        <Component class="javax.swing.JTable" name="MyShoppingCartTable">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Microsoft YaHei UI" size="12" style="0"/>
@@ -162,7 +162,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BackButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="ReturnButton">
+    <Component class="javax.swing.JButton" name="SendBackButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -170,7 +170,7 @@
         <Property name="text" type="java.lang.String" value="Devolver"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReturnButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SendBackButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

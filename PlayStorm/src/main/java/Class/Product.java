@@ -8,15 +8,13 @@ public class Product implements Serializable {
 
     private String title, description, category;
     private float price;
-    private int amount;
     private int id;
     private IntCompany company;
 
-    public Product(String title, String description, float price, int amount, String category, IntCompany company) throws Exception {
+    public Product(String title, String description, float price, String category, IntCompany company) throws Exception {
         this.title = title;
         this.description = description;
         this.price = price;
-        this.amount = amount;
         this.category = category;
         this.company = company;
         ProductIterator iterator = new ProductIterator();
@@ -57,14 +55,6 @@ public class Product implements Serializable {
 
     public void setPrice(float price) {
         this.price = price;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
     }
 
     public String getCategory() {

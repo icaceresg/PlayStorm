@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Class.Observer;
 
 import Interfaces.Subject;
@@ -9,11 +5,7 @@ import Interfaces.Observer;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author jorge
- */
-public class SumSubject implements Subject{
+public class SumSubject implements Subject {
 
     private List<Observer> observers;
     private float clientData;

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Class.Observer;
 
 import Interfaces.Observer;
@@ -12,10 +8,6 @@ import Interfaces.IntClient;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author jorge
- */
 public class SumObserver implements Observer {
 
     private float sum;
@@ -28,7 +20,7 @@ public class SumObserver implements Observer {
 
     public void setMoney() {
         try {
-            String email = Client.usuarioActivo.get(0).getEmail();
+            String email = Client.activeUser.get(0).getEmail();
 
             //Iterador + guardar en base de datos
             ClientIterator iterator = new ClientIterator();

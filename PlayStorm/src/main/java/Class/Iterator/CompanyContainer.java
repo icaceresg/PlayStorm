@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Class.Iterator;
 
 import Class.DataBase;
@@ -13,18 +9,11 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author jorge
- */
 public class CompanyContainer implements IntContainer, Serializable {
 
     public ArrayList<IntCompany> companies = new ArrayList<>();
 
     public CompanyContainer() throws Exception {
-        //clients.add(new Client("a","a","a","a","a","a","a"));
-        //clients.add(new Client("b","b","b","b","b","b","b"));
-
         this.companies = new DataBase().readCompanies();
     }
 

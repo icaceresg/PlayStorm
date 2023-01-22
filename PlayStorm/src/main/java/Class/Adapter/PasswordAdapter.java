@@ -1,14 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Class.Adapter;
 
 import java.security.MessageDigest;
 
-/**
- * Adapter allows fitting square pegs into round holes.
- */
 public class PasswordAdapter extends PasswordEncode {
 
     private Password password;

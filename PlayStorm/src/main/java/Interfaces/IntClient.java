@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package Interfaces;
 
 import Class.Product;
 
-/**
- *
- * @author jorge
- */
 public interface IntClient extends IntUser {
 
     @Override
@@ -34,17 +26,17 @@ public interface IntClient extends IntUser {
 
     public void setLastName(String lastName);
 
-    public String getSite();
+    public String getLocation();
 
-    public void setSite(String site);
+    public void setLocation(String location);
 
     public String getCreditCard();
 
     public void setCreditCard(String creditCard);
 
-    public String getPhone();
+    public String getTelephone();
 
-    public void setPhone(String phone);
+    public void setTelephone(String telephone);
 
     public float getWallet();
 

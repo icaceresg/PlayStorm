@@ -55,11 +55,11 @@
                   </Group>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Email" alignment="1" pref="295" max="32767" attributes="0"/>
-                      <Component id="PasswordField" alignment="1" max="32767" attributes="0"/>
-                      <Component id="SiteField" alignment="0" max="32767" attributes="0"/>
+                      <Component id="EmailField" alignment="1" pref="295" max="32767" attributes="0"/>
+                      <Component id="PassField" alignment="1" max="32767" attributes="0"/>
+                      <Component id="LocationField" alignment="0" max="32767" attributes="0"/>
                       <Component id="CIFField" alignment="0" max="32767" attributes="0"/>
-                      <Component id="RepeatPasswordField" alignment="0" max="32767" attributes="0"/>
+                      <Component id="RepeatPassField" alignment="0" max="32767" attributes="0"/>
                       <Component id="NameField" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
@@ -90,25 +90,25 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="SiteField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LocationField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="CIFField" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="Email" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="EmailField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="PasswordField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PassField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="RepeatPasswordField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RepeatPassField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="97" max="32767" attributes="0"/>
               </Group>
@@ -117,14 +117,12 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JPasswordField" name="PasswordField">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Microsoft YaHei UI" size="12" style="1"/>
+          <Font name="Microsoft YaHei UI" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Repita la contrase&#xf1;a"/>
+        <Property name="text" type="java.lang.String" value="Modificar empresa"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -143,18 +141,13 @@
         <Property name="text" type="java.lang.String" value="Localizaci&#xf3;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="RepeatPasswordField">
-    </Component>
-    <Component class="javax.swing.JButton" name="BackButton">
+    <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Microsoft YaHei UI" size="11" style="1"/>
+          <Font name="Microsoft YaHei UI" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Volver"/>
+        <Property name="text" type="java.lang.String" value="C.I.F"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BackButtonActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -172,12 +165,12 @@
         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Microsoft YaHei UI" size="24" style="1"/>
+          <Font name="Microsoft YaHei UI" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Modificar empresa"/>
+        <Property name="text" type="java.lang.String" value="Repita la contrase&#xf1;a"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="NameField">
@@ -185,15 +178,24 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="SiteField">
+    <Component class="javax.swing.JTextField" name="LocationField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SiteFieldActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LocationFieldActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="CIFField">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CIFFieldActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="EmailField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="PassField">
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="RepeatPassField">
     </Component>
     <Component class="javax.swing.JButton" name="AcceptButton">
       <Properties>
@@ -206,18 +208,16 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AcceptButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="Email">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JButton" name="BackButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Microsoft YaHei UI" size="12" style="1"/>
+          <Font name="Microsoft YaHei UI" size="11" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="C.I.F"/>
+        <Property name="text" type="java.lang.String" value="Volver"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BackButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

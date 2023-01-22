@@ -57,17 +57,17 @@ public class CompanySignUp extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PasswordField = new javax.swing.JPasswordField();
+        PassField = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        RepeatPasswordField = new javax.swing.JPasswordField();
+        RepeatPassField = new javax.swing.JPasswordField();
         BackButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         NameField = new javax.swing.JTextField();
-        SiteField = new javax.swing.JTextField();
+        LocationField = new javax.swing.JTextField();
         CIFField = new javax.swing.JTextField();
         AcceptButton = new javax.swing.JButton();
         EmailField = new javax.swing.JTextField();
@@ -75,6 +75,9 @@ public class CompanySignUp extends javax.swing.JFrame {
         VIPComboBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 24)); // NOI18N
+        jLabel1.setText("Registro de empresa");
 
         jLabel8.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jLabel8.setText("Repita la contraseña");
@@ -99,18 +102,15 @@ public class CompanySignUp extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jLabel6.setText("Contraseña");
 
-        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 24)); // NOI18N
-        jLabel1.setText("Registro de empresa");
-
         NameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NameFieldActionPerformed(evt);
             }
         });
 
-        SiteField.addActionListener(new java.awt.event.ActionListener() {
+        LocationField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SiteFieldActionPerformed(evt);
+                LocationFieldActionPerformed(evt);
             }
         });
 
@@ -149,78 +149,73 @@ public class CompanySignUp extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(VIPComboBox)
-                        .addGap(96, 96, 96)
-                        .addComponent(BackButton)
-                        .addGap(36, 36, 36)
-                        .addComponent(AcceptButton))
-                    .addComponent(jLabel4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 142, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(126, 126, 126))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(24, 24, 24)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel5)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel8))
-                    .addGap(34, 34, 34)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(EmailField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
-                        .addComponent(PasswordField, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(SiteField)
-                        .addComponent(CIFField)
-                        .addComponent(RepeatPasswordField)
-                        .addComponent(NameField))
-                    .addGap(25, 25, 25)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(VIPComboBox)
+                .addGap(96, 96, 96)
+                .addComponent(BackButton)
+                .addGap(53, 53, 53)
+                .addComponent(AcceptButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel8)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PassField, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                    .addComponent(RepeatPassField)
+                    .addComponent(EmailField, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(CIFField)
+                    .addComponent(LocationField)
+                    .addComponent(NameField))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(LocationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(CIFField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(EmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PassField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RepeatPassField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AcceptButton)
                     .addComponent(BackButton)
                     .addComponent(VIPComboBox))
                 .addGap(47, 47, 47))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(93, 93, 93)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2))
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(SiteField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3))
-                    .addGap(18, 18, 18)
-                    .addComponent(CIFField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(EmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5))
-                    .addGap(27, 27, 27)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6))
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel8)
-                        .addComponent(RepeatPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(97, Short.MAX_VALUE)))
         );
 
         pack();
@@ -236,9 +231,9 @@ public class CompanySignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NameFieldActionPerformed
 
-    private void SiteFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiteFieldActionPerformed
+    private void LocationFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LocationFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SiteFieldActionPerformed
+    }//GEN-LAST:event_LocationFieldActionPerformed
 
     private void CIFFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIFFieldActionPerformed
         // TODO add your handling code here:
@@ -248,11 +243,11 @@ public class CompanySignUp extends javax.swing.JFrame {
         boolean emptyFields = CIFField.getText().equals("") //no esta
                 | EmailField.getText().equals("") //esta
                 | NameField.getText().equals("") //esta
-                | PasswordField.getPassword().equals("") //esta
-                | RepeatPasswordField.getPassword().equals("") //esta
-                | SiteField.getText().equals("");
+                | PassField.getPassword().equals("") //esta
+                | RepeatPassField.getPassword().equals("") //esta
+                | LocationField.getText().equals("");
 
-        if (emptyFields | !(Arrays.equals(PasswordField.getPassword(), RepeatPasswordField.getPassword()))) {
+        if (emptyFields | !(Arrays.equals(PassField.getPassword(), RepeatPassField.getPassword()))) {
             if (emptyFields) {
                 JOptionPane.showMessageDialog(this, "Existen campos vacíos", "Registro", JOptionPane.ERROR_MESSAGE);
             } else {
@@ -266,16 +261,16 @@ public class CompanySignUp extends javax.swing.JFrame {
         } else {
             String finalEncodePassword;
 
-            Password password = new Password((String.valueOf(PasswordField.getPassword())));
+            Password password = new Password((String.valueOf(PassField.getPassword())));
             PasswordAdapter passwordAdapter = new PasswordAdapter(password);
 
             finalEncodePassword = new PasswordEncode().save(passwordAdapter);
 
             IntCompany company;
             if (VIPComboBox.isSelected()) {
-                company = new SubscriberFactory().createCompany(NameField.getText(), EmailField.getText(), finalEncodePassword, SiteField.getText(), CIFField.getText());
+                company = new SubscriberFactory().createCompany(NameField.getText(), EmailField.getText(), finalEncodePassword, LocationField.getText(), CIFField.getText());
             } else {
-                company = new NotSubscriberFactory().createCompany(NameField.getText(), EmailField.getText(), finalEncodePassword, SiteField.getText(), CIFField.getText());
+                company = new NotSubscriberFactory().createCompany(NameField.getText(), EmailField.getText(), finalEncodePassword, LocationField.getText(), CIFField.getText());
             }
 
             DataBase database = new DataBase();
@@ -306,10 +301,10 @@ public class CompanySignUp extends javax.swing.JFrame {
     private javax.swing.JButton BackButton;
     private javax.swing.JTextField CIFField;
     private javax.swing.JTextField EmailField;
+    private javax.swing.JTextField LocationField;
     private javax.swing.JTextField NameField;
-    private javax.swing.JPasswordField PasswordField;
-    private javax.swing.JPasswordField RepeatPasswordField;
-    private javax.swing.JTextField SiteField;
+    private javax.swing.JPasswordField PassField;
+    private javax.swing.JPasswordField RepeatPassField;
     private javax.swing.JCheckBox VIPComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -17,19 +17,19 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+    <Menu class="javax.swing.JMenuBar" name="MenuBar">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="ProvideerMenu">
+        <Menu class="javax.swing.JMenu" name="CompanyMenu">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Proveedor"/>
+            <Property name="text" type="java.lang.String" value="Empresa"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="Provideer">
+            <MenuItem class="javax.swing.JMenuItem" name="CompanyItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar Proveedor"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProvideerActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CompanyItemActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -39,27 +39,27 @@
             <Property name="text" type="java.lang.String" value="Registrar Estudio"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="StudioRegister">
+            <MenuItem class="javax.swing.JMenuItem" name="StudioRegisterItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Registrar Estudio"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StudioRegisterActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StudioRegisterItemActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="CloseSessionMenu">
+        <Menu class="javax.swing.JMenu" name="SessionCloseMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="CloseSession">
+            <MenuItem class="javax.swing.JMenuItem" name="SessionCloseItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cerrar Sesion"/>
+                <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CloseSessionActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SessionCloseItemActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -71,7 +71,7 @@
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="MenuBar"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -96,14 +96,14 @@
                       <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="110" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Name" min="-2" pref="131" max="-2" attributes="0"/>
+                      <Component id="NameLabel" min="-2" pref="131" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="AddProduct" pref="152" max="32767" attributes="0"/>
-                          <Component id="DeleteProduct" max="32767" attributes="0"/>
-                          <Component id="Sales" max="32767" attributes="0"/>
+                          <Component id="AddProductField" pref="152" max="32767" attributes="0"/>
+                          <Component id="ProductsField" max="32767" attributes="0"/>
+                          <Component id="SalesButton" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -117,14 +117,14 @@
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="Name" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="NameLabel" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Component id="AddProduct" min="-2" pref="54" max="-2" attributes="0"/>
+              <Component id="AddProductField" min="-2" pref="54" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Component id="DeleteProduct" min="-2" pref="56" max="-2" attributes="0"/>
+              <Component id="ProductsField" min="-2" pref="56" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Component id="Sales" min="-2" pref="56" max="-2" attributes="0"/>
+              <Component id="SalesButton" min="-2" pref="56" max="-2" attributes="0"/>
               <EmptySpace pref="113" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -139,7 +139,7 @@
         <Property name="text" type="java.lang.String" value="Bienvenido,"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="AddProduct">
+    <Component class="javax.swing.JButton" name="AddProductField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -148,10 +148,10 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddProductActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddProductFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="DeleteProduct">
+    <Component class="javax.swing.JButton" name="ProductsField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -159,10 +159,10 @@
         <Property name="text" type="java.lang.String" value="Ver Productos"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteProductActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProductsFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Sales">
+    <Component class="javax.swing.JButton" name="SalesButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Microsoft YaHei UI" size="12" style="1"/>
@@ -171,10 +171,10 @@
         <Property name="actionCommand" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SalesActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SalesButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="Name">
+    <Component class="javax.swing.JLabel" name="NameLabel">
     </Component>
   </SubComponents>
 </Form>

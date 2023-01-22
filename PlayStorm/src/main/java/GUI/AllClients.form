@@ -40,7 +40,7 @@
                               <EmptySpace min="-2" pref="354" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="AllClientsPanel" min="-2" pref="906" max="-2" attributes="0"/>
+                              <Component id="AllClientsPane" min="-2" pref="906" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -63,7 +63,7 @@
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="AllClientsPanel" min="-2" pref="206" max="-2" attributes="0"/>
+              <Component id="AllClientsPane" min="-2" pref="206" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="DeleteButton" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace pref="32" max="32767" attributes="0"/>
@@ -72,7 +72,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JScrollPane" name="AllClientsPanel">
+    <Container class="javax.swing.JScrollPane" name="AllClientsPane">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
@@ -88,7 +88,7 @@
               <Table columnCount="7" rowCount="0">
                 <Column editable="false" title="Nombre" type="java.lang.Object"/>
                 <Column editable="false" title="Apellido" type="java.lang.Object"/>
-                <Column editable="false" title="Usuario" type="java.lang.Object"/>
+                <Column editable="false" title="Correo" type="java.lang.Object"/>
                 <Column editable="false" title="Tel&#xe9;fono" type="java.lang.Object"/>
                 <Column editable="false" title="Localizaci&#xf3;n" type="java.lang.Object"/>
                 <Column editable="false" title="Dinero" type="java.lang.Object"/>

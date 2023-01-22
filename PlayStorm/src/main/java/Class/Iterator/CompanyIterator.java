@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Class.Iterator;
 
 import Interfaces.IntCompany;
 import Interfaces.IntIterator;
 
-/**
- *
- * @author jorge
- */
 public class CompanyIterator implements IntIterator {
 
     private int i;
