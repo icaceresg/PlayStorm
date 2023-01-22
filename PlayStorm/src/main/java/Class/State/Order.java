@@ -7,29 +7,52 @@ package Class.State;
 import Class.Product;
 import Interfaces.IntClient;
 import Interfaces.IntCompany;
+import java.util.ArrayList;
 
 /**
  *
  * @author jorge
  */
 public class Order {
-
+    
+    private static Order instance;
     private int id;
     private IntClient client;
-    private Product[] product;
+    private ArrayList<Product> products = new ArrayList<Product>();
     private IntCompany company;
     private String status;
 
     private OrderState currentState;
-
-    public Order(int id, IntClient client, Product[] product, IntCompany company, String status) {
+            
+            
+    public static Order getInstance(IntClient client) {
+        if (instance == null) {
+            instance = new Order(0, client, "");
+        }
+        return instance;
+    }
+    
+    public static Order getInstance() {
+        return instance;
+    }
+    
+    private Order(int id, IntClient client, String status) {
         this.id = id;
         this.client = client;
-        this.product = product;
-        this.company = company;
         this.status = status;
 
         currentState = new NewOrderState();
+    }
+    
+    
+    public void addProduct(Product product)
+    {
+        this.products.add(product);
+    }
+    
+    public void deleteProduct(Product product)
+    {
+        return;
     }
 
     public int getId() {
@@ -48,12 +71,12 @@ public class Order {
         this.client = client;
     }
 
-    public Product[] getProduct() {
-        return product;
+    public ArrayList<Product> getProduct() {
+        return products;
     }
 
-    public void setProduct(Product[] product) {
-        this.product = product;
+    public void setProduct(ArrayList<Product> products) {
+        this.products = products;
     }
 
     public IntCompany getCompany() {

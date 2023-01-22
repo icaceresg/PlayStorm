@@ -11,6 +11,7 @@ import Class.Administrator;
 import Class.Client;
 import Class.Iterator.ClientIterator;
 import Class.Iterator.CompanyIterator;
+import Class.State.Order;
 import Class.User;
 import Interfaces.IntClient;
 import Interfaces.IntCompany;
@@ -183,6 +184,8 @@ public class Login extends javax.swing.JFrame {
                     IntClient client = clientIterator.next();
                     if (client.getEmail().equals(UserField.getText()) && client.getPassword().equals(finalEncodePassword)) {
                         User.usuarioActivo.add(client);
+                        Order order = Order.getInstance(client);
+                        order.process();
                         GameSearch gameSearch = new GameSearch();
                         gameSearch.setVisible(true);
                         this.dispose();

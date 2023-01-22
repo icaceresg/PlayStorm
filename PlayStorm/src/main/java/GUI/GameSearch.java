@@ -13,6 +13,7 @@ import Class.Iterator.ProductIterator;
 import Class.Observer.SumObserver;
 import Class.Observer.SumSubject;
 import Class.Product;
+import Class.State.Order;
 import Interfaces.IntClient;
 import Interfaces.IntCompany;
 import Interfaces.IntLogOut;
@@ -81,12 +82,13 @@ public class GameSearch extends javax.swing.JFrame {
         while (iterator.hasNext()) {
             Product product = iterator.next();
 
-            rowData[0] = product.getTitle();
-            rowData[1] = product.getDescription();
-            rowData[2] = product.getCategory();
-            rowData[3] = product.getPrice();
-            rowData[4] = product.getCompany().getName();
-            rowData[5] = product.getAmount();
+            rowData[0] = product.getId();
+            rowData[1] = product.getTitle();
+            rowData[2] = product.getDescription();
+            rowData[3] = product.getCategory();
+            rowData[4] = product.getPrice();
+            rowData[5] = product.getCompany().getName();
+            rowData[6] = product.getAmount();
 
             model.addRow(rowData);
 
@@ -166,12 +168,19 @@ public class GameSearch extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Titulo", "Descripción", "Categoría", "Precio", "Empresa", "Cantidad"
+                "ID", "Titulo", "Descripción", "Categoría", "Precio", "Empresa", "Cantidad"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -336,7 +345,26 @@ public class GameSearch extends javax.swing.JFrame {
     }//GEN-LAST:event_CartActionPerformed
 
     private void AddCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCartButtonActionPerformed
-        // TODO add your handling code here:
+        int num = AllProductsTable.getSelectedRow();
+        if(num > -1) {
+            try {
+                DefaultTableModel modelo = (DefaultTableModel) AllProductsTable.getModel();
+                ProductIterator productIterator = new ProductIterator();
+                while (productIterator.hasNext())
+                {
+                    Product product = productIterator.next();
+                    if((Integer) AllProductsTable.getValueAt(num, 0) == product.getId())
+                        productIterator.deleteProduct(product);
+                        Order order = Order.getInstance();
+                        order.addProduct(product);
+                        modelo.removeRow(num);
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(GameSearch.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecciona un producto a añadir.", "Añadir producto", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_AddCartButtonActionPerformed
 
     private void CategorycomboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategorycomboboxActionPerformed

@@ -1,5 +1,8 @@
 package GUI;
 
+import Class.Iterator.ProductIterator;
+import Class.Product;
+import Class.State.Order;
 import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -32,6 +35,27 @@ public class MyCart extends javax.swing.JFrame {
      */
     public void addRowToJTable() {
 
+        DefaultTableModel model = (DefaultTableModel) MyCartTable.getModel();
+
+        Order order = Order.getInstance();
+        ArrayList<Product> products = order.getProduct();
+        Object rowData[] = new Object[MyCartTable.getColumnCount()];
+       
+        int i = 0;
+        while (i < products.size()) {
+
+            rowData[0] = products.get(i).getId();
+            rowData[1] = products.get(i).getTitle();
+            rowData[2] = products.get(i).getDescription();
+            rowData[3] = products.get(i).getCategory();
+            rowData[4] = products.get(i).getPrice();
+            rowData[5] = products.get(i).getCompany().getName();
+
+            model.addRow(rowData);
+            i++;
+
+        }
+
     }
 
     @SuppressWarnings("unchecked")
@@ -53,12 +77,19 @@ public class MyCart extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Título", "Empresa", "Precio", "Categoría", "Fecha"
+                "ID", "Título", "Descripción", "Categoría", "Precio", "Empresa"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -147,7 +178,7 @@ public class MyCart extends javax.swing.JFrame {
     }//GEN-LAST:event_ReturnButtonActionPerformed
 
     private void BuyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuyButtonActionPerformed
-        // Cambia de ventana a la de comprar para avanzar en la operacion
+        Order.getInstance().finish();
 
     }//GEN-LAST:event_BuyButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
