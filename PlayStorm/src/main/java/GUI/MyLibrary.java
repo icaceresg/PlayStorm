@@ -22,7 +22,7 @@ public class MyLibrary extends javax.swing.JFrame {
 
         this.setTitle("JavaPop");
 
-        ImageIcon imagen = new ImageIcon("./imagenes/LogoApp 01.png");
+        ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
     }
 
