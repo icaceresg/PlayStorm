@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author jorge
+ * Interfaz que realiza el LogOut de un cliente para el patrón Command
  */
 public interface IntLogOut {
 

@@ -2,31 +2,31 @@ package Interfaces;
 
 /**
  *
- * @author jorge
+ * Interfaz del iterador para el patrón Iterador
  */
 public interface IntIterator {
 
     /**
-     *
-     * @return
+     * Método a implementar
+     * @return boolean
      */
     public boolean hasNext();
 
     /**
-     *
-     * @return
+     * Método a implementar
+     * @return Object
      */
     public Object next();
 
     /**
-     *
-     * @return
+     * Método a implementar
+     * @return Object
      */
     public Object firstItem();
 
     /**
-     *
-     * @return
+     * Método a implementar
+     * @return Object
      */
     public Object lastItem();
 }

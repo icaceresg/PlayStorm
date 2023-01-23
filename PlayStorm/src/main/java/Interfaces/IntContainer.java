@@ -2,13 +2,13 @@ package Interfaces;
 
 /**
  *
- * @author jorge
+ * Interfaz container para el patrón Iterator
  */
 public interface IntContainer {
 
     /**
-     *
-     * @return
+     * Método a implementar
+     * @return IntIterator
      */
     public IntIterator createIterator();
 }

@@ -2,12 +2,12 @@ package Interfaces;
 
 /**
  *
- * @author jorge
+ * Interfaz del observer para el patrón Observer
  */
 public interface Observer {
 
     /**
-     *
+     * Método a implementar
      * @param data1
      * @param data2
      */
