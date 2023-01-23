@@ -15,7 +15,7 @@ A simulation of online video game store like Steam
 
 ## Patrones de Creación: **(FINALIZADO)**
  - **Abstract Factory:** Se va a utilizar a la hora de crear un usuario nuevo. **(FINALIZADO)**
-   - Fabrica Abstracta: AbstractFactory.
+   - Fabrica Abstracta: UserFactory.
    - Fabrica Concreta: SubscriberFactory, NotSubscriberFactory.
    - Producto Abstracto: IntClient, IntCompany.
    - Producto Concreto: SubscriberClient, SubscriberCompany, NotSubscriberClient, NotSubscriberCompany.
