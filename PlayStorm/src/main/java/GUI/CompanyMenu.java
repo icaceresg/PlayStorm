@@ -101,6 +101,8 @@ public class CompanyMenu extends javax.swing.JFrame {
             }
         });
 
+        NameLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         CompanyMenu.setText("Empresa");
 
         CompanyItem.setText("Editar Empresa");
