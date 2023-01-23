@@ -53,7 +53,7 @@ A simulation of online video game store like Steam
    - Sujeto: Subject
    - Observador: Observer
  - **Command:** Cada vez que se cierre sesión, que el código sea implementado con Command. **(FINALIZADO)**
-   - Comando: IntCommand
+   - Comando: IntLogOut
    - Invocado: LogOutCommand
    - Invocador: AdminMenu, CompanyMenu, GameSearch
  - **Strategy:** Cada vez que se realice una búsqueda, dependiendo de los parámetros dados, buscará los productos. **(FINALIZADO)**
