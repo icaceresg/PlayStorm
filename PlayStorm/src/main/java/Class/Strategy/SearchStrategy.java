@@ -13,5 +13,11 @@ import java.util.List;
  */
 public interface SearchStrategy {
 
+    /**
+     *
+     * @param products
+     * @param criteria
+     * @return
+     */
     public List<Product> search(List<Product> products, String criteria);
 }

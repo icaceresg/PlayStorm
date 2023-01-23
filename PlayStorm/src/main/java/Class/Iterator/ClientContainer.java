@@ -9,14 +9,29 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author jorge
+ */
 public class ClientContainer implements IntContainer, Serializable {
 
+    /**
+     *
+     */
     public ArrayList<IntClient> clients = new ArrayList<>();
 
+    /**
+     *
+     * @throws Exception
+     */
     public ClientContainer() throws Exception {
         this.clients = new DataBase().readClients();
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public IntIterator createIterator() {
         try {

@@ -23,6 +23,10 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+/**
+ *
+ * @author jorge
+ */
 public class ClientProfile extends javax.swing.JFrame {
 
     /**
@@ -45,6 +49,9 @@ public class ClientProfile extends javax.swing.JFrame {
         insertData();
     }
 
+    /**
+     *
+     */
     public void insertData() {
         NameField.setText(User.activeUser.get(0).getName());
 
@@ -65,6 +72,10 @@ public class ClientProfile extends javax.swing.JFrame {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public IntClient getClient() {
         IntClient clientSelected = null;
         try {
@@ -465,6 +476,11 @@ public class ClientProfile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     *
+     * @param text
+     * @return
+     */
     public boolean isTextEditable(String text) {
         return false;
     }

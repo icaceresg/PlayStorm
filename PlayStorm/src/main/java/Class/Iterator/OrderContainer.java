@@ -19,12 +19,23 @@ import java.util.logging.Logger;
  */
 public class OrderContainer implements IntContainer, Serializable {
 
+    /**
+     *
+     */
     public ArrayList<Order> orders = new ArrayList<>();
 
+    /**
+     *
+     * @throws Exception
+     */
     public OrderContainer() throws Exception {
         this.orders = new DataBase().readOrder();
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public IntIterator createIterator() {
         try {

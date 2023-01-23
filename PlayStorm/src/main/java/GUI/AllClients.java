@@ -11,8 +11,15 @@ import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ *
+ * @author jorge
+ */
 public class AllClients extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public AllClients() {
         try {
             // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
@@ -36,6 +43,7 @@ public class AllClients extends javax.swing.JFrame {
     /**
      * Metodo para crear por defecto la tabla definida por los productos
      * introducidos
+     * @throws java.lang.Exception
      */
     public void addRowToJTable() throws Exception {
 

@@ -2,8 +2,17 @@ package Class.Iterator;
 
 import Class.DataBase;
 
+/**
+ *
+ * @author jorge
+ */
 public class Demo {
 
+    /**
+     *
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         DataBase database = new DataBase();
         ClientIterator iterator = new ClientIterator();

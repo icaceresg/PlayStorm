@@ -1,7 +1,14 @@
 package Class.Command;
 
+/**
+ *
+ * @author jorge
+ */
 public class NewJFrame extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public NewJFrame() {
         initComponents();
     }
@@ -26,6 +33,10 @@ public class NewJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

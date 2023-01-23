@@ -13,6 +13,10 @@ import java.util.List;
  */
 public class Main {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         // Crear una lista de juegos
@@ -60,6 +64,11 @@ public class Main {
         }
     }
 
+    /**
+     *
+     * @param games
+     * @return
+     */
     public List<Game> ordenarPreferencia(List<Game> games) {
         List<Game> lista = new ArrayList<>();
         List<Game> lista2 = new ArrayList<>();

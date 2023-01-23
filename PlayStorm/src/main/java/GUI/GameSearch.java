@@ -81,6 +81,10 @@ public class GameSearch extends javax.swing.JFrame {
         return 0;
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     public void addRowToJTable() throws Exception {
 
         DefaultTableModel model = (DefaultTableModel) AllProductsTable.getModel();
@@ -391,8 +395,6 @@ public class GameSearch extends javax.swing.JFrame {
                 while (productIterator.hasNext()) {
                     Product product = productIterator.next();
                     if ((Integer) AllProductsTable.getValueAt(num, 0) == product.getId()) {
-                        productIterator.deleteProduct(product);
-                        modelo.removeRow(num);
                         ClientIterator client = new ClientIterator();
                         while (client.hasNext()) {
                             IntClient clientOrder = client.next();
@@ -404,6 +406,7 @@ public class GameSearch extends javax.swing.JFrame {
                                         order = orderSelected;
                                         order.addProduct(product);
                                         order.process();
+                                        productIterator.deleteProduct(product);
                                     }
                                 }
                                 if (order == null) {
@@ -411,12 +414,14 @@ public class GameSearch extends javax.swing.JFrame {
                                     order.addProduct(product);
                                     order.process();
                                     orderIterator.addOrder(order);
+                                    productIterator.deleteProduct(product);
+                                    modelo.removeRow(num);
                                 }
-
                             }
                         }
                     }
                 }
+                modelo.removeRow(num);
                 DataBase dataBase = new DataBase();
                 dataBase.saveIteratorOrder(orderIterator);
                 dataBase.saveIteratorProduct(productIterator);
@@ -522,6 +527,10 @@ public class GameSearch extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SearchButtonActionPerformed
 
+    /**
+     *
+     * @return
+     */
     public float getMaximum() {
         float maximum = 0;
         try {
@@ -536,6 +545,10 @@ public class GameSearch extends javax.swing.JFrame {
         return maximum;
     }
 
+    /**
+     *
+     * @return
+     */
     public float getMinimum() {
         float minimum = 10000;
         try {

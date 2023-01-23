@@ -9,8 +9,16 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author jorge
+ */
 public class Main {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             NotSubscriberClient client = new NotSubscriberClient("name", "correo", "1234", "villarreal", "location", "1231231231231231", "telefono", "12/7/2001");

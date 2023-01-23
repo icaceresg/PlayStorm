@@ -19,6 +19,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class AllCompanies extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public AllCompanies() {
         // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
@@ -42,6 +45,7 @@ public class AllCompanies extends javax.swing.JFrame {
     /**
      * Metodo para crear por defecto la tabla definida por los productos
      * introducidos
+     * @throws java.lang.Exception
      */
     public void addRowToJTable() throws Exception {
 

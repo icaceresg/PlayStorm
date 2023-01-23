@@ -2,8 +2,15 @@ package Class.Command;
 
 import Interfaces.IntLogOut;
 
+/**
+ *
+ * @author jorge
+ */
 public class NewJFrame1 extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public NewJFrame1() {
         initComponents();
     }
@@ -48,6 +55,10 @@ public class NewJFrame1 extends javax.swing.JFrame {
         logoutCommand.logOut(this);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

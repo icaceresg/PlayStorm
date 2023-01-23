@@ -8,16 +8,28 @@ import Interfaces.IntClient;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author jorge
+ */
 public class SumObserver implements Observer {
 
     private float sum;
 
+    /**
+     *
+     * @param clientMoney
+     * @param addedMoney
+     */
     @Override
     public void update(float clientMoney, float addedMoney) {
         sum = clientMoney + addedMoney;
         setMoney();
     }
 
+    /**
+     *
+     */
     public void setMoney() {
         try {
             String email = Client.activeUser.get(0).getEmail();

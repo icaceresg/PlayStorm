@@ -16,10 +16,20 @@ public class Finder {
 
     private SearchStrategy strategy;
 
+    /**
+     *
+     * @param strategy
+     */
     public void setSearchStrategy(SearchStrategy strategy) {
         this.strategy = strategy;
     }
 
+    /**
+     *
+     * @param products
+     * @param criteria
+     * @return
+     */
     public List<Product> search(List<Product> products, String criteria) {
         return strategy.search(products, criteria);
     }

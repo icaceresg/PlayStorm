@@ -1,7 +1,15 @@
 package Class.Observer;
 
+/**
+ *
+ * @author jorge
+ */
 public class Main {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 //        Cliente cliente = new Cliente(12, "correo1");
 //

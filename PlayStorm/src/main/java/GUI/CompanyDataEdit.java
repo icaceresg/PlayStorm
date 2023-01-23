@@ -51,6 +51,9 @@ public class CompanyDataEdit extends javax.swing.JFrame {
         this.setIconImage(imagen.getImage());
     }
 
+    /**
+     *
+     */
     public void insertData() {
         NameField.setText(User.activeUser.get(0).getName());
 
@@ -67,6 +70,10 @@ public class CompanyDataEdit extends javax.swing.JFrame {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public IntCompany getCompany() {
         IntCompany companySelected = null;
         try {

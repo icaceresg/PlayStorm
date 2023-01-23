@@ -2,14 +2,26 @@ package Class.Adapter;
 
 import java.security.MessageDigest;
 
+/**
+ *
+ * @author jorge
+ */
 public class PasswordAdapter extends PasswordEncode {
 
     private Password password;
 
+    /**
+     *
+     * @param pass
+     */
     public PasswordAdapter(Password pass) {
         this.password = pass;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String getEncode() {
         String cifrado;
@@ -19,6 +31,11 @@ public class PasswordAdapter extends PasswordEncode {
         return cifrado;
     }
 
+    /**
+     *
+     * @param pass
+     * @return
+     */
     public static String encodeSHA256(String pass) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");

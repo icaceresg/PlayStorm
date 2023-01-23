@@ -9,14 +9,29 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author jorge
+ */
 public class ProductContainer implements IntContainer, Serializable {
 
+    /**
+     *
+     */
     public ArrayList<Product> products = new ArrayList<>();
 
+    /**
+     *
+     * @throws Exception
+     */
     public ProductContainer() throws Exception {
         this.products = new DataBase().readProducts();
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public IntIterator createIterator() {
         try {

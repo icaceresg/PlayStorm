@@ -25,6 +25,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class MyCart extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public MyCart() {
         // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
@@ -233,72 +236,78 @@ public class MyCart extends javax.swing.JFrame {
                 Logger.getLogger(GameSearch.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Selecciona un producto a añadir.", "Añadir producto", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Selecciona un producto a devolver.", "Devolver producto", JOptionPane.WARNING_MESSAGE);
         }
 
     }//GEN-LAST:event_SendBackButtonActionPerformed
 
     private void BuyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuyButtonActionPerformed
-        try {
+        int num = MyShoppingCartTable.getSelectedRow();
+        if (num > -1) {
+            try {
 
-            OrderIterator orderIterator = new OrderIterator();
-            Order order = null;
-            while (orderIterator.hasNext()) {
-                Order orderSearch = orderIterator.next();
-                if (orderSearch.getClient().getEmail().equals(User.activeUser.get(0).getEmail()) & !orderSearch.getStatus().equals("Finalizado")) {
-                    order = orderSearch;
-                }
-            }
-
-            if (order == null) {
-                JOptionPane.showMessageDialog(this, "La cesta está vacía", "Mi Carrito", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            float sum = 0;
-            for (int i = 0; i < order.getProduct().size(); i++) {
-                sum += order.getProduct().get(i).getPrice();
-                IntCompany company = null;
-                CompanyIterator companyIterator = new CompanyIterator();
-                while (companyIterator.hasNext()) {
-                    IntCompany companySelected = companyIterator.next();
-                    if (companySelected.getEmail().equals(order.getProduct().get(i).getCompany().getEmail())) {
-                        companySelected.setWallet(companySelected.getWallet() + order.getProduct().get(i).getPrice());
+                OrderIterator orderIterator = new OrderIterator();
+                Order order = null;
+                while (orderIterator.hasNext()) {
+                    Order orderSearch = orderIterator.next();
+                    if (orderSearch.getClient().getEmail().equals(User.activeUser.get(0).getEmail()) & !orderSearch.getStatus().equals("Finalizado")) {
+                        order = orderSearch;
                     }
                 }
-            }
 
-            IntClient client = null;
-            ClientIterator clientIterator = new ClientIterator();
-            while (clientIterator.hasNext()) {
-                IntClient clientSelected = clientIterator.next();
-                if (clientSelected.getEmail().equals(User.activeUser.get(0).getEmail())) {
-                    client = clientSelected;
+                if (order == null) {
+                    JOptionPane.showMessageDialog(this, "La cesta está vacía", "Mi Carrito", JOptionPane.ERROR_MESSAGE);
+                    return;
                 }
+
+                float sum = 0;
+                for (int i = 0; i < order.getProduct().size(); i++) {
+                    sum += order.getProduct().get(i).getPrice();
+                    IntCompany company = null;
+                    CompanyIterator companyIterator = new CompanyIterator();
+                    while (companyIterator.hasNext()) {
+                        IntCompany companySelected = companyIterator.next();
+                        if (companySelected.getEmail().equals(order.getProduct().get(i).getCompany().getEmail())) {
+                            companySelected.setWallet(companySelected.getWallet() + order.getProduct().get(i).getPrice());
+                        }
+                    }
+                }
+
+                IntClient client = null;
+                ClientIterator clientIterator = new ClientIterator();
+                while (clientIterator.hasNext()) {
+                    IntClient clientSelected = clientIterator.next();
+                    if (clientSelected.getEmail().equals(User.activeUser.get(0).getEmail())) {
+                        client = clientSelected;
+                    }
+                }
+
+                if (client instanceof SubscriberClient) {
+                    client.setWallet((float) (client.getWallet() - (sum * 0.92)));
+                } else {
+                    client.setWallet(client.getWallet() - sum);
+                }
+
+                order.setState(new ProcessingOrderState());
+                order.finish(); // prints "Order processing cannot be canceled"
+
+                DataBase dataBase = new DataBase();
+                dataBase.saveIteratorOrder(orderIterator);
+                dataBase.saveIteratorClient(clientIterator);
+                DefaultTableModel model = new DefaultTableModel(0, 0);
+                MyShoppingCartTable.setModel(model);
+                addRowToJTable();
+
+                GameSearch gameSearch = new GameSearch();
+                gameSearch.setVisible(true);
+                this.dispose();
+
+            } catch (Exception ex) {
+                Logger.getLogger(MyCart.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            if (client instanceof SubscriberClient) {
-                client.setWallet((float) (client.getWallet() - (sum * 0.92)));
-            } else {
-                client.setWallet(client.getWallet() - sum);
-            }
-
-            order.setState(new ProcessingOrderState());
-            order.finish(); // prints "Order processing cannot be canceled"
-
-            DataBase dataBase = new DataBase();
-            dataBase.saveIteratorOrder(orderIterator);
-            dataBase.saveIteratorClient(clientIterator);
-            DefaultTableModel model = new DefaultTableModel(0, 0);
-            MyShoppingCartTable.setModel(model);
-            addRowToJTable();
-
-            GameSearch gameSearch = new GameSearch();
-            gameSearch.setVisible(true);
-            this.dispose();
-
-        } catch (Exception ex) {
-            Logger.getLogger(MyCart.class.getName()).log(Level.SEVERE, null, ex);
+        } else {
+            JOptionPane.showMessageDialog(this, "La cesta está vacía.", "Finalizar pedido", JOptionPane.WARNING_MESSAGE);
         }
 
 

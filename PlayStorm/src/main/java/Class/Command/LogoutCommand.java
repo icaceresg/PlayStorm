@@ -5,8 +5,16 @@ import GUI.Login;
 import Interfaces.IntLogOut;
 import javax.swing.JFrame;
 
+/**
+ *
+ * @author jorge
+ */
 public class LogoutCommand implements IntLogOut {
 
+    /**
+     *
+     * @param vista
+     */
     @Override
     public void logOut(JFrame vista) {
         Login login = new Login();
@@ -16,6 +24,9 @@ public class LogoutCommand implements IntLogOut {
         logOutUser();
     }
 
+    /**
+     *
+     */
     @Override
     public void logOutUser() {
         User.activeUser.clear();

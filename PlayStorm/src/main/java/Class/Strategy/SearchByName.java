@@ -14,6 +14,12 @@ import java.util.List;
  */
 public class SearchByName implements SearchStrategy {
 
+    /**
+     *
+     * @param products
+     * @param criteria
+     * @return
+     */
     @Override
     public List<Product> search(List<Product> products, String criteria) {
         List<Product> result = new ArrayList<>();

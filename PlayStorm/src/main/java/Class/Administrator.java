@@ -10,6 +10,10 @@ import Interfaces.IntCompany;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author jorge
+ */
 public final class Administrator extends User implements IntAdmin {
 
     private static Administrator instance;
@@ -19,6 +23,11 @@ public final class Administrator extends User implements IntAdmin {
     }
 
     //Call this function to create Administrator user
+
+    /**
+     *
+     * @return
+     */
     public static Administrator getInstance() {
         if (instance == null) {
             instance = new Administrator();
@@ -26,6 +35,10 @@ public final class Administrator extends User implements IntAdmin {
         return instance;
     }
 
+    /**
+     *
+     * @param email
+     */
     @Override
     public void deleteClient(String email) {
         try {
@@ -43,6 +56,10 @@ public final class Administrator extends User implements IntAdmin {
         }
     }
 
+    /**
+     *
+     * @param email
+     */
     @Override
     public void deleteCompany(String email) {
         try {
@@ -59,6 +76,10 @@ public final class Administrator extends User implements IntAdmin {
         }
     }
 
+    /**
+     *
+     * @param id
+     */
     @Override
     public void deleteProduct(int id) {
         try {

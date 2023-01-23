@@ -16,10 +16,20 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author jorge
+ */
 public class DataBase {
 
     private String path = "./database/";
 
+    /**
+     *
+     * @param client
+     * @throws IOException
+     * @throws Exception
+     */
     public void saveClient(IntClient client) throws IOException, Exception {
         ClientIterator iterator = new ClientIterator();
         iterator.addClient(client);
@@ -44,6 +54,12 @@ public class DataBase {
 
     }
 
+    /**
+     *
+     * @param iterator
+     * @throws IOException
+     * @throws Exception
+     */
     public void saveIteratorClient(ClientIterator iterator) throws IOException, Exception {
         File file = new File(path, "Clients.txt");
         ObjectOutputStream oos = null;
@@ -66,6 +82,11 @@ public class DataBase {
 
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public ArrayList<IntClient> readClients() throws Exception {
         File file = new File(path, "Clients.txt");
         ArrayList<IntClient> clients = new ArrayList();
@@ -91,6 +112,12 @@ public class DataBase {
         return clients;
     }
 
+    /**
+     *
+     * @param company
+     * @throws IOException
+     * @throws Exception
+     */
     public void saveCompanies(IntCompany company) throws IOException, Exception {
         CompanyIterator iterator = new CompanyIterator();
         iterator.addCompany(company);
@@ -115,6 +142,12 @@ public class DataBase {
 
     }
 
+    /**
+     *
+     * @param iterator
+     * @throws IOException
+     * @throws Exception
+     */
     public void saveIteratorCompany(CompanyIterator iterator) throws IOException, Exception {
         File file = new File(path, "Company.txt");
         ObjectOutputStream oos = null;
@@ -137,6 +170,11 @@ public class DataBase {
 
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public ArrayList<IntCompany> readCompanies() throws Exception {
         File file = new File(path, "Company.txt");
         ArrayList<IntCompany> companies = new ArrayList();
@@ -162,6 +200,12 @@ public class DataBase {
         return companies;
     }
 
+    /**
+     *
+     * @param product
+     * @throws IOException
+     * @throws Exception
+     */
     public void saveProducts(Product product) throws IOException, Exception {
         ProductIterator iterator = new ProductIterator();
         iterator.addProducts(product);
@@ -186,6 +230,12 @@ public class DataBase {
 
     }
 
+    /**
+     *
+     * @param iterator
+     * @throws IOException
+     * @throws Exception
+     */
     public void saveIteratorProduct(ProductIterator iterator) throws IOException, Exception {
         File file = new File(path, "Product.txt");
         ObjectOutputStream oos = null;
@@ -208,6 +258,11 @@ public class DataBase {
 
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public ArrayList<Product> readProducts() throws Exception {
         File file = new File(path, "Product.txt");
         ArrayList<Product> products = new ArrayList();
@@ -233,6 +288,12 @@ public class DataBase {
         return products;
     }
 
+    /**
+     *
+     * @param order
+     * @throws IOException
+     * @throws Exception
+     */
     public void saveOrders(Order order) throws IOException, Exception {
         OrderIterator iterator = new OrderIterator();
         iterator.addOrder(order);
@@ -257,6 +318,12 @@ public class DataBase {
 
     }
 
+    /**
+     *
+     * @param iterator
+     * @throws IOException
+     * @throws Exception
+     */
     public void saveIteratorOrder(OrderIterator iterator) throws IOException, Exception {
         File file = new File(path, "Order.txt");
         ObjectOutputStream oos = null;
@@ -279,6 +346,11 @@ public class DataBase {
 
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public ArrayList<Order> readOrder() throws Exception {
         File file = new File(path, "Order.txt");
         ArrayList<Order> orders = new ArrayList();

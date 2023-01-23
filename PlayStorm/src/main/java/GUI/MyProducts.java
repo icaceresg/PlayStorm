@@ -19,6 +19,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class MyProducts extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public MyProducts() {
         // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();

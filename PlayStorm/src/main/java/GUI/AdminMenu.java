@@ -8,8 +8,15 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+/**
+ *
+ * @author jorge
+ */
 public class AdminMenu extends javax.swing.JFrame {
 
+    /**
+     *
+     */
     public AdminMenu() {
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
         int height = pantalla.height / 2;

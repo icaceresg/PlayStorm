@@ -20,10 +20,18 @@ public class OrderIterator implements IntIterator {
     private int i;
     private OrderContainer orderContainer;
 
+    /**
+     *
+     * @throws Exception
+     */
     public OrderIterator() throws Exception {
         this.orderContainer = new OrderContainer();
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean hasNext() {
         if (i < orderContainer.orders.size()) {
@@ -34,6 +42,10 @@ public class OrderIterator implements IntIterator {
 
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Order next() {
         if (this.hasNext()) {
@@ -42,24 +54,45 @@ public class OrderIterator implements IntIterator {
         return null;
     }
 
+    /**
+     *
+     * @param order
+     */
     public void addOrder(Order order) {
         orderContainer.orders.add(order);
     }
 
+    /**
+     *
+     * @param order
+     */
     public void deleteOrder(Order order) {
         orderContainer.orders.remove(order);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Order firstItem() {
         return orderContainer.orders.get(0);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Order lastItem() {
         return orderContainer.orders.get(orderContainer.orders.size() - 1);
     }
 
+    /**
+     *
+     * @param clientOrder
+     * @return
+     */
     public Order getOrder(IntClient clientOrder) {
 
         try {
