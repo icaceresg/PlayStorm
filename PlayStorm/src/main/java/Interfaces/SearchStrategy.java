@@ -1,23 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
+
 package Interfaces;
 
 import Class.Product;
 import java.util.List;
 
 /**
- *
- * @author jorge
+ * 
+ * Interfaz para la creación de estrategia de búsqueda para el patrón Strategy
  */
 public interface SearchStrategy {
 
     /**
-     *
+     * Método a implementar
      * @param products
      * @param criteria
-     * @return
+     * @return 
      */
     public List<Product> search(List<Product> products, String criteria);
 }

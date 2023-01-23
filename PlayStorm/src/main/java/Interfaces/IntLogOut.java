@@ -9,13 +9,13 @@ import javax.swing.JFrame;
 public interface IntLogOut {
 
     /**
-     *
+     * Método a implementar
      * @param vista
      */
     void logOut(JFrame vista);
 
     /**
-     *
+     * Método a implementar
      */
     public void logOutUser();
 }
