@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import Class.AbstractFactory.TemplateMethod.SubscriberCompany;
 import Class.Client;
 import Class.User;
 import Class.Command.LogoutCommand;
@@ -15,10 +16,18 @@ import Class.Observer.SumObserver;
 import Class.Observer.SumSubject;
 import Class.Product;
 import Class.State.Order;
+import Class.Strategy.Finder;
+import Class.Strategy.SearchByCategory;
+import Class.Strategy.SearchByName;
+import Class.Strategy.SearchByPrice;
 import Interfaces.IntClient;
 import Interfaces.IntLogOut;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import static java.lang.Float.max;
+import static java.lang.Float.min;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -77,22 +86,45 @@ public class GameSearch extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) AllProductsTable.getModel();
 
         ProductIterator iterator = new ProductIterator();
+        List<Product> productIterator = ordenarPreferencia(iterator);
         Object rowData[] = new Object[AllProductsTable.getColumnCount()];
 
-        while (iterator.hasNext()) {
-            Product product = iterator.next();
-
-            rowData[0] = product.getId();
-            rowData[1] = product.getTitle();
-            rowData[2] = product.getDescription();
-            rowData[3] = product.getCategory();
-            rowData[4] = product.getPrice();
-            rowData[5] = product.getCompany().getName();
+        for (int i = 0; i < productIterator.size(); i++) {
+            rowData[0] = productIterator.get(i).getId();
+            rowData[1] = productIterator.get(i).getTitle();
+            rowData[2] = productIterator.get(i).getDescription();
+            rowData[3] = productIterator.get(i).getCategory();
+            rowData[4] = productIterator.get(i).getPrice();
+            rowData[5] = productIterator.get(i).getCompany().getName();
 
             model.addRow(rowData);
-
         }
 
+    }
+
+    private List<Product> ordenarPreferencia(ProductIterator products) {
+        List<Product> lista = new ArrayList<>();
+        List<Product> lista2 = new ArrayList<>();
+        List<Product> listaFinal = new ArrayList<>();
+
+        while (products.hasNext()) {
+            Product product = products.next();
+            if (product.getCompany() instanceof SubscriberCompany) {
+                lista.add(product);
+            } else {
+                lista2.add(product);
+            }
+        }
+
+        for (Product product : lista) {
+            listaFinal.add(product);
+        }
+
+        for (Product product : lista2) {
+            listaFinal.add(product);
+        }
+
+        return listaFinal;
     }
 
     /**
@@ -143,7 +175,7 @@ public class GameSearch extends javax.swing.JFrame {
             }
         });
 
-        CategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una categoria", "Rol", "Acción", "Estrategia", "Aventura", "Simulación", "Deportes", "Carreras" }));
+        CategoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una categoría", "Rol", "Acción", "Estrategia", "Aventura", "Simulación", "Deportes", "Carreras" }));
         CategoryComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CategoryComboBoxActionPerformed(evt);
@@ -152,6 +184,11 @@ public class GameSearch extends javax.swing.JFrame {
 
         SearchButton.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         SearchButton.setText("Buscar");
+        SearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchButtonActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -363,7 +400,7 @@ public class GameSearch extends javax.swing.JFrame {
                                 Order orderSelected, order = null;
                                 while (orderIterator.hasNext()) {
                                     orderSelected = orderIterator.next();
-                                    if (orderSelected.getClient().getEmail().equals(User.activeUser.get(0).getEmail())&!(orderSelected.getStatus().equals("Finalizado"))) {
+                                    if (orderSelected.getClient().getEmail().equals(User.activeUser.get(0).getEmail()) & !(orderSelected.getStatus().equals("Finalizado"))) {
                                         order = orderSelected;
                                         order.addProduct(product);
                                         order.process();
@@ -421,6 +458,97 @@ public class GameSearch extends javax.swing.JFrame {
         MoneyLabel.setText(String.valueOf(wallet));
     }//GEN-LAST:event_AddMoneyItemActionPerformed
 
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
+        try {
+            ProductIterator iterator = new ProductIterator();
+            List<Product> productIterator = ordenarPreferencia(iterator);
+
+            Finder finder = new Finder();
+
+            // Buscar juegos por Título
+            if (!TitleField.getText().equals("Inserte título...")) {
+
+                finder.setSearchStrategy(new SearchByName());
+                productIterator = finder.search(productIterator, TitleField.getText());
+                for (Product product : productIterator) {
+                    System.out.println(product.getTitle());
+                }
+            }
+
+            // Buscar juegos por Categoría
+            if (!CategoryComboBox.getSelectedItem().toString().equals("Seleccione una categoría")) {
+
+                finder.setSearchStrategy(new SearchByCategory());
+                productIterator = finder.search(productIterator, CategoryComboBox.getSelectedItem().toString());
+                for (Product product : productIterator) {
+                    System.out.println(product.getTitle());
+                }
+            }
+
+            float maximum = getMaximum();
+            float minimum = getMinimum();
+
+            // Buscar juegos por Precio
+            finder.setSearchStrategy(new SearchByPrice());
+            MaxPriceSlider.setMaximum((int) maximum + 1);
+            MaxPriceSlider.setMinimum((int) minimum);
+
+            productIterator = finder.search(productIterator, String.valueOf(MaxPriceSlider.getValue()));
+
+            for (Product product : productIterator) {
+                System.out.println(product.getTitle());
+            }
+
+            DefaultTableModel model = (DefaultTableModel) AllProductsTable.getModel();
+            model.setRowCount(0);
+
+            Object rowData[] = new Object[AllProductsTable.getColumnCount()];
+
+            System.out.println("Tamaño" + productIterator.size());
+
+            for (int i = 0; i < productIterator.size(); i++) {
+                rowData[0] = productIterator.get(i).getId();
+                rowData[1] = productIterator.get(i).getTitle();
+                rowData[2] = productIterator.get(i).getDescription();
+                rowData[3] = productIterator.get(i).getCategory();
+                rowData[4] = productIterator.get(i).getPrice();
+                rowData[5] = productIterator.get(i).getCompany().getName();
+
+                model.addRow(rowData);
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(GameSearch.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_SearchButtonActionPerformed
+
+    public float getMaximum() {
+        float maximum = 0;
+        try {
+            ProductIterator productIterator = new ProductIterator();
+            while (productIterator.hasNext()) {
+                maximum = max(productIterator.next().getPrice(), maximum);
+            }
+            return maximum;
+        } catch (Exception ex) {
+            Logger.getLogger(GameSearch.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return maximum;
+    }
+
+    public float getMinimum() {
+        float minimum = 10000;
+        try {
+            ProductIterator productIterator = new ProductIterator();
+            while (productIterator.hasNext()) {
+                minimum = min(productIterator.next().getPrice(), minimum);
+            }
+            return minimum;
+        } catch (Exception ex) {
+            Logger.getLogger(GameSearch.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return minimum;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AddMoneyItem;
