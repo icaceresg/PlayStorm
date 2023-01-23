@@ -3,25 +3,28 @@ package Class;
 import Interfaces.IntClient;
 
 /**
- *
- * @author jorge
+ * Clase que extiende del Usuario e implementa la interfaz IntClient.
  */
 public class Client extends User implements IntClient {
 
+    /**
+     * Declaración de variables
+     */
     private String lastName, location, creditCard, telephone, birthday;
     private float wallet;
     private Product[] ownProducts;
 
     /**
+     * Contructor del cliente
      *
-     * @param name
-     * @param email
-     * @param password
-     * @param lastName
-     * @param location
-     * @param creditCard
-     * @param telephone
-     * @param birthday
+     * @param name, nombre del cliente
+     * @param email, correo del cliente
+     * @param password, contraseña del cliente
+     * @param lastName, apellido del cliente
+     * @param location, localización del cliente
+     * @param creditCard, tarjeta de crédito del cliente
+     * @param telephone, teléfono del cliente
+     * @param birthday, cumpleaños del cliente
      */
     public Client(String name, String email, String password, String lastName, String location, String creditCard, String telephone, String birthday) {
         super(name, email, password);
@@ -34,8 +37,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Devuelve su apellido
      *
-     * @return
+     * @return lastName, apellido del cliente
      */
     @Override
     public String getLastName() {
@@ -43,8 +47,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Guarda el apellido del cliente
      *
-     * @param lastName
+     * @param lastName, nuevo apellido del cliente
      */
     @Override
     public void setLastName(String lastName) {
@@ -52,8 +57,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Devuelve su localización
      *
-     * @return
+     * @return location, localización del cliente
      */
     @Override
     public String getLocation() {
@@ -61,8 +67,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Guarda la localización del cliente
      *
-     * @param location
+     * @param location, nueva localización del cliente
      */
     @Override
     public void setLocation(String location) {
@@ -70,8 +77,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Devuelve su tarjeta de crédito
      *
-     * @return
+     * @return creditCard, tarjeta de crédito del cliente
      */
     @Override
     public String getCreditCard() {
@@ -79,8 +87,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Guarda la tarjeta de crédito del cliente
      *
-     * @param creditCard
+     * @param creditCard, nueva tarjeta de crédito del cliente
      */
     @Override
     public void setCreditCard(String creditCard) {
@@ -88,8 +97,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Devuelve su teléfono
      *
-     * @return
+     * @return telephone, teléfono del cliente
      */
     @Override
     public String getTelephone() {
@@ -97,8 +107,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Guarda el teléfono del cliente
      *
-     * @param telephone
+     * @param telephone, nuevo teléfono del cliente
      */
     @Override
     public void setTelephone(String telephone) {
@@ -106,8 +117,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Devuelve su cartera
      *
-     * @return
+     * @return wallet, cartera del cliente
      */
     @Override
     public float getWallet() {
@@ -115,8 +127,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Guarda la cartera del cliente
      *
-     * @param wallet
+     * @param wallet, nueva cartera del cliente
      */
     @Override
     public void setWallet(float wallet) {
@@ -124,8 +137,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Devuelve la lista de productos del cliente
      *
-     * @return
+     * @return ownProducts, lista de productos del cliente
      */
     @Override
     public Product[] getOwnProducts() {
@@ -133,8 +147,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Guarda la lista de productos del cliente
      *
-     * @param ownProducts
+     * @param ownProducts, nueva lista de productos del cliente
      */
     @Override
     public void setOwnProducts(Product[] ownProducts) {
@@ -142,62 +157,69 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Guarda la contraseña del cliente
      *
-     * @param password
+     * @param password, nueva contraseña del cliente
      */
     @Override
     public void setPassword(String password) {
-        super.setPassword(password); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        super.setPassword(password);
     }
 
     /**
+     * Devuelve su contraseña
      *
-     * @return
+     * @return password, contraseña del cliente
      */
     @Override
     public String getPassword() {
-        return super.getPassword(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return super.getPassword();
     }
 
     /**
+     * Guarda el correo del cliente
      *
-     * @param email
+     * @param email, nuevo correo del cliente
      */
     @Override
     public void setEmail(String email) {
-        super.setEmail(email); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        super.setEmail(email);
     }
 
     /**
+     * Devuelve su correo
      *
-     * @return
+     * @return email, correo del cliente
      */
     @Override
     public String getEmail() {
-        return super.getEmail(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return super.getEmail();
     }
 
     /**
+     * Guarda el nombre del cliente
      *
-     * @param name
+     * @param name, nuevo nombre del cliente
      */
     @Override
     public void setName(String name) {
-        super.setName(name); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        super.setName(name);
     }
 
     /**
+     * Devuelve su nombre
      *
-     * @return
+     * @return name, nombre del cliente
      */
     @Override
     public String getName() {
-        return super.getName(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return super.getName();
     }
 
     /**
+     * Devuelve su cumpleaños
      *
-     * @return
+     * @return birthday, cumpleaños del cliente
      */
     @Override
     public String getBirthday() {
@@ -205,8 +227,9 @@ public class Client extends User implements IntClient {
     }
 
     /**
+     * Guarda el cumpleaños del cliente
      *
-     * @param birthday
+     * @param birthday, nuevo cumpleaños del cliente
      */
     @Override
     public void setBirthday(String birthday) {

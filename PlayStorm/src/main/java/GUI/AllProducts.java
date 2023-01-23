@@ -31,7 +31,7 @@ public class AllProducts extends javax.swing.JFrame {
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());
 
-        this.setTitle("JavaPop");
+        this.setTitle("PlayStorm");
 
         try {
             addRowToJTable();

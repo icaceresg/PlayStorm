@@ -5,17 +5,13 @@
  */
 package GUI;
 
-import Class.AbstractFactory.NotSubscriberFactory;
-import Class.AbstractFactory.SubscriberFactory;
 import Class.AbstractFactory.TemplateMethod.SubscriberCompany;
 import Class.Adapter.PasswordAdapter;
 import Class.Adapter.PasswordEncode;
 import Class.Adapter.Password;
 import Class.DataBase;
-import Class.Iterator.ClientIterator;
 import Class.Iterator.CompanyIterator;
 import Class.User;
-import Interfaces.IntClient;
 import Interfaces.IntCompany;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -45,7 +41,7 @@ public class CompanyDataEdit extends javax.swing.JFrame {
         initComponents();
         insertData();
 
-        this.setTitle("JavaPop");
+        this.setTitle("PlayStorm");
 
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());

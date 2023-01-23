@@ -1,13 +1,10 @@
 package GUI;
 
 import Class.DataBase;
-import Class.Iterator.OrderIterator;
 import Class.Iterator.ProductIterator;
 import Class.Product;
-import Class.State.Order;
 import Class.User;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -32,7 +29,7 @@ public class MyProducts extends javax.swing.JFrame {
         initComponents();
         addRowToJTable();
 
-        this.setTitle("JavaPop");
+        this.setTitle("PlayStorm");
 
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());

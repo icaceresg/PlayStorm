@@ -4,11 +4,13 @@ import Interfaces.IntCompany;
 import java.util.Map;
 
 /**
- *
- * @author jorge
+ * Clase que extiende del Usuario e implementa la interfaz IntCompany.
  */
 public class Company extends User implements IntCompany {
 
+    /**
+     * Declaración de variables
+     */
     private String location, cif;
     private Product[] products;
     private float wallet;
@@ -16,12 +18,13 @@ public class Company extends User implements IntCompany {
     private Company[] company; //List to companys
 
     /**
+     * Constructor de la empresa
      *
-     * @param name
-     * @param email
-     * @param password
-     * @param location
-     * @param cif
+     * @param name, nombre de la empresa
+     * @param email, email de la empresa
+     * @param password, contraseña de la empresa
+     * @param location, localización de la empresa
+     * @param cif, cif de la empresa
      */
     public Company(String name, String email, String password, String location, String cif) {
         super(name, email, password);
@@ -31,8 +34,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Devuelve la localización de la empresa
      *
-     * @return
+     * @return location, localización de la empresa
      */
     @Override
     public String getLocation() {
@@ -40,8 +44,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Guarda la localización de la empresa
      *
-     * @param location
+     * @param location, localización de la empresa
      */
     @Override
     public void setLocation(String location) {
@@ -49,8 +54,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Devuelve el CIF de la empresa
      *
-     * @return
+     * @return cif, CIF de la empresa
      */
     @Override
     public String getCif() {
@@ -58,8 +64,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Guarda el CIF de la empresa
      *
-     * @param cif
+     * @param cif, CIF de la empresa
      */
     @Override
     public void setCif(String cif) {
@@ -67,8 +74,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Devuelve la lista de productos de la empresa
      *
-     * @return
+     * @return products, lista de productos de la empresa
      */
     @Override
     public Product[] getProducts() {
@@ -76,8 +84,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Guarda la lista de productos de la empresa
      *
-     * @param products
+     * @param products, lista de productos de la empresa
      */
     @Override
     public void setProducts(Product[] products) {
@@ -85,8 +94,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Devuelve el monedero de la empresa
      *
-     * @return
+     * @return wallet, monedero de la empresa
      */
     @Override
     public float getWallet() {
@@ -94,8 +104,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Guarda el monedero de la empresa
      *
-     * @param wallet
+     * @param wallet, monedero de la empresa
      */
     @Override
     public void setWallet(float wallet) {
@@ -103,8 +114,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Devuelve los descuentos de la empresa
      *
-     * @return
+     * @return discounts, descuentos de la empresa
      */
     @Override
     public Map<String, Integer> getDiscounts() {
@@ -112,8 +124,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Guarda los descuentos de la empresa
      *
-     * @param discounts
+     * @param discounts, descuentos de la empresa
      */
     @Override
     public void setDiscounts(Map<String, Integer> discounts) {
@@ -121,8 +134,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Devuelve las empresas de la empresa
      *
-     * @return
+     * @return company, empresas de la empresa
      */
     @Override
     public Company[] getCompany() {
@@ -130,8 +144,9 @@ public class Company extends User implements IntCompany {
     }
 
     /**
+     * Guarda las empresas de la empresa
      *
-     * @param company
+     * @param company, empresas de la empresa
      */
     @Override
     public void setCompany(Company[] company) {

@@ -17,16 +17,19 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
- *
- * @author jorge
+ * Clase que se va a encargar almacenar los datos
  */
 public class DataBase {
 
+    /**
+     * Declaración de variables
+     */
     private String path = "./database/";
 
     /**
+     * Guarda el cliente en Clients.txt
      *
-     * @param client
+     * @param client, cliente que vamos a guardar
      * @throws IOException
      * @throws Exception
      */
@@ -55,8 +58,9 @@ public class DataBase {
     }
 
     /**
+     * Guarda el iterador del cliente en Client.txt
      *
-     * @param iterator
+     * @param iterator, iterador del cliente
      * @throws IOException
      * @throws Exception
      */
@@ -83,8 +87,9 @@ public class DataBase {
     }
 
     /**
+     * Lee los clientes de Clients.txt
      *
-     * @return
+     * @return clients, clientes guardados
      * @throws Exception
      */
     public ArrayList<IntClient> readClients() throws Exception {
@@ -113,8 +118,9 @@ public class DataBase {
     }
 
     /**
+     * Guarda la empresa en Company.txt
      *
-     * @param company
+     * @param company, empresa a guardar
      * @throws IOException
      * @throws Exception
      */
@@ -143,8 +149,9 @@ public class DataBase {
     }
 
     /**
+     * Guarda el iterador en Company.txt
      *
-     * @param iterator
+     * @param iterator, iterador de Company
      * @throws IOException
      * @throws Exception
      */
@@ -171,8 +178,9 @@ public class DataBase {
     }
 
     /**
+     * Lee las empresas guardadas
      *
-     * @return
+     * @return companies, empresas guardadas
      * @throws Exception
      */
     public ArrayList<IntCompany> readCompanies() throws Exception {
@@ -201,8 +209,9 @@ public class DataBase {
     }
 
     /**
+     * Guarda el producto en Product.txt
      *
-     * @param product
+     * @param product, producto a guardar
      * @throws IOException
      * @throws Exception
      */
@@ -231,8 +240,9 @@ public class DataBase {
     }
 
     /**
+     * Guarda el iterador en Product.txt
      *
-     * @param iterator
+     * @param iterator, iterador de los productos
      * @throws IOException
      * @throws Exception
      */
@@ -259,8 +269,9 @@ public class DataBase {
     }
 
     /**
+     * Lee los productos guardadas
      *
-     * @return
+     * @return products, productos guardados
      * @throws Exception
      */
     public ArrayList<Product> readProducts() throws Exception {
@@ -289,8 +300,9 @@ public class DataBase {
     }
 
     /**
+     * Guarda el pedido en Order.txt
      *
-     * @param order
+     * @param order, pedido a guardar
      * @throws IOException
      * @throws Exception
      */
@@ -319,8 +331,9 @@ public class DataBase {
     }
 
     /**
+     * Guarda el iterador en Order.txt
      *
-     * @param iterator
+     * @param iterator, iterador del pedido
      * @throws IOException
      * @throws Exception
      */
@@ -347,8 +360,9 @@ public class DataBase {
     }
 
     /**
+     * Lee los pedidos guardados
      *
-     * @return
+     * @return orders, pedidos guardados
      * @throws Exception
      */
     public ArrayList<Order> readOrder() throws Exception {

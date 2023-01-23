@@ -1,13 +1,11 @@
 package GUI;
 
 import Class.AbstractFactory.TemplateMethod.SubscriberCompany;
-import Class.DataBase;
 import Class.Iterator.CompanyIterator;
 import Class.Proxy.AdminProxy;
 import Interfaces.IntAdmin;
 import Interfaces.IntCompany;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -36,7 +34,7 @@ public class AllCompanies extends javax.swing.JFrame {
             Logger.getLogger(AllCompanies.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        this.setTitle("JavaPop");
+        this.setTitle("PlayStorm");
 
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());

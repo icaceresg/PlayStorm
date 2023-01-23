@@ -31,7 +31,7 @@ public class AllClients extends javax.swing.JFrame {
             initComponents();
             addRowToJTable();
 
-            this.setTitle("JavaPop");
+        this.setTitle("PlayStorm");
 
             ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
             this.setIconImage(imagen.getImage());

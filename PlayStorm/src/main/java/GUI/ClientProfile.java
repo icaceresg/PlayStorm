@@ -4,8 +4,6 @@
  */
 package GUI;
 
-import Class.AbstractFactory.NotSubscriberFactory;
-import Class.AbstractFactory.SubscriberFactory;
 import Class.AbstractFactory.TemplateMethod.SubscriberClient;
 import Class.Adapter.Password;
 import Class.Adapter.PasswordAdapter;
@@ -41,7 +39,7 @@ public class ClientProfile extends javax.swing.JFrame {
 
         initComponents();
 
-        this.setTitle("JavaPop");
+        this.setTitle("PlayStorm");
 
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());

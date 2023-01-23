@@ -8,10 +8,8 @@ import Class.Adapter.Password;
 import Class.Adapter.PasswordAdapter;
 import Class.Adapter.PasswordEncode;
 import Class.Administrator;
-import Class.Client;
 import Class.Iterator.ClientIterator;
 import Class.Iterator.CompanyIterator;
-import Class.State.Order;
 import Class.User;
 import Interfaces.IntClient;
 import Interfaces.IntCompany;
@@ -41,7 +39,7 @@ public class Login extends javax.swing.JFrame {
 
         initComponents();
 
-        this.setTitle("JavaPop");
+        this.setTitle("PlayStorm");
 
         ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
         this.setIconImage(imagen.getImage());

@@ -5,23 +5,22 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la interfaz IntUser y Serializable para guardar datos
  */
 public class User implements IntUser, Serializable {
 
     /**
-     *
+     * Declaración de variables
      */
     public static ArrayList<IntUser> activeUser = new ArrayList<IntUser>();
-
     private String name, email, password;
 
     /**
+     * Constructor del Usuario
      *
-     * @param name
-     * @param email
-     * @param password
+     * @param name, nombre
+     * @param email, correo
+     * @param password, contraseña
      */
     public User(String name, String email, String password) {
         this.name = name;
@@ -30,8 +29,9 @@ public class User implements IntUser, Serializable {
     }
 
     /**
+     * Devuelve el nombre del usuario
      *
-     * @return
+     * @return name, nombre del usuario
      */
     @Override
     public String getName() {
@@ -39,8 +39,9 @@ public class User implements IntUser, Serializable {
     }
 
     /**
+     * Guarda el nombre del usuario
      *
-     * @param name
+     * @param name, nombre del usuario
      */
     @Override
     public void setName(String name) {
@@ -48,8 +49,9 @@ public class User implements IntUser, Serializable {
     }
 
     /**
+     * Devuelve el correo del usuario
      *
-     * @return
+     * @return email, correo del usuario
      */
     @Override
     public String getEmail() {
@@ -57,8 +59,9 @@ public class User implements IntUser, Serializable {
     }
 
     /**
+     * Guarda el correo del usuario
      *
-     * @param email
+     * @param email, correo del usuario
      */
     @Override
     public void setEmail(String email) {
@@ -66,8 +69,9 @@ public class User implements IntUser, Serializable {
     }
 
     /**
+     * Devuelve la contraseña del usuario
      *
-     * @return
+     * @return password, contraseña del usuario
      */
     @Override
     public String getPassword() {
@@ -75,8 +79,9 @@ public class User implements IntUser, Serializable {
     }
 
     /**
+     * Guarda la contraseña del usuario
      *
-     * @param password
+     * @param password, contraseña del usuario
      */
     @Override
     public void setPassword(String password) {

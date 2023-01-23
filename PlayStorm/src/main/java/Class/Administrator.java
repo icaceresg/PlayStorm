@@ -11,22 +11,27 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author jorge
+ * Esta clase implementa la interfaz IntAdmin y extiende de la clase Usuario
  */
 public final class Administrator extends User implements IntAdmin {
 
+    /**
+     * Creamos una instancia Administrador para poder utilizar el patrón
+     * Singleton
+     */
     private static Administrator instance;
 
+    /**
+     * Constructor ya inicializado porque solo puede haber un administrador
+     */
     private Administrator() {
         super("admin", "admin@admin", "admin");
     }
 
-    //Call this function to create Administrator user
-
     /**
+     * Devuelve la instancia del Administrador
      *
-     * @return
+     * @return instance, instancia del Administrador
      */
     public static Administrator getInstance() {
         if (instance == null) {
@@ -36,8 +41,9 @@ public final class Administrator extends User implements IntAdmin {
     }
 
     /**
+     * Elimina el cliente a través del email
      *
-     * @param email
+     * @param email, correo del cliente a eliminar
      */
     @Override
     public void deleteClient(String email) {
@@ -57,8 +63,9 @@ public final class Administrator extends User implements IntAdmin {
     }
 
     /**
+     * Elimina la empresa a través del correo
      *
-     * @param email
+     * @param email, correo de la empresa a eliminar
      */
     @Override
     public void deleteCompany(String email) {
@@ -77,8 +84,9 @@ public final class Administrator extends User implements IntAdmin {
     }
 
     /**
+     * Elimina un producto por su ID
      *
-     * @param id
+     * @param id, identificador del producto a eliminar
      */
     @Override
     public void deleteProduct(int id) {
