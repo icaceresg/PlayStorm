@@ -4,6 +4,7 @@
  */
 package Class.Strategy;
 
+import Interfaces.SearchStrategy;
 import Class.Product;
 import java.util.ArrayList;
 import java.util.List;

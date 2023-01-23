@@ -1,4 +1,4 @@
-package Class.State;
+package Interfaces;
 
 /**
  *

@@ -1,5 +1,6 @@
 package Class.State;
 
+import Interfaces.OrderState;
 import java.io.Serializable;
 
 /**

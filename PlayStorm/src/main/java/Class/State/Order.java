@@ -1,5 +1,6 @@
 package Class.State;
 
+import Interfaces.OrderState;
 import Class.Iterator.OrderIterator;
 import Class.Product;
 import Interfaces.IntClient;
