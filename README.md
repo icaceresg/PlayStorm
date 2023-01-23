@@ -39,8 +39,8 @@ A simulation of online video game store like Steam
    - Clase Abstracta: Client.
    - Clase Concreta: SubscriberClient, NotSubscriberClient.
  - **Iterator:** Para recorrer los objetos. **(FINALIZADO)**
-   - Agregado: ClientContainer, CompanyContainer, ProductContainer
-   - Iterador: ClientIterator, CompanyIterator, ProductIterator
+   - Agregado: ClientContainer, CompanyContainer, ProductContainer, OrderContainer
+   - Iterador: ClientIterator, CompanyIterator, ProductIterator, OrderIterator
    - Interfaz Iterador: IntContainer 
    - Interfaz Agregado:  IntIterator
  - **State:** Para ver el estado del pedido. **(FINALIZADO)**
