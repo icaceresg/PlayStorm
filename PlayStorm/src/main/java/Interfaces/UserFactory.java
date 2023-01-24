@@ -1,12 +1,12 @@
 package Interfaces;
 
 /**
- *
- * @author jorge
+ * Interfaz para el patrón Abstract Factory
  */
 public interface UserFactory {
 
     /**
+     * Crear una compañía
      *
      * @param name
      * @param email
@@ -18,6 +18,7 @@ public interface UserFactory {
     IntCompany createCompany(String name, String email, String password, String site, String cif);
 
     /**
+     * Crear un cliente
      *
      * @param name
      * @param email
