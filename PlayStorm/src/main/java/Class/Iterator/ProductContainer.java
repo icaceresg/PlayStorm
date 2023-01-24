@@ -10,17 +10,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la interfaz IntContainer y la clase Serializable
  */
 public class ProductContainer implements IntContainer, Serializable {
 
     /**
-     *
+     * Declaración de variables
      */
     public ArrayList<Product> products = new ArrayList<>();
 
     /**
+     * Constructor del contenedor de productos
      *
      * @throws Exception
      */
@@ -29,8 +29,9 @@ public class ProductContainer implements IntContainer, Serializable {
     }
 
     /**
+     * Creación del iterador
      *
-     * @return
+     * @return iterator, el iterador
      */
     @Override
     public IntIterator createIterator() {

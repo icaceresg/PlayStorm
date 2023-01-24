@@ -4,25 +4,26 @@ import Interfaces.OrderState;
 import java.io.Serializable;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la interfaz OrderState y Serializable
  */
 public class ProcessingOrderState implements OrderState, Serializable {
 
     /**
+     * Poner el pedido en proceso
      *
-     * @param status
-     * @return
+     * @param status, estado del pedido
+     * @return String
      */
     @Override
     public String processOrder(String status) {
-        return "Procesado";
+        return "En Proceso";
     }
 
     /**
+     * Finalizar pedido
      *
-     * @param status
-     * @return
+     * @param status, estado del pedido
+     * @return String
      */
     @Override
     public String endOrder(String status) {

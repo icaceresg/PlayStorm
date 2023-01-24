@@ -3,38 +3,42 @@ package Class.Adapter;
 import java.security.MessageDigest;
 
 /**
- *
- * @author jorge
+ * Clase que se encarga de la encriptación del Adapter
  */
 public class PasswordAdapter extends PasswordEncode {
 
+    /**
+     * Declaración de variables
+     */
     private Password password;
 
     /**
+     * Guarda la contraseña
      *
-     * @param pass
+     * @param pass, contraseña nueva
      */
     public PasswordAdapter(Password pass) {
         this.password = pass;
     }
 
     /**
+     * Cifra la contraseña
      *
-     * @return
+     * @return cifrado, contraseña cifrada
      */
     @Override
     public String getEncode() {
         String cifrado;
-        // Calculate a minimum circle radius, which can fit this peg.
         cifrado = password.getPassword();
         cifrado = encodeSHA256(cifrado);
         return cifrado;
     }
 
     /**
+     * Método para cifrar la contraseña
      *
-     * @param pass
-     * @return
+     * @param pass, contraseña a cifrar
+     * @return contraseña cifrada
      */
     public static String encodeSHA256(String pass) {
         try {

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package GUI;
 
 import Class.AbstractFactory.TemplateMethod.SubscriberClient;
@@ -22,13 +18,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author jorge
+ * JFrame para editar datos del cliente
  */
 public class ClientProfile extends javax.swing.JFrame {
 
     /**
-     * Creates new form UserProfile
+     * Método que inicializa esta vista, hace que la pantalla esté centrada,
+     * escribe el título e inserta la foto
      */
     public ClientProfile() {
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
@@ -48,7 +44,7 @@ public class ClientProfile extends javax.swing.JFrame {
     }
 
     /**
-     *
+     * Inserta todos los datos del usuario
      */
     public void insertData() {
         NameField.setText(User.activeUser.get(0).getName());
@@ -65,14 +61,15 @@ public class ClientProfile extends javax.swing.JFrame {
         RepeatPassField.setText("");
         if (client instanceof SubscriberClient) {
             VIPCheckBox.setSelected(true);
-        }else{
+        } else {
             VIPCheckBox.setSelected(false);
         }
     }
 
     /**
+     * Devuelve el cliente activo
      *
-     * @return
+     * @return client, cliente activo
      */
     public IntClient getClient() {
         IntClient clientSelected = null;
@@ -474,14 +471,6 @@ public class ClientProfile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     *
-     * @param text
-     * @return
-     */
-    public boolean isTextEditable(String text) {
-        return false;
-    }
     private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailFieldActionPerformed
 
     }//GEN-LAST:event_EmailFieldActionPerformed
@@ -526,15 +515,15 @@ public class ClientProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-        boolean emptyFields = BirthdayField.getText().equals("") //no esta
-                | CreditCardField.getText().equals("") //esta
-                | LocationField.getText().equals("") //esta
-                | ProfileNameField.getText().equals("") //esta
-                | (String.valueOf(PassField.getPassword())).equals("") //esta
-                | (String.valueOf(RepeatPassField.getPassword())).equals("") //esta
-                | LastNameField.getText().equals("") //esta
-                | TelephoneField.getText().equals("") //esta
-                | EmailField.getText().equals("");                      //esta 
+        boolean emptyFields = BirthdayField.getText().equals("")
+                | CreditCardField.getText().equals("")
+                | LocationField.getText().equals("")
+                | ProfileNameField.getText().equals("")
+                | (String.valueOf(PassField.getPassword())).equals("")
+                | (String.valueOf(RepeatPassField.getPassword())).equals("")
+                | LastNameField.getText().equals("")
+                | TelephoneField.getText().equals("")
+                | EmailField.getText().equals("");
 
         if (emptyFields | !((String.valueOf(PassField.getPassword())).equals((String.valueOf(RepeatPassField.getPassword()))))) {
             if (emptyFields) {
@@ -596,21 +585,17 @@ public class ClientProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void LibraryItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LibraryItemActionPerformed
-        // TODO add your handling code here:
         MyLibrary library = new MyLibrary();
         library.setVisible(true);
         this.dispose();
-
     }//GEN-LAST:event_LibraryItemActionPerformed
 
     private void SessionCloseItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SessionCloseItemActionPerformed
-        // TODO add your handling code here:
         int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de que quiere cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
         if (resp == 0) {
             IntLogOut logOutCommand = new LogoutCommand();
             logOutCommand.logOut(this);
         }
-
     }//GEN-LAST:event_SessionCloseItemActionPerformed
 
     private void ProfileItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileItemActionPerformed

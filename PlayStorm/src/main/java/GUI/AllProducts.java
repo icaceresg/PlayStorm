@@ -11,16 +11,15 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author jorge
+ * JFrame con todos los productos
  */
 public class AllProducts extends javax.swing.JFrame {
 
     /**
-     *
+     * Método que inicializa esta vista, hace que la pantalla esté centrada,
+     * escribe el título e inserta la foto
      */
     public AllProducts() {
-        // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
         int height = pantalla.height / 2;
         int width = pantalla.width / 2;
@@ -42,31 +41,25 @@ public class AllProducts extends javax.swing.JFrame {
     }
 
     /**
-     * Metodo para crear por defecto la tabla definida por los productos
-     * introducidos
+     * Método para crear por defecto la tabla definida por los productos
+     *
      * @throws java.lang.Exception
      */
     public void addRowToJTable() throws Exception {
-
         DefaultTableModel model = (DefaultTableModel) AllProductsTable.getModel();
-
         ProductIterator iterator = new ProductIterator();
         Object rowData[] = new Object[AllProductsTable.getColumnCount()];
 
         while (iterator.hasNext()) {
             Product product = iterator.next();
-
             rowData[0] = product.getId();
             rowData[1] = product.getTitle();
             rowData[2] = product.getDescription();
             rowData[3] = product.getCategory();
             rowData[4] = product.getPrice();
             rowData[5] = product.getCompany().getName();
-
             model.addRow(rowData);
-
         }
-
     }
 
     @SuppressWarnings("unchecked")
@@ -157,7 +150,6 @@ public class AllProducts extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
-        // Vuelve a la ventana de perfil
         AdminMenu adminMenu = new AdminMenu();
         adminMenu.setVisible(true);
         this.dispose();
@@ -165,14 +157,12 @@ public class AllProducts extends javax.swing.JFrame {
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         int num = AllProductsTable.getSelectedRow();
-        //Eliminamos el producto seleccionado
         if (num != -1) {
             try {
                 DefaultTableModel modelo = (DefaultTableModel) AllProductsTable.getModel();
                 IntAdmin adminProxy = new AdminProxy();
                 adminProxy.deleteProduct((Integer) modelo.getValueAt(num, 0));
                 modelo.removeRow(num);
-                //Si no seleccionamos ninguno se muestra una advertencia
             } catch (Exception ex) {
                 Logger.getLogger(AllProducts.class.getName()).log(Level.SEVERE, null, ex);
             }

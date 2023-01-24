@@ -4,15 +4,19 @@ import Interfaces.IntCompany;
 import Interfaces.IntIterator;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la interfaz IntIterator y se encarga de seleccionar una
+ * empresa del contenedor
  */
 public class CompanyIterator implements IntIterator {
 
+    /**
+     * Declaración de variables
+     */
     private int i;
     private CompanyContainer companyContainer;
 
     /**
+     * Creación del iterador
      *
      * @throws Exception
      */
@@ -21,8 +25,9 @@ public class CompanyIterator implements IntIterator {
     }
 
     /**
+     * Devuelve si hay una empresa más en el contenedor
      *
-     * @return
+     * @return boolean
      */
     @Override
     public boolean hasNext() {
@@ -34,8 +39,9 @@ public class CompanyIterator implements IntIterator {
     }
 
     /**
+     * Devuelve la empresa siguiente
      *
-     * @return
+     * @return company, siguiente empresa
      */
     @Override
     public IntCompany next() {
@@ -46,24 +52,27 @@ public class CompanyIterator implements IntIterator {
     }
 
     /**
+     * Añade una empresa al contenedor
      *
-     * @param company
+     * @param company, empresa nuevo
      */
     public void addCompany(IntCompany company) {
         companyContainer.companies.add(company);
     }
 
     /**
+     * Elimina una empresa
      *
-     * @param company
+     * @param company, empresa que eliminar
      */
     public void deleteCompany(IntCompany company) {
         companyContainer.companies.remove(company);
     }
 
     /**
+     * Devuelve la primer empresa
      *
-     * @return
+     * @return company, primera empresa
      */
     @Override
     public IntCompany firstItem() {
@@ -71,8 +80,9 @@ public class CompanyIterator implements IntIterator {
     }
 
     /**
+     * Devuelve la última empresa
      *
-     * @return
+     * @return company, última empresa
      */
     @Override
     public IntCompany lastItem() {

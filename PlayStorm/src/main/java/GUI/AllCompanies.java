@@ -12,16 +12,15 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Ventana para ver la lista de productos añadidos al carrito para poder
- * comprarlo
+ * JFrame con todas las empresas
  */
 public class AllCompanies extends javax.swing.JFrame {
 
     /**
-     *
+     * Método que inicializa esta vista, hace que la pantalla esté centrada,
+     * escribe el título e inserta la foto
      */
     public AllCompanies() {
-        // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
         int height = pantalla.height / 2;
         int width = pantalla.width / 2;
@@ -41,20 +40,17 @@ public class AllCompanies extends javax.swing.JFrame {
     }
 
     /**
-     * Metodo para crear por defecto la tabla definida por los productos
-     * introducidos
+     * Método para crear por defecto la tabla definida por las empresas
+     *
      * @throws java.lang.Exception
      */
     public void addRowToJTable() throws Exception {
-
         DefaultTableModel model = (DefaultTableModel) AllCompaniesTable.getModel();
-
         CompanyIterator iterator = new CompanyIterator();
         Object rowData[] = new Object[AllCompaniesTable.getColumnCount()];
 
         while (iterator.hasNext()) {
             IntCompany company = iterator.next();
-
             rowData[0] = company.getCif();
             rowData[1] = company.getName();
             rowData[2] = company.getLocation();
@@ -64,11 +60,8 @@ public class AllCompanies extends javax.swing.JFrame {
             if (company instanceof SubscriberCompany) {
                 rowData[4] = true;
             }
-
             model.addRow(rowData);
-
         }
-
     }
 
     @SuppressWarnings("unchecked")
@@ -178,7 +171,6 @@ public class AllCompanies extends javax.swing.JFrame {
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         int num = AllCompaniesTable.getSelectedRow();
-        //Eliminamos el producto seleccionado
         if (num != -1) {
             try {
                 DefaultTableModel modelo = (DefaultTableModel) AllCompaniesTable.getModel();
@@ -188,7 +180,6 @@ public class AllCompanies extends javax.swing.JFrame {
 
                 modelo.removeRow(num);
 
-                //Si no seleccionamos ninguno se muestra una advertencia
             } catch (Exception ex) {
                 Logger.getLogger(AllProducts.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -4,7 +4,6 @@ import Class.Iterator.ClientIterator;
 import Class.Iterator.CompanyIterator;
 import Class.Iterator.OrderIterator;
 import Class.Iterator.ProductIterator;
-import Class.State.Order;
 import Interfaces.IntClient;
 import Interfaces.IntCompany;
 import java.io.File;

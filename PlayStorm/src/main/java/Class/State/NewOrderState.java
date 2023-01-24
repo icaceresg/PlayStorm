@@ -4,15 +4,15 @@ import Interfaces.OrderState;
 import java.io.Serializable;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la interfaz OrderState y Serializable
  */
 public class NewOrderState implements OrderState, Serializable {
 
     /**
+     * Poner el pedido en proceso
      *
-     * @param status
-     * @return
+     * @param status, estado del pedido
+     * @return String
      */
     @Override
     public String processOrder(String status) {
@@ -20,12 +20,13 @@ public class NewOrderState implements OrderState, Serializable {
     }
 
     /**
+     * Finalizar pedido
      *
-     * @param status
-     * @return
+     * @param status, estado del pedido
+     * @return String
      */
     @Override
     public String endOrder(String status) {
-        return "Finalizado";         // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "Finalizado";         
     }
 }

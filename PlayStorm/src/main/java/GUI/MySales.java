@@ -1,7 +1,7 @@
 package GUI;
 
 import Class.Iterator.OrderIterator;
-import Class.State.Order;
+import Class.Order;
 import Class.User;
 import java.awt.*;
 import java.util.logging.Level;
@@ -10,16 +10,15 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Ventana para ver la lista de productos añadidos al carrito para poder
- * comprarlo
+ * JFrame para ver la lista de mis ventas
  */
 public class MySales extends javax.swing.JFrame {
 
     /**
-     *
+     * Método que inicializa esta vista, hace que la pantalla esté centrada,
+     * escribe el título e inserta la foto
      */
     public MySales() {
-        // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
         int height = pantalla.height / 2;
         int width = pantalla.width / 2;
@@ -35,8 +34,7 @@ public class MySales extends javax.swing.JFrame {
     }
 
     /**
-     * Metodo para crear por defecto la tabla definida por los productos
-     * introducidos
+     * Método para crear por defecto la tabla definida por los productos
      */
     public void addRowToJTable() {
         try {
@@ -141,7 +139,6 @@ public class MySales extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
-        // Vuelve a la ventana de perfil
         CompanyMenu companyMenu = new CompanyMenu();
         companyMenu.setVisible(true);
         this.dispose();

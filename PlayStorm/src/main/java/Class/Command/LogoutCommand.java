@@ -6,14 +6,14 @@ import Interfaces.IntLogOut;
 import javax.swing.JFrame;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la interfaz IntLogOut y sirve para el patrón Command
  */
 public class LogoutCommand implements IntLogOut {
 
     /**
+     * Método que se encarga de cerrar sesión
      *
-     * @param vista
+     * @param vista, vista actual
      */
     @Override
     public void logOut(JFrame vista) {
@@ -25,7 +25,7 @@ public class LogoutCommand implements IntLogOut {
     }
 
     /**
-     *
+     * Quita el usuario activo
      */
     @Override
     public void logOutUser() {

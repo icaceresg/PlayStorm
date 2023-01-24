@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Class.Strategy;
 
 import Interfaces.SearchStrategy;
@@ -10,16 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la interfaz SearchStrategy
  */
 public class SearchByName implements SearchStrategy {
 
     /**
+     * Busca por nombre
      *
-     * @param products
-     * @param criteria
-     * @return
+     * @param products, lista de productos
+     * @param criteria, criterio
+     * @return lista de productos filtrado
      */
     @Override
     public List<Product> search(List<Product> products, String criteria) {

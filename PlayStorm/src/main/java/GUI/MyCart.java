@@ -7,7 +7,7 @@ import Class.Iterator.CompanyIterator;
 import Class.Iterator.OrderIterator;
 import Class.Iterator.ProductIterator;
 import Class.Product;
-import Class.State.Order;
+import Class.Order;
 import Class.State.ProcessingOrderState;
 import Class.User;
 import Interfaces.IntClient;
@@ -20,16 +20,15 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Ventana para ver la lista de productos añadidos al carrito para poder
- * comprarlo
+ * JFrame para ver la lista de productos añadidos al carrito para poder comprar
  */
 public class MyCart extends javax.swing.JFrame {
 
     /**
-     *
+     * Método que inicializa esta vista, hace que la pantalla esté centrada,
+     * escribe el título e inserta la foto
      */
     public MyCart() {
-        // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
         int height = pantalla.height / 2;
         int width = pantalla.width / 2;
@@ -45,8 +44,7 @@ public class MyCart extends javax.swing.JFrame {
     }
 
     /**
-     * Metodo para crear por defecto la tabla definida por los productos
-     * introducidos
+     * Método para crear por defecto la tabla definida por los productos
      */
     public void addRowToJTable() {
 
@@ -200,7 +198,6 @@ public class MyCart extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
-        // Vuelve a la ventana de perfil
         GameSearch games = new GameSearch();
         games.setVisible(true);
         this.dispose();
@@ -289,7 +286,7 @@ public class MyCart extends javax.swing.JFrame {
                 }
 
                 order.setState(new ProcessingOrderState());
-                order.finish(); // prints "Order processing cannot be canceled"
+                order.finish(); 
 
                 DataBase dataBase = new DataBase();
                 dataBase.saveIteratorOrder(orderIterator);

@@ -12,17 +12,16 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author jorge
+ * JFrame con todos los clientes
  */
 public class AllClients extends javax.swing.JFrame {
 
     /**
-     *
+     * Método que inicializa esta vista, hace que la pantalla esté centrada,
+     * escribe el título e inserta la foto
      */
     public AllClients() {
         try {
-            // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
             Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
             int height = pantalla.height / 2;
             int width = pantalla.width / 2;
@@ -31,7 +30,7 @@ public class AllClients extends javax.swing.JFrame {
             initComponents();
             addRowToJTable();
 
-        this.setTitle("PlayStorm");
+            this.setTitle("PlayStorm");
 
             ImageIcon imagen = new ImageIcon("./images/LogoApp 01.png");
             this.setIconImage(imagen.getImage());
@@ -41,8 +40,8 @@ public class AllClients extends javax.swing.JFrame {
     }
 
     /**
-     * Metodo para crear por defecto la tabla definida por los productos
-     * introducidos
+     * Método para crear por defecto la tabla definida por los clientes
+     *
      * @throws java.lang.Exception
      */
     public void addRowToJTable() throws Exception {
@@ -68,7 +67,6 @@ public class AllClients extends javax.swing.JFrame {
             }
             model.addRow(rowData);
         }
-
     }
 
     @SuppressWarnings("unchecked")
@@ -176,19 +174,16 @@ public class AllClients extends javax.swing.JFrame {
         AdminMenu adminMenu = new AdminMenu();
         adminMenu.setVisible(true);
         this.dispose();
-
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         int num = AllClientsTable.getSelectedRow();
-        //Eliminamos el producto seleccionado
         if (num != -1) {
             try {
                 DefaultTableModel modelo = (DefaultTableModel) AllClientsTable.getModel();
                 IntAdmin adminProxy = new AdminProxy();
                 adminProxy.deleteClient((String) modelo.getValueAt(num, 2));
                 modelo.removeRow(num);
-                //Si no seleccionamos ninguno se muestra una advertencia
             } catch (Exception ex) {
                 Logger.getLogger(AllProducts.class.getName()).log(Level.SEVERE, null, ex);
             }

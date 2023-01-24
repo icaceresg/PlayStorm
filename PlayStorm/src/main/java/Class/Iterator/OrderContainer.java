@@ -5,7 +5,7 @@
 package Class.Iterator;
 
 import Class.DataBase;
-import Class.State.Order;
+import Class.Order;
 import Interfaces.IntContainer;
 import Interfaces.IntIterator;
 import java.io.Serializable;
@@ -14,17 +14,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la interfaz IntContainer y la clase Serializable
  */
 public class OrderContainer implements IntContainer, Serializable {
 
     /**
-     *
+     * Declaración de variables
      */
     public ArrayList<Order> orders = new ArrayList<>();
 
     /**
+     * Constructor del contenedor de pedidos
      *
      * @throws Exception
      */
@@ -33,8 +33,9 @@ public class OrderContainer implements IntContainer, Serializable {
     }
 
     /**
+     * Creación del iterador
      *
-     * @return
+     * @return iterator, el iterador
      */
     @Override
     public IntIterator createIterator() {

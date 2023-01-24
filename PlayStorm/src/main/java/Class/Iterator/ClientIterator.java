@@ -4,15 +4,19 @@ import Interfaces.IntIterator;
 import Interfaces.IntClient;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la interfaz IntIterator y se encarga de seleccionar un
+ * cliente del contenedor
  */
 public class ClientIterator implements IntIterator {
 
+    /**
+     * Declaración de variables
+     */
     private int i;
     private ClientContainer clientContainer;
 
     /**
+     * Creación del iterador
      *
      * @throws Exception
      */
@@ -21,8 +25,9 @@ public class ClientIterator implements IntIterator {
     }
 
     /**
+     * Devuelve si hay un cliente más en el contenedor
      *
-     * @return
+     * @return boolean
      */
     @Override
     public boolean hasNext() {
@@ -34,8 +39,9 @@ public class ClientIterator implements IntIterator {
     }
 
     /**
+     * Devuelve el cliente siguiente
      *
-     * @return
+     * @return client, siguiente cliente
      */
     @Override
     public IntClient next() {
@@ -46,24 +52,27 @@ public class ClientIterator implements IntIterator {
     }
 
     /**
+     * Añade un cliente al contenedor
      *
-     * @param client
+     * @param client, cliente nuevo
      */
     public void addClient(IntClient client) {
         clientContainer.clients.add(client);
     }
 
     /**
+     * Elimina un cliente
      *
-     * @param client
+     * @param client, cliente que eliminar
      */
     public void deleteClient(IntClient client) {
         clientContainer.clients.remove(client);
     }
 
     /**
+     * Devuelve el primer cliente
      *
-     * @return
+     * @return client, primer cliente
      */
     @Override
     public IntClient firstItem() {
@@ -71,8 +80,9 @@ public class ClientIterator implements IntIterator {
     }
 
     /**
+     * Devuelve el último cliente
      *
-     * @return
+     * @return client, último cliente
      */
     @Override
     public IntClient lastItem() {

@@ -6,25 +6,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la intefaz Subject y utiliza el patrón Observer
  */
 public class SumSubject implements Subject {
 
+    /**
+     * Declaración de variables
+     */
     private List<Observer> observers;
     private float clientData;
     private float externalData;
 
     /**
-     *
+     * Constructor de SumSubject
      */
     public SumSubject() {
         observers = new ArrayList<Observer>();
     }
 
     /**
+     * Guarda el observador
      *
-     * @param observer
+     * @param observer, observador a añadir
      */
     @Override
     public void registerObserver(Observer observer) {
@@ -32,8 +35,9 @@ public class SumSubject implements Subject {
     }
 
     /**
+     * Elimina el observador
      *
-     * @param observer
+     * @param observer, observador a eliminar
      */
     @Override
     public void removeObserver(Observer observer) {
@@ -44,7 +48,7 @@ public class SumSubject implements Subject {
     }
 
     /**
-     *
+     * Notificar al cliente del cambio
      */
     @Override
     public void notifyObservers() {
@@ -54,8 +58,9 @@ public class SumSubject implements Subject {
     }
 
     /**
+     * Guardar el dinero del cliente
      *
-     * @param data
+     * @param data, dinero del cliente
      */
     public void getClientData(float data) {
         this.clientData = data;
@@ -63,8 +68,9 @@ public class SumSubject implements Subject {
     }
 
     /**
+     * Guardar el dinero a añadir
      *
-     * @param data
+     * @param data, dinero escrito por el cliente
      */
     public void getExternalData(float data) {
         this.externalData = data;

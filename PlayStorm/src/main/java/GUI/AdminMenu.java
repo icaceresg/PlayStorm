@@ -9,13 +9,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author jorge
+ * JFrame del menú del admin
  */
 public class AdminMenu extends javax.swing.JFrame {
 
     /**
-     *
+     * Método que inicializa esta vista, hace que la pantalla esté centrada,
+     * escribe el título e inserta la foto
      */
     public AdminMenu() {
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
@@ -163,8 +163,6 @@ public class AdminMenu extends javax.swing.JFrame {
             IntLogOut logOutCommand = new LogoutCommand();
             logOutCommand.logOut(this);
         }
-
-
     }//GEN-LAST:event_jMenuItemCloseSessionActionPerformed
 
     private void CompanyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompanyButtonActionPerformed

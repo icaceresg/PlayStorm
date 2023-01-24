@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package GUI;
 
 import Class.AbstractFactory.TemplateMethod.SubscriberCompany;
@@ -15,7 +11,7 @@ import Class.Iterator.ProductIterator;
 import Class.Observer.SumObserver;
 import Class.Observer.SumSubject;
 import Class.Product;
-import Class.State.Order;
+import Class.Order;
 import Class.Strategy.Finder;
 import Class.Strategy.SearchByCategory;
 import Class.Strategy.SearchByName;
@@ -35,13 +31,13 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author AdriiM_
+ * JFrame con todos los productos
  */
 public class GameSearch extends javax.swing.JFrame {
 
     /**
-     * Creates new form GameSearch
+     * Método que inicializa esta vista, hace que la pantalla esté centrada,
+     * escribe el título e inserta la foto
      */
     public GameSearch() {
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
@@ -66,6 +62,12 @@ public class GameSearch extends javax.swing.JFrame {
         MoneyLabel.setText(String.valueOf(wallet));
     }
 
+    /**
+     * Coge el monedero del cliente
+     *
+     * @param email
+     * @return float
+     */
     private float getWallet(String email) {
         try {
             ClientIterator iterator = new ClientIterator();
@@ -82,8 +84,9 @@ public class GameSearch extends javax.swing.JFrame {
     }
 
     /**
+     * Método para crear por defecto la tabla definida por los productos
      *
-     * @throws Exception
+     * @throws java.lang.Exception
      */
     public void addRowToJTable() throws Exception {
 
@@ -106,6 +109,12 @@ public class GameSearch extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Ordenar por preferencia
+     *
+     * @param products, productos
+     * @return
+     */
     private List<Product> ordenarPreferencia(ProductIterator products) {
         List<Product> lista = new ArrayList<>();
         List<Product> lista2 = new ArrayList<>();
@@ -386,7 +395,6 @@ public class GameSearch extends javax.swing.JFrame {
 
     private void AddShoppingCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddShoppingCartButtonActionPerformed
         int num = AllProductsTable.getSelectedRow();
-
         if (num > -1) {
             try {
                 DefaultTableModel modelo = (DefaultTableModel) AllProductsTable.getModel();
@@ -528,8 +536,9 @@ public class GameSearch extends javax.swing.JFrame {
     }//GEN-LAST:event_SearchButtonActionPerformed
 
     /**
+     * Establecer máximo
      *
-     * @return
+     * @return maximum
      */
     public float getMaximum() {
         float maximum = 0;
@@ -546,8 +555,9 @@ public class GameSearch extends javax.swing.JFrame {
     }
 
     /**
+     * Establecer mínimo
      *
-     * @return
+     * @return minimum
      */
     public float getMinimum() {
         float minimum = 10000;

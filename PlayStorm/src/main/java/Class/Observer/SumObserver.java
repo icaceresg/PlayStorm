@@ -9,17 +9,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la intefaz Observer y utiliza el patrón Observer
  */
 public class SumObserver implements Observer {
 
+    /**
+     * Declaración de variables
+     */
     private float sum;
 
     /**
+     * Actualiza el nuevo dinero del cliente
      *
-     * @param clientMoney
-     * @param addedMoney
+     * @param clientMoney, dinero del cliente
+     * @param addedMoney, dinero a añadir
      */
     @Override
     public void update(float clientMoney, float addedMoney) {
@@ -28,13 +31,11 @@ public class SumObserver implements Observer {
     }
 
     /**
-     *
+     * Guarda el nuevo dinero del cliente
      */
     public void setMoney() {
         try {
             String email = Client.activeUser.get(0).getEmail();
-
-            //Iterador + guardar en base de datos
             ClientIterator iterator = new ClientIterator();
             while (iterator.hasNext()) {
                 IntClient client = iterator.next();

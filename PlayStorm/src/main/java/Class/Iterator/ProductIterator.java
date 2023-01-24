@@ -4,15 +4,19 @@ import Class.Product;
 import Interfaces.IntIterator;
 
 /**
- *
- * @author jorge
+ * Clase que implementa la interfaz IntIterator y se encarga de seleccionar un
+ * producto del contenedor
  */
 public class ProductIterator implements IntIterator {
 
+    /**
+     * Declaración de variables
+     */
     private int i;
     private ProductContainer productContainer;
 
     /**
+     * Creación del iterador
      *
      * @throws Exception
      */
@@ -21,8 +25,9 @@ public class ProductIterator implements IntIterator {
     }
 
     /**
+     * Devuelve si hay un producto más en el contenedor
      *
-     * @return
+     * @return boolean
      */
     @Override
     public boolean hasNext() {
@@ -35,8 +40,9 @@ public class ProductIterator implements IntIterator {
     }
 
     /**
+     * Devuelve el producto siguiente
      *
-     * @return
+     * @return producto, siguiente producto
      */
     @Override
     public Product next() {
@@ -47,24 +53,27 @@ public class ProductIterator implements IntIterator {
     }
 
     /**
+     * Añade un producto al contenedor
      *
-     * @param product
+     * @param product, producto nuevo
      */
     public void addProducts(Product product) {
         productContainer.products.add(product);
     }
 
     /**
+     * Elimina un producto
      *
-     * @param product
+     * @param product, producto que eliminar
      */
     public void deleteProduct(Product product) {
         productContainer.products.remove(product);
     }
 
     /**
+     * Devuelve el primer producto
      *
-     * @return
+     * @return product, primer producto
      */
     @Override
     public Product firstItem() {
@@ -72,8 +81,9 @@ public class ProductIterator implements IntIterator {
     }
 
     /**
+     * Devuelve el último producto
      *
-     * @return
+     * @return product, último producto
      */
     @Override
     public Product lastItem() {

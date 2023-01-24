@@ -11,16 +11,15 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Ventana para ver la lista de productos añadidos al carrito para poder
- * comprarlo
+ * JFrame para ver la lista de mis productos
  */
 public class MyProducts extends javax.swing.JFrame {
 
     /**
-     *
+     * Método que inicializa esta vista, hace que la pantalla esté centrada,
+     * escribe el título e inserta la foto
      */
     public MyProducts() {
-        // Se centra la imagen, añade la tabla y se establece el logo y el nombre de la pantalla
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
         int height = pantalla.height / 2;
         int width = pantalla.width / 2;
@@ -36,8 +35,7 @@ public class MyProducts extends javax.swing.JFrame {
     }
 
     /**
-     * Metodo para crear por defecto la tabla definida por los productos
-     * introducidos
+     * Método para crear por defecto la tabla definida por los productos
      */
     public void addRowToJTable() {
         try {
@@ -161,7 +159,6 @@ public class MyProducts extends javax.swing.JFrame {
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         int num = MyProductsTable.getSelectedRow();
-        //Eliminamos el producto seleccionado
         if (num != -1) {
             try {
                 DefaultTableModel modelo = (DefaultTableModel) MyProductsTable.getModel();
@@ -177,7 +174,6 @@ public class MyProducts extends javax.swing.JFrame {
                 DataBase dataBase = new DataBase();
                 dataBase.saveIteratorProduct(productIterator);
                 modelo.removeRow(num);
-                //Si no seleccionamos ninguno se muestra una advertencia
             } catch (Exception ex) {
                 Logger.getLogger(AllProducts.class.getName()).log(Level.SEVERE, null, ex);
             }
