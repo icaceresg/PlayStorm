@@ -7,7 +7,7 @@ A simulation of online video game store like Steam
  - Java
 #### Interfaz:
  - Con la que nos proporciona Java
-#### Javadoc dentro de la carpeta tarjet2 en GitHub, en la entrega está en tarjet.
+#### Javadoc dentro de la carpeta tarjet2.
  
 # Patrones:
 
