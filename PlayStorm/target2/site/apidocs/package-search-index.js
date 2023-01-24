@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"Class"},{"l":"Class.AbstractFactory"},{"l":"Class.AbstractFactory.TemplateMethod"},{"l":"Class.Adapter"},{"l":"Class.Command"},{"l":"Class.Iterator"},{"l":"Class.Observer"},{"l":"Class.Proxy"},{"l":"Class.State"},{"l":"Class.Strategy"},{"l":"GUI"},{"l":"Interfaces"}];updateSearchResults();

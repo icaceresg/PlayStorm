@@ -1,0 +1,8 @@
+cmd.exe
+/X
+/C
+""C:\Program Files\Java\jdk-16\bin\javadoc.exe" @options @argfile"
+C:\Users\jorge\Desktop\JORGE\UNIVERSIDAD\4º GIC\1º CUATRIMESTRE\PATRONES\PlayStorm\PlayStorm\target\site\apidocs\argfile = 1674564574024
+C:\Users\jorge\Desktop\JORGE\UNIVERSIDAD\4º GIC\1º CUATRIMESTRE\PATRONES\PlayStorm\PlayStorm\target\site\apidocs\javadoc.bat = 1674564391697
+C:\Users\jorge\Desktop\JORGE\UNIVERSIDAD\4º GIC\1º CUATRIMESTRE\PATRONES\PlayStorm\PlayStorm\target\site\apidocs\options = 1674564574023
+C:\Users\jorge\Desktop\JORGE\UNIVERSIDAD\4º GIC\1º CUATRIMESTRE\PATRONES\PlayStorm\PlayStorm\target\site\apidocs\packages = 1674564391260
